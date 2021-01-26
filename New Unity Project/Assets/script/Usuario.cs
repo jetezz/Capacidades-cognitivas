@@ -14,5 +14,7 @@ public class Usuario
     public string Name;
     public string Description;
     public Sprite Icon;
+    public int id;
+   
 }
 

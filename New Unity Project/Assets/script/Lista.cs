@@ -9,8 +9,7 @@ using System;
 public class Lista : MonoBehaviour
 {
     public GameObject mainMenu;
-    public GameObject buttonTemplate;
-    public GameObject yo;
+    
     
 
 
@@ -24,34 +23,98 @@ public class Lista : MonoBehaviour
        
         List<Usuario> usuarios = mainMenu.GetComponent<menu>().usuarios;        
         GameObject g;
-        int N = usuarios.Count;
+        int N = usuarios.Count;     
 
-        if (N > 1)
-        {
-            borrarLista();
-        }
 
-        
-
+        GameObject buttonTemplate = transform.GetChild(0).gameObject;
         for (int i = 0; i < N; i++)
         {            
             g = Instantiate(buttonTemplate, transform);
             g.transform.GetChild(0).GetComponent<Text>().text = usuarios[i].Name;
             g.transform.GetChild(1).GetComponent<Text>().text = usuarios[i].Description;
-            g.transform.GetChild(2).GetComponent<Image>().sprite = usuarios[i].Icon;
+            g.transform.GetChild(2).GetComponent<Image>().sprite = usuarios[i].Icon;            
+            g.SetActive(true);
         }
         
+    }
+    public void anadieUsuario()
+    {
+        List<Usuario> usuarios = mainMenu.GetComponent<menu>().usuarios;
+        GameObject g;
+        GameObject buttonTemplate = transform.GetChild(0).gameObject;
+        g = Instantiate(buttonTemplate, transform);
+        g.transform.GetChild(0).GetComponent<Text>().text = usuarios[usuarios.Count-1].Name;
+        g.transform.GetChild(1).GetComponent<Text>().text = usuarios[usuarios.Count-1].Description;
+        g.transform.GetChild(2).GetComponent<Image>().sprite = usuarios[usuarios.Count-1].Icon;
+        int newId= darId();
+        usuarios[usuarios.Count - 1].id = newId;
+        g.GetComponent<IdUsuario>().id = newId;
+
+
+        g.SetActive(true);
     }
     public void borrarLista()
     {
         List<Usuario> usuarios = mainMenu.GetComponent<menu>().usuarios;
         int N = usuarios.Count;
         for (int i = 0; i < N-1; i++)
+        {            
+            Destroy(gameObject.transform.GetChild(i+1).gameObject);
+        }
+
+        
+       
+
+    }
+    public void borrarUsuario(int id)
+    {
+        Debug.Log("id que queremos eliminar=" + id);      
+     
+
+        List<Usuario> usuarios = mainMenu.GetComponent<menu>().usuarios;
+        int N = usuarios.Count;
+        
+
+            for (int i = 0; i < N; i++)
         {
-            Debug.Log("entra");
-            Destroy(gameObject.transform.GetChild(i).gameObject);
+            Debug.Log(gameObject.transform.GetChild(i + 1).gameObject.GetComponent<IdUsuario>().id);
+           if(gameObject.transform.GetChild(i+1).gameObject.GetComponent<IdUsuario>().id == id)
+            {
+                Debug.Log("entra en eliminar" + i+1);
+                Destroy(gameObject.transform.GetChild(i+1).gameObject);
+
+            }
+        }       
+        mainMenu.GetComponent<menu>().borrar = false;
+
+        for (int i = 0; i < N; i++)
+        {
+            if (usuarios[i].id == id)
+            {
+                Debug.Log("usuario" + i);
+                mainMenu.GetComponent<menu>().usuarios.Remove(mainMenu.GetComponent<menu>().usuarios[i]);
+                break;
+            }
+            
+        }
+
+    }
+    public int darId()
+    {
+        int id = 0;
+        List<Usuario> usuarios = mainMenu.GetComponent<menu>().usuarios;
+        int N = usuarios.Count;
+
+        for(int i = 0; i < N; i++)
+        {
+            if(usuarios[i].id == id)
+            {
+                id++;
+                i = -1;
+            }
         }
         
+        return id;
     }
 
     
