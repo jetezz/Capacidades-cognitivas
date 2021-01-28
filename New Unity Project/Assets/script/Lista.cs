@@ -8,7 +8,8 @@ using System;
 
 public class Lista : MonoBehaviour
 {
-    public GameObject mainMenu;
+   
+    public GameObject mainCamera;
     
     
 
@@ -21,7 +22,7 @@ public class Lista : MonoBehaviour
       public void crearLista()
     {
        
-        List<Usuario> usuarios = mainMenu.GetComponent<menu>().usuarios;        
+        List<Usuario> usuarios = mainCamera.GetComponent<ManagerUsuario>().usuarios;        
         GameObject g;
         int N = usuarios.Count;     
 
@@ -34,12 +35,13 @@ public class Lista : MonoBehaviour
             g.transform.GetChild(1).GetComponent<Text>().text = usuarios[i].Description;
             g.transform.GetChild(2).GetComponent<Image>().sprite = usuarios[i].Icon;            
             g.SetActive(true);
+            g.GetComponent<IdUsuario>().id = usuarios[i].id;
         }
         
     }
     public void anadieUsuario()
     {
-        List<Usuario> usuarios = mainMenu.GetComponent<menu>().usuarios;
+        List<Usuario> usuarios = mainCamera.GetComponent<ManagerUsuario>().usuarios;
         GameObject g;
         GameObject buttonTemplate = transform.GetChild(0).gameObject;
         g = Instantiate(buttonTemplate, transform);
@@ -55,7 +57,7 @@ public class Lista : MonoBehaviour
     }
     public void borrarLista()
     {
-        List<Usuario> usuarios = mainMenu.GetComponent<menu>().usuarios;
+        List<Usuario> usuarios = mainCamera.GetComponent<ManagerUsuario>().usuarios;
         int N = usuarios.Count;
         for (int i = 0; i < N-1; i++)
         {            
@@ -71,7 +73,7 @@ public class Lista : MonoBehaviour
         Debug.Log("id que queremos eliminar=" + id);      
      
 
-        List<Usuario> usuarios = mainMenu.GetComponent<menu>().usuarios;
+        List<Usuario> usuarios = mainCamera.GetComponent<ManagerUsuario>().usuarios;
         int N = usuarios.Count;
         
 
@@ -84,15 +86,15 @@ public class Lista : MonoBehaviour
                 Destroy(gameObject.transform.GetChild(i+1).gameObject);
 
             }
-        }       
-        mainMenu.GetComponent<menu>().borrar = false;
+        }
+        mainCamera.GetComponent<ManagerUsuario>().borrar = false;
 
         for (int i = 0; i < N; i++)
         {
             if (usuarios[i].id == id)
             {
                 Debug.Log("usuario" + i);
-                mainMenu.GetComponent<menu>().usuarios.Remove(mainMenu.GetComponent<menu>().usuarios[i]);
+                mainCamera.GetComponent<ManagerUsuario>().usuarios.Remove(mainCamera.GetComponent<ManagerUsuario>().usuarios[i]);
                 break;
             }
             
@@ -102,7 +104,7 @@ public class Lista : MonoBehaviour
     public int darId()
     {
         int id = 0;
-        List<Usuario> usuarios = mainMenu.GetComponent<menu>().usuarios;
+        List<Usuario> usuarios = mainCamera.GetComponent<ManagerUsuario>().usuarios;
         int N = usuarios.Count;
 
         for(int i = 0; i < N; i++)

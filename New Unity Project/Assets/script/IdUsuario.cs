@@ -3,19 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class IdUsuario : MonoBehaviour
-{
-    public string Name;
-    public string Description;
-    public Sprite Icon;
+{   
     public int id;
-    public GameObject menu;
+    public GameObject managerUsuario;
     public GameObject lista;
 
     public void clickUsuario()
     {
-        if (menu.GetComponent<menu>().borrar)
+        if (managerUsuario.GetComponent<ManagerUsuario>().borrar)
         {
             lista.GetComponent<Lista>().borrarUsuario(id);
+            managerUsuario.GetComponent<ManagerUsuario>().botonGuardar();
         }
         else
         {
