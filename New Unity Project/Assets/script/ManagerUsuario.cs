@@ -6,51 +6,54 @@ using System;
 [System.Serializable]
 public class ManagerUsuario : MonoBehaviour
 {
-    public GameObject maincamera;
-    public GameObject lista;
+    public static ManagerUsuario managerUsuario;       
     public List<Usuario> usuarios;
 
-    public string nombre;
-    public string descripcion;
-    public bool borrar = false;
 
 
 
-    private void Start()
+    private void Awake()
     {
-        usuarios = maincamera.GetComponent<Ejemplojson>().cargarUsuarios();
-    }
-    public void botonNuevoUsuario()
-    {
-
-        if (nombre.Length != 0)
+        if (managerUsuario == null)
         {
-            usuarios.Add(new Usuario(nombre, descripcion));
-            lista.GetComponent<Lista>().anadieUsuario();
-            maincamera.GetComponent<Ejemplojson>().guardarUsuario(usuarios);
+            managerUsuario = this;
+            DontDestroyOnLoad(gameObject);
+        }else if (managerUsuario != this)
+        {
+            Destroy(gameObject);
         }
     }
 
-    public void botonGuardar()
+    private void Start()
     {
-        maincamera.GetComponent<Ejemplojson>().guardarUsuario(usuarios);       
+      
+        usuarios = GameObject.FindWithTag("Json").GetComponent<Ejemplojson>().cargarUsuarios();        
     }
 
-    public void borrarUsuario()
+    public void addUser(Usuario usuario)
     {
-        borrar = true;
+        usuarios.Add(usuario);
     }
 
-    public void userNom(string n)
+    public void guardarUsuarios()
     {
-        Debug.Log(n);
-        nombre = n;
-    }
-    public void userDesc(string d)
-    {
-        descripcion = d;
+        GameObject.FindWithTag("Json").GetComponent<Ejemplojson>().guardarUsuario(usuarios);
     }
 
+    public Usuario getUsuarioByid(int id)
+    {
+        for (int i = 0; i < usuarios.Count; i++)
+        {
+            Debug.Log(i);
+            if (usuarios[i].id==id)
+            {
+                return usuarios[i];
+            }
+        }
+        return new Usuario("error", "error");
+    }
+
+   
 }
 
 [System.Serializable]
@@ -61,12 +64,22 @@ public class Usuario
    {
        Name = nombre;
        Description = detalles;
+        estadisticas = new Estadisticas();
    }
-   public string Name;
-   public string Description;
-   public Sprite Icon;
-   public int id;
+    public string Name;
+    public string Description;
+    public Sprite Icon;
+    public int id;
+    public Estadisticas estadisticas;
    
 
+}
+
+[System.Serializable]
+public class Estadisticas
+{
+   public  bool textInicial = false;
+   public  int[] estadistica1;
+   public int[] estadistica2;
 }
 

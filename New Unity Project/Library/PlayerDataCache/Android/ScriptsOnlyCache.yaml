@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - Ejemplojson
+    - Ejercicios
     - IdUsuario
     - Lista
     - ManagerUsuario
@@ -69,7 +70,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1514}
     - Class: 114
+      Script: {instanceID: 1914}
+    - Class: 114
       Script: {instanceID: 2096}
+    - Class: 114
+      Script: {instanceID: 2256}
     - Class: 114
       Script: {instanceID: 2460}
     - Class: 114
@@ -79,7 +84,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2978}
     - Class: 114
+      Script: {instanceID: 2986}
+    - Class: 114
+      Script: {instanceID: 3162}
+    - Class: 114
+      Script: {instanceID: 3306}
+    - Class: 114
+      Script: {instanceID: 3410}
+    - Class: 114
+      Script: {instanceID: 3932}
+    - Class: 114
+      Script: {instanceID: 4108}
+    - Class: 114
       Script: {instanceID: 4408}
+    - Class: 114
+      Script: {instanceID: 77370}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -171,9 +190,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1782}
     - Class: 114
+      Script: {instanceID: 1914}
+    - Class: 114
       Script: {instanceID: 2088}
     - Class: 114
       Script: {instanceID: 2096}
+    - Class: 114
+      Script: {instanceID: 2256}
     - Class: 114
       Script: {instanceID: 2460}
     - Class: 114
@@ -231,8 +254,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 1914}
     - Class: 114
       Script: {instanceID: 2096}
-    - Class: 114
-      Script: {instanceID: 2256}
     - Class: 114
       Script: {instanceID: 2460}
     - Class: 114
@@ -410,7 +431,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 888f76ff69e2180f0f9dff4f6ea5aa40
+      Hash: b5a5587818cc67c23e491d05455b4240
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ManagerUsuario
@@ -548,7 +569,7 @@ ScriptsOnlyBuild:
     className: SpriteShapeController
   - hash:
       serializedVersion: 2
-      Hash: 3e3864f6fe05b1ae81fed32c75804ad0
+      Hash: 702c8e232109d44def47cbc8ac67ba0a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Lista
@@ -566,7 +587,7 @@ ScriptsOnlyBuild:
     className: ContentSizeFitter
   - hash:
       serializedVersion: 2
-      Hash: e6212049917baab0e488cf102e203dba
+      Hash: 329554de06905192a985fe5297de3b63
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: IdUsuario
@@ -816,6 +837,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
+  - hash:
+      serializedVersion: 2
+      Hash: 654720a6b080c45718d283073b53d2d5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Ejercicios
   platform: 13
   scenePathNames:
   - Assets/Scenes/Menu.unity

@@ -9,23 +9,26 @@ using System;
 public class Lista : MonoBehaviour
 {
    
-    public GameObject mainCamera;
-    
-    
+    private GameObject managerUsuarios;  
+
+    public string nombre;
+    public string descripcion;
+    public bool borrar = false;
+
 
 
     void Start()
     {
+        managerUsuarios = GameObject.FindWithTag("MUsu");
         crearLista();
     }
 
       public void crearLista()
     {
        
-        List<Usuario> usuarios = mainCamera.GetComponent<ManagerUsuario>().usuarios;        
+        List<Usuario> usuarios = managerUsuarios.GetComponent<ManagerUsuario>().usuarios;        
         GameObject g;
-        int N = usuarios.Count;     
-
+        int N = usuarios.Count;        
 
         GameObject buttonTemplate = transform.GetChild(0).gameObject;
         for (int i = 0; i < N; i++)
@@ -41,7 +44,7 @@ public class Lista : MonoBehaviour
     }
     public void anadieUsuario()
     {
-        List<Usuario> usuarios = mainCamera.GetComponent<ManagerUsuario>().usuarios;
+        List<Usuario> usuarios = managerUsuarios.GetComponent<ManagerUsuario>().usuarios;
         GameObject g;
         GameObject buttonTemplate = transform.GetChild(0).gameObject;
         g = Instantiate(buttonTemplate, transform);
@@ -57,44 +60,34 @@ public class Lista : MonoBehaviour
     }
     public void borrarLista()
     {
-        List<Usuario> usuarios = mainCamera.GetComponent<ManagerUsuario>().usuarios;
+        List<Usuario> usuarios = managerUsuarios.GetComponent<ManagerUsuario>().usuarios;
         int N = usuarios.Count;
         for (int i = 0; i < N-1; i++)
         {            
             Destroy(gameObject.transform.GetChild(i+1).gameObject);
         }
-
-        
-       
-
     }
     public void borrarUsuario(int id)
     {
-        Debug.Log("id que queremos eliminar=" + id);      
-     
-
-        List<Usuario> usuarios = mainCamera.GetComponent<ManagerUsuario>().usuarios;
+       
+        List<Usuario> usuarios = managerUsuarios.GetComponent<ManagerUsuario>().usuarios;
         int N = usuarios.Count;
         
 
             for (int i = 0; i < N; i++)
-        {
-            Debug.Log(gameObject.transform.GetChild(i + 1).gameObject.GetComponent<IdUsuario>().id);
-           if(gameObject.transform.GetChild(i+1).gameObject.GetComponent<IdUsuario>().id == id)
-            {
-                Debug.Log("entra en eliminar" + i+1);
+            {            
+                if(gameObject.transform.GetChild(i+1).gameObject.GetComponent<IdUsuario>().id == id)
+                {               
                 Destroy(gameObject.transform.GetChild(i+1).gameObject);
-
+                }
             }
-        }
-        mainCamera.GetComponent<ManagerUsuario>().borrar = false;
+        borrar = false;
 
         for (int i = 0; i < N; i++)
         {
             if (usuarios[i].id == id)
-            {
-                Debug.Log("usuario" + i);
-                mainCamera.GetComponent<ManagerUsuario>().usuarios.Remove(mainCamera.GetComponent<ManagerUsuario>().usuarios[i]);
+            {                
+                managerUsuarios.GetComponent<ManagerUsuario>().usuarios.Remove(managerUsuarios.GetComponent<ManagerUsuario>().usuarios[i]);
                 break;
             }
             
@@ -104,7 +97,7 @@ public class Lista : MonoBehaviour
     public int darId()
     {
         int id = 0;
-        List<Usuario> usuarios = mainCamera.GetComponent<ManagerUsuario>().usuarios;
+        List<Usuario> usuarios = managerUsuarios.GetComponent<ManagerUsuario>().usuarios;
         int N = usuarios.Count;
 
         for(int i = 0; i < N; i++)
@@ -119,7 +112,31 @@ public class Lista : MonoBehaviour
         return id;
     }
 
-    
+    public void botonNuevoUsuario()
+    {
+        if (nombre.Length != 0)
+        {
+            List<Usuario> usuarios = managerUsuarios.GetComponent<ManagerUsuario>().usuarios;
+            managerUsuarios.GetComponent<ManagerUsuario>().addUser(new Usuario(nombre, descripcion));            
+            anadieUsuario();
+            managerUsuarios.GetComponent<ManagerUsuario>().guardarUsuarios();
+        }
+    }
 
+
+    public void userNom(string n)
+    {
+        
+        nombre = n;
+    }
+    public void userDesc(string d)
+    {
+        descripcion = d;
+    }
+
+    public void borrarUsuario()
+    {
+        borrar = true;
+    }
 
 }

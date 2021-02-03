@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - MUsu
+  - Json
+  - Ejercicios
   layers:
   - Default
   - TransparentFX

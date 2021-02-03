@@ -250,14 +250,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cf972d31a6b22458aded09c8337257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lista: {fileID: 0}
-  usuarios: []
-  contador: 0
-  nombre: 
-  descripcion: 
-  borrar: 0
-  yo: 0
-  maincamera: {fileID: 1920299276}
 --- !u!1 &762834779
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,7 +608,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 720, y: 1280}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96

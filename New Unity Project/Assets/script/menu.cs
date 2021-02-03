@@ -24,4 +24,10 @@ public class menu : MonoBehaviour
         SceneManager.LoadScene(0);
         
     }
+    public void salir()
+    {
+        Application.Quit();
+    }
+
+    
 }
