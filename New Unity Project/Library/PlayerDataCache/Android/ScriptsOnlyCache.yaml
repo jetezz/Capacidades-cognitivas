@@ -29,7 +29,6 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
-    - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -78,27 +77,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2460}
     - Class: 114
-      Script: {instanceID: 2606}
+      Script: {instanceID: 2484}
     - Class: 114
-      Script: {instanceID: 2774}
+      Script: {instanceID: 2608}
     - Class: 114
-      Script: {instanceID: 2978}
+      Script: {instanceID: 2776}
     - Class: 114
-      Script: {instanceID: 2986}
+      Script: {instanceID: 2980}
     - Class: 114
-      Script: {instanceID: 3162}
+      Script: {instanceID: 2988}
     - Class: 114
-      Script: {instanceID: 3306}
+      Script: {instanceID: 3164}
     - Class: 114
-      Script: {instanceID: 3410}
+      Script: {instanceID: 3308}
     - Class: 114
-      Script: {instanceID: 3932}
+      Script: {instanceID: 3412}
     - Class: 114
-      Script: {instanceID: 4108}
+      Script: {instanceID: 3934}
     - Class: 114
-      Script: {instanceID: 4408}
+      Script: {instanceID: 4110}
     - Class: 114
-      Script: {instanceID: 77370}
+      Script: {instanceID: 4410}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -141,13 +140,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2460}
     - Class: 114
-      Script: {instanceID: 2606}
+      Script: {instanceID: 2608}
     - Class: 114
-      Script: {instanceID: 2774}
+      Script: {instanceID: 2776}
     - Class: 114
-      Script: {instanceID: 2978}
+      Script: {instanceID: 2980}
     - Class: 114
-      Script: {instanceID: 4408}
+      Script: {instanceID: 4410}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -200,17 +199,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2460}
     - Class: 114
-      Script: {instanceID: 2606}
+      Script: {instanceID: 2608}
     - Class: 114
-      Script: {instanceID: 2774}
+      Script: {instanceID: 2776}
     - Class: 114
-      Script: {instanceID: 2978}
+      Script: {instanceID: 2980}
     - Class: 114
-      Script: {instanceID: 4202}
+      Script: {instanceID: 4204}
     - Class: 114
-      Script: {instanceID: 4408}
+      Script: {instanceID: 4410}
     - Class: 114
-      Script: {instanceID: 4532}
+      Script: {instanceID: 4534}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -249,37 +248,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1514}
     - Class: 114
-      Script: {instanceID: 1782}
-    - Class: 114
       Script: {instanceID: 1914}
     - Class: 114
       Script: {instanceID: 2096}
     - Class: 114
+      Script: {instanceID: 2256}
+    - Class: 114
       Script: {instanceID: 2460}
     - Class: 114
-      Script: {instanceID: 2606}
+      Script: {instanceID: 2608}
     - Class: 114
-      Script: {instanceID: 2646}
+      Script: {instanceID: 2776}
     - Class: 114
-      Script: {instanceID: 2774}
+      Script: {instanceID: 2826}
     - Class: 114
-      Script: {instanceID: 2824}
+      Script: {instanceID: 2980}
     - Class: 114
-      Script: {instanceID: 2978}
+      Script: {instanceID: 2988}
     - Class: 114
-      Script: {instanceID: 2986}
+      Script: {instanceID: 3164}
     - Class: 114
-      Script: {instanceID: 3162}
+      Script: {instanceID: 3308}
     - Class: 114
-      Script: {instanceID: 3306}
+      Script: {instanceID: 3412}
     - Class: 114
-      Script: {instanceID: 3410}
+      Script: {instanceID: 3934}
     - Class: 114
-      Script: {instanceID: 3932}
+      Script: {instanceID: 4110}
     - Class: 114
-      Script: {instanceID: 4108}
-    - Class: 114
-      Script: {instanceID: 4408}
+      Script: {instanceID: 4410}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -431,7 +428,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: b5a5587818cc67c23e491d05455b4240
+      Hash: 108997f7c53fa20bf7029109a04cd668
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ManagerUsuario
@@ -447,6 +444,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: CanvasScaler
+  - hash:
+      serializedVersion: 2
+      Hash: 162d8e923b5d7858829a597e3807faf8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Ejercicios
   - hash:
       serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
@@ -569,7 +572,7 @@ ScriptsOnlyBuild:
     className: SpriteShapeController
   - hash:
       serializedVersion: 2
-      Hash: 702c8e232109d44def47cbc8ac67ba0a
+      Hash: 4f6dadc566ba77a621c1beddd0571b53
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Lista
@@ -837,12 +840,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
-  - hash:
-      serializedVersion: 2
-      Hash: 654720a6b080c45718d283073b53d2d5
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Ejercicios
   platform: 13
   scenePathNames:
   - Assets/Scenes/Menu.unity

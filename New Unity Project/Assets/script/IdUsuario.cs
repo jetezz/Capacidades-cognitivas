@@ -12,9 +12,9 @@ public class IdUsuario : MonoBehaviour
     {
         managerUsuarios = GameObject.FindWithTag("MUsu");
         if (lista.GetComponent<Lista>().borrar)
-        {
-            lista.GetComponent<Lista>().borrarUsuario(id);
-            managerUsuarios.GetComponent<ManagerUsuario>().guardarUsuarios();
+        {            
+            lista.GetComponent<Lista>().alertaBorrarUsuario(id);
+           
         }
         else
         {

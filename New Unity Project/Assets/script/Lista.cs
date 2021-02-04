@@ -9,11 +9,16 @@ using System;
 public class Lista : MonoBehaviour
 {
    
-    private GameObject managerUsuarios;  
+    private GameObject managerUsuarios;
+    public GameObject panelEliminarUsuario;
+    public GameObject canvas;
 
     public string nombre;
     public string descripcion;
     public bool borrar = false;
+
+    public int idSeleccion = 0;
+    
 
 
 
@@ -67,16 +72,24 @@ public class Lista : MonoBehaviour
             Destroy(gameObject.transform.GetChild(i+1).gameObject);
         }
     }
-    public void borrarUsuario(int id)
+    public void alertaBorrarUsuario(int id)
     {
-       
+        idSeleccion = id;
+        panelEliminarUsuario.SetActive(true);       
+        Usuario usuario = managerUsuarios.GetComponent<ManagerUsuario>().getUsuarioByid(idSeleccion);
+        panelEliminarUsuario.transform.GetChild(2).GetComponent<Text>().text = usuario.Name;
+        panelEliminarUsuario.transform.GetChild(3).GetComponent<Text>().text = usuario.Description;
+    }
+    public void borrarUsuario()
+    {
+        
         List<Usuario> usuarios = managerUsuarios.GetComponent<ManagerUsuario>().usuarios;
         int N = usuarios.Count;
         
 
             for (int i = 0; i < N; i++)
             {            
-                if(gameObject.transform.GetChild(i+1).gameObject.GetComponent<IdUsuario>().id == id)
+                if(gameObject.transform.GetChild(i+1).gameObject.GetComponent<IdUsuario>().id == idSeleccion)
                 {               
                 Destroy(gameObject.transform.GetChild(i+1).gameObject);
                 }
@@ -85,14 +98,19 @@ public class Lista : MonoBehaviour
 
         for (int i = 0; i < N; i++)
         {
-            if (usuarios[i].id == id)
+            if (usuarios[i].id == idSeleccion)
             {                
                 managerUsuarios.GetComponent<ManagerUsuario>().usuarios.Remove(managerUsuarios.GetComponent<ManagerUsuario>().usuarios[i]);
                 break;
             }
             
         }
-
+        managerUsuarios.GetComponent<ManagerUsuario>().guardarUsuarios();
+        canvas.transform.GetChild(3).gameObject.SetActive(true);
+        canvas.transform.GetChild(4).gameObject.SetActive(true);
+        canvas.transform.GetChild(5).gameObject.SetActive(true);
+        canvas.transform.GetChild(6).gameObject.SetActive(true);
+        panelEliminarUsuario.SetActive(false);
     }
     public int darId()
     {
@@ -134,9 +152,15 @@ public class Lista : MonoBehaviour
         descripcion = d;
     }
 
-    public void borrarUsuario()
+    public void botonBorrarUsuario()
     {
-        borrar = true;
+        borrar = true;       
+
+        canvas.transform.GetChild(3).gameObject.SetActive(false);
+        canvas.transform.GetChild(4).gameObject.SetActive(false);
+        canvas.transform.GetChild(5).gameObject.SetActive(false);
+        canvas.transform.GetChild(6).gameObject.SetActive(false);            
+      
     }
 
 }
