@@ -58,10 +58,11 @@
   <ItemGroup>
     <Compile Include="Assets\script\Ejemplojson.cs" />
     <Compile Include="Assets\script\ManagerUsuario.cs" />
+    <Compile Include="Assets\script\Ejercicios.cs" />
     <Compile Include="Assets\script\Lista.cs" />
     <Compile Include="Assets\script\IdUsuario.cs" />
     <Compile Include="Assets\script\menu.cs" />
-    <Compile Include="Assets\script\Ejercicios.cs" />
+    <Compile Include="Assets\script\Test.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -12,6 +12,8 @@ public class Lista : MonoBehaviour
     private GameObject managerUsuarios;
     public GameObject panelEliminarUsuario;
     public GameObject canvas;
+    public GameObject panelCaracteristicas;
+    public GameObject panelCapacidades;
 
     public string nombre;
     public string descripcion;
@@ -161,6 +163,33 @@ public class Lista : MonoBehaviour
         canvas.transform.GetChild(5).gameObject.SetActive(false);
         canvas.transform.GetChild(6).gameObject.SetActive(false);            
       
+    }
+    public void botonSalirPanelUsuarios()
+    {
+        panelEliminarUsuario.SetActive(false);
+        canvas.transform.GetChild(3).gameObject.SetActive(true);
+        canvas.transform.GetChild(4).gameObject.SetActive(true);
+        canvas.transform.GetChild(5).gameObject.SetActive(true);
+        canvas.transform.GetChild(6).gameObject.SetActive(true);
+    }
+    public void abrirPanelCaracteristicas(int id)
+    {
+        panelCaracteristicas.SetActive(true);
+        GameObject managerUsuario = GameObject.FindWithTag("MUsu");
+        Usuario usuario = managerUsuario.GetComponent<ManagerUsuario>().getUsuarioByid(id);
+        panelCaracteristicas.transform.GetChild(2).GetComponent<Text>().text = usuario.Name;
+        panelCaracteristicas.transform.GetChild(3).GetComponent<Text>().text = usuario.Description;
+        if (usuario.estadisticas.textInicial)
+        {           
+            panelCapacidades.SetActive(true);
+            string valoresCapacidades = string.Format(usuario.getMemoria() + "{0}{0}" + usuario.getLenguaje() + "{0}{0}" + usuario.getPercepcion() + "{0}{0}" + usuario.getAtencion() + "{0}{0}" + usuario.getGnosias() + "{0}{0}" + usuario.getPraxias() + "{0}{0}" + usuario.getOrientacion() + "{0}{0}" + usuario.getCalculo(), Environment.NewLine);
+
+            panelCapacidades.transform.GetChild(2).GetComponent<Text>().text = valoresCapacidades;           
+        }
+    }
+    public void cerrarCaracteristicas()
+    {
+        panelCaracteristicas.SetActive(false);
     }
 
 }

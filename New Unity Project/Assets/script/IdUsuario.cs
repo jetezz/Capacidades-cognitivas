@@ -13,12 +13,11 @@ public class IdUsuario : MonoBehaviour
         managerUsuarios = GameObject.FindWithTag("MUsu");
         if (lista.GetComponent<Lista>().borrar)
         {            
-            lista.GetComponent<Lista>().alertaBorrarUsuario(id);
-           
+            lista.GetComponent<Lista>().alertaBorrarUsuario(id);          
         }
         else
         {
-            Debug.Log(id);
+            lista.GetComponent<Lista>().abrirPanelCaracteristicas(id);
         }
     }
     public void clickUsuarioEjercicios()

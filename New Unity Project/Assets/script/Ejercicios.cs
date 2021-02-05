@@ -52,21 +52,7 @@ public class Ejercicios : MonoBehaviour
 
     public void botonTextInicial()
     {
-        GameObject managerUsuario = GameObject.FindWithTag("MUsu");
-        Usuario usuario = managerUsuario.GetComponent<ManagerUsuario>().getUsuarioByid(id);
-        usuario.estadisticas.textInicial = true;
-        usuario.memoria(0);
-        usuario.lenguaje(1);
-        usuario.percepcion(2);
-        usuario.atencion(3);
-        usuario.gnosia(4);
-        usuario.praxia(5);
-        usuario.orientacion(6);
-        usuario.calculo(7);
-        managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
-
-        SceneManager.LoadScene(1);
-
+        SceneManager.LoadScene(4);
     }
 
 }

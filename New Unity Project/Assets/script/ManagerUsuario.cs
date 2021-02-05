@@ -9,7 +9,7 @@ public class ManagerUsuario : MonoBehaviour
 {
     public static ManagerUsuario managerUsuario;       
     public List<Usuario> usuarios;
-
+    public int usuarioSeleccionado=-1;
 
 
 
@@ -44,10 +44,10 @@ public class ManagerUsuario : MonoBehaviour
     public Usuario getUsuarioByid(int id)
     {
         for (int i = 0; i < usuarios.Count; i++)
-        {
-            Debug.Log(i);
+        {            
             if (usuarios[i].id==id)
             {
+                usuarioSeleccionado = i;
                 return usuarios[i];
             }
         }
