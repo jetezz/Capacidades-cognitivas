@@ -55,4 +55,9 @@ public class Ejercicios : MonoBehaviour
         SceneManager.LoadScene(4);
     }
 
+    public void botonEmpezarEjercicios()
+    {
+        SceneManager.LoadScene(5);
+    }
+
 }
