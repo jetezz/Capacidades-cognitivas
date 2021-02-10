@@ -45,7 +45,7 @@ public class Test : MonoBehaviour
         preguntas.Add("(1)Coja este papel con la mano derecha, (2)Doblelo por la mitad, (3)Póngalo en la mesa");      
         preguntas.Add("Lea esto y haga lo que dice ahí.");
         preguntas.Add("Escriba una frase, algo que tenga sentido");
-        preguntas.Add("Reproduzca este dibujo (entregar en cartulina grande)");
+        preguntas.Add("Reproduzca este dibujo");
 
 
         panelPreguntas.transform.GetChild(0).GetComponent<Text>().text = preguntas[contador];
@@ -141,6 +141,10 @@ public class Test : MonoBehaviour
                 panelPreguntas.transform.GetChild(7).gameObject.SetActive(true);
                 especiales = true;
             }
+            if (contador == 26)
+            {
+                panelPreguntas.transform.GetChild(9).gameObject.SetActive(true);
+            }
             if(especiales==false)
             {
                 panelPreguntas.transform.GetChild(1).gameObject.SetActive(true);
@@ -198,7 +202,7 @@ public class Test : MonoBehaviour
 
         if (nivel > 0)
         {
-            Usuario usuario = managerUsuario.GetComponent<ManagerUsuario>().usuarios[managerUsuario.GetComponent<ManagerUsuario>().usuarioSeleccionado];
+            Usuario usuario = managerUsuario.GetComponent<ManagerUsuario>().getUsuarioSeleccionado();
             usuario.memoria(nivel);
             usuario.lenguaje(nivel);
             usuario.percepcion(nivel);

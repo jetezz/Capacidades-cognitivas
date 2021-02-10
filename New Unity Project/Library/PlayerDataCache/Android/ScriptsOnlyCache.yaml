@@ -4,9 +4,11 @@ ScriptsOnlyBuild:
     - Ejemplojson
     - Ejercicios
     - IdUsuario
-    - Juego
     - Lista
+    - ManagerEjercicios
     - ManagerUsuario
+    - Memoria
+    - MenuEjercicios
     - Test
     - menu
     Unity.2D.Animation.Editor.dll:
@@ -91,15 +93,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3166}
     - Class: 114
-      Script: {instanceID: 3310}
+      Script: {instanceID: 3312}
     - Class: 114
-      Script: {instanceID: 3414}
+      Script: {instanceID: 3416}
     - Class: 114
-      Script: {instanceID: 3936}
+      Script: {instanceID: 3940}
     - Class: 114
-      Script: {instanceID: 4112}
+      Script: {instanceID: 4116}
     - Class: 114
-      Script: {instanceID: 4412}
+      Script: {instanceID: 4416}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -115,6 +117,186 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/Ejercicios/Atencion.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 3262}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    Assets/Scenes/Ejercicios/Calculo.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    Assets/Scenes/Ejercicios/Gnoxias.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    Assets/Scenes/Ejercicios/Lenguaje.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    Assets/Scenes/Ejercicios/Memoria.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1462}
+    - Class: 114
+      Script: {instanceID: 1514}
+    - Class: 114
+      Script: {instanceID: 1914}
+    - Class: 114
+      Script: {instanceID: 2096}
+    - Class: 114
+      Script: {instanceID: 2460}
+    - Class: 114
+      Script: {instanceID: 2608}
+    - Class: 114
+      Script: {instanceID: 2776}
+    - Class: 114
+      Script: {instanceID: 2826}
+    - Class: 114
+      Script: {instanceID: 2980}
+    - Class: 114
+      Script: {instanceID: 3262}
+    - Class: 114
+      Script: {instanceID: 3882}
+    - Class: 114
+      Script: {instanceID: 25430}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/Ejercicios/Orientacion.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    Assets/Scenes/Ejercicios/Percepcion.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    Assets/Scenes/Ejercicios/Praxias.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
       Script: {instanceID: 0}
     Assets/Scenes/Estadisticas.unity:
     - Class: 1
@@ -148,7 +330,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2980}
     - Class: 114
-      Script: {instanceID: 4412}
+      Script: {instanceID: 4416}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -165,56 +347,28 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
-    Assets/Scenes/Juego.unity:
+    Assets/Scenes/ManagerEjercicios.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
       Script: {instanceID: 0}
     - Class: 20
       Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
     - Class: 28
-      Script: {instanceID: 0}
-    - Class: 48
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1462}
+      Script: {instanceID: 2256}
     - Class: 114
-      Script: {instanceID: 1514}
-    - Class: 114
-      Script: {instanceID: 2096}
-    - Class: 114
-      Script: {instanceID: 2460}
-    - Class: 114
-      Script: {instanceID: 2608}
-    - Class: 114
-      Script: {instanceID: 2776}
-    - Class: 114
-      Script: {instanceID: 2826}
-    - Class: 114
-      Script: {instanceID: 2980}
-    - Class: 114
-      Script: {instanceID: 25908}
+      Script: {instanceID: 3262}
     - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
       Script: {instanceID: 0}
     Assets/Scenes/Menu.unity:
     - Class: 1
@@ -258,11 +412,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2980}
     - Class: 114
-      Script: {instanceID: 4206}
+      Script: {instanceID: 4210}
     - Class: 114
-      Script: {instanceID: 4412}
+      Script: {instanceID: 4416}
     - Class: 114
-      Script: {instanceID: 4536}
+      Script: {instanceID: 4540}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -372,15 +526,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3166}
     - Class: 114
-      Script: {instanceID: 3310}
+      Script: {instanceID: 3312}
     - Class: 114
-      Script: {instanceID: 3414}
+      Script: {instanceID: 3416}
     - Class: 114
-      Script: {instanceID: 3936}
+      Script: {instanceID: 3940}
     - Class: 114
-      Script: {instanceID: 4112}
+      Script: {instanceID: 4116}
     - Class: 114
-      Script: {instanceID: 4412}
+      Script: {instanceID: 4416}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -532,7 +686,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 2571894411ea93ec4b557779664d66a7
+      Hash: 48da3118a508028f8f56f929dd4fa75c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ManagerUsuario
@@ -694,6 +848,12 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
+      Hash: 5660baf9fd66afb122d69cfb6be7eb6f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ManagerEjercicios
+  - hash:
+      serializedVersion: 2
       Hash: 8aa3d6ccbcb54ee8db6c1229854adaaa
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -812,6 +972,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 923cd5419b2e601bb59625dee01c7631
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MenuEjercicios
   - hash:
       serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
@@ -952,10 +1118,10 @@ ScriptsOnlyBuild:
     className: FabrikSolver2D
   - hash:
       serializedVersion: 2
-      Hash: 1f3a18ff96a1c3648b0ef25b1f87cad3
+      Hash: f7212f6fd40d90743cdec2dc178f2f9d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Juego
+    className: Memoria
   platform: 13
   scenePathNames:
   - Assets/Scenes/Menu.unity
@@ -963,5 +1129,13 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Usuarios.unity
   - Assets/Scenes/Estadisticas.unity
   - Assets/Scenes/Test.unity
-  - Assets/Scenes/Juego.unity
+  - Assets/Scenes/Ejercicios/Atencion.unity
+  - Assets/Scenes/Ejercicios/Calculo.unity
+  - Assets/Scenes/Ejercicios/Gnoxias.unity
+  - Assets/Scenes/Ejercicios/Lenguaje.unity
+  - Assets/Scenes/Ejercicios/Memoria.unity
+  - Assets/Scenes/Ejercicios/Orientacion.unity
+  - Assets/Scenes/Ejercicios/Percepcion.unity
+  - Assets/Scenes/Ejercicios/Praxias.unity
+  - Assets/Scenes/ManagerEjercicios.unity
   playerPath: C:/Users/JesusCuadraTellez/Desktop/tfg/aplicacion/tfg/New Unity Project/aplicacion.apk

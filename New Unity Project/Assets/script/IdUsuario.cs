@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class IdUsuario : MonoBehaviour
 {   
-    public int id;
-    private GameObject managerUsuarios;
+    public int id;   
     public GameObject lista;
 
     public void clickUsuario()
     {
-        managerUsuarios = GameObject.FindWithTag("MUsu");
+        
         if (lista.GetComponent<Lista>().borrar)
         {            
             lista.GetComponent<Lista>().alertaBorrarUsuario(id);          

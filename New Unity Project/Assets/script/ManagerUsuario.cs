@@ -8,8 +8,8 @@ using System.Linq;
 public class ManagerUsuario : MonoBehaviour
 {
     public static ManagerUsuario managerUsuario;       
-    public List<Usuario> usuarios;
-    public int usuarioSeleccionado=-1;
+    public List<Usuario> usuarios;  
+    public Usuario usuarioSeleccionado;
 
 
 
@@ -47,11 +47,15 @@ public class ManagerUsuario : MonoBehaviour
         {            
             if (usuarios[i].id==id)
             {
-                usuarioSeleccionado = i;
-                return usuarios[i];
+                usuarioSeleccionado = usuarios[i];
+                return usuarioSeleccionado;
             }
         }
         return new Usuario("error", "error");
+    }
+    public Usuario getUsuarioSeleccionado()
+    {
+        return usuarioSeleccionado;
     }
    
 
@@ -138,6 +142,83 @@ public class Usuario
     public string getCalculo()
     {
         return estadisticas.calculo.Last().valor.ToString();
+    }
+
+    public int getPeorEstadistica()
+    {
+        int ejercicio = 0;
+        int nivel = estadisticas.memoria.Last().valor;
+
+        if (estadisticas.lenguaje.Last().valor < nivel)
+        {
+            ejercicio = 1;
+            nivel = estadisticas.lenguaje.Last().valor;
+        }
+
+        if (estadisticas.percepcion.Last().valor < nivel)
+        {
+            ejercicio = 2;
+            nivel = estadisticas.percepcion.Last().valor;
+        }
+
+        if (estadisticas.atencion.Last().valor < nivel)
+        {
+            ejercicio = 3;
+            nivel = estadisticas.atencion.Last().valor;
+        }
+        if (estadisticas.gnosias.Last().valor < nivel)
+        {
+            ejercicio = 4;
+            nivel = estadisticas.gnosias.Last().valor;
+        }
+        if (estadisticas.praxias.Last().valor < nivel)
+        {
+            ejercicio = 5;
+            nivel = estadisticas.praxias.Last().valor;
+        }
+        if (estadisticas.orientacion.Last().valor < nivel)
+        {
+            ejercicio = 6;
+            nivel = estadisticas.orientacion.Last().valor;
+        }
+        if (estadisticas.calculo.Last().valor < nivel)
+        {
+            ejercicio = 7;
+            nivel = estadisticas.calculo.Last().valor;
+        }
+        return ejercicio;
+    }
+
+    public int getNivelEstadistica(int est)
+    {
+        if (est == 0)
+        {
+            return estadisticas.memoria.Last().valor;
+        }else if (est == 1)
+        {
+            return estadisticas.lenguaje.Last().valor;
+        }else if (est == 2)
+        {
+            return estadisticas.percepcion.Last().valor;
+        }else if(est == 3)
+        {
+            return estadisticas.atencion.Last().valor;
+        }else if (est == 4)
+        {
+            return estadisticas.gnosias.Last().valor;
+        }else if (est == 5)
+        {
+            return estadisticas.praxias.Last().valor;
+        }
+        else if (est == 6)
+        {
+            return estadisticas.orientacion.Last().valor;
+        }
+        else if (est == 7)
+        {
+            return estadisticas.calculo.Last().valor;
+        }
+        return 0;
     }
 
 

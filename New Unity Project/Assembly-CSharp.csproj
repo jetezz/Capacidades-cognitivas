@@ -61,9 +61,11 @@
     <Compile Include="Assets\script\Ejercicios.cs" />
     <Compile Include="Assets\script\Test.cs" />
     <Compile Include="Assets\script\Lista.cs" />
+    <Compile Include="Assets\script\ManagerEjercicios.cs" />
     <Compile Include="Assets\script\IdUsuario.cs" />
+    <Compile Include="Assets\script\MenuEjercicios.cs" />
     <Compile Include="Assets\script\menu.cs" />
-    <Compile Include="Assets\script\Juego.cs" />
+    <Compile Include="Assets\script\Memoria.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
