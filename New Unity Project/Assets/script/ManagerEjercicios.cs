@@ -28,14 +28,10 @@ public class ManagerEjercicios : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private void Start()
-    {
-        //iniciarRapido();
-        iniciarConUsuario();
-    }
+  
 
 
-    void iniciarConUsuario()
+    public void iniciarConUsuario()
     {
         managerUsuario = GameObject.FindWithTag("MUsu");
         usuario = managerUsuario.GetComponent<ManagerUsuario>().getUsuarioSeleccionado();
@@ -77,11 +73,7 @@ public class ManagerEjercicios : MonoBehaviour
         }
     }
 
-    void iniciarRapido()
-    {
-        ejercicio = 0;
-        nivel = 1;
-    }
+   
 
 
 

@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class Ejercicios : MonoBehaviour
 {
+    
     public int id;
     public GameObject panel;
     public string valoresCapacidades;
@@ -57,7 +58,10 @@ public class Ejercicios : MonoBehaviour
 
     public void botonEmpezarEjercicios()
     {
-        SceneManager.LoadScene(13);
+        GameObject managerEjercicios;
+        managerEjercicios = GameObject.FindWithTag("MEje");       
+        managerEjercicios.GetComponent<ManagerEjercicios>().iniciarConUsuario();
+        
     }
 
 }
