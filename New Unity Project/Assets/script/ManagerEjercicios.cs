@@ -37,6 +37,7 @@ public class ManagerEjercicios : MonoBehaviour
         usuario = managerUsuario.GetComponent<ManagerUsuario>().getUsuarioSeleccionado();
         
         ejercicio = usuario.getPeorEstadistica();
+        ejercicio = 0;
         nivel = usuario.getNivelEstadistica(ejercicio);
 
         if (ejercicio == 0)
