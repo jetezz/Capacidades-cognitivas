@@ -620,7 +620,7 @@ ScriptsOnlyBuild:
     className: LayoutElement
   - hash:
       serializedVersion: 2
-      Hash: 5c046306a7bbf16e6fdb62baa0c3f4f1
+      Hash: 3219b387b59f4d2145688db9ddd61e81
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Memoria
