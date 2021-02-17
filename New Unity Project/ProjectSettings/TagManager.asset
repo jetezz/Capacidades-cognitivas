@@ -8,6 +8,8 @@ TagManager:
   - Json
   - Ejercicios
   - MEje
+  - panelSalir
+  - DragParent
   layers:
   - Default
   - TransparentFX

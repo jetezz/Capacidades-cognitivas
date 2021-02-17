@@ -49,6 +49,9 @@ public class Memoria : MonoBehaviour
     public GameObject panelNivel3;
     public GameObject botonesNivel3;
 
+    ///Nivel4
+    public GameObject panelNivel4;
+
     void Start()
     {
         fuenteDeAudio = GetComponent<AudioSource>();
@@ -1028,18 +1031,96 @@ public class Memoria : MonoBehaviour
 
 
 
-
+    /// Nivel4
 
 
     void nivel4()
     {
+        fases fase1 = new fases();
+        fases fase2 = new fases();
+        fases fase3 = new fases();
+
+        fase1.imagen = granja;
+        fase1.preguntas.Add("¿Cuántos arboles hay?");
+        fase1.soluciones.Add(new Soluciones(5, 1));
+        fase1.preguntas.Add("De qué color es la casa?");
+        fase1.soluciones.Add(new Soluciones(0, 2));
+        fase1.preguntas.Add("Cuántas manzanas hay en el arbol?");
+        fase1.soluciones.Add(new Soluciones(6, 2));
+        fase1.preguntas.Add("De qué color es la barca?");
+        fase1.soluciones.Add(new Soluciones(1, 2));
+        fase1.preguntas.Add("Cómo está el dia?");
+        fase1.soluciones.Add(new Soluciones(8, 2));
+        fase1.preguntas.Add("Qué animales hay?");
+        fase1.soluciones.Add(new Soluciones(9, 1));
+
+        fase2.imagen = habitacion;
+        fase2.preguntas.Add("¿De qué color son las sabanas?");
+        fase2.soluciones.Add(new Soluciones(0, 1));
+        fase2.preguntas.Add("¿Dónde esta el espejo?");
+        fase2.soluciones.Add(new Soluciones(10, 1));
+        fase2.preguntas.Add("De qué color es la alfombra?");
+        fase2.soluciones.Add(new Soluciones(3, 1));
+        fase2.preguntas.Add("¿De qué color es el suelo?");
+        fase2.soluciones.Add(new Soluciones(0, 2));
+        fase2.preguntas.Add("¿Cuántos cuadros hay?");
+        fase2.soluciones.Add(new Soluciones(5, 1));
+        fase2.preguntas.Add("¿Cómo son los cojines?");
+        fase2.soluciones.Add(new Soluciones(12, 1));
+
+        fase3.imagen = salon;
+        fase3.preguntas.Add("¿Dónde esta la tele?");
+        fase3.soluciones.Add(new Soluciones(11, 1));
+        fase3.preguntas.Add("¿De qué color es el sofa?");
+        fase3.soluciones.Add(new Soluciones(0, 2));
+        fase3.preguntas.Add("¿Dónde esta la percha?");
+        fase3.soluciones.Add(new Soluciones(13, 1));
+        fase3.preguntas.Add("¿De qué color es el telefono?");
+        fase3.soluciones.Add(new Soluciones(3, 2));
+        fase3.preguntas.Add("¿Dónde esta la alfombra?");
+        fase3.soluciones.Add(new Soluciones(14, 1));
+        fase3.preguntas.Add("¿De qué color es la lampara?");
+        fase3.soluciones.Add(new Soluciones(3, 1));
+        fase3.preguntas.Add("¿Cuántos cojines hay?");
+        fase3.soluciones.Add(new Soluciones(5, 1));
+
+        fasesTotales.Add(fase1);
+        fasesTotales.Add(fase2);
+        fasesTotales.Add(fase3);
+
+        panelNivel4.SetActive(true);
+        panelNivel4.transform.GetChild(1).GetComponent<Image>().sprite = granja;
+        tiempo = 0;
+    }
+
+
+    public void botonEmpezar4()
+    {
+        
+    }
+
+    public void siguientePreguntaNivel4()
+    {
+
+        botonesNivel3.SetActive(true);
+        generarBotones();
+
+        string aux = fasesTotales[contadorFases].preguntas[fasesTotales[contadorFases].contador];
+        panelNivel3.transform.GetChild(0).GetComponent<Text>().text = aux;
 
     }
 
     public void Update()
-    {       
-        
+    {
+        if (nivel == 4)
+        {
+
+        }
+        else
+        {
             updateNivel1();
+        }
+        
         
     }
 
