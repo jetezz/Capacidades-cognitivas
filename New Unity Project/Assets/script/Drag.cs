@@ -8,10 +8,16 @@ public class Drag : MonoBehaviour,IPointerDownHandler,IBeginDragHandler,IEndDrag
 {
    
     private CanvasGroup canvasGroup;
+    public int id;
+    public Vector3 posInicial;
    
     
     
    
+    public void iniciarposicion()
+    {
+        posInicial = transform.position;
+    }
   
    
     public void OnBeginDrag(PointerEventData eventData)
@@ -19,9 +25,9 @@ public class Drag : MonoBehaviour,IPointerDownHandler,IBeginDragHandler,IEndDrag
         canvasGroup = GetComponent<CanvasGroup>();
         canvasGroup.alpha = .6f;
        canvasGroup.blocksRaycasts = false;
-
         
-       
+
+
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -48,14 +54,11 @@ public class Drag : MonoBehaviour,IPointerDownHandler,IBeginDragHandler,IEndDrag
     }
 
    
-    void Start()
+    public void resetPosition()
     {
-        
+        transform.position = posInicial;
     }
 
     
-    void Update()
-    {
-        
-    }
+ 
 }

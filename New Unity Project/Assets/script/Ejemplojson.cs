@@ -16,13 +16,14 @@ public class Ejemplojson : MonoBehaviour
         listausuarios = new ListaUsuarios();
         
 
-        /*
+        
         string patch = Application.persistentDataPath;
         string json = File.ReadAllText(patch + "/" + "TextFile1.json");
         JsonUtility.FromJsonOverwrite(json, listausuarios);
-        */
-
+        return listausuarios.usuarios;
         
+
+        /*
         filePath = Application.dataPath + "/TextFile1.json";
         jsonString = File.ReadAllText(filePath);
         listausuarios = JsonUtility.FromJson<ListaUsuarios>(jsonString);
@@ -36,7 +37,7 @@ public class Ejemplojson : MonoBehaviour
             return listausuarios.usuarios;
         }
 
-        
+        */
 
     }
    public void guardarUsuario(List<Usuario> usu)
@@ -45,18 +46,18 @@ public class Ejemplojson : MonoBehaviour
         ListaUsuarios LUsu = new ListaUsuarios();
         LUsu.usuarios = usu;
 
-        /*
+        
         string patch = Application.persistentDataPath;
         string json = JsonUtility.ToJson(LUsu);
         File.WriteAllText(patch+"/" + "TextFile1.json", json);
-        */
-
         
 
+        
+        /*
         filePath = Application.dataPath + "/TextFile1.json";
         jsonString = JsonUtility.ToJson(LUsu,true);
         File.WriteAllText(filePath, jsonString);
-        
+        */
     }
 }
 [System.Serializable]

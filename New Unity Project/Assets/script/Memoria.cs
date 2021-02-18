@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class Memoria : MonoBehaviour
 {
     public GameObject panelFin;
@@ -51,6 +52,18 @@ public class Memoria : MonoBehaviour
 
     ///Nivel4
     public GameObject panelNivel4;
+    public GameObject preguntas4;
+    public GameObject slots;
+    public GameObject drags;
+    public GameObject botonSiguienteN4;
+    private List<Soluciones> respustasNivel4;
+    private List<bool> posicionesPreguntas;
+    private int movimientos = 0;
+    private int numPreguntas = 0;
+   
+
+
+
 
     void Start()
     {
@@ -1043,15 +1056,15 @@ public class Memoria : MonoBehaviour
         fase1.imagen = granja;
         fase1.preguntas.Add("¿Cuántos arboles hay?");
         fase1.soluciones.Add(new Soluciones(5, 1));
-        fase1.preguntas.Add("De qué color es la casa?");
+        fase1.preguntas.Add("¿De qué color es la casa?");
         fase1.soluciones.Add(new Soluciones(0, 2));
-        fase1.preguntas.Add("Cuántas manzanas hay en el arbol?");
+        fase1.preguntas.Add("¿Cuántas manzanas hay en el arbol?");
         fase1.soluciones.Add(new Soluciones(6, 2));
-        fase1.preguntas.Add("De qué color es la barca?");
+        fase1.preguntas.Add("¿De qué color es la barca?");
         fase1.soluciones.Add(new Soluciones(1, 2));
-        fase1.preguntas.Add("Cómo está el dia?");
+        fase1.preguntas.Add("¿Cómo está el dia?");
         fase1.soluciones.Add(new Soluciones(8, 2));
-        fase1.preguntas.Add("Qué animales hay?");
+        fase1.preguntas.Add("¿Qué animales hay?");
         fase1.soluciones.Add(new Soluciones(9, 1));
 
         fase2.imagen = habitacion;
@@ -1091,23 +1104,327 @@ public class Memoria : MonoBehaviour
         panelNivel4.SetActive(true);
         panelNivel4.transform.GetChild(1).GetComponent<Image>().sprite = granja;
         tiempo = 0;
+        respustasNivel4 = new List<Soluciones>();
+        posicionesPreguntas = new List<bool>();
+
+        for (int i = 0; i < 4; i++)
+        {
+            posicionesPreguntas.Add(false);
+            drags.transform.GetChild(i).GetComponent<Drag>().iniciarposicion();
+        }
     }
 
 
     public void botonEmpezar4()
     {
-        
+        siguientePreguntaNivel4();
     }
+    string generarDrag(Soluciones sol)
+    {  
+
+
+        if (sol.pregunta == 0)
+        {
+            if (sol.solucion == 1)
+            {
+                return "Azul";
+            }else if (sol.solucion == 2)
+            {
+                return "Rojo";
+            }        
+           
+        }
+        else if (sol.pregunta == 1)
+        {
+            if (sol.solucion == 1)
+            {
+                return "Verde";
+            }
+            else if (sol.solucion == 2)
+            {
+                return "Marron";
+            }
+           
+        }
+        else if (sol.pregunta == 2)
+        {
+            if (sol.solucion == 1)
+            {
+                return "Blanco";
+            }
+            else if (sol.solucion == 2)
+            {
+                return "Naranja";
+            }
+           
+           
+        }
+        else if (sol.pregunta == 3)
+        {
+            if (sol.solucion == 1)
+            {
+                return "Amarillo";
+            }
+            else if (sol.solucion == 2)
+            {
+                return "Negro";
+            }
+           
+        }
+        else if (sol.pregunta == 4)
+        {
+            if (sol.solucion == 1)
+            {
+                return "1";
+            }
+            else if (sol.solucion == 2)
+            {
+                return "3";
+            }          
+        }
+        else if (sol.pregunta == 5)
+        {
+            if (sol.solucion == 1)
+            {
+                return "2";
+            }
+            else if (sol.solucion == 2)
+            {
+                return "4";
+            }
+           
+        }
+        else if (sol.pregunta == 6)
+        {
+            if (sol.solucion == 1)
+            {
+                return "3";
+            }
+            else if (sol.solucion == 2)
+            {
+                return "5";
+            }
+          
+        }
+        else if (sol.pregunta == 7)
+        {
+            if (sol.solucion == 1)
+            {
+                return "4";
+            }
+            else if (sol.solucion == 2)
+            {
+                return "6";
+            }           
+        }
+        else if (sol.pregunta == 8)
+        {
+            if (sol.solucion == 1)
+            {
+                return "Soleado";
+            }
+            else if (sol.solucion == 2)
+            {
+                return "Nublado";
+            }
+            
+        }
+        else if (sol.pregunta == 9)
+        {
+            if (sol.solucion == 1)
+            {
+                return "Cisne y vaca";
+            }
+            else if (sol.solucion == 2)
+            {
+                return "Perros y visne";
+            }          
+        }
+        else if (sol.pregunta == 10)
+        {
+            if (sol.solucion == 1)
+            {
+                return "Izquierda";
+            }
+            else if (sol.solucion == 2)
+            {
+                return "Abajo";
+            }           
+        }
+        else if (sol.pregunta == 11)
+        {
+            if (sol.solucion == 1)
+            {
+                return "Derecha";
+            }
+            else if (sol.solucion == 2)
+            {
+                return "Arriba";
+            }
+          
+        }
+        else if (sol.pregunta == 12)
+        {
+            if (sol.solucion == 1)
+            {
+                return "Rallas";
+            }
+            else if (sol.solucion == 2)
+            {
+                return "Circulos";
+            }          
+        }
+        else if (sol.pregunta == 13)
+        {
+            if (sol.solucion == 1)
+            {
+                return "En la puerta";
+            }
+            else if (sol.solucion == 2)
+            {
+                return "En la pared";
+            }
+           
+
+        }
+        else if (sol.pregunta == 14)
+        {
+            if (sol.solucion == 1)
+            {
+                return "Debajo de la mesa";
+            }
+            else if (sol.solucion == 2)
+            {
+                return "Debajo del sofá";
+            }            
+        }
+        return "";
+    }
+
 
     public void siguientePreguntaNivel4()
     {
+        drags.transform.GetChild(0).GetComponent<Drag>().resetPosition();
+        drags.transform.GetChild(1).GetComponent<Drag>().resetPosition();
+        drags.transform.GetChild(2).GetComponent<Drag>().resetPosition();
+        drags.transform.GetChild(3).GetComponent<Drag>().resetPosition();
 
-        botonesNivel3.SetActive(true);
-        generarBotones();
+        drags.transform.GetChild(0).gameObject.SetActive(false);
+        drags.transform.GetChild(1).gameObject.SetActive(false);
+        drags.transform.GetChild(2).gameObject.SetActive(false);
+        drags.transform.GetChild(3).gameObject.SetActive(false);
 
-        string aux = fasesTotales[contadorFases].preguntas[fasesTotales[contadorFases].contador];
-        panelNivel3.transform.GetChild(0).GetComponent<Text>().text = aux;
+        slots.transform.GetChild(0).gameObject.SetActive(false);
+        slots.transform.GetChild(1).gameObject.SetActive(false);
+        slots.transform.GetChild(2).gameObject.SetActive(false);
+        slots.transform.GetChild(3).gameObject.SetActive(false);
 
+        preguntas4.transform.GetChild(0).gameObject.SetActive(false);
+        preguntas4.transform.GetChild(1).gameObject.SetActive(false);
+        preguntas4.transform.GetChild(2).gameObject.SetActive(false);
+        preguntas4.transform.GetChild(3).gameObject.SetActive(false);
+
+        botonSiguienteN4.SetActive(false);
+        numPreguntas = 0;
+        movimientos = 0;
+        respustasNivel4.Clear();
+
+        for (int i = 0; i < 4; i++)
+        {
+            posicionesPreguntas[i] = false;
+        }
+       
+
+        preguntas4.SetActive(true);
+
+        if (fasesTotales[contadorFases].contador != fasesTotales[contadorFases].preguntas.Count)
+        {
+            for (int i = 0; i < 4; i++) //colocar las preguntas
+            {
+                if (fasesTotales[contadorFases].contador < fasesTotales[contadorFases].preguntas.Count)
+                {
+                    preguntas4.transform.GetChild(i).gameObject.SetActive(true);
+                    slots.transform.GetChild(i).gameObject.SetActive(true);
+                    drags.transform.GetChild(i).gameObject.SetActive(true);
+                    preguntas4.transform.GetChild(i).GetComponent<Text>().text = fasesTotales[contadorFases].preguntas[fasesTotales[contadorFases].contador];
+                    respustasNivel4.Add(fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador]);
+                    fasesTotales[contadorFases].contador++;
+                    numPreguntas++;
+                }
+            }
+
+            for (int j = 0; j < respustasNivel4.Count; j++)  //colocar las respuestas
+            {
+                bool colocado = false;
+                while (!colocado)
+                {
+                    int pos = Random.Range(0, respustasNivel4.Count);
+                    if (posicionesPreguntas[pos] == false)
+                    {
+                        posicionesPreguntas[pos] = true;
+                        
+                        drags.transform.GetChild(pos).GetChild(0).GetComponent<Text>().text = generarDrag(respustasNivel4[j]);
+                        drags.transform.GetChild(pos).GetComponent<Drag>().id = j;
+                        colocado = true;
+                    }
+                }
+            }
+            for (int i = 0; i < 4; i++)
+            {
+                posicionesPreguntas[i] = false;
+            }
+        }
+        else //ya estamos al final de la fase
+        {
+            contadorFases++;
+            if (contadorFases == fasesTotales.Count)
+            {
+                panelFin.SetActive(true);
+                panelFin.transform.GetChild(3).GetComponent<Text>().text = puntos.ToString();
+                panelFin.transform.GetChild(4).GetComponent<Text>().text = "Los puntos maximos de esta prueba son 19 ";
+
+                if (puntos == 19)
+                {
+                    panelFin.transform.GetChild(5).GetComponent<Text>().text = "Superado el nivel maximo";
+                    managerEjercicios.GetComponent<ManagerEjercicios>().usuario.memoria(5);
+                    GameObject managerUsuario = GameObject.FindWithTag("MUsu");
+                    managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+                }
+                else
+                {
+                    panelFin.transform.GetChild(5).GetComponent<Text>().text = "Se mantiene el nivel 4 en memoria";
+                }
+            }
+            else
+            {
+                preguntas4.SetActive(false);
+                panelNivel4.transform.GetChild(1).GetComponent<Image>().sprite = fasesTotales[contadorFases].imagen;
+            }
+            
+        }
+    }
+
+    public void sumarPunto(int id, bool dato)
+    {
+        posicionesPreguntas[id] = dato;
+        movimientos++;
+        if (movimientos >= numPreguntas)
+        {
+            botonSiguienteN4.SetActive(true);
+        }
+        
+    }
+
+    public void BotonsiguientePreguntaNivel4()
+    {
+        for(int i =0; i< numPreguntas;i++)
+        {
+            if (posicionesPreguntas[i] == true)
+            {
+                puntos++;
+            }
+        }
+        siguientePreguntaNivel4();
     }
 
     public void Update()

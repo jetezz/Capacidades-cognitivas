@@ -6,13 +6,24 @@ using UnityEngine.EventSystems;
 
 public class ItemSlot : MonoBehaviour, IDropHandler
 {
+    public GameObject memoria;
+    public int id;
+
     public void OnDrop(PointerEventData eventData)
     {
         
         if(eventData.pointerDrag != null)
         {
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
-            Debug.Log("asd");
+            if (eventData.pointerDrag.GetComponent<Drag>().id == id)
+            {
+                memoria.GetComponent<Memoria>().sumarPunto(id,true);
+            }
+            else
+            {
+                memoria.GetComponent<Memoria>().sumarPunto(id, false);
+            }
+           
         }
     }
 }
