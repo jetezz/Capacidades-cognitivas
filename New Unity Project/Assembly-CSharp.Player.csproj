@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\script\Memoria.cs" />
+    <Compile Include="Assets\script\ItemSlot.cs" />
     <Compile Include="Assets\script\Ejemplojson.cs" />
     <Compile Include="Assets\script\ManagerUsuario.cs" />
     <Compile Include="Assets\script\Ejercicios.cs" />
@@ -64,10 +65,13 @@
     <Compile Include="Assets\script\Lista.cs" />
     <Compile Include="Assets\script\ManagerEjercicios.cs" />
     <Compile Include="Assets\script\IdUsuario.cs" />
-    <Compile Include="Assets\script\MenuEjercicios.cs" />
-    <Compile Include="Assets\script\menu.cs" />
+    <Compile Include="Assets\script\pru2.cs" />
     <Compile Include="Assets\script\Drag.cs" />
-    <Compile Include="Assets\script\ItemSlot.cs" />
+    <Compile Include="Assets\script\MenuEjercicios.cs" />
+    <Compile Include="Assets\script\MoveSystem.cs" />
+    <Compile Include="Assets\script\Drop.cs" />
+    <Compile Include="Assets\script\menu.cs" />
+    <Compile Include="Assets\script\pru.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
