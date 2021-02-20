@@ -10,9 +10,15 @@ public class Memoria : MonoBehaviour
     public GameObject panelFin;
     public GameObject canvas;
     private GameObject managerEjercicios;
-    bool respuesta = true;
+    int respuesta = 0;
+    int respuesta2 = 0;
+    int respuesta3 = 0;
+    int respuesta4 = 0;
     private AudioSource fuenteDeAudio;
     public GameObject imagenRespuesta;
+    public GameObject imagenRespuesta2;
+    public GameObject imagenRespuesta3;
+    public GameObject imagenRespuesta4;
 
 
     public int contadorFases=0;
@@ -25,6 +31,9 @@ public class Memoria : MonoBehaviour
     public Sprite salon;
     public Sprite cruz;
     public Sprite tick;
+    public Sprite salon2;
+    public Sprite cuarto;
+    public Sprite zoo;
     public List<fases> fasesTotales;
     int nivel;
     public float tiempo=0;
@@ -72,7 +81,6 @@ public class Memoria : MonoBehaviour
 
         managerEjercicios = GameObject.FindWithTag("MEje");
         
-
         if (managerEjercicios.GetComponent<ManagerEjercicios>().nivel == 1)
         {
             nivel1();
@@ -153,12 +161,12 @@ public class Memoria : MonoBehaviour
         if (fasesTotales[contadorFases].contador == 1)
         {
             puntos++;
-            respuesta = true;
+            respuesta = 1;
 
         }
         else
         {
-            respuesta = false;
+            respuesta = 2;
         }
         tiempo = 3;
         siguientePreguntaNivel1();        
@@ -169,12 +177,12 @@ public class Memoria : MonoBehaviour
         if (fasesTotales[contadorFases].contador == 2)
         {
             puntos++;
-            respuesta = true;
+            respuesta = 1;
             
         }
         else
         {
-            respuesta = false;
+            respuesta = 2;
         }
         tiempo = 3;
         siguientePreguntaNivel1();
@@ -185,11 +193,11 @@ public class Memoria : MonoBehaviour
         if (fasesTotales[contadorFases].contador == 3)
         {
             puntos++;
-            respuesta = true;            
+            respuesta = 1;            
         }
         else
         {
-            respuesta = false;
+            respuesta = 2;
         }
         tiempo = 3;
         siguientePreguntaNivel1();
@@ -200,11 +208,11 @@ public class Memoria : MonoBehaviour
         if (fasesTotales[contadorFases].contador == 4)
         {
             puntos++;
-            respuesta = true;            
+            respuesta = 1;            
         }
         else
         {
-            respuesta = false;
+            respuesta = 2;
         }
         tiempo = 3;
         siguientePreguntaNivel1();
@@ -215,11 +223,11 @@ public class Memoria : MonoBehaviour
         if (fasesTotales[contadorFases].contador == 5)
         {
             puntos++;
-            respuesta = true;
+            respuesta = 1;
         }
         else
         {
-            respuesta = false;
+            respuesta = 2;
         }
         tiempo = 3;
         siguientePreguntaNivel1();
@@ -230,11 +238,11 @@ public class Memoria : MonoBehaviour
         if (fasesTotales[contadorFases].contador == 6)
         {
             puntos++;
-            respuesta = true;
+            respuesta = 1;
         }
         else
         {
-            respuesta = false;
+            respuesta = 2;
         }
         tiempo = 3;
         siguientePreguntaNivel1();
@@ -246,11 +254,11 @@ public class Memoria : MonoBehaviour
         if (fasesTotales[contadorFases].contador == 1)
         {
             puntos++;
-            respuesta = true;
+            respuesta = 1;
         }
         else
         {
-            respuesta = false;
+            respuesta = 2;
         }
         tiempo = 3;
         siguientePreguntaNivel1();
@@ -261,11 +269,11 @@ public class Memoria : MonoBehaviour
         if (fasesTotales[contadorFases].contador == 2)
         {
             puntos++;
-            respuesta = true;
+            respuesta = 1;
         }
         else
         {
-            respuesta = false;
+            respuesta = 2;
         }
         tiempo = 3;
         siguientePreguntaNivel1();
@@ -276,11 +284,11 @@ public class Memoria : MonoBehaviour
         if (fasesTotales[contadorFases].contador == 3)
         {
             puntos++;
-            respuesta = true;
+            respuesta = 1;
         }
         else
         {
-            respuesta = false;
+            respuesta = 2;
         }
         tiempo = 3;
         siguientePreguntaNivel1();
@@ -291,11 +299,11 @@ public class Memoria : MonoBehaviour
         if (fasesTotales[contadorFases].contador == 4)
         {
             puntos++;
-            respuesta = true;
+            respuesta = 1;
         }
         else
         {
-            respuesta = false;
+            respuesta = 2;
         }
         tiempo = 3;
         siguientePreguntaNivel1();
@@ -306,11 +314,11 @@ public class Memoria : MonoBehaviour
         if (fasesTotales[contadorFases].contador == 5)
         {
             puntos++;
-            respuesta = true;
+            respuesta = 1;
         }
         else
         {
-            respuesta = false;
+            respuesta = 2;
         }
         tiempo = 3;
         siguientePreguntaNivel1();
@@ -321,11 +329,11 @@ public class Memoria : MonoBehaviour
         if (fasesTotales[contadorFases].contador == 6)
         {
             puntos++;
-            respuesta = true;
+            respuesta = 1;
         }
         else
         {
-            respuesta = false;
+            respuesta = 2;
         }
         tiempo = 3;
         siguientePreguntaNivel1();
@@ -337,11 +345,11 @@ public class Memoria : MonoBehaviour
         if (fasesTotales[contadorFases].contador == 1)
         {
             puntos++;
-            respuesta = true;
+            respuesta = 1;
         }
         else
         {
-            respuesta = false;
+            respuesta = 2;
         }
         tiempo = 3;
         siguientePreguntaNivel1();
@@ -352,11 +360,11 @@ public class Memoria : MonoBehaviour
         if (fasesTotales[contadorFases].contador == 2)
         {
             puntos++;
-            respuesta = true;
+            respuesta = 1;
         }
         else
         {
-            respuesta = false;
+            respuesta = 2;
         }
         tiempo = 3;
         siguientePreguntaNivel1();
@@ -367,11 +375,11 @@ public class Memoria : MonoBehaviour
         if (fasesTotales[contadorFases].contador == 3)
         {
             puntos++;
-            respuesta = true;
+            respuesta = 1;
         }
         else
         {
-            respuesta = false;
+            respuesta = 2;
         }
         tiempo = 3;
         siguientePreguntaNivel1();
@@ -382,11 +390,11 @@ public class Memoria : MonoBehaviour
         if (fasesTotales[contadorFases].contador == 4)
         {
             puntos++;
-            respuesta = true;
+            respuesta = 1;
         }
         else
         {
-            respuesta = false;
+            respuesta = 2;
         }
         tiempo = 3;
         siguientePreguntaNivel1();
@@ -398,11 +406,11 @@ public class Memoria : MonoBehaviour
         if (fasesTotales[contadorFases].contador == 1)
         {
             puntos++;
-            respuesta = true;
+            respuesta = 1;
         }
         else
         {
-            respuesta = false;
+            respuesta = 2;
         }
         tiempo = 3;
         siguientePreguntaNivel1();
@@ -413,11 +421,11 @@ public class Memoria : MonoBehaviour
         if (fasesTotales[contadorFases].contador == 2)
         {
             puntos++;
-            respuesta = true;
+            respuesta = 1;
         }
         else
         {
-            respuesta = false;
+            respuesta = 2;
         }
         tiempo = 3;
         siguientePreguntaNivel1();
@@ -428,11 +436,11 @@ public class Memoria : MonoBehaviour
         if (fasesTotales[contadorFases].contador == 3)
         {
             puntos++;
-            respuesta = true;
+            respuesta = 1;
         }
         else
         {
-            respuesta = false;
+            respuesta = 2;
         }
         tiempo = 3;
         siguientePreguntaNivel1();
@@ -443,11 +451,11 @@ public class Memoria : MonoBehaviour
         if (fasesTotales[contadorFases].contador == 4)
         {
             puntos++;
-            respuesta = true;
+            respuesta = 1;
         }
         else
         {
-            respuesta = false;
+            respuesta = 2;
         }
         tiempo = 3;
         siguientePreguntaNivel1();
@@ -458,11 +466,11 @@ public class Memoria : MonoBehaviour
         if (fasesTotales[contadorFases].contador == 5)
         {
             puntos++;
-            respuesta = true;
+            respuesta = 1;
         }
         else
         {
-            respuesta = false;
+            respuesta = 2;
         }
         tiempo = 3;
         siguientePreguntaNivel1();
@@ -558,7 +566,7 @@ public class Memoria : MonoBehaviour
         fase1.preguntas.Add("De qué color es la barca?");
         fase1.soluciones.Add(new Soluciones(1, 2));
         fase1.preguntas.Add("Cómo está el dia?");
-        fase1.soluciones.Add(new Soluciones(8, 2));
+        fase1.soluciones.Add(new Soluciones(8, 1));
         fase1.preguntas.Add("Qué animales hay?");
         fase1.soluciones.Add(new Soluciones(9, 1));
 
@@ -576,20 +584,21 @@ public class Memoria : MonoBehaviour
         fase2.preguntas.Add("¿Cómo son los cojines?");
         fase2.soluciones.Add(new Soluciones(12, 1));
 
-        fase3.imagen = salon;
-        fase3.preguntas.Add("¿Dónde esta la tele?");
-        fase3.soluciones.Add(new Soluciones(11, 1));
+
+        fase3.imagen = salon2;
+        fase3.preguntas.Add("¿Dónde esta el gato?");
+        fase3.soluciones.Add(new Soluciones(15, 1));
         fase3.preguntas.Add("¿De qué color es el sofa?");
-        fase3.soluciones.Add(new Soluciones(0, 2));        
-        fase3.preguntas.Add("¿Dónde esta la percha?");
-        fase3.soluciones.Add(new Soluciones(13, 1));
-        fase3.preguntas.Add("¿De qué color es el telefono?");
-        fase3.soluciones.Add(new Soluciones(3, 2));
-        fase3.preguntas.Add("¿Dónde esta la alfombra?");
-        fase3.soluciones.Add(new Soluciones(14, 1));
+        fase3.soluciones.Add(new Soluciones(3, 1));        
+        fase3.preguntas.Add("¿De qué color son las cortinas?");
+        fase3.soluciones.Add(new Soluciones(16, 2));
+        fase3.preguntas.Add("¿Cuantas macetas hay en la ventana?");
+        fase3.soluciones.Add(new Soluciones(5, 1));
+        fase3.preguntas.Add("¿Donde esta la mesa?");
+        fase3.soluciones.Add(new Soluciones(17, 2));
         fase3.preguntas.Add("¿De qué color es la lampara?");
-        fase3.soluciones.Add(new Soluciones(3, 1));
-        fase3.preguntas.Add("¿Cuántos cojines hay?");
+        fase3.soluciones.Add(new Soluciones(2, 1));
+        fase3.preguntas.Add("¿Cuantos cuadros hay?");
         fase3.soluciones.Add(new Soluciones(5, 1));
 
         fasesTotales.Add(fase1);
@@ -608,12 +617,12 @@ public class Memoria : MonoBehaviour
         if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].solucion==1)
         {
             puntos++;
-            respuesta = true;
+            respuesta = 1;
 
         }
         else
         {
-            respuesta = false;
+            respuesta = 2;
         }
         tiempo = 3;
         fasesTotales[contadorFases].contador++;
@@ -626,12 +635,12 @@ public class Memoria : MonoBehaviour
         if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].solucion == 2)
         {
             puntos++;
-            respuesta = true;
+            respuesta = 1;
 
         }
         else
         {
-            respuesta = false;
+            respuesta = 2;
         }
         tiempo = 3;
         fasesTotales[contadorFases].contador++;
@@ -644,12 +653,12 @@ public class Memoria : MonoBehaviour
         if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].solucion == 3)
         {
             puntos++;
-            respuesta = true;
+            respuesta = 1;
 
         }
         else
         {
-            respuesta = false;
+            respuesta = 2;
         }
         tiempo = 3;
         fasesTotales[contadorFases].contador++;
@@ -662,12 +671,12 @@ public class Memoria : MonoBehaviour
         if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].solucion == 4)
         {
             puntos++;
-            respuesta = true;
+            respuesta = 1;
 
         }
         else
         {
-            respuesta = false;
+            respuesta = 2;
         }
         tiempo = 3;
         fasesTotales[contadorFases].contador++;
@@ -740,7 +749,7 @@ public class Memoria : MonoBehaviour
             boton3 = botonesNivel3.transform.GetChild(2).gameObject;
             boton4 = botonesNivel3.transform.GetChild(3).gameObject;
         }
-       
+
 
         if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].pregunta == 0)
         {
@@ -802,8 +811,8 @@ public class Memoria : MonoBehaviour
         else if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].pregunta == 8)
         {
             boton1.transform.GetChild(0).GetComponent<Text>().text = "Soleado";
-            boton2.transform.GetChild(0).GetComponent<Text>().text = "Nublado";
-            boton3.transform.GetChild(0).GetComponent<Text>().text = "Nieve";
+            boton2.transform.GetChild(0).GetComponent<Text>().text = "Nieve";
+            boton3.transform.GetChild(0).GetComponent<Text>().text = "Lluvia";
             boton4.transform.GetChild(0).GetComponent<Text>().text = "Viento";
         }
         else if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].pregunta == 9)
@@ -849,13 +858,33 @@ public class Memoria : MonoBehaviour
             boton3.transform.GetChild(0).GetComponent<Text>().text = "Al lado de la puerta";
             boton4.transform.GetChild(0).GetComponent<Text>().text = "No hay alfombra";
         }
-
+        else if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].pregunta == 15)
+        {
+            boton1.transform.GetChild(0).GetComponent<Text>().text = "En el sofá";
+            boton2.transform.GetChild(0).GetComponent<Text>().text = "En el suelo";
+            boton3.transform.GetChild(0).GetComponent<Text>().text = "Al lado de la puerta";
+            boton4.transform.GetChild(0).GetComponent<Text>().text = "En la puerta";
+        }
+        else if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].pregunta == 16)
+        {
+            boton1.transform.GetChild(0).GetComponent<Text>().text = "Morado";
+            boton2.transform.GetChild(0).GetComponent<Text>().text = "Rosa";
+            boton3.transform.GetChild(0).GetComponent<Text>().text = "Violeta";
+            boton4.transform.GetChild(0).GetComponent<Text>().text = "Verda";
+        }
+        else if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].pregunta == 17)
+        {
+            boton1.transform.GetChild(0).GetComponent<Text>().text = "Detras del sofa";
+            boton2.transform.GetChild(0).GetComponent<Text>().text = "Delante del sofa";
+            boton3.transform.GetChild(0).GetComponent<Text>().text = "Delanten del armario";
+            boton4.transform.GetChild(0).GetComponent<Text>().text = "Al lado de la puerta";
+        }
     }
 
-    
-    /// Nivel3
-   
-    void nivel3()
+
+        /// Nivel3
+
+        void nivel3()
     {
         fases fase1 = new fases();
         fases fase2 = new fases();
@@ -871,7 +900,7 @@ public class Memoria : MonoBehaviour
         fase1.preguntas.Add("De qué color es la barca?");
         fase1.soluciones.Add(new Soluciones(1, 2));
         fase1.preguntas.Add("Cómo está el dia?");
-        fase1.soluciones.Add(new Soluciones(8, 2));
+        fase1.soluciones.Add(new Soluciones(8, 1));
         fase1.preguntas.Add("Qué animales hay?");
         fase1.soluciones.Add(new Soluciones(9, 1));
 
@@ -901,7 +930,7 @@ public class Memoria : MonoBehaviour
         fase3.preguntas.Add("¿Dónde esta la alfombra?");
         fase3.soluciones.Add(new Soluciones(14, 1));
         fase3.preguntas.Add("¿De qué color es la lampara?");
-        fase3.soluciones.Add(new Soluciones(1, 3));
+        fase3.soluciones.Add(new Soluciones(3, 1));
         fase3.preguntas.Add("¿Cuántos cojines hay?");
         fase3.soluciones.Add(new Soluciones(5, 1));
 
@@ -922,11 +951,11 @@ public class Memoria : MonoBehaviour
         if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].solucion == 1)
         {
             puntos++;
-            respuesta = true;
+            respuesta = 1;
         }
         else
         {
-            respuesta = false;
+            respuesta = 2;
         }
         tiempo = 3;
         fasesTotales[contadorFases].contador++;
@@ -939,11 +968,11 @@ public class Memoria : MonoBehaviour
         if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].solucion == 2)
         {
             puntos++;
-            respuesta = true;
+            respuesta = 1;
         }
         else
         {
-            respuesta = false;
+            respuesta = 2;
         }
         tiempo = 3;
         fasesTotales[contadorFases].contador++;
@@ -955,12 +984,12 @@ public class Memoria : MonoBehaviour
         if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].solucion == 3)
         {
             puntos++;
-            respuesta = true;
+            respuesta = 1;
 
         }
         else
         {
-            respuesta = false;
+            respuesta = 2;
         }
         tiempo = 3;
         fasesTotales[contadorFases].contador++;
@@ -972,12 +1001,12 @@ public class Memoria : MonoBehaviour
         if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].solucion == 4)
         {
             puntos++;
-            respuesta = true;
+            respuesta = 1;
 
         }
         else
         {
-            respuesta = false;
+            respuesta = 2;
         }
         tiempo = 3;
         fasesTotales[contadorFases].contador++;
@@ -1053,56 +1082,66 @@ public class Memoria : MonoBehaviour
         fases fase2 = new fases();
         fases fase3 = new fases();
 
-        fase1.imagen = granja;
-        fase1.preguntas.Add("¿Cuántos arboles hay?");
-        fase1.soluciones.Add(new Soluciones(5, 1));
-        fase1.preguntas.Add("¿De qué color es la casa?");
-        fase1.soluciones.Add(new Soluciones(0, 2));
-        fase1.preguntas.Add("¿Cuántas manzanas hay en el arbol?");
-        fase1.soluciones.Add(new Soluciones(6, 2));
-        fase1.preguntas.Add("¿De qué color es la barca?");
-        fase1.soluciones.Add(new Soluciones(1, 2));
-        fase1.preguntas.Add("¿Cómo está el dia?");
-        fase1.soluciones.Add(new Soluciones(8, 2));
-        fase1.preguntas.Add("¿Qué animales hay?");
-        fase1.soluciones.Add(new Soluciones(9, 1));
+        fase1.imagen = cuarto;
+        fase1.preguntas.Add("¿De qué color es el ventilador?");
+        fase1.soluciones.Add(new Soluciones("Verde"));
+        fase1.preguntas.Add("¿De qué color es el vestido?");
+        fase1.soluciones.Add(new Soluciones("Rojo"));
+        fase1.preguntas.Add("¿De qué color es la lampara?");
+        fase1.soluciones.Add(new Soluciones("Amarilla"));
+        fase1.preguntas.Add("¿De qué color es las sabanas?");
+        fase1.soluciones.Add(new Soluciones("Amarilla y blanca"));
+        fase1.preguntas.Add("¿De qué color es la alfombra?");
+        fase1.soluciones.Add(new Soluciones("Blanca y azul"));
+        fase1.preguntas.Add("¿De qué color es la almohada?");
+        fase1.soluciones.Add(new Soluciones("Blanca"));
 
-        fase2.imagen = habitacion;
-        fase2.preguntas.Add("¿De qué color son las sabanas?");
-        fase2.soluciones.Add(new Soluciones(0, 1));
-        fase2.preguntas.Add("¿Dónde esta el espejo?");
-        fase2.soluciones.Add(new Soluciones(10, 1));
-        fase2.preguntas.Add("De qué color es la alfombra?");
-        fase2.soluciones.Add(new Soluciones(3, 1));
-        fase2.preguntas.Add("¿De qué color es el suelo?");
-        fase2.soluciones.Add(new Soluciones(0, 2));
-        fase2.preguntas.Add("¿Cuántos cuadros hay?");
-        fase2.soluciones.Add(new Soluciones(5, 1));
-        fase2.preguntas.Add("¿Cómo son los cojines?");
-        fase2.soluciones.Add(new Soluciones(12, 1));
+        fase2.imagen = salon;
+        fase2.preguntas.Add("¿De qué color es el sofá?");
+        fase2.soluciones.Add(new Soluciones("Rojo"));
+        fase2.preguntas.Add("¿De qué color es la puerta?");
+        fase2.soluciones.Add(new Soluciones("Verde"));
+        fase2.preguntas.Add("¿De qué color es la cortina?");
+        fase2.soluciones.Add(new Soluciones("Blanca"));
+        fase2.preguntas.Add("¿De qué color es la alfombra?");
+        fase2.soluciones.Add(new Soluciones("Amarilla"));
+        fase2.preguntas.Add("¿De qué color es el reloj?");
+        fase2.soluciones.Add(new Soluciones("Rojo"));
+        fase2.preguntas.Add("¿De qué color es la lampara?");
+        fase2.soluciones.Add(new Soluciones("Blanca"));
+        fase2.preguntas.Add("¿De qué color es la libreta?");
+        fase2.soluciones.Add(new Soluciones("Rosa"));
+        fase2.preguntas.Add("¿De qué color es el teléfono?");
+        fase2.soluciones.Add(new Soluciones("Negro"));
+        fase2.preguntas.Add("¿De qué color es la camiseta?");
+        fase2.soluciones.Add(new Soluciones("Marron"));
+        fase2.preguntas.Add("¿De qué color es el triciclo?");
+        fase2.soluciones.Add(new Soluciones("Azul y amarillo"));
+        fase2.preguntas.Add("¿De qué color son los cojines?");
+        fase2.soluciones.Add(new Soluciones("amarillos"));
 
-        fase3.imagen = salon;
-        fase3.preguntas.Add("¿Dónde esta la tele?");
-        fase3.soluciones.Add(new Soluciones(11, 1));
-        fase3.preguntas.Add("¿De qué color es el sofa?");
-        fase3.soluciones.Add(new Soluciones(0, 2));
-        fase3.preguntas.Add("¿Dónde esta la percha?");
-        fase3.soluciones.Add(new Soluciones(13, 1));
-        fase3.preguntas.Add("¿De qué color es el telefono?");
-        fase3.soluciones.Add(new Soluciones(3, 2));
-        fase3.preguntas.Add("¿Dónde esta la alfombra?");
-        fase3.soluciones.Add(new Soluciones(14, 1));
-        fase3.preguntas.Add("¿De qué color es la lampara?");
-        fase3.soluciones.Add(new Soluciones(3, 1));
-        fase3.preguntas.Add("¿Cuántos cojines hay?");
-        fase3.soluciones.Add(new Soluciones(5, 1));
+
+
+        fase3.imagen = zoo;
+        fase3.preguntas.Add("¿Cuántas palomas hay?");
+        fase3.soluciones.Add(new Soluciones("2"));
+        fase3.preguntas.Add("¿Cuántas jirafas hay?");
+        fase3.soluciones.Add(new Soluciones("1"));
+        fase3.preguntas.Add("¿Cuántas mujeres hay?");
+        fase3.soluciones.Add(new Soluciones("4"));
+        fase3.preguntas.Add("¿Cuántas mariposas hay?");
+        fase3.soluciones.Add(new Soluciones("3"));
+        fase3.preguntas.Add("¿Cuántas niñas hay?");
+        fase3.soluciones.Add(new Soluciones("1"));
+        fase3.preguntas.Add("¿Cuántas nubes hay?");
+        fase3.soluciones.Add(new Soluciones("4"));
 
         fasesTotales.Add(fase1);
         fasesTotales.Add(fase2);
         fasesTotales.Add(fase3);
 
         panelNivel4.SetActive(true);
-        panelNivel4.transform.GetChild(1).GetComponent<Image>().sprite = granja;
+        panelNivel4.transform.GetChild(1).GetComponent<Image>().sprite = cuarto;
         tiempo = 0;
         respustasNivel4 = new List<Soluciones>();
         posicionesPreguntas = new List<bool>();
@@ -1119,187 +1158,7 @@ public class Memoria : MonoBehaviour
     {
         siguientePreguntaNivel4();
     }
-    string generarDrag(Soluciones sol)
-    {  
-
-
-        if (sol.pregunta == 0)
-        {
-            if (sol.solucion == 1)
-            {
-                return "Azul";
-            }else if (sol.solucion == 2)
-            {
-                return "Rojo";
-            }        
-           
-        }
-        else if (sol.pregunta == 1)
-        {
-            if (sol.solucion == 1)
-            {
-                return "Verde";
-            }
-            else if (sol.solucion == 2)
-            {
-                return "Marron";
-            }
-           
-        }
-        else if (sol.pregunta == 2)
-        {
-            if (sol.solucion == 1)
-            {
-                return "Blanco";
-            }
-            else if (sol.solucion == 2)
-            {
-                return "Naranja";
-            }
-           
-           
-        }
-        else if (sol.pregunta == 3)
-        {
-            if (sol.solucion == 1)
-            {
-                return "Amarillo";
-            }
-            else if (sol.solucion == 2)
-            {
-                return "Negro";
-            }
-           
-        }
-        else if (sol.pregunta == 4)
-        {
-            if (sol.solucion == 1)
-            {
-                return "1";
-            }
-            else if (sol.solucion == 2)
-            {
-                return "3";
-            }          
-        }
-        else if (sol.pregunta == 5)
-        {
-            if (sol.solucion == 1)
-            {
-                return "2";
-            }
-            else if (sol.solucion == 2)
-            {
-                return "4";
-            }
-           
-        }
-        else if (sol.pregunta == 6)
-        {
-            if (sol.solucion == 1)
-            {
-                return "3";
-            }
-            else if (sol.solucion == 2)
-            {
-                return "5";
-            }
-          
-        }
-        else if (sol.pregunta == 7)
-        {
-            if (sol.solucion == 1)
-            {
-                return "4";
-            }
-            else if (sol.solucion == 2)
-            {
-                return "6";
-            }           
-        }
-        else if (sol.pregunta == 8)
-        {
-            if (sol.solucion == 1)
-            {
-                return "Soleado";
-            }
-            else if (sol.solucion == 2)
-            {
-                return "Nublado";
-            }
-            
-        }
-        else if (sol.pregunta == 9)
-        {
-            if (sol.solucion == 1)
-            {
-                return "Cisne y vaca";
-            }
-            else if (sol.solucion == 2)
-            {
-                return "Perros y visne";
-            }          
-        }
-        else if (sol.pregunta == 10)
-        {
-            if (sol.solucion == 1)
-            {
-                return "Izquierda";
-            }
-            else if (sol.solucion == 2)
-            {
-                return "Abajo";
-            }           
-        }
-        else if (sol.pregunta == 11)
-        {
-            if (sol.solucion == 1)
-            {
-                return "Derecha";
-            }
-            else if (sol.solucion == 2)
-            {
-                return "Arriba";
-            }
-          
-        }
-        else if (sol.pregunta == 12)
-        {
-            if (sol.solucion == 1)
-            {
-                return "Rallas";
-            }
-            else if (sol.solucion == 2)
-            {
-                return "Circulos";
-            }          
-        }
-        else if (sol.pregunta == 13)
-        {
-            if (sol.solucion == 1)
-            {
-                return "En la puerta";
-            }
-            else if (sol.solucion == 2)
-            {
-                return "En la pared";
-            }
-           
-
-        }
-        else if (sol.pregunta == 14)
-        {
-            if (sol.solucion == 1)
-            {
-                return "Debajo de la mesa";
-            }
-            else if (sol.solucion == 2)
-            {
-                return "Debajo del sofá";
-            }            
-        }
-        return "";
-    }
+  
 
 
     public void siguientePreguntaNivel4()
@@ -1362,8 +1221,8 @@ public class Memoria : MonoBehaviour
                     if (posicionesPreguntas[pos] == false)
                     {
                         posicionesPreguntas[pos] = true;
-                        
-                        drags.transform.GetChild(pos).GetChild(0).GetComponent<Text>().text = generarDrag(respustasNivel4[j]);
+
+                        drags.transform.GetChild(pos).GetChild(0).GetComponent<Text>().text = respustasNivel4[j].solucion2;
                         drags.transform.GetChild(pos).GetComponent<Drag>().id = j;
                         colocado = true;
                     }
@@ -1381,9 +1240,9 @@ public class Memoria : MonoBehaviour
             {
                 panelFin.SetActive(true);
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = puntos.ToString();
-                panelFin.transform.GetChild(4).GetComponent<Text>().text = "Los puntos maximos de esta prueba son 19 ";
+                panelFin.transform.GetChild(4).GetComponent<Text>().text = "Los puntos maximos de esta prueba son 23 ";
 
-                if (puntos == 19)
+                if (puntos == 23)
                 {
                     panelFin.transform.GetChild(5).GetComponent<Text>().text = "Superado el nivel maximo";
                     managerEjercicios.GetComponent<ManagerEjercicios>().usuario.memoria(5);
@@ -1417,12 +1276,49 @@ public class Memoria : MonoBehaviour
 
     public void BotonsiguientePreguntaNivel4()
     {
-        for(int i =0; i< numPreguntas;i++)
+        respuesta = 0;
+        respuesta2 = 0;
+        respuesta3 = 0;
+        respuesta4 = 0;
+        for (int i =0; i< numPreguntas;i++)
         {
             if (posicionesPreguntas[i] == true)
             {
                 puntos++;
+                if (i == 0)
+                {
+                    respuesta = 1;
+                }else if (i == 1)
+                {
+                    respuesta2 = 1;
+                }else if (i==2)
+                {
+                    respuesta3 = 1;
+                }else if (i == 3)
+                {
+                    respuesta4 = 1;
+                }
             }
+            else
+            {
+                if (i == 0)
+                {
+                    respuesta = 2;
+                }
+                else if (i == 1)
+                {
+                    respuesta2 = 2;
+                }
+                else if (i == 2)
+                {
+                    respuesta3 = 2;
+                }
+                else if (i == 3)
+                {
+                    respuesta4 = 2;
+                }
+            }
+            tiempo = 3;
         }
         siguientePreguntaNivel4();
     }
@@ -1431,7 +1327,7 @@ public class Memoria : MonoBehaviour
     {
         if (nivel == 4)
         {
-
+            updateNivel4();
         }
         else
         {
@@ -1446,7 +1342,7 @@ public class Memoria : MonoBehaviour
         tiempo -= Time.deltaTime;
         if (tiempo > 0)
         {
-            if (respuesta)
+            if (respuesta==1)
             {
                 imagenRespuesta.SetActive(true);
                 imagenRespuesta.GetComponent<Image>().sprite = tick;
@@ -1463,6 +1359,73 @@ public class Memoria : MonoBehaviour
             imagenRespuesta.SetActive(false);
         }
         
+    }
+    void updateNivel4()
+    {
+        tiempo -= Time.deltaTime;
+        if (tiempo > 0)
+        {
+
+
+            if (respuesta == 1)
+            {
+                imagenRespuesta4.SetActive(true);
+                imagenRespuesta4.GetComponent<Image>().sprite = tick;
+            }
+            else if (respuesta2 == 2)
+            {
+                imagenRespuesta4.gameObject.SetActive(true);
+                imagenRespuesta4.GetComponent<Image>().sprite = cruz;
+            }           
+          
+            
+            if (respuesta2==1)
+            {
+                imagenRespuesta3.SetActive(true);
+                imagenRespuesta3.GetComponent<Image>().sprite = tick;
+            }
+            else if(respuesta2==2)
+            {
+                imagenRespuesta3.gameObject.SetActive(true);
+                imagenRespuesta3.GetComponent<Image>().sprite = cruz;
+            }
+            
+            
+            
+            if (respuesta3==1)
+            {
+                imagenRespuesta2.SetActive(true);
+                imagenRespuesta2.GetComponent<Image>().sprite = tick;
+            }
+            else if(respuesta3==2)
+            {
+                imagenRespuesta2.gameObject.SetActive(true);
+                imagenRespuesta2.GetComponent<Image>().sprite = cruz;
+            }
+            
+            
+            if (respuesta4==1)
+            {
+                imagenRespuesta.SetActive(true);
+                imagenRespuesta.GetComponent<Image>().sprite = tick;
+            }
+            else if(respuesta4==2)
+            {
+                imagenRespuesta.gameObject.SetActive(true);
+                imagenRespuesta.GetComponent<Image>().sprite = cruz;
+            }
+            
+
+        }
+        else
+        {
+            imagenRespuesta.SetActive(false);
+            imagenRespuesta2.SetActive(false);
+            imagenRespuesta3.SetActive(false);
+            imagenRespuesta4.SetActive(false);
+
+        }
+
     }
 
     public void botonInicio()
@@ -1497,8 +1460,13 @@ public class Soluciones
         pregunta = pre;
         solucion = sol;
     }
+    public Soluciones(string res)
+    {
+        solucion2 = res;
+    }
 
    public int pregunta;
    public int solucion;
+    public string solucion2;
     
 }
