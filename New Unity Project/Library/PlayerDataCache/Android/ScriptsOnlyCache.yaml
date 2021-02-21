@@ -6,6 +6,7 @@ ScriptsOnlyBuild:
     - Ejercicios
     - IdUsuario
     - ItemSlot
+    - Lenguaje
     - Lista
     - ManagerEjercicios
     - ManagerUsuario
@@ -184,15 +185,51 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 20
       Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
     - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1462}
+    - Class: 114
+      Script: {instanceID: 1514}
+    - Class: 114
+      Script: {instanceID: 1918}
+    - Class: 114
+      Script: {instanceID: 2100}
+    - Class: 114
+      Script: {instanceID: 2260}
+    - Class: 114
+      Script: {instanceID: 2464}
+    - Class: 114
+      Script: {instanceID: 2612}
+    - Class: 114
+      Script: {instanceID: 2780}
+    - Class: 114
+      Script: {instanceID: 2984}
+    - Class: 114
+      Script: {instanceID: 26280}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     Assets/Scenes/Ejercicios/Memoria.unity:
     - Class: 1
@@ -228,6 +265,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2100}
     - Class: 114
+      Script: {instanceID: 2260}
+    - Class: 114
       Script: {instanceID: 2464}
     - Class: 114
       Script: {instanceID: 2612}
@@ -237,8 +276,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 2830}
     - Class: 114
       Script: {instanceID: 2984}
-    - Class: 114
-      Script: {instanceID: 3266}
     - Class: 114
       Script: {instanceID: 3720}
     - Class: 114
@@ -628,7 +665,7 @@ ScriptsOnlyBuild:
     className: LayoutElement
   - hash:
       serializedVersion: 2
-      Hash: aaa1becdf2a2f42956684518acf0dccc
+      Hash: 411495d6b369410e0acb6b3e38c227a9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Memoria
@@ -730,7 +767,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: 162d8e923b5d7858829a597e3807faf8
+      Hash: fc3d06708c74d1f3b5034e47eb1108f6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Ejercicios
@@ -1172,6 +1209,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
+  - hash:
+      serializedVersion: 2
+      Hash: 6b61c77ffd1a8fba7a2cba14d4e89812
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Lenguaje
   platform: 13
   scenePathNames:
   - Assets/Scenes/Menu.unity

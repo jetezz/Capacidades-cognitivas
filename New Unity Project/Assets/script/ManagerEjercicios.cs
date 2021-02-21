@@ -37,9 +37,49 @@ public class ManagerEjercicios : MonoBehaviour
         usuario = managerUsuario.GetComponent<ManagerUsuario>().getUsuarioSeleccionado();
         
         ejercicio = usuario.getPeorEstadistica();
-        ejercicio = 0;
+        ejercicio = 1;
         nivel = usuario.getNivelEstadistica(ejercicio);
 
+        if (ejercicio == 0)
+        {
+            SceneManager.LoadScene(9);
+        }
+        if (ejercicio == 1)
+        {
+            SceneManager.LoadScene(8);
+        }
+        if (ejercicio == 2)
+        {
+            SceneManager.LoadScene(11);
+        }
+        if (ejercicio == 3)
+        {
+            SceneManager.LoadScene(5);
+        }
+        if (ejercicio == 4)
+        {
+            SceneManager.LoadScene(7);
+        }
+        if (ejercicio == 5)
+        {
+            SceneManager.LoadScene(12);
+        }
+        if (ejercicio == 6)
+        {
+            SceneManager.LoadScene(10);
+        }
+        if (ejercicio == 6)
+        {
+            SceneManager.LoadScene(6);
+        }
+    }
+
+    public void iniciarEpecial(int eje, int niv) 
+    {
+        managerUsuario = GameObject.FindWithTag("MUsu");
+        usuario = managerUsuario.GetComponent<ManagerUsuario>().getUsuarioSeleccionado();
+        nivel = niv;
+        ejercicio = eje;
         if (ejercicio == 0)
         {
             SceneManager.LoadScene(9);

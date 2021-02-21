@@ -13,6 +13,9 @@ public class Ejercicios : MonoBehaviour
     public GameObject panel;
     public string valoresCapacidades;
     public GameObject panelCapacidades;
+    public int ejercicio;
+    public int nivel;
+    public GameObject panelElegirEjercicio;
     public void botonCerrarPanel()
     {
         panel.SetActive(false);
@@ -55,13 +58,22 @@ public class Ejercicios : MonoBehaviour
     {
         SceneManager.LoadScene(4);
     }
+    public void activarPanelElegir()
+    {
+        panelElegirEjercicio.SetActive(true);
+    }
 
-    public void botonEmpezarEjercicios()
+    public void botonEmpezarEjercicios(int niv)
     {
         GameObject managerEjercicios;
         managerEjercicios = GameObject.FindWithTag("MEje");       
-        managerEjercicios.GetComponent<ManagerEjercicios>().iniciarConUsuario();
+        managerEjercicios.GetComponent<ManagerEjercicios>().iniciarEpecial(ejercicio,niv);
         
     }
 
+
+    public void botonSelecionarEjercicio(int eje)
+    {
+        ejercicio = eje;
+    }
 }

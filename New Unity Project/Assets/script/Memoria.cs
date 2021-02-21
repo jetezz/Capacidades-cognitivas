@@ -65,6 +65,8 @@ public class Memoria : MonoBehaviour
     public GameObject slots;
     public GameObject drags;
     public GameObject botonSiguienteN4;
+    public GameObject botonCorregir;
+    public GameObject panelBloqueo;
     private List<Soluciones> respustasNivel4;
     private List<bool> posicionesPreguntas;
     private int movimientos = 0;
@@ -597,7 +599,7 @@ public class Memoria : MonoBehaviour
         fase3.preguntas.Add("¿Donde esta la mesa?");
         fase3.soluciones.Add(new Soluciones(17, 2));
         fase3.preguntas.Add("¿De qué color es la lampara?");
-        fase3.soluciones.Add(new Soluciones(2, 1));
+        fase3.soluciones.Add(new Soluciones(16, 1));
         fase3.preguntas.Add("¿Cuantos cuadros hay?");
         fase3.soluciones.Add(new Soluciones(5, 1));
 
@@ -818,7 +820,7 @@ public class Memoria : MonoBehaviour
         else if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].pregunta == 9)
         {
             boton1.transform.GetChild(0).GetComponent<Text>().text = "Cisne y vaca";
-            boton2.transform.GetChild(0).GetComponent<Text>().text = "Perros y visne";
+            boton2.transform.GetChild(0).GetComponent<Text>().text = "Perros y cisne";
             boton3.transform.GetChild(0).GetComponent<Text>().text = "Vaca y perro";
             boton4.transform.GetChild(0).GetComponent<Text>().text = "Vaca";
         }
@@ -1269,12 +1271,12 @@ public class Memoria : MonoBehaviour
         movimientos++;
         if (movimientos >= numPreguntas)
         {
-            botonSiguienteN4.SetActive(true);
+            botonCorregir.SetActive(true);
         }
         
     }
 
-    public void BotonsiguientePreguntaNivel4()
+    public void botonCorregirN4()
     {
         respuesta = 0;
         respuesta2 = 0;
@@ -1318,9 +1320,19 @@ public class Memoria : MonoBehaviour
                     respuesta4 = 2;
                 }
             }
-            tiempo = 3;
+            tiempo = 10;
         }
+        botonCorregir.SetActive(false);
+        botonSiguienteN4.SetActive(true);
+        panelBloqueo.SetActive(true);
+        
+    }
+    public void botonSiguientePreguntaN4()
+    {
         siguientePreguntaNivel4();
+        panelBloqueo.SetActive(false);
+        botonSiguienteN4.SetActive(false);
+        tiempo = 0;
     }
 
     public void Update()
