@@ -198,6 +198,18 @@ public class Lenguaje : MonoBehaviour
 
                 textoPrincipal.GetComponent<Text>().text = preguntas1[contador].preguntas[preguntas1[contador].contador].pregunta;
                 generarGrupo();
+            }            
+        }
+        else
+        {
+            contador++;
+            panel1.transform.GetChild(0).gameObject.SetActive(true);
+            panel1.transform.GetChild(1).gameObject.SetActive(true);
+            panel1.transform.GetChild(2).gameObject.SetActive(true);
+            panel1.transform.GetChild(3).gameObject.SetActive(true);
+            if (contador < preguntas1.Count)
+            {
+                siguientePreguntaN1();
             }
             else
             {
@@ -217,15 +229,6 @@ public class Lenguaje : MonoBehaviour
                     panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 1";
                 }
             }
-        }
-        else
-        {
-            contador++;
-            panel1.transform.GetChild(0).gameObject.SetActive(true);
-            panel1.transform.GetChild(1).gameObject.SetActive(true);
-            panel1.transform.GetChild(2).gameObject.SetActive(true);
-            panel1.transform.GetChild(3).gameObject.SetActive(true);
-            siguientePreguntaN1();
         }
     }
 
@@ -310,7 +313,7 @@ public class Lenguaje : MonoBehaviour
         aux.Add(new Pregunta2(secador, conjuntosN2(2)));
         aux.Add(new Pregunta2(ballena, conjuntosN2(3)));
         aux.Add(new Pregunta2(calcetin, conjuntosN2(4)));
-        aux.Add(new Pregunta2(campana, conjuntosN2(5)));
+        aux.Add(new Pregunta2(perro, conjuntosN2(5)));
         aux.Add(new Pregunta2(fresa, conjuntosN2(6)));
         aux.Add(new Pregunta2(cuadro, conjuntosN2(7)));
 

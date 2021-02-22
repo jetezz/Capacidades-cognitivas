@@ -68,11 +68,11 @@
     <Compile Include="Assets\script\pru2.cs" />
     <Compile Include="Assets\script\Drag.cs" />
     <Compile Include="Assets\script\MenuEjercicios.cs" />
+    <Compile Include="Assets\script\Lenguaje.cs" />
     <Compile Include="Assets\script\MoveSystem.cs" />
     <Compile Include="Assets\script\Drop.cs" />
     <Compile Include="Assets\script\menu.cs" />
     <Compile Include="Assets\script\pru.cs" />
-    <Compile Include="Assets\script\Lenguaje.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
