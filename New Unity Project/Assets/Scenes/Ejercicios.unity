@@ -471,7 +471,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: text inicial
+  m_Text: Examen MEC
 --- !u!222 &429881315
 CanvasRenderer:
   m_ObjectHideFlags: 0

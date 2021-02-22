@@ -119,16 +119,16 @@ public class Memoria : MonoBehaviour
         fase1.preguntas.Add("¿Dónde está el espejo?");
         fase1.preguntas.Add("¿Dónde está la lavadora?");
         fase1.preguntas.Add("¿Dónde está el calentador?");
-        fase1.preguntas.Add("¿Dónde está el bater?");
+        fase1.preguntas.Add("¿Dónde está el váter?");
         
 
         fase2.imagen = granja;
         fase2.preguntas.Add("¿Dónde está la barca?");
         fase2.preguntas.Add("¿Dónde está los patos?");
         fase2.preguntas.Add("¿Dónde está la vaca?");
-        fase2.preguntas.Add("¿Dónde está el arbol con fruta?");
+        fase2.preguntas.Add("¿Dónde está el árbol con fruta?");
         fase2.preguntas.Add("¿Dónde está la cabaña?");
-        fase2.preguntas.Add("¿Dónde está el arbol sin fruta?");
+        fase2.preguntas.Add("¿Dónde está el árbol sin fruta?");
 
 
         fase3.imagen = cocina;
