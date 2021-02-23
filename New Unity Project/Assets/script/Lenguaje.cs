@@ -81,10 +81,22 @@ public class Lenguaje : MonoBehaviour
     public GameObject boton5N2;
     public GameObject boton6N2;
 
+    ///
+    ///Nivel3
+    List<Pregunta3> preguntas3 = new List<Pregunta3>();
+    public GameObject panel3;
+    Dictionary<int, string> idYPregun = new Dictionary<int, string>();
+
+    //
+    //nivel 4
+    public GameObject panel4;
+
+
+
     void Start()
     {
         fuenteDeAudio = GetComponent<AudioSource>();
-        
+      
 
         managerEjercicios = GameObject.FindWithTag("MEje");
 
@@ -114,7 +126,7 @@ public class Lenguaje : MonoBehaviour
     {
         List<T> arr = input;
         List<T> arrDes = new List<T>();
-
+        arr.Add(input[input.Count - 1]);
        
         while (arr.Count > 0)
         {
@@ -122,6 +134,7 @@ public class Lenguaje : MonoBehaviour
             arrDes.Add(arr[val]);
             arr.RemoveAt(val);
         }
+        arrDes.RemoveAt(arrDes.Count - 1);
 
         return arrDes;
     }
@@ -454,12 +467,117 @@ public class Lenguaje : MonoBehaviour
 
     void nivel3()
     {
+        List<Pregunta3> aux = new List<Pregunta3>();
+        aux.Add(new Pregunta3("Madrid Sevilla Barcelona Burgos Soria",0));
+        aux.Add(new Pregunta3("España China Portugal Brasil Francia",1));
+        aux.Add(new Pregunta3("Enero  Marzo Febrero Abril",2));
+        aux.Add(new Pregunta3("Cuchillo Tenedor Cuchara Platos Cazo",3));
+        aux.Add(new Pregunta3("Mesa Silla Escritorio Sillon Cama",4));
+        aux.Add(new Pregunta3("Dormitorio Salon Cocina Despacho Cuarto Baño",5));
+        aux.Add(new Pregunta3("Paula Ana Josefa Manuela Rosa Estefania",6));
+        aux.Add(new Pregunta3("Paco José Mario Manuel Pedro",7));
+        aux.Add(new Pregunta3("Tio Prima Abuela Hijo Sobrino Nieto",8));
+        preguntas3 = DesordenarLista<Pregunta3>(aux);
+
+        idYPregun.Add(0, "Ciudades");
+        idYPregun.Add(1, "Paises");
+        idYPregun.Add(2, "Meses");
+        idYPregun.Add(3, "Utensilios de cocina");
+        idYPregun.Add(4, "Muebles");
+        idYPregun.Add(5, "Habitacion");
+        idYPregun.Add(6, "Nombre Mujer");
+        idYPregun.Add(7, "Nombre Hombre");
+        idYPregun.Add(8, "Parientes");
+
+
+        panel3.SetActive(true);
+        textoPrincipal.GetComponent<Text>().text = "A que grupo corresponde estas palabras";
+        siguientePreguntaN3();
+        
+    }
+
+    void siguientePreguntaN3()
+    {
+        if (contador < preguntas3.Count)
+        {
+            panel3.transform.GetChild(0).GetComponent<Text>().text = preguntas3[contador].pregunta;
+            generarBotonesN3();
+        }
+        else
+        {
+            panelFin.SetActive(true);
+            textoPrincipal.GetComponent<Text>().text = "Ejercicio de lenguaje nivel 3 completado";
+            panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
+            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 9 ";
+            if (puntos == 9)
+            {
+                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 4";
+                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.lenguaje(3);
+                GameObject managerUsuario = GameObject.FindWithTag("MUsu");
+                managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+            }
+            else
+            {
+                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 3";
+            }
+        }
+    }
+
+    void generarBotonesN3()
+    {
+        List<int> aux = new List<int>();
+        aux.Add(preguntas3[contador].respuesta);
+        bool salir = false;
+        while (aux.Count < 4)
+        {
+            salir = false;
+            int ran = Random.Range(0, 8);
+            for (int i = 0; i < aux.Count;i++) 
+            {
+                if (aux[i] == ran)
+                {
+                    salir = true;
+                    break;
+                }
+            }
+            if(!salir)
+            aux.Add(ran);
+        }
+       
+        List<int> botones = new List<int>();        
+        botones = DesordenarLista<int>(aux);
+     
+        for (int i = 0; i < 4; i++)
+        {
+            if (botones[i] == preguntas3[contador].respuesta)
+            {
+                preguntas3[contador].solucion = i;
+            }
+        }
+        panel3.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = idYPregun[botones[0]];
+        panel3.transform.GetChild(2).GetChild(0).GetComponent<Text>().text = idYPregun[botones[1]];
+        panel3.transform.GetChild(3).GetChild(0).GetComponent<Text>().text = idYPregun[botones[2]];
+        panel3.transform.GetChild(4).GetChild(0).GetComponent<Text>().text = idYPregun[botones[3]];
+
 
     }
 
+    public void botonN3(int i)
+    {
+        if (i == preguntas3[contador].solucion)
+        {
+            puntos++;
+            imagenCorreccion.GetComponent<Image>().sprite = tick;
+        }
+        else
+        {
+            imagenCorreccion.GetComponent<Image>().sprite = cruz;
 
-
-
+        }
+        contador++;
+        tiempo = 1;
+        siguientePreguntaN3();
+    }
 
 
     void nivel4()
@@ -487,7 +605,7 @@ public class Lenguaje : MonoBehaviour
         tiempo -= Time.deltaTime;
         if (tiempo > 0)
         {
-            if (nivel == 1 || nivel==2)
+            if (nivel == 1 || nivel==2 || nivel==3)
             {
                 imagenCorreccion.SetActive(true);
             }
@@ -545,4 +663,16 @@ public class Pregunta2
     public Sprite imagen;
     public int solucion;
     public int contadorImagen;
+}
+
+public class Pregunta3
+{
+    public Pregunta3(string pre, int re)
+    {
+        pregunta = pre;
+        respuesta = re;       
+    }
+    public string pregunta;     
+    public int respuesta;
+    public int solucion;
 }
