@@ -8,10 +8,10 @@ public class Lenguaje : MonoBehaviour
 {
     private AudioSource fuenteDeAudio;
     private GameObject managerEjercicios;
-    private int contador=0;
+    private int contador = 0;
     private int puntos = 0;
     private int nivel;
-    private float tiempo=0;
+    private float tiempo = 0;
     public GameObject textoPrincipal;
     public GameObject panelFin;
     public GameObject imagenCorreccion;
@@ -89,17 +89,28 @@ public class Lenguaje : MonoBehaviour
 
     //
     //nivel 4
+    List<FaseP4> fases4 = new List<FaseP4>();
     public GameObject panel4;
+    public GameObject palabra;
+    public GameObject hand;
+    public GameObject botonCorregir;
+    public GameObject botonSiguiente;
+    public GameObject categoria1;
+    public GameObject categoria2;
+    public GameObject categoria3;
+    public GameObject block;
 
-
+    public object F4E { get; private set; }
 
     void Start()
     {
         fuenteDeAudio = GetComponent<AudioSource>();
-      
+        nivel4();
+        nivel = 4;
 
         managerEjercicios = GameObject.FindWithTag("MEje");
 
+        /*
         if (managerEjercicios.GetComponent<ManagerEjercicios>().nivel == 1)
         {
             nivel1();
@@ -121,13 +132,14 @@ public class Lenguaje : MonoBehaviour
             nivel4();
             nivel = 4;
         }
+        */
     }
     public static List<T> DesordenarLista<T>(List<T> input)
     {
         List<T> arr = input;
         List<T> arrDes = new List<T>();
         arr.Add(input[input.Count - 1]);
-       
+
         while (arr.Count > 0)
         {
             int val = Random.Range(0, arr.Count - 1);
@@ -143,14 +155,14 @@ public class Lenguaje : MonoBehaviour
     void nivel1()
     {
         List<Pregunta1> aux = new List<Pregunta1>();
-        aux.Add(new Pregunta1("Pulsa en el color azul", 1,0));
-        aux.Add(new Pregunta1("Pulsa en el color rojo", 2,0));
-        aux.Add(new Pregunta1("Pulsa en el color verde", 3,0));
-        aux.Add(new Pregunta1("Pulsa en el color negro", 4,0));
+        aux.Add(new Pregunta1("Pulsa en el color azul", 1, 0));
+        aux.Add(new Pregunta1("Pulsa en el color rojo", 2, 0));
+        aux.Add(new Pregunta1("Pulsa en el color verde", 3, 0));
+        aux.Add(new Pregunta1("Pulsa en el color negro", 4, 0));
         preguntas1.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
         aux.Clear();
 
-        aux.Add(new Pregunta1("Pulsa en la falda", 1,1));
+        aux.Add(new Pregunta1("Pulsa en la falda", 1, 1));
         aux.Add(new Pregunta1("Pulsa en el calcetín", 2, 1));
         aux.Add(new Pregunta1("Pulsa en la chaqueta", 3, 1));
         aux.Add(new Pregunta1("Pulsa en el pantalon", 4, 1));
@@ -195,7 +207,7 @@ public class Lenguaje : MonoBehaviour
 
 
 
-       
+
         panel1.SetActive(true);
 
         siguientePreguntaN1();
@@ -211,7 +223,7 @@ public class Lenguaje : MonoBehaviour
 
                 textoPrincipal.GetComponent<Text>().text = preguntas1[contador].preguntas[preguntas1[contador].contador].pregunta;
                 generarGrupo();
-            }            
+            }
         }
         else
         {
@@ -253,7 +265,8 @@ public class Lenguaje : MonoBehaviour
             boton2.GetComponent<Image>().sprite = rojo;
             boton3.GetComponent<Image>().sprite = verde;
             boton4.GetComponent<Image>().sprite = negro;
-        }else if(preguntas1[contador].preguntas[preguntas1[contador].contador].grupoImagenes == 1)
+        }
+        else if (preguntas1[contador].preguntas[preguntas1[contador].contador].grupoImagenes == 1)
         {
             boton1.GetComponent<Image>().sprite = falda;
             boton2.GetComponent<Image>().sprite = calcetin;
@@ -302,7 +315,7 @@ public class Lenguaje : MonoBehaviour
         {
             puntos++;
             imagenCorreccion.GetComponent<Image>().sprite = tick;
-            panel1.transform.GetChild(i-1).gameObject.SetActive(false);
+            panel1.transform.GetChild(i - 1).gameObject.SetActive(false);
 
         }
         else
@@ -314,7 +327,7 @@ public class Lenguaje : MonoBehaviour
         siguientePreguntaN1();
         tiempo = 1;
     }
- 
+
 
 
 
@@ -322,7 +335,7 @@ public class Lenguaje : MonoBehaviour
     void nivel2()
     {
         List<Pregunta2> aux = new List<Pregunta2>();
-        aux.Add(new Pregunta2(amapola,conjuntosN2(1)));
+        aux.Add(new Pregunta2(amapola, conjuntosN2(1)));
         aux.Add(new Pregunta2(secador, conjuntosN2(2)));
         aux.Add(new Pregunta2(ballena, conjuntosN2(3)));
         aux.Add(new Pregunta2(calcetin, conjuntosN2(4)));
@@ -351,7 +364,7 @@ public class Lenguaje : MonoBehaviour
         if (contador < preguntas2.Count)
         {
             int numRand = Random.Range(0, 6);
-            for (int i = 0; i < 6;i++)
+            for (int i = 0; i < 6; i++)
             {
                 if (i == numRand)
                 {
@@ -363,7 +376,7 @@ public class Lenguaje : MonoBehaviour
                     panel2.transform.GetChild(i).GetComponent<Image>().sprite = preguntas2[contador].listaImagenes[preguntas2[contador].contadorImagen];
                     preguntas2[contador].contadorImagen++;
                 }
-            }            
+            }
         }
         else
         {
@@ -411,7 +424,8 @@ public class Lenguaje : MonoBehaviour
             outList.Add(verde);
             outList.Add(negro);
             outList.Add(rosa);
-        }else if (conjunto==2)
+        }
+        else if (conjunto == 2)
         {
             outList.Add(falda);
             outList.Add(calcetin);
@@ -468,15 +482,15 @@ public class Lenguaje : MonoBehaviour
     void nivel3()
     {
         List<Pregunta3> aux = new List<Pregunta3>();
-        aux.Add(new Pregunta3("Madrid Sevilla Barcelona Burgos Soria",0));
-        aux.Add(new Pregunta3("España China Portugal Brasil Francia",1));
-        aux.Add(new Pregunta3("Enero  Marzo Febrero Abril",2));
-        aux.Add(new Pregunta3("Cuchillo Tenedor Cuchara Platos Cazo",3));
-        aux.Add(new Pregunta3("Mesa Silla Escritorio Sillon Cama",4));
-        aux.Add(new Pregunta3("Dormitorio Salon Cocina Despacho Cuarto Baño",5));
-        aux.Add(new Pregunta3("Paula Ana Josefa Manuela Rosa Estefania",6));
-        aux.Add(new Pregunta3("Paco José Mario Manuel Pedro",7));
-        aux.Add(new Pregunta3("Tio Prima Abuela Hijo Sobrino Nieto",8));
+        aux.Add(new Pregunta3("Madrid Sevilla Barcelona Burgos Soria", 0));
+        aux.Add(new Pregunta3("España China Portugal Brasil Francia", 1));
+        aux.Add(new Pregunta3("Enero  Marzo Febrero Abril", 2));
+        aux.Add(new Pregunta3("Cuchillo Tenedor Cuchara Platos Cazo", 3));
+        aux.Add(new Pregunta3("Mesa Silla Escritorio Sillon Cama", 4));
+        aux.Add(new Pregunta3("Dormitorio Salon Cocina Despacho Cuarto Baño", 5));
+        aux.Add(new Pregunta3("Paula Ana Josefa Manuela Rosa Estefania", 6));
+        aux.Add(new Pregunta3("Paco José Mario Manuel Pedro", 7));
+        aux.Add(new Pregunta3("Tio Prima Abuela Hijo Sobrino Nieto", 8));
         preguntas3 = DesordenarLista<Pregunta3>(aux);
 
         idYPregun.Add(0, "Ciudades");
@@ -493,7 +507,7 @@ public class Lenguaje : MonoBehaviour
         panel3.SetActive(true);
         textoPrincipal.GetComponent<Text>().text = "A que grupo corresponde estas palabras";
         siguientePreguntaN3();
-        
+
     }
 
     void siguientePreguntaN3()
@@ -532,7 +546,7 @@ public class Lenguaje : MonoBehaviour
         {
             salir = false;
             int ran = Random.Range(0, 8);
-            for (int i = 0; i < aux.Count;i++) 
+            for (int i = 0; i < aux.Count; i++)
             {
                 if (aux[i] == ran)
                 {
@@ -540,13 +554,13 @@ public class Lenguaje : MonoBehaviour
                     break;
                 }
             }
-            if(!salir)
-            aux.Add(ran);
+            if (!salir)
+                aux.Add(ran);
         }
-       
-        List<int> botones = new List<int>();        
+
+        List<int> botones = new List<int>();
         botones = DesordenarLista<int>(aux);
-     
+
         for (int i = 0; i < 4; i++)
         {
             if (botones[i] == preguntas3[contador].respuesta)
@@ -582,10 +596,248 @@ public class Lenguaje : MonoBehaviour
 
     void nivel4()
     {
+        List<Pregunta4> fase1 = new List<Pregunta4>();
+        List<Pregunta4> fase2 = new List<Pregunta4>();
+
+        fase1.Add(new Pregunta4("Cebolla", 0));
+        fase1.Add(new Pregunta4("Pepino", 0));
+        fase1.Add(new Pregunta4("Zanahoria", 0));
+        fase1.Add(new Pregunta4("Espinacas", 0));
+        fase1.Add(new Pregunta4("Guisantes", 0));
+        fase1.Add(new Pregunta4("Tomate", 0));
+        fase1.Add(new Pregunta4("Pimientos", 0));
+
+        fase1.Add(new Pregunta4("Fresa", 1));
+        fase1.Add(new Pregunta4("Piña", 1));
+        fase1.Add(new Pregunta4("Naranja", 1));
+        fase1.Add(new Pregunta4("Manzana", 1));
+        fase1.Add(new Pregunta4("Melon", 1));
+
+        fase1.Add(new Pregunta4("Zumo", 2));
+        fase1.Add(new Pregunta4("Agua", 2));
+        fase1.Add(new Pregunta4("Refrescos", 2));
+        fase1.Add(new Pregunta4("Gaseosa", 2));
+        fase1.Add(new Pregunta4("Vino", 2));
+        fase1.Add(new Pregunta4("Champan", 2));
+
+        
+        fases4.Add(new FaseP4(DesordenarLista<Pregunta4>(fase1)));
+
+
+        fase2.Add(new Pregunta4("pez", 3));
+        fase2.Add(new Pregunta4("tiburon", 3));
+        fase2.Add(new Pregunta4("ballena", 3));
+        fase2.Add(new Pregunta4("foca", 3));
+        fase2.Add(new Pregunta4("estrella", 3));
+        fase2.Add(new Pregunta4("sardina", 3));
+        fase2.Add(new Pregunta4("orca", 3));
+
+        fase2.Add(new Pregunta4("perro", 4));
+        fase2.Add(new Pregunta4("gato", 4));
+        fase2.Add(new Pregunta4("vaca", 4));
+        fase2.Add(new Pregunta4("caballo", 4));
+        fase2.Add(new Pregunta4("oso", 4));
+        fase2.Add(new Pregunta4("raton", 4));
+        fase2.Add(new Pregunta4("burro", 4));
+
+        fase2.Add(new Pregunta4("loro", 5));
+        fase2.Add(new Pregunta4("gaviota", 5));
+        fase2.Add(new Pregunta4("aguila", 5));
+        fase2.Add(new Pregunta4("buitre", 5));
+        fase2.Add(new Pregunta4("paloma", 5));
+        fase2.Add(new Pregunta4("canario", 5));
+        fase2.Add(new Pregunta4("cisne", 5));
+        fases4.Add(new FaseP4(DesordenarLista<Pregunta4>(fase2)));
+
+
+
+        textoPrincipal.GetComponent<Text>().text = "Coloca las palabras en el grupo correcto";
+        panel4.SetActive(true);
+        siguientepreguntaN4();
 
     }
 
+    void siguientepreguntaN4()
+    {
+        if (contador < fases4.Count)
+        {
+            if (fases4[contador].contadorFase < fases4[contador].preguntas.Count)
+            {
+                if (contador == 0)
+                {
+                    panel4.transform.GetChild(0).GetComponent<Text>().text = "Verduras";
+                    panel4.transform.GetChild(1).GetComponent<Text>().text = "Frutas";
+                    panel4.transform.GetChild(2).GetComponent<Text>().text = "Bebidas";
+                }
+                else
+                {
+                    panel4.transform.GetChild(0).GetComponent<Text>().text = "Animales acuaticos";
+                    panel4.transform.GetChild(1).GetComponent<Text>().text = "Animales terrestres";
+                    panel4.transform.GetChild(2).GetComponent<Text>().text = "Aves";
+                }
 
+                for (int i = 0; i < 5; i++)
+                {
+                    if (fases4[contador].contadorFase < fases4[contador].preguntas.Count)
+                    {
+                        GameObject g;
+                        g = Instantiate(palabra, hand.transform);
+                        g.SetActive(true);
+                        g.transform.GetChild(0).GetComponent<Text>().text = fases4[contador].preguntas[fases4[contador].contadorFase].nombre;
+                        g.GetComponent<Drag2>().id = fases4[contador].preguntas[fases4[contador].contadorFase].categoria;
+                        fases4[contador].contadorFase++;
+
+                    }
+
+                }
+            }
+            else
+            {
+                botonCorregir.SetActive(true);
+            }
+        }
+        else
+        {
+            panelFin.SetActive(true);
+            textoPrincipal.GetComponent<Text>().text = "Ejercicio de lenguaje nivel 4 completado";
+            panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
+            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 39 ";
+            if (puntos == 39)
+            {
+                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Has completado todos los niveles de lenguaje";
+                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.lenguaje(5);
+                GameObject managerUsuario = GameObject.FindWithTag("MUsu");
+                managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+            }
+            else
+            {
+                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 4";
+            }
+        }
+    }
+
+    public void comprobarNumRespuesta()
+    {
+
+        if (hand.transform.childCount == 1)
+        {
+            siguientepreguntaN4();
+        }
+    }
+    public void corregirN4()
+    {
+        block.SetActive(true);
+        botonCorregir.SetActive(false);
+        botonSiguiente.SetActive(true);
+        if (contador == 0)
+        {
+            for (int i = 0; i < categoria1.transform.childCount; i++)
+            {
+                if (categoria1.transform.GetChild(i).GetComponent<Drag2>().id == 0)
+                {
+                    puntos++;
+                    categoria1.transform.GetChild(i).GetComponent<Image>().color = Color.green;
+                }
+                else
+                {
+                    categoria1.transform.GetChild(i).GetComponent<Image>().color = Color.red;
+                }
+            }
+
+            for (int i = 0; i < categoria2.transform.childCount; i++)
+            {
+                if (categoria2.transform.GetChild(i).GetComponent<Drag2>().id == 1)
+                {
+                    puntos++;
+                    categoria2.transform.GetChild(i).GetComponent<Image>().color = Color.green;
+                }
+                else
+                {
+                    categoria2.transform.GetChild(i).GetComponent<Image>().color = Color.red;
+                }
+            }
+
+            for (int i = 0; i < categoria3.transform.childCount; i++)
+            {
+                if (categoria3.transform.GetChild(i).GetComponent<Drag2>().id == 2)
+                {
+                    puntos++;
+                    categoria3.transform.GetChild(i).GetComponent<Image>().color = Color.green;
+                }
+                else
+                {
+                    categoria3.transform.GetChild(i).GetComponent<Image>().color = Color.red;
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; i < categoria1.transform.childCount; i++)
+            {
+                if (categoria1.transform.GetChild(i).GetComponent<Drag2>().id == 3)
+                {
+                    puntos++;
+                    categoria1.transform.GetChild(i).GetComponent<Image>().color = Color.green;
+                }
+                else
+                {
+                    categoria1.transform.GetChild(i).GetComponent<Image>().color = Color.red;
+                }
+            }
+
+            for (int i = 0; i < categoria2.transform.childCount; i++)
+            {
+                if (categoria2.transform.GetChild(i).GetComponent<Drag2>().id == 4)
+                {
+                    puntos++;
+                    categoria2.transform.GetChild(i).GetComponent<Image>().color = Color.green;
+                }
+                else
+                {
+                    categoria2.transform.GetChild(i).GetComponent<Image>().color = Color.red;
+                }
+            }
+
+            for (int i = 0; i < categoria3.transform.childCount; i++)
+            {
+                if (categoria3.transform.GetChild(i).GetComponent<Drag2>().id == 5)
+                {
+                    puntos++;
+                    categoria3.transform.GetChild(i).GetComponent<Image>().color = Color.green;
+                }
+                else
+                {
+                    categoria3.transform.GetChild(i).GetComponent<Image>().color = Color.red;
+                }
+            }
+        }
+
+
+
+    }
+    public void continuarN4()
+    {
+        while (categoria1.transform.childCount > 0)
+        {
+            DestroyImmediate(categoria1.transform.GetChild(0).gameObject);
+        }
+        while (categoria2.transform.childCount > 0)
+        {
+            DestroyImmediate(categoria2.transform.GetChild(0).gameObject);
+        }
+        while (categoria3.transform.childCount > 0)
+        {
+            DestroyImmediate(categoria3.transform.GetChild(0).gameObject);
+        }
+
+        botonSiguiente.SetActive(false);
+        block.SetActive(false);
+        contador++;
+        siguientepreguntaN4();
+
+
+
+    }
 
     public void irInicio()
     {
@@ -605,7 +857,7 @@ public class Lenguaje : MonoBehaviour
         tiempo -= Time.deltaTime;
         if (tiempo > 0)
         {
-            if (nivel == 1 || nivel==2 || nivel==3)
+            if (nivel == 1 || nivel == 2 || nivel == 3)
             {
                 imagenCorreccion.SetActive(true);
             }
@@ -614,11 +866,11 @@ public class Lenguaje : MonoBehaviour
         {
             imagenCorreccion.SetActive(false);
         }
-        
+
     }
 
 
-  
+
 }
 
 
@@ -637,7 +889,7 @@ public class Preguntas1
 
 public class Pregunta1
 {
-    public Pregunta1(string p,int s,int g)
+    public Pregunta1(string p, int s, int g)
     {
         imagenes = new List<Sprite>();
         solucion = s;
@@ -647,12 +899,12 @@ public class Pregunta1
     public List<Sprite> imagenes;
     public int solucion;
     public string pregunta;
-    public int grupoImagenes;    
+    public int grupoImagenes;
 }
 
 public class Pregunta2
 {
-    public Pregunta2(Sprite img,List<Sprite> lImg)
+    public Pregunta2(Sprite img, List<Sprite> lImg)
     {
         listaImagenes = new List<Sprite>();
         listaImagenes = lImg;
@@ -670,9 +922,31 @@ public class Pregunta3
     public Pregunta3(string pre, int re)
     {
         pregunta = pre;
-        respuesta = re;       
+        respuesta = re;
     }
-    public string pregunta;     
+    public string pregunta;
     public int respuesta;
     public int solucion;
+}
+
+public class Pregunta4
+{
+    public Pregunta4(string nom, int cat)
+    {
+        nombre = nom;
+        categoria = cat;
+    }
+    public int categoria;
+    public string nombre;
+}
+
+public class FaseP4
+{
+    public FaseP4(List<Pregunta4> pr)
+    {
+        preguntas = new List<Pregunta4>();
+        preguntas = pr;
+    }
+    public List<Pregunta4> preguntas;
+    public int contadorFase = 0;
 }
