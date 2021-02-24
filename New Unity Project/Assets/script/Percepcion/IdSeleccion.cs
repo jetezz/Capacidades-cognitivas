@@ -12,4 +12,6 @@ public class IdSeleccion : MonoBehaviour
     {
         percepcion.GetComponent<Percepcion>().eventoPulsado(correcto,id);
     }
+
+
 }
