@@ -104,13 +104,11 @@ public class Lenguaje : MonoBehaviour
 
     void Start()
     {
-        fuenteDeAudio = GetComponent<AudioSource>();
-        nivel4();
-        nivel = 4;
+        fuenteDeAudio = GetComponent<AudioSource>();        
 
         managerEjercicios = GameObject.FindWithTag("MEje");
 
-        /*
+        
         if (managerEjercicios.GetComponent<ManagerEjercicios>().nivel == 1)
         {
             nivel1();
@@ -132,7 +130,7 @@ public class Lenguaje : MonoBehaviour
             nivel4();
             nivel = 4;
         }
-        */
+        
     }
     public static List<T> DesordenarLista<T>(List<T> input)
     {

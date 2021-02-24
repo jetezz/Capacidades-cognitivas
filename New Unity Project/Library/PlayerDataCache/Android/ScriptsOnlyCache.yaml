@@ -6,6 +6,7 @@ ScriptsOnlyBuild:
     - Drop2
     - Ejemplojson
     - Ejercicios
+    - IdSeleccion
     - IdUsuario
     - ItemSlot
     - Lenguaje
@@ -14,6 +15,7 @@ ScriptsOnlyBuild:
     - ManagerUsuario
     - Memoria
     - MenuEjercicios
+    - Percepcion
     - Test
     - menu
     Unity.2D.Animation.Editor.dll:
@@ -335,15 +337,51 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 20
       Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
     - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1462}
+    - Class: 114
+      Script: {instanceID: 1530}
+    - Class: 114
+      Script: {instanceID: 1934}
+    - Class: 114
+      Script: {instanceID: 2116}
+    - Class: 114
+      Script: {instanceID: 2480}
+    - Class: 114
+      Script: {instanceID: 2630}
+    - Class: 114
+      Script: {instanceID: 2798}
+    - Class: 114
+      Script: {instanceID: 3002}
+    - Class: 114
+      Script: {instanceID: 21232}
+    - Class: 114
+      Script: {instanceID: 23096}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     Assets/Scenes/Ejercicios/Praxias.unity:
     - Class: 1
@@ -1240,6 +1278,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
+  - hash:
+      serializedVersion: 2
+      Hash: ff2e3f5cb88a126f3defa78ed4349a7e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Percepcion
+  - hash:
+      serializedVersion: 2
+      Hash: 3f31094a8aa370d5418bc0e7a9a8d954
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: IdSeleccion
   platform: 13
   scenePathNames:
   - Assets/Scenes/Menu.unity
@@ -1256,4 +1306,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Ejercicios/Percepcion.unity
   - Assets/Scenes/Ejercicios/Praxias.unity
   - Assets/Scenes/ManagerEjercicios.unity
-  playerPath: C:/Users/JesusCuadraTellez/Desktop/tfg/tfg/New Unity Project/aplicacion.apk
+  playerPath: C:/Users/JesusCuadraTellez/Desktop/tfg/aplicacion/tfg/New Unity Project/aplicacion.apk
