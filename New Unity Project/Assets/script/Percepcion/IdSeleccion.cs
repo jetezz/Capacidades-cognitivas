@@ -13,8 +13,13 @@ public class IdSeleccion : MonoBehaviour
         percepcion.GetComponent<Percepcion>().eventoPulsado(correcto,id);
     }
 
-    public void botonPulsadoN4()
+    public void botonPulsadoN4Izquierda()
     {
-        percepcion.GetComponent<Percepcion>().eventoSeleccionNivel4(id);
+        percepcion.GetComponent<Percepcion>().eventoSeleccionNivel4(id,true);
+       
+    }
+    public void botonPulsadoN4Derecha()
+    {
+        percepcion.GetComponent<Percepcion>().eventoSeleccionNivel4(id,false);
     }
 }

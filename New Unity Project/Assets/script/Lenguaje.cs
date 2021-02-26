@@ -480,15 +480,15 @@ public class Lenguaje : MonoBehaviour
     void nivel3()
     {
         List<Pregunta3> aux = new List<Pregunta3>();
-        aux.Add(new Pregunta3("Madrid Sevilla Barcelona Burgos Soria", 0));
-        aux.Add(new Pregunta3("España China Portugal Brasil Francia", 1));
-        aux.Add(new Pregunta3("Enero  Marzo Febrero Abril", 2));
-        aux.Add(new Pregunta3("Cuchillo Tenedor Cuchara Platos Cazo", 3));
-        aux.Add(new Pregunta3("Mesa Silla Escritorio Sillon Cama", 4));
-        aux.Add(new Pregunta3("Dormitorio Salon Cocina Despacho Cuarto Baño", 5));
-        aux.Add(new Pregunta3("Paula Ana Josefa Manuela Rosa Estefania", 6));
-        aux.Add(new Pregunta3("Paco José Mario Manuel Pedro", 7));
-        aux.Add(new Pregunta3("Tio Prima Abuela Hijo Sobrino Nieto", 8));
+        aux.Add(new Pregunta3("Madrid - Sevilla - Barcelona - Burgos - Soria", 0));
+        aux.Add(new Pregunta3("España - China - Portugal - Brasil - Francia", 1));
+        aux.Add(new Pregunta3("Enero -  Marzo - Febrero - Abril", 2));
+        aux.Add(new Pregunta3("Cuchillo - Tenedor - Cuchara - Platos - Cazo", 3));
+        aux.Add(new Pregunta3("Mesa - Silla - Escritorio - Sillon - Cama", 4));
+        aux.Add(new Pregunta3("Dormitorio - Salon - Cocina - Despacho - Cuarto - Baño", 5));
+        aux.Add(new Pregunta3("Paula - Ana - Josefa - Manuela - Rosa - Estefania", 6));
+        aux.Add(new Pregunta3("Paco - José - Mario - Manuel - Pedro", 7));
+        aux.Add(new Pregunta3("Tio - Prima - Abuela - Hijo - Sobrino - Nieto", 8));
         preguntas3 = DesordenarLista<Pregunta3>(aux);
 
         idYPregun.Add(0, "Ciudades");
@@ -626,7 +626,7 @@ public class Lenguaje : MonoBehaviour
         fase2.Add(new Pregunta4("tiburon", 3));
         fase2.Add(new Pregunta4("ballena", 3));
         fase2.Add(new Pregunta4("foca", 3));
-        fase2.Add(new Pregunta4("estrella", 3));
+        fase2.Add(new Pregunta4("estrella de mar", 3));
         fase2.Add(new Pregunta4("sardina", 3));
         fase2.Add(new Pregunta4("orca", 3));
 

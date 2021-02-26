@@ -109,6 +109,8 @@ public class Percepcion : MonoBehaviour
     public Sprite llave7;
 
     //grupo1N4
+
+
     public Sprite spor1;
     public Sprite spor2;
     public Sprite spor3;
@@ -117,47 +119,13 @@ public class Percepcion : MonoBehaviour
     public Sprite spor6;
     public Sprite spor7;
     public Sprite spor8;
-    public Sprite spor9;
-    public Sprite spor10;
-    public Sprite spor11;
-    public Sprite spor12;
-    public Sprite spor13;
-    public Sprite spor14;
-    public Sprite spor15;
-    public Sprite spor16;
-    public Sprite spor17;
-    public Sprite spor18;
-    public Sprite spor19;
-    public Sprite spor20;
-    public Sprite spor21;
-    public Sprite spor22;
-    public Sprite spor23;
-    public Sprite spor24;
-    public Sprite spor25;
-    public Sprite spor26;
-    public Sprite spor27;
-    public Sprite spor28;
-    public Sprite spor29;
-    public Sprite spor30;
-    public Sprite spor31;
-    public Sprite spor32;
-    public Sprite spor33;
-    public Sprite spor34;
-    public Sprite spor35;
-    public Sprite spor36;
-    public Sprite spor37;
-    public Sprite spor38;
-    public Sprite spor39;
-    public Sprite spor40;
-    public Sprite nada;
-
-
 
 
 
     //nivel1
     List<Pregunta1P> preguntas1 = new List<Pregunta1P>();
     public GameObject panel1;
+    int numrespuestas = 0;
 
 
 
@@ -178,9 +146,10 @@ public class Percepcion : MonoBehaviour
     //nivel4
     public GameObject panel4;
     public GameObject ImagenSleccionada;
-    Dictionary<int, Sprite> grupo1N4 = new Dictionary<int, Sprite>();
-    int idUltimo = 0;
-    Dictionary<int, bool> soluciones = new Dictionary<int, bool>();
+    List<Pregunta42p> preguntas4;
+   
+   
+  
 
 
 
@@ -190,7 +159,7 @@ public class Percepcion : MonoBehaviour
 
         managerEjercicios = GameObject.FindWithTag("MEje");
 
-       
+        
         
         if (managerEjercicios.GetComponent<ManagerEjercicios>().nivel == 1)
         {
@@ -744,116 +713,53 @@ public class Percepcion : MonoBehaviour
 
     void nivel4()
     {
-        grupo1N4.Add(1, spor1);
-        grupo1N4.Add(2, spor2);
-        grupo1N4.Add(3, spor3);
-        grupo1N4.Add(4, spor4);
-        grupo1N4.Add(5, spor5);
-        grupo1N4.Add(6, spor6);
-        grupo1N4.Add(7, spor7);
-        grupo1N4.Add(8, spor8);
-        grupo1N4.Add(9, spor9);
-        grupo1N4.Add(10, spor10);
-        grupo1N4.Add(11, spor11);
-        grupo1N4.Add(12, spor12);
-        grupo1N4.Add(13, spor13);
-        grupo1N4.Add(14, spor14);
-        grupo1N4.Add(15, spor15);
-        grupo1N4.Add(16, spor16);
-        grupo1N4.Add(17, spor17);
-        grupo1N4.Add(18, spor18);
-        grupo1N4.Add(19, spor19);
-        grupo1N4.Add(20, spor20);
-        grupo1N4.Add(21, spor21);
-        grupo1N4.Add(22, spor22);
-        grupo1N4.Add(23, spor23);
-        grupo1N4.Add(24, spor24);
-        grupo1N4.Add(25, spor25);
-        grupo1N4.Add(26, spor26);
-        grupo1N4.Add(27, spor27);
-        grupo1N4.Add(28, spor28);
-        grupo1N4.Add(29, spor29);
-        grupo1N4.Add(30, spor30);
-        grupo1N4.Add(31, spor31);
-        grupo1N4.Add(32, spor32);
-        grupo1N4.Add(33, spor33);
-        grupo1N4.Add(34, spor34);
-        grupo1N4.Add(35, spor35);
-        grupo1N4.Add(36, spor36);
-        grupo1N4.Add(37, spor37);
-        grupo1N4.Add(38, spor38);
-        grupo1N4.Add(39, spor39);
-        grupo1N4.Add(40, spor40);
 
-        soluciones.Add(1, false);
-        soluciones.Add(2, false);
-        soluciones.Add(3, false);
-        soluciones.Add(4, false);
-        soluciones.Add(5, false);
-        soluciones.Add(6, false);
-        soluciones.Add(7, false);
-        soluciones.Add(8, false);
-        soluciones.Add(9, false);
-        soluciones.Add(10, false);
-        soluciones.Add(11, false);
-        soluciones.Add(12, false);
-        soluciones.Add(13, false);
-        soluciones.Add(14, false);
-        soluciones.Add(15, false);
-        soluciones.Add(16, false);
-        soluciones.Add(17, false);
-        soluciones.Add(18, false);
-        soluciones.Add(19, false);
-        soluciones.Add(21, false);
-        soluciones.Add(22, false);
-        soluciones.Add(23, false);
-        soluciones.Add(24, false);
-        soluciones.Add(25, false);
-        soluciones.Add(26, false);
-        soluciones.Add(27, false);
-        soluciones.Add(28, false);
-        soluciones.Add(29, false);
-        soluciones.Add(31, false);
-        soluciones.Add(32, false);
-        soluciones.Add(33, false);
-        soluciones.Add(34, false);
-        soluciones.Add(35, false);
-        soluciones.Add(36, false);
-        soluciones.Add(37, false);
-        soluciones.Add(38, false);
-        soluciones.Add(39, false);
-        soluciones.Add(40, false);
+        List<Pregunta42p> aux = new List<Pregunta42p>();
+        preguntas4 = new List<Pregunta42p>();
+        aux.Add(new Pregunta42p(spor1, spor2, 10, 4));
+        aux.Add(new Pregunta42p(spor1, spor3, 13, 13));
+        aux.Add(new Pregunta42p(spor1, spor4, 7, 11));
+        aux.Add(new Pregunta42p(spor1, spor5, 15, 7));
+        aux.Add(new Pregunta42p(spor1, spor6, 3, 11));
+        aux.Add(new Pregunta42p(spor1, spor7, 9, 4));
+        aux.Add(new Pregunta42p(spor1, spor8, 1, 10));
+        aux.Add(new Pregunta42p(spor2, spor3, 3, 8));
+        aux.Add(new Pregunta42p(spor2, spor4, 4, 4));
+        aux.Add(new Pregunta42p(spor2, spor5, 8, 9));
+        aux.Add(new Pregunta42p(spor2, spor6, 9, 6));
+        aux.Add(new Pregunta42p(spor2, spor7, 10, 10));
+        aux.Add(new Pregunta42p(spor2, spor8, 11, 7));
+        aux.Add(new Pregunta42p(spor3, spor4, 11, 12));
+        aux.Add(new Pregunta42p(spor3, spor5, 7, 8));
+        aux.Add(new Pregunta42p(spor3, spor6, 10, 12));
+        aux.Add(new Pregunta42p(spor3, spor7, 5, 11));
+        aux.Add(new Pregunta42p(spor3, spor8, 4, 5));
+        aux.Add(new Pregunta42p(spor4, spor5, 4, 5));
 
+        preguntas4 = DesordenarLista<Pregunta42p>(aux);
 
 
         panel4.SetActive(true);
-        textoPrincipal.GetComponent<Text>().text = "Selecciona dos imagenes iguales";
+        textoPrincipal.GetComponent<Text>().text = "Selecciona los dos dibujos iguales";
 
     }
-    public void eventoSeleccionNivel4(int id)
+    void siguientepreguntaN4()
     {
-        ImagenSleccionada.GetComponent<Image>().sprite = grupo1N4[id];
-        if (idUltimo == id && soluciones[id]==false)
+        if (contador < preguntas4.Count)
         {
-            puntos++;
-            imagenCorreccion.GetComponent<Image>().sprite = tick;
-            tiempo = 1;
-            numRespuestas++;
-            ImagenSleccionada.GetComponent<Image>().sprite = nada;
-            soluciones[id] = true;
-            id = 0;            
-        }
-        idUltimo = id;
+            panel4.transform.GetChild(0).GetComponent<Image>().sprite = preguntas4[contador].imagen1;
+            panel4.transform.GetChild(1).GetComponent<Image>().sprite = preguntas4[contador].imagen2;
 
-        if (numRespuestas > 10)
+        }
+        else
         {
             panelFin.SetActive(true);
             textoPrincipal.GetComponent<Text>().text = "Ejercicio de percepcion nivel 4 completado";
             panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 11 ";
-            if (puntos == 11)
+            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 38 ";
+            if (puntos == 38)
             {
-                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Todos los niveles ce percepcion completados";
+                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Has completado todos los niveles de percepcion";
                 managerEjercicios.GetComponent<ManagerEjercicios>().usuario.percepcion(5);
                 GameObject managerUsuario = GameObject.FindWithTag("MUsu");
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
@@ -863,6 +769,45 @@ public class Percepcion : MonoBehaviour
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 4";
             }
         }
+    }
+    public void eventoSeleccionNivel4(int id, bool izquierda)
+    {
+        if (izquierda == true)
+        {
+            
+            if (preguntas4[contador].solucion1 == id)
+            {               
+
+                puntos++;
+                imagenCorreccion.GetComponent<Image>().sprite = tick;
+            }
+            else
+            {
+                imagenCorreccion.GetComponent<Image>().sprite = cruz;
+            }          
+        }
+        else
+        {
+            if (preguntas4[contador].solucion2 == id)
+            {
+                puntos++;
+                imagenCorreccion.GetComponent<Image>().sprite = tick;
+            }
+            else
+            {
+                imagenCorreccion.GetComponent<Image>().sprite = cruz;
+            }
+        }
+
+        numrespuestas++;
+        tiempo = 1;
+        if (numrespuestas == 2)
+        {
+            numrespuestas = 0;
+            contador++;
+            siguientepreguntaN4();
+        }
+
     } 
     
     void Update()
@@ -920,4 +865,19 @@ public class Pregunta2P{
     }
     public int id;
     public int grupo;
+}
+
+public class Pregunta42p
+{
+    public Pregunta42p(Sprite im1,Sprite im2, int id1, int id2)
+    {
+        imagen1 = im1;
+        imagen2 = im2;
+        solucion1 = id1;
+        solucion2 = id2;
+    }
+    public Sprite imagen1;
+    public Sprite imagen2;
+    public int solucion1;
+    public int solucion2;
 }
