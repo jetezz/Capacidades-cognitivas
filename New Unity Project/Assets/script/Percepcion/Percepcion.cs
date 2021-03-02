@@ -8,7 +8,7 @@ public class Percepcion : MonoBehaviour
 {
     private GameObject managerEjercicios;
     private int contador = 0;
-    private int puntos = 0;
+    public int puntos = 0;
     private int nivel;
     private float tiempo = 0;
     private int numRespuestas = 0;
@@ -159,6 +159,7 @@ public class Percepcion : MonoBehaviour
 
         managerEjercicios = GameObject.FindWithTag("MEje");
 
+      
         
         
         if (managerEjercicios.GetComponent<ManagerEjercicios>().nivel == 1)
@@ -716,7 +717,7 @@ public class Percepcion : MonoBehaviour
 
         List<Pregunta42p> aux = new List<Pregunta42p>();
         preguntas4 = new List<Pregunta42p>();
-        aux.Add(new Pregunta42p(spor1, spor2, 10, 4));
+        aux.Add(new Pregunta42p(spor1, spor2, 10, 1));
         aux.Add(new Pregunta42p(spor1, spor3, 13, 13));
         aux.Add(new Pregunta42p(spor1, spor4, 7, 11));
         aux.Add(new Pregunta42p(spor1, spor5, 15, 7));
@@ -734,13 +735,14 @@ public class Percepcion : MonoBehaviour
         aux.Add(new Pregunta42p(spor3, spor6, 10, 12));
         aux.Add(new Pregunta42p(spor3, spor7, 5, 11));
         aux.Add(new Pregunta42p(spor3, spor8, 4, 5));
-        aux.Add(new Pregunta42p(spor4, spor5, 4, 5));
+        aux.Add(new Pregunta42p(spor4, spor5, 4, 6));
 
         preguntas4 = DesordenarLista<Pregunta42p>(aux);
-
+        
 
         panel4.SetActive(true);
         textoPrincipal.GetComponent<Text>().text = "Selecciona los dos dibujos iguales";
+        siguientepreguntaN4();
 
     }
     void siguientepreguntaN4()
@@ -772,9 +774,11 @@ public class Percepcion : MonoBehaviour
     }
     public void eventoSeleccionNivel4(int id, bool izquierda)
     {
+        
         if (izquierda == true)
         {
-            
+            Debug.Log(id +"-"+ preguntas4[contador].solucion1.ToString());
+
             if (preguntas4[contador].solucion1 == id)
             {               
 
@@ -788,6 +792,8 @@ public class Percepcion : MonoBehaviour
         }
         else
         {
+            Debug.Log(id +"-"+ preguntas4[contador].solucion2.ToString());
+
             if (preguntas4[contador].solucion2 == id)
             {
                 puntos++;
