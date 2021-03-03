@@ -35,6 +35,19 @@ public class Atencion : MonoBehaviour
     int repeticiones = 0;
     int contadorRep = 0;
 
+    //nivel3
+    public GameObject panel3;
+    public GameObject numeros;
+    List<int> preguntas3 = new List<int>();
+    int respuestaN3;
+    public GameObject inputNumero;
+
+    //nivel4
+    public GameObject panel4;
+    public GameObject numeros4;
+    List<Pregunta4A> preguntas4;
+    int posicionNumN4 = 45;
+
     public static List<T> DesordenarLista<T>(List<T> input)
     {
         List<T> arr = input;
@@ -54,7 +67,7 @@ public class Atencion : MonoBehaviour
     void Start()
     {
         managerEjercicios = GameObject.FindWithTag("MEje");
-      
+       
         
         if (managerEjercicios.GetComponent<ManagerEjercicios>().nivel == 1)
         {
@@ -291,15 +304,209 @@ public class Atencion : MonoBehaviour
 
     void nivel3()
     {
+        
+        for (int i = 0; i < 2; i++) {
+            preguntas3.Add(Random.Range(0, 36));
+        }
 
+        preguntas3.Add(Random.Range(30, 36));
+
+
+        textoPrincipal.GetComponent<Text>().text = "Introduce el numero que falta 0-35";
+        tiempoEjercicio = 0;
+        panel3.SetActive(true);
+        siguientePreguntaN3();
+    }
+    void siguientePreguntaN3()
+    {
+        if (contador < preguntas3.Count)
+        {
+            generarNumerosN3();
+        }
+        else
+        {
+            panelFin.SetActive(true);
+            textoPrincipal.GetComponent<Text>().text = "Ejercicio de atencion nivel 3 completado";
+            panelFin.transform.GetChild(0).GetComponent<Text>().text = "tiempo";
+            panelFin.transform.GetChild(1).GetComponent<Text>().text = tiempoEjercicio.ToString() + "s";
+            panelFin.transform.GetChild(2).GetComponent<Text>().text = "el tiempo minimo para completar el nivel es 300s";
+            if (tiempoEjercicio < 300)
+            {
+                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 4";
+                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.atencion(4);
+                GameObject managerUsuario = GameObject.FindWithTag("MUsu");
+                managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+            }
+            else
+            {
+                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 3";
+            }
+        }
+    }
+    void generarNumerosN3()
+    {
+        List<int> aux = new List<int>();
+
+        for(int i =0; i< 36; i++)
+        {
+            if(i!= preguntas3[contador])
+            {
+                aux.Add(i);
+            }
+        }
+        aux = DesordenarLista<int>(aux);
+        for(int i = 0; i < aux.Count; i++)
+        {
+            numeros.transform.GetChild(i).GetComponent<Text>().text = aux[i].ToString();
+        }
+        numeros.transform.GetChild(35).GetComponent<Text>().text = "";
     }
 
+    public void inputRespuestaN3(string res)
+    {
+       
+          respuestaN3 = int.Parse(res);
+       
+    }
+    public void botonComprobarN3()
+    {
+        if (respuestaN3 == preguntas3[contador])
+        {
+            imagenCorreccion.GetComponent<Image>().sprite = tick;
+            contador++;
+            siguientePreguntaN3();
+        }
+        else
+        {
+            imagenCorreccion.GetComponent<Image>().sprite = cruz;
+            tiempoEjercicio += 5;
+        }
+
+        tiempo = 1;
+    }
 
     void nivel4()
     {
+        preguntas4 = new List<Pregunta4A>();
+        List<int> aux = new List<int>();
+        List<int> aux2 = new List<int>();
+        List<int> aux3 = new List<int>();
 
 
+       
+        
+        for (int i = 0; i < 4; i++)
+        {
+            aux.Add(Random.Range(0, 49));
+            aux2.Add(Random.Range(0, 49));
+            aux3.Add(Random.Range(0, 49));
+        }        
+             
+        preguntas4.Add(new Pregunta4A(aux));     
+        preguntas4.Add(new Pregunta4A(aux2));       
+        preguntas4.Add(new Pregunta4A(aux3));
 
+
+        textoPrincipal.GetComponent<Text>().text = "Introduce el numero que falta 0-45";
+        tiempoEjercicio = 0;
+        panel4.SetActive(true);
+        siguientePreguntaN4();
+
+    }
+    void siguientePreguntaN4()
+    {
+        if (contador < preguntas4.Count)
+        {
+            generarNumerosN4();
+        }
+        else
+        {
+            panelFin.SetActive(true);
+            textoPrincipal.GetComponent<Text>().text = "Ejercicio de atencion nivel 4 completado";
+            panelFin.transform.GetChild(0).GetComponent<Text>().text = "tiempo";
+            panelFin.transform.GetChild(1).GetComponent<Text>().text = tiempoEjercicio.ToString() + "s";
+            panelFin.transform.GetChild(2).GetComponent<Text>().text = "el tiempo minimo para completar el nivel es 300s";
+            if (tiempoEjercicio < 300)
+            {
+                panelFin.transform.GetChild(3).GetComponent<Text>().text = "has completado todos los niveles de atencion";
+                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.atencion(5);
+                GameObject managerUsuario = GameObject.FindWithTag("MUsu");
+                managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+            }
+            else
+            {
+                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 4";
+            }
+        }
+    }
+    void generarNumerosN4()
+    {
+        List<int> aux = new List<int>();
+        bool esta = false;
+        for (int i = 0; i < 49; i++)
+        {
+            for(int j = 0; j < preguntas4[contador].numeros.Count;j++)
+            {
+                if(i == preguntas4[contador].numeros[j])
+                {
+                    esta = true;
+                }
+            }
+            if (esta==false)
+            {
+                aux.Add(i);
+            }
+            esta = false;
+        }
+        aux = DesordenarLista<int>(aux);
+        for (int i = 0; i < aux.Count; i++)
+        {
+            numeros4.transform.GetChild(i).GetComponent<Text>().text = aux[i].ToString();
+        }
+        numeros4.transform.GetChild(45).GetComponent<Text>().text = "";
+        numeros4.transform.GetChild(46).GetComponent<Text>().text = "";
+        numeros4.transform.GetChild(47).GetComponent<Text>().text = "";
+        numeros4.transform.GetChild(48).GetComponent<Text>().text = "";
+
+    }
+
+    public void botonComprobarN4()
+    {
+        bool esta = false;
+
+        for (int i = 0; i < preguntas4[contador].numeros.Count; i++)
+        {
+            if (preguntas4[contador].numeros[i] == respuestaN3)
+            {
+                esta = true;
+                preguntas4[contador].numeros.RemoveAt(i);
+                break;
+            }
+        }
+
+        if (esta)
+        {
+            imagenCorreccion.GetComponent<Image>().sprite = tick;
+            numeros4.transform.GetChild(posicionNumN4).GetComponent<Text>().text = respuestaN3.ToString();
+            posicionNumN4++;
+            numRespuestas++;
+            if (numRespuestas == 4)
+            {
+                numRespuestas = 0;
+                contador++;
+                posicionNumN4 = 45;
+                siguientePreguntaN4();
+            }
+        }
+        else
+        {
+            imagenCorreccion.GetComponent<Image>().sprite = cruz;
+            tiempoEjercicio += 5;
+        }       
+        
+
+      
+        tiempo = 1;
     }
 
     void Update()
@@ -336,4 +543,14 @@ public class Pregunta1A
     public string imagen;
     public int solucion;
     public int grupo;
+}
+
+class Pregunta4A
+{
+    public Pregunta4A(List<int> nums)
+    {
+        numeros = new List<int>();
+        numeros = nums;
+    }
+    public List<int> numeros;
 }
