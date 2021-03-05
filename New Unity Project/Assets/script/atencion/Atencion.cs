@@ -532,7 +532,7 @@ public class Atencion : MonoBehaviour
 }
 
 
-public class Pregunta1A
+ class Pregunta1A
 {
     public Pregunta1A(string img, int gru)
     {

@@ -839,7 +839,7 @@ public class Percepcion : MonoBehaviour
 }
 
 
-public class Pregunta1P
+ class Pregunta1P
 {
     public Pregunta1P(Sprite img,int gru)
     {
@@ -852,7 +852,7 @@ public class Pregunta1P
     public int grupo;
 }
 
-public class InfoBoton
+ class InfoBoton
 {
     public InfoBoton(Sprite img, bool cor)
     {
@@ -863,7 +863,7 @@ public class InfoBoton
     public bool correcto ;
 }
 
-public class Pregunta2P{
+ class Pregunta2P{
     public Pregunta2P(int i,int gru)
     {
         id = i;
@@ -873,7 +873,7 @@ public class Pregunta2P{
     public int grupo;
 }
 
-public class Pregunta42p
+ class Pregunta42p
 {
     public Pregunta42p(Sprite im1,Sprite im2, int id1, int id2)
     {

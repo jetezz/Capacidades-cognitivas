@@ -99,6 +99,11 @@ public class Gnoxias : MonoBehaviour
     Dictionary<int, Sprite> imagenesN2;
     Dictionary<int, Sprite> siluetasN2;
     List<Pregunta2G> preguntas2;
+
+    //Nivel3
+    public GameObject panel3;
+    List<Pregunta3G> preguntas3;
+    int numRespuestas = 0;
     
 
 
@@ -122,10 +127,10 @@ public class Gnoxias : MonoBehaviour
 
     void Start()
     {
-        
+        nivel3();
         managerEjercicios = GameObject.FindWithTag("MEje");
         
-        
+        /*
         if (managerEjercicios.GetComponent<ManagerEjercicios>().nivel == 1)
         {
             nivel1();
@@ -147,6 +152,7 @@ public class Gnoxias : MonoBehaviour
             nivel4();
 
         }
+        */
         
     }
 
@@ -383,10 +389,10 @@ public class Gnoxias : MonoBehaviour
 
         for(int i = 0; i < 5; i++)
         {
-            rand = randomGrupos();
+            rand = randomGrupos(preguntas2[contador].grupo);
             while (rand==preguntas2[contador].id)
             {
-                rand = randomGrupos();
+                rand = randomGrupos(preguntas2[contador].grupo);
             }
             for(int j = 0; j < aux.Count; j++)
             {
@@ -429,17 +435,17 @@ public class Gnoxias : MonoBehaviour
         siguientePreguntaN2();    
     }
 
-    int randomGrupos()
+    int randomGrupos(int i)
     {
         int aux=0;
-        if (preguntas2[contador].grupo == 1)
+        if (i == 1)
         {
             aux = Random.Range(0, 6);
-        }else if(preguntas2[contador].grupo == 2)
+        }else if(i == 2)
         {
             aux = Random.Range(6, 13);
         }
-        else if(preguntas2[contador].grupo == 3)
+        else if(i == 3)
         {
             aux = Random.Range(13, 19);
         }
@@ -447,9 +453,211 @@ public class Gnoxias : MonoBehaviour
     }
     void nivel3()
     {
+        imagenesN2 = new Dictionary<int, Sprite>();
+        siluetasN2 = new Dictionary<int, Sprite>();
+
+        imagenesN2.Add(0, f1);
+        imagenesN2.Add(1, f2);
+        imagenesN2.Add(2, f3);
+        imagenesN2.Add(3, f4);
+        imagenesN2.Add(4, f5);
+        imagenesN2.Add(5, f6);
+        imagenesN2.Add(6, f7);
+        imagenesN2.Add(7, f8);
+        imagenesN2.Add(8, f9);
+        imagenesN2.Add(9, f10);
+        imagenesN2.Add(10, f11);
+        imagenesN2.Add(11, f12);
+        imagenesN2.Add(12, f13);
+        imagenesN2.Add(13, f14);
+        imagenesN2.Add(14, f15);
+        imagenesN2.Add(15, f16);
+        imagenesN2.Add(16, f17);
+        imagenesN2.Add(17, f18);
+        imagenesN2.Add(18, f19);
+
+        siluetasN2.Add(0, s1);
+        siluetasN2.Add(1, s2);
+        siluetasN2.Add(2, s3);
+        siluetasN2.Add(3, s4);
+        siluetasN2.Add(4, s5);
+        siluetasN2.Add(5, s6);
+        siluetasN2.Add(6, s7);
+        siluetasN2.Add(7, s8);
+        siluetasN2.Add(8, s9);
+        siluetasN2.Add(9, s10);
+        siluetasN2.Add(10, s11);
+        siluetasN2.Add(11, s12);
+        siluetasN2.Add(12, s13);
+        siluetasN2.Add(13, s14);
+        siluetasN2.Add(14, s15);
+        siluetasN2.Add(15, s16);
+        siluetasN2.Add(16, s17);
+        siluetasN2.Add(17, s18);
+        siluetasN2.Add(18, s19);
+
+        preguntas3 = new List<Pregunta3G>();
+
+        preguntas3.Add(generarPreguntas(1));
+        preguntas3.Add(generarPreguntas(1));
+        preguntas3.Add(generarPreguntas(1));
+        preguntas3.Add(generarPreguntas(1));
+
+        preguntas3.Add(generarPreguntas(2));
+        preguntas3.Add(generarPreguntas(2));
+        preguntas3.Add(generarPreguntas(2));
+        preguntas3.Add(generarPreguntas(2));
+
+        preguntas3.Add(generarPreguntas(3));
+        preguntas3.Add(generarPreguntas(3));
+        preguntas3.Add(generarPreguntas(3));
+        preguntas3.Add(generarPreguntas(3));
+        preguntas3.Add(generarPreguntas(3));
+
+
+
+
+
+
+        panel3.SetActive(true);
+        textoPrincipal.GetComponent<Text>().text = "Selecciona las imagenes que aparecen en la silueta";
+        siguientePreguntaN3();
 
     }
+    Pregunta3G generarPreguntas(int grupo)
+    {
+        List<int> imagenes = new List<int>();
+        int rand;
+        bool igual = false;
+        while (imagenes.Count < 3)
+        {
+            rand = randomGrupos(grupo);
+            for(int i = 0; i < imagenes.Count; i++)
+            {
+                if (imagenes[i] == rand)
+                {
+                    igual = true;
+                }              
+            }
+            if (!igual)
+            {
+                imagenes.Add(rand);
+            }
+            igual = false;
+        }
 
+        List<Sprite> auxSprites = new List<Sprite>();
+        List<int> auxIds = new List<int>();
+
+        for(int i = 0; i < 3; i++)
+        {
+            auxSprites.Add(siluetasN2[imagenes[i]]);
+            auxIds.Add(imagenes[i]);
+        }
+
+        Pregunta3G ejercicio = new Pregunta3G(auxSprites, auxIds, grupo);
+        return ejercicio;
+        
+    }
+    void siguientePreguntaN3()
+    {
+        if (contador < preguntas3.Count)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                panel3.transform.GetChild(0).GetChild(i).GetComponent<Image>().sprite = preguntas3[contador].silueta[i];
+            }
+            generarBotonesN3();
+        }
+        else
+        {
+            panelFin.SetActive(true);
+            textoPrincipal.GetComponent<Text>().text = "Ejercicio de Gnosia nivel 3 completado";
+            panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
+            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 39 ";
+            if (puntos == 39)
+            {
+                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 4";
+                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.gnosia(4);
+                GameObject managerUsuario = GameObject.FindWithTag("MUsu");
+                managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+            }
+            else
+            {
+                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 3";
+            }
+        }
+    }
+    void generarBotonesN3()
+    {
+        List<Pregunta1G> aux = new List<Pregunta1G>();
+        int rand;
+        bool igual = false;
+        for(int i = 0; i < 3; i++)
+        {
+            aux.Add(new Pregunta1G(imagenesN2[preguntas3[contador].ids[i]], preguntas3[contador].ids[i]));
+        }
+
+        for(int i = 0; i < 3; i++)
+        {
+            rand = randomGrupos(preguntas3[contador].grupo);
+            for(int j = 0; j < aux.Count; j++)
+            {
+                if (rand == aux[j].id)
+                {
+                    igual = true;
+                }
+            }
+            if (igual)
+            {
+                i--;
+            }
+            else
+            {
+                aux.Add(new Pregunta1G(imagenesN2[rand], rand));
+            }
+            igual = false;
+        }
+        aux = DesordenarLista<Pregunta1G>(aux);
+        for (int i = 0; i < 6; i++)
+        {
+            panel3.transform.GetChild(i + 1).gameObject.SetActive(true);
+            panel3.transform.GetChild(i + 1).GetComponent<Image>().sprite = aux[i].imagen;
+            panel3.transform.GetChild(i + 1).GetComponent<IdSeleccion>().id= aux[i].id;
+
+        }
+    }
+
+    public void botonesN3(int id)
+    {
+        bool acierto = false;
+        for(int i = 0; i < 3; i++)
+        {
+            if (panel3.transform.GetChild(id).GetComponent<IdSeleccion>().id == preguntas3[contador].ids[i])
+            {
+                acierto = true;
+                break;
+            }
+        }
+        if (acierto)
+        {
+            puntos++;
+            imagenCorreccion.GetComponent<Image>().sprite = tick;
+            panel3.transform.GetChild(id).gameObject.SetActive(false);
+        }
+        else
+        {
+            imagenCorreccion.GetComponent<Image>().sprite = cruz;
+        }
+        tiempo = 1;
+        numRespuestas++;
+        if (numRespuestas == 3)
+        {
+            numRespuestas = 0;
+            contador++;
+            siguientePreguntaN3();
+        }      
+    }
     void nivel4()
     {
 
@@ -506,4 +714,17 @@ class Pregunta2G
     public int id;
     public int grupo;
 
+}
+
+class Pregunta3G
+{
+    public Pregunta3G(List<Sprite>sil,List<int>id,int gru)
+    {
+        silueta = sil;
+        ids = id;
+        grupo = gru;
+    }
+    public List<Sprite> silueta;
+    public List<int> ids;
+    public int grupo;
 }
