@@ -89,6 +89,23 @@ public class Gnoxias : MonoBehaviour
     public Sprite s18;
     public Sprite s19;
 
+    //grupo4 n1 
+    public Sprite puz1;
+    public Sprite puz2;
+    public Sprite puz3;
+    public Sprite puz4;
+    public Sprite puz5;
+    public Sprite puz6;
+    public Sprite puz7;
+    public Sprite puz8;
+    public Sprite puz9;
+    public Sprite puz10;
+    public Sprite puz11;
+    public Sprite puz12;
+
+
+
+
 
     //nivel1
     public GameObject panel1;
@@ -104,7 +121,11 @@ public class Gnoxias : MonoBehaviour
     public GameObject panel3;
     List<Pregunta3G> preguntas3;
     int numRespuestas = 0;
-    
+
+    //Nivel4
+    Dictionary<int, Sprite> grupo1N4;
+    public GameObject panel4;
+    List<Pregunta4G> preguntasN4;
 
 
 
@@ -127,10 +148,10 @@ public class Gnoxias : MonoBehaviour
 
     void Start()
     {
-        nivel3();
+     
         managerEjercicios = GameObject.FindWithTag("MEje");
         
-        /*
+        
         if (managerEjercicios.GetComponent<ManagerEjercicios>().nivel == 1)
         {
             nivel1();
@@ -152,7 +173,7 @@ public class Gnoxias : MonoBehaviour
             nivel4();
 
         }
-        */
+        
         
     }
 
@@ -660,8 +681,73 @@ public class Gnoxias : MonoBehaviour
     }
     void nivel4()
     {
+        grupo1N4 = new Dictionary<int, Sprite>();
+        grupo1N4.Add(0, puz1);
+        grupo1N4.Add(1, puz2);
+        grupo1N4.Add(2, puz3);
+        grupo1N4.Add(3, puz4);
+        grupo1N4.Add(4, puz5);
+        grupo1N4.Add(5, puz6);
+        grupo1N4.Add(6, puz7);
+        grupo1N4.Add(7, puz8);
+        grupo1N4.Add(8, puz9);
+        grupo1N4.Add(9, puz10);
+        grupo1N4.Add(10, puz11);
+        grupo1N4.Add(11, puz12);
 
+        preguntasN4 = new List<Pregunta4G>();
+        for (int i = 0; i < 12; i++)
+        {
+            preguntasN4.Add(new Pregunta4G(grupo1N4[i],i));
+        }
 
+        preguntasN4 = DesordenarLista<Pregunta4G>(preguntasN4);
+        panel4.SetActive(true);
+        textoPrincipal.GetComponent<Text>().text = "Selecciona la casilla a la que corresponde esta imagen ";
+        siguientePreguntaN4();
+    }
+    void siguientePreguntaN4()
+    {
+        if (contador < preguntasN4.Count)
+        {
+            panel4.transform.GetChild(1).GetComponent<Image>().sprite = preguntasN4[contador].imagen;
+            
+        }
+        else
+        {
+            panelFin.SetActive(true);
+            textoPrincipal.GetComponent<Text>().text = "Ejercicio de Gnosia nivel 4 completado";
+            panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
+            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 12 ";
+            if (puntos == 12)
+            {
+                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Has completado todos los ejercicios de gnosias";
+                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.gnosia(5);
+                GameObject managerUsuario = GameObject.FindWithTag("MUsu");
+                managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+            }
+            else
+            {
+                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 4";
+            }
+        }
+    }
+    public void botonN4(int id)
+    {
+        
+        if (preguntasN4[contador].id+1 == id)
+        {
+            puntos++;
+            imagenCorreccion.GetComponent<Image>().sprite = tick;
+            panel4.transform.GetChild(id+1).GetComponent<Image>().sprite = preguntasN4[contador].imagen;           
+        }
+        else
+        {
+            imagenCorreccion.GetComponent<Image>().sprite = cruz;
+        }
+        contador++;
+        tiempo = 1;
+        siguientePreguntaN4();
     }
     
     void Update()
@@ -727,4 +813,17 @@ class Pregunta3G
     public List<Sprite> silueta;
     public List<int> ids;
     public int grupo;
+}
+
+class Pregunta4G
+{
+    public Pregunta4G(Sprite img, int i)
+    {
+        imagen = img;
+        id = i;
+    }
+    public Sprite imagen;
+    public int id;
+    public bool activo = false;
+
 }

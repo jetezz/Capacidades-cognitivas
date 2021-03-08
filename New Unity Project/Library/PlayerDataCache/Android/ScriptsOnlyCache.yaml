@@ -224,6 +224,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1514}
     - Class: 114
+      Script: {instanceID: 1918}
+    - Class: 114
       Script: {instanceID: 2100}
     - Class: 114
       Script: {instanceID: 2464}
@@ -1158,7 +1160,7 @@ ScriptsOnlyBuild:
     className: EventTrigger
   - hash:
       serializedVersion: 2
-      Hash: c52424204c271797d44f94e8fd0b3639
+      Hash: 11a0c4fcd010238380dffe9c2496a46c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Gnoxias
