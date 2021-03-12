@@ -753,7 +753,7 @@ public class Gnoxias : MonoBehaviour
     void Update()
     {
         tiempo -= Time.deltaTime;
-        //tiempoEjercicio += Time.deltaTime;
+        
         if (tiempo > 0)
         {
 

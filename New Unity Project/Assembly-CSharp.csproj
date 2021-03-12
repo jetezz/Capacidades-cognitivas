@@ -79,6 +79,7 @@
     <Compile Include="Assets\script\Drop.cs" />
     <Compile Include="Assets\script\menu.cs" />
     <Compile Include="Assets\script\pru.cs" />
+    <Compile Include="Assets\script\praxia\Praxia.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
