@@ -55,6 +55,17 @@ public class Praxia : MonoBehaviour
     List<Praxia3> preguntas3;
     int numrespuestas = 0;
 
+    //nivel4
+    public GameObject panel4;
+    public GameObject slotsN4;
+    List<Praxia4> preguntas4;
+    public bool[] resultados = new bool[6];
+    public GameObject botonCorregir;
+    public GameObject botonSiguiente;
+    public GameObject panelBloqueo;
+    public GameObject drags;
+
+
     public static List<T> DesordenarLista<T>(List<T> input)
     {
         List<T> arr = input;
@@ -461,10 +472,137 @@ public class Praxia : MonoBehaviour
     }
     void nivel4()
     {
+        
+        textoPrincipal.GetComponent<Text>().text = "Indica el orden de las secuencias";
+        for (int i = 0; i < 6; i++)
+        {
+            resultados[i] = false;
+            drags.transform.GetChild(i).GetComponent<Drag>().iniciarposicion();
+        }
+        preguntas4 = new List<Praxia4>();
+        panel4.SetActive(true);
+
+        List < Praxia1 > fase1= new List<Praxia1>();
+        fase1.Add(new Praxia1(0, "Llamar a un restaurante"));
+        fase1.Add(new Praxia1(1, "Reservar una mesa"));
+        fase1.Add(new Praxia1(2, "Ir al restaurante"));
+        fase1.Add(new Praxia1(3, "Aguardar en la entrada del restaurante"));
+        fase1.Add(new Praxia1(4, "Leer el menu"));
+        fase1.Add(new Praxia1(5, "Pedir los platos al camarero"));
+
+        fase1 = DesordenarLista<Praxia1>(fase1);
+        preguntas4.Add(new Praxia4(fase1));
+
+
+        List<Praxia1> fase2 = new List<Praxia1>();
+        fase2.Add(new Praxia1(1, "Esperar al tren en el anden"));
+        fase2.Add(new Praxia1(2, "Subir al tren"));
+        fase2.Add(new Praxia1(0, "Comprar los billetes"));
+        fase2.Add(new Praxia1(5, "Salir de la estacion de trenes"));
+        fase2.Add(new Praxia1(4, "Bajar del tren"));
+        fase2.Add(new Praxia1(3, "Buscar el asiento"));
+
+        fase2 = DesordenarLista<Praxia1>(fase2);
+        preguntas4.Add(new Praxia4(fase2));
+
+        List<Praxia1> fase3 = new List<Praxia1>();
+        fase3.Add(new Praxia1(3, "Comer"));
+        fase3.Add(new Praxia1(1, "Cocinar la comida"));
+        fase3.Add(new Praxia1(2, "Poner la mesa"));
+        fase3.Add(new Praxia1(4, "Tirar los restos de comida"));
+        fase3.Add(new Praxia1(0, "Pensar la comida"));
+        fase3.Add(new Praxia1(5, "Lavar los platos"));
+
+        fase3 = DesordenarLista<Praxia1>(fase3);
+        preguntas4.Add(new Praxia4(fase3));
+
+
+        List<Praxia1> fase4 = new List<Praxia1>();
+        fase4.Add(new Praxia1(1, "Salgo de casa"));
+        fase4.Add(new Praxia1(4, "Meto la compra en la bolsa"));
+        fase4.Add(new Praxia1(5, "Coloco la compra en su sitio"));
+        fase4.Add(new Praxia1(3, "Paso por caja y pago"));
+        fase4.Add(new Praxia1(2, "Cojo un carro"));
+        fase4.Add(new Praxia1(0, "Elaboro una lista de la compra"));
+
+        fase4 = DesordenarLista<Praxia1>(fase4);
+        preguntas4.Add(new Praxia4(fase4));
+
+
+        List<Praxia1> fase5 = new List<Praxia1>();
+        fase5.Add(new Praxia1(0, "Meter la ropa en la lavadora"));
+        fase5.Add(new Praxia1(3, "Esperar a que termina el lavado"));
+        fase5.Add(new Praxia1(4, "Teder la ropa"));
+        fase5.Add(new Praxia1(5, "Planchar la ropa"));
+        fase5.Add(new Praxia1(2, "Seleccionar el programa de lavado"));
+        fase5.Add(new Praxia1(1, "Echar el jabon y el suavante"));
+
+        fase5 = DesordenarLista<Praxia1>(fase5);
+        preguntas4.Add(new Praxia4(fase5));
+
+        siguientePreguntaN4();
 
     }
-
     
+    void siguientePreguntaN4()
+    {
+        
+        botonSiguiente.SetActive(false);
+        if (contador < preguntas4.Count)
+        {
+            generarBotones4();
+        }
+        else
+        {
+            final("Ejercicio praxia nivel 4 completado", 30, 5);
+        }
+    }
+    void generarBotones4()
+    {
+        for(int i = 0; i < 6; i++)
+        {
+            panel4.transform.GetChild(i).GetComponent<Text>().text = preguntas4[contador].preguntas[i].pregunta;
+            slotsN4.transform.GetChild(i).GetComponent<SlotPraxia>().id= preguntas4[contador].preguntas[i].id;
+            slotsN4.transform.GetChild(i).GetComponent<Image>().color = Color.grey;
+            drags.transform.GetChild(i).GetComponent<Drag>().resetPosition();
+        }
+    }
+    public void corregirN4()
+    {
+        for(int i = 0; i < 6; i++)
+        {
+            if (resultados[i])
+            {
+                puntos++;
+                slotsN4.transform.GetChild(i).GetComponent<Image>().color = Color.green;
+            }
+            else
+            {
+                slotsN4.transform.GetChild(i).GetComponent<Image>().color = Color.red;
+            }
+        }
+        botonCorregir.SetActive(false);
+        botonSiguiente.SetActive(true);
+        panelBloqueo.SetActive(true);
+
+
+    }
+    public void siguienteN4()
+    {
+        numrespuestas = 0;
+        contador++;
+        siguientePreguntaN4();
+        panelBloqueo.SetActive(false);
+
+    }
+    public void nuevaRespuesta()
+    {
+        numrespuestas++;
+        if (numrespuestas > 5)
+        {
+            botonCorregir.SetActive(true);
+        }
+    }
     void Update()
     {
         tiempo -= Time.deltaTime;
@@ -479,6 +617,7 @@ public class Praxia : MonoBehaviour
         {
             imagenCorreccion.SetActive(false);
         }
+        
     }
     public void irInicio()
     {
@@ -518,5 +657,17 @@ class Praxia3
     }
     public List<string> preguntas;
     public int contador = 0;
+    
+}
+
+class Praxia4
+{
+    public Praxia4(List<Praxia1> aux)
+    {
+        preguntas = new List<Praxia1>();
+        preguntas = aux;
+    }
+    
+    public List<Praxia1> preguntas;
     
 }

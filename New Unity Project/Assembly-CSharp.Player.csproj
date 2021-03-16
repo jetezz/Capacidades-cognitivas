@@ -62,6 +62,8 @@
     <Compile Include="Assets\script\ManagerUsuario.cs" />
     <Compile Include="Assets\script\Ejercicios.cs" />
     <Compile Include="Assets\script\Drag2.cs" />
+    <Compile Include="Assets\script\praxia\Praxia.cs" />
+    <Compile Include="Assets\script\atencion\Atencion.cs" />
     <Compile Include="Assets\script\Test.cs" />
     <Compile Include="Assets\script\Lista.cs" />
     <Compile Include="Assets\script\Percepcion\Percepcion.cs" />
@@ -69,14 +71,16 @@
     <Compile Include="Assets\script\IdUsuario.cs" />
     <Compile Include="Assets\script\pru2.cs" />
     <Compile Include="Assets\script\Drag.cs" />
+    <Compile Include="Assets\script\gnoxias\Gnoxias.cs" />
     <Compile Include="Assets\script\Drop2.cs" />
     <Compile Include="Assets\script\MenuEjercicios.cs" />
-    <Compile Include="Assets\script\Percepcion\IdSeleccion.cs" />
+    <Compile Include="Assets\script\IdSeleccion.cs" />
     <Compile Include="Assets\script\Lenguaje.cs" />
     <Compile Include="Assets\script\MoveSystem.cs" />
     <Compile Include="Assets\script\Drop.cs" />
     <Compile Include="Assets\script\menu.cs" />
     <Compile Include="Assets\script\pru.cs" />
+    <Compile Include="Assets\script\praxia\SlotPraxia.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
