@@ -108,7 +108,7 @@ public class ManagerEjercicios : MonoBehaviour
         {
             SceneManager.LoadScene(10);
         }
-        if (ejercicio == 6)
+        if (ejercicio == 7)
         {
             SceneManager.LoadScene(6);
         }
