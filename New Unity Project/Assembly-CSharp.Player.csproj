@@ -59,12 +59,14 @@
     <Compile Include="Assets\script\Memoria.cs" />
     <Compile Include="Assets\script\ItemSlot.cs" />
     <Compile Include="Assets\script\Ejemplojson.cs" />
+    <Compile Include="Assets\script\orientacion\Orientacion.cs" />
     <Compile Include="Assets\script\ManagerUsuario.cs" />
     <Compile Include="Assets\script\Ejercicios.cs" />
     <Compile Include="Assets\script\Drag2.cs" />
     <Compile Include="Assets\script\praxia\Praxia.cs" />
     <Compile Include="Assets\script\atencion\Atencion.cs" />
     <Compile Include="Assets\script\Test.cs" />
+    <Compile Include="Assets\script\praxia\SlotPraxia.cs" />
     <Compile Include="Assets\script\Lista.cs" />
     <Compile Include="Assets\script\Percepcion\Percepcion.cs" />
     <Compile Include="Assets\script\ManagerEjercicios.cs" />
@@ -80,7 +82,7 @@
     <Compile Include="Assets\script\Drop.cs" />
     <Compile Include="Assets\script\menu.cs" />
     <Compile Include="Assets\script\pru.cs" />
-    <Compile Include="Assets\script\praxia\SlotPraxia.cs" />
+    <Compile Include="Assets\script\orientacion\SlotOrientacion.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
