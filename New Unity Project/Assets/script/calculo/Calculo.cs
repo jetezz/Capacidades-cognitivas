@@ -63,7 +63,20 @@ public class Calculo : MonoBehaviour
     List<Calculo2> preguntas2;
     public GameObject precio;
     float dinero;
+    //nivel3
+    public GameObject panel3;   
+    List<Calculo3> preguntas3;
+    List<Moneda> monedas;
+    List<Billete> billetes;
+    List<Calculo3> conjuntos;
 
+    //nivel4
+    public GameObject panel4;
+    int preguntas4 = 5;
+    List<Grupo2> conjunto2;
+    public float precioTotal = 0;
+    public float precioInput = 0;
+ 
     public static List<T> DesordenarLista<T>(List<T> input)
     {
         List<T> arr = input;
@@ -83,7 +96,8 @@ public class Calculo : MonoBehaviour
     void Start()
     {
         managerEjercicios = GameObject.FindWithTag("MEje");
-      
+
+        
         
         if (managerEjercicios.GetComponent<ManagerEjercicios>().nivel == 1)
         {
@@ -106,6 +120,7 @@ public class Calculo : MonoBehaviour
             nivel4();
 
         }
+        
         
     }
     void final(string nivel, int pMax, int siguienteNnivel)
@@ -262,11 +277,300 @@ public class Calculo : MonoBehaviour
     }
     void nivel3()
     {
+        preguntas3 = new List<Calculo3>();
+        monedas = new List<Moneda>();
+        billetes = new List<Billete>();
 
+        monedas.Add(new Moneda(c5, 0.05f));
+        monedas.Add(new Moneda(c10, 0.10f));
+        monedas.Add(new Moneda(c20, 0.20f));
+        monedas.Add(new Moneda(c50, 0.50f));
+
+        billetes.Add(new Billete(e5, 5f));
+        billetes.Add(new Billete(e10, 10f));
+        billetes.Add(new Billete(e20, 20f));
+        billetes.Add(new Billete(e50, 50f));
+
+        conjuntos = new List<Calculo3>();
+
+        //15,10
+        List<Moneda> monedas1=new List<Moneda>();
+        List<Billete> billetes1=new List<Billete>();      
+      
+        monedas1.Add(monedas[1]);
+
+        billetes1.Add(billetes[0]);
+        billetes1.Add(billetes[1]);
+
+        preguntas3.Add(new Calculo3(monedas1, billetes1));
+
+        //15,15
+        List<Moneda> monedas2 = new List<Moneda>();
+        List<Billete> billetes2 = new List<Billete>();
+        monedas2.Add(monedas[1]);      
+
+        billetes2.Add(billetes[0]);
+        billetes2.Add(billetes[0]);
+        billetes2.Add(billetes[0]);
+
+        conjuntos.Add(new Calculo3(monedas2, billetes2));
+
+        //20,20
+        List<Moneda> monedas3 = new List<Moneda>();
+        List<Billete> billetes3 = new List<Billete>();
+        monedas3.Add(monedas[1]);
+        monedas3.Add(monedas[1]);
+      
+
+        billetes3.Add(billetes[2]);
+       
+     
+
+        preguntas3.Add(new Calculo3(monedas3, billetes3));
+
+        //20,20
+        List<Moneda> monedas4 = new List<Moneda>();
+        List<Billete> billetes4 = new List<Billete>();
+        monedas4.Add(monedas[2]);        
+
+
+        billetes4.Add(billetes[1]);
+        billetes4.Add(billetes[1]);
+
+
+
+
+        conjuntos.Add(new Calculo3(monedas4, billetes4));
+
+        panel3.SetActive(true);
+
+        //20,50
+        List<Moneda> monedas5 = new List<Moneda>();
+        List<Billete> billetes5 = new List<Billete>();
+        monedas5.Add(monedas[3]);
+        billetes5.Add(billetes[1]);
+        billetes5.Add(billetes[1]);
+
+        preguntas3.Add(new Calculo3(monedas5, billetes5));
+
+        //20,50
+        List<Moneda> monedas6 = new List<Moneda>();
+        List<Billete> billetes6 = new List<Billete>();
+        monedas6.Add(monedas[2]);
+        monedas6.Add(monedas[2]);
+        monedas6.Add(monedas[1]);
+
+        billetes6.Add(billetes[2]);
+        conjuntos.Add(new Calculo3(monedas6, billetes6));
+
+
+        //20,50
+        List<Moneda> monedas7 = new List<Moneda>();
+        List<Billete> billetes7 = new List<Billete>();
+        
+        billetes7.Add(billetes[3]);
+        
+
+        preguntas3.Add(new Calculo3(monedas7, billetes7));
+
+
+        //20,50
+        List<Moneda> monedas8 = new List<Moneda>();
+        List<Billete> billetes8 = new List<Billete>();
+       
+
+        billetes8.Add(billetes[2]);
+        billetes8.Add(billetes[2]);
+        billetes8.Add(billetes[1]);
+
+        conjuntos.Add(new Calculo3(monedas8, billetes8));
+
+
+
+
+        panel3.SetActive(true);
+
+
+
+
+        textoPrincipal.GetComponent<Text>().text = "Pulsa en el grupo que contenga el mismo dinero que el grupo de ariba";
+        siguientePreguntaN3();
+
+    }
+
+    void siguientePreguntaN3()
+    {
+      
+        if (contador < preguntas3.Count)
+        {
+            instanciar(panel3.transform.GetChild(0).gameObject, preguntas3[contador].monedas, preguntas3[contador].billetes);
+            generarGruposN3();
+        }
+        else
+        {
+            final("Ejercicio de calculo nivel3 completado", 4, 4);
+        }
+    }
+    void generarGruposN3()
+    {
+        
+        List<Calculo3> aux=new List<Calculo3>();
+        for(int i = 0; i < conjuntos.Count; i++)
+        {
+            if (preguntas3[contador].cantidad == conjuntos[i].cantidad)
+            {
+                aux.Add(conjuntos[i]);
+                break;
+            }
+        }
+
+        for(int i = 0; i < 4; i++)
+        {
+          for(int j = 0; j < conjuntos.Count; j++)
+            {
+                if (preguntas3[contador].cantidad != conjuntos[j].cantidad)
+                {
+                    bool repetido=false;
+                    for(int y = 0; y < aux.Count; y++)
+                    {
+                        if (conjuntos[j].cantidad == aux[y].cantidad)
+                        {
+                            repetido = true;
+                        }
+                    }
+                    if (repetido == false)
+                    {
+                        aux.Add(conjuntos[j]);
+                        break;
+                    }
+                    
+                }
+            }
+        }
+        aux = DesordenarLista<Calculo3>(aux);
+        for(int i = 0; i < 4; i++)
+        {
+            instanciar(panel3.transform.GetChild(i + 1).gameObject, aux[i].monedas, aux[i].billetes);
+            if(aux[i].cantidad== preguntas3[contador].cantidad)
+            {
+                panel3.transform.GetChild(i + 1).GetComponent<IdSeleccion>().correcto = true;
+            }
+            else
+            {
+                panel3.transform.GetChild(i + 1).GetComponent<IdSeleccion>().correcto = false;
+            }
+        }
+
+        
+    }
+    void instanciar(GameObject objeto,List<Moneda> mone, List<Billete> bille)
+    {
+        GameObject g;
+        for(int i = 0; i < mone.Count; i++)
+        {
+            g = Instantiate(objeto.transform.GetChild(0).gameObject, objeto.transform);
+            g.SetActive(true);
+            g.GetComponent<Image>().sprite = mone[i].imagen;
+            
+        }
+        for(int i = 0; i < bille.Count;i++)
+        {
+            g = Instantiate(objeto.transform.GetChild(1).gameObject, objeto.transform);
+            g.SetActive(true);
+            g.GetComponent<Image>().sprite = bille[i].imagen;
+        }
+    }
+    public void pulsarGrupoN3(int i)
+    {
+        if (panel3.transform.GetChild(i).GetComponent<IdSeleccion>().correcto)
+        {
+            puntos++;
+            imagenCorreccion.GetComponent<Image>().sprite = tick;
+        }
+    
+        else
+        {
+            imagenCorreccion.GetComponent<Image>().sprite = cruz;
+        }
+        tiempo = 1;
+        contador++;
+        destruirObjetos();
+        siguientePreguntaN3();
+    }
+    void destruirObjetos()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+
+            for (int j = 0; j < panel3.transform.GetChild(i).childCount - 2; j++)
+            {               
+                DestroyImmediate(panel3.transform.GetChild(i).GetChild(2).gameObject);
+                j--;
+            }
+        }
     }
     void nivel4()
     {
+        conjunto2 = new List<Grupo2>();
+        conjunto2.Add(new Grupo2(img1, etiqueta1, 10.50f));
+        conjunto2.Add(new Grupo2(img2, etiqueta2, 5.30f));
+        conjunto2.Add(new Grupo2(img3, etiqueta3, 3.60f));
+        conjunto2.Add(new Grupo2(img4, etiqueta4, 1.80f));
+        conjunto2.Add(new Grupo2(img5, etiqueta5, 15.50f));
+        conjunto2.Add(new Grupo2(img6, etiqueta6, 20.30f));
+        conjunto2.Add(new Grupo2(img7, etiqueta7, 30.50f));
+        conjunto2.Add(new Grupo2(img8, etiqueta8, 40.50f));
+        conjunto2.Add(new Grupo2(img9, etiqueta9, 50.35f));
+        
+        panel4.SetActive(true);
+        textoPrincipal.GetComponent<Text>().text = "calcula la suma de estos objetos, utiliza '.' para los centimos Ej 10.25";
+        siguientePreguntaN4();
+    }
+    void siguientePreguntaN4()
+    {
+        precioTotal = 0;
+        if (contador < preguntas4)
+        {
+            generarGruposN4();
+        }
+        else
+        {
+            final("Ejercicio de calculo nivel4 completado", 5, 5);
+        }
+    }
+    void generarGruposN4()
+    {
+        int rand = 0;
+        for(int i = 0; i < 4; i++)
+        {
+            rand = UnityEngine.Random.Range(0, conjunto2.Count);
+            panel4.transform.GetChild(i).GetChild(0).GetComponent<Image>().sprite = conjunto2[rand].img;
+            panel4.transform.GetChild(i).GetChild(1).GetComponent<Image>().sprite = conjunto2[rand].eti;
+            precioTotal += conjunto2[rand].precio;
 
+        }
+        precioTotal = (float)(Math.Round(precioTotal * 100) / 100);
+    }
+
+    public void inputPrecio(string pre)
+    {
+        precioInput = float.Parse(pre,System.Globalization.CultureInfo.InvariantCulture);
+    }
+    public void botonNivel4()
+    {
+        if (precioInput == precioTotal)
+        {
+            puntos++;
+            imagenCorreccion.GetComponent<Image>().sprite = tick;
+        }
+        else
+        {
+            imagenCorreccion.GetComponent<Image>().sprite = cruz;
+        }
+        tiempo = 1;
+        contador++;
+        destruirObjetos();
+        siguientePreguntaN4();
     }
 
     void Update()
@@ -318,4 +622,68 @@ class Calculo2
     public float precio;
     public Sprite imagen;
     public Sprite etiqueta;
+}
+
+class Moneda
+{
+    public Moneda(Sprite img, float din)
+    {
+        imagen = img;
+        dinero = din;
+    }
+    public Sprite imagen;
+    public float dinero;
+}
+
+class Billete
+{
+    public Billete(Sprite img, float din)
+    {
+        imagen = img;
+        dinero = din;
+    }
+    public Sprite imagen;
+    public float dinero;
+
+}
+
+class Calculo3
+{
+    public Calculo3(List<Moneda> mon, List<Billete> bill)
+    {
+        monedas = new List<Moneda>();
+        billetes = new List<Billete>();
+        monedas = mon;
+        billetes = bill;
+
+        for (int i = 0; i < monedas.Count; i++)
+        {
+            cantidad += monedas[i].dinero;
+        }
+        for (int i = 0; i < billetes.Count; i++)
+        {
+            cantidad += billetes[i].dinero;
+        }
+
+    }
+
+
+        
+    public List<Moneda> monedas;
+    public List<Billete> billetes;
+    public float cantidad;
+}
+
+class Grupo2
+{
+    public Grupo2(Sprite im,Sprite et, float pre)
+    {
+        img = im;
+        eti = et;
+        precio = pre;
+    }
+
+    public Sprite img;
+    public Sprite eti;
+    public float precio;
 }
