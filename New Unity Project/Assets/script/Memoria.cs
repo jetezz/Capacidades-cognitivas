@@ -133,16 +133,16 @@ public class Memoria : MonoBehaviour
 
         fase3.imagen = cocina;
         fase3.preguntas.Add("¿Dónde está el horno?");
-        fase3.preguntas.Add("¿Dónde está el frigorifico?");
+        fase3.preguntas.Add("¿Dónde está el frigorífico?");
         fase3.preguntas.Add("¿Dónde está el fregadero?");
         fase3.preguntas.Add("¿Dónde está el microondas?");
 
         fase4.imagen = habitacion;
         fase4.preguntas.Add("¿Dónde está el espejo?");
-        fase4.preguntas.Add("¿Dónde está la planta?");
+        fase4.preguntas.Add("¿Dónde está la maceta?");
         fase4.preguntas.Add("¿Dónde está la cama?");
         fase4.preguntas.Add("¿Dónde está la ventana?");
-        fase4.preguntas.Add("¿Dónde está la lampara?");
+        fase4.preguntas.Add("¿Dónde está la lámpara?");
 
         fasesTotales.Add(fase1);
         fasesTotales.Add(fase2);
@@ -559,11 +559,11 @@ public class Memoria : MonoBehaviour
         fases fase3 = new fases();
 
         fase1.imagen = granja;
-        fase1.preguntas.Add("¿Cuántos arboles hay?");
+        fase1.preguntas.Add("¿Cuántos árboles hay?");
         fase1.soluciones.Add(new Soluciones(5, 1));
         fase1.preguntas.Add("¿De qué color es la casa?");
         fase1.soluciones.Add(new Soluciones(0, 2));
-        fase1.preguntas.Add("¿Cuántas manzanas hay en el arbol?");
+        fase1.preguntas.Add("¿Cuántas manzanas hay en el árbol?");
         fase1.soluciones.Add(new Soluciones(6, 2));
         fase1.preguntas.Add("¿De qué color es la barca?");
         fase1.soluciones.Add(new Soluciones(1, 2));
@@ -573,11 +573,11 @@ public class Memoria : MonoBehaviour
         fase1.soluciones.Add(new Soluciones(9, 1));
 
         fase2.imagen = habitacion;
-        fase2.preguntas.Add("¿De qué color son las sabanas?");
+        fase2.preguntas.Add("¿De qué color son las sábanas?");
         fase2.soluciones.Add(new Soluciones(0, 1));
-        fase2.preguntas.Add("¿Dónde esta el espejo?");
+        fase2.preguntas.Add("¿Dónde está el espejo?");
         fase2.soluciones.Add(new Soluciones(18, 1));
-        fase2.preguntas.Add("De qué color es la alfombra?");
+        fase2.preguntas.Add("¿De qué color es la alfombra?");
         fase2.soluciones.Add(new Soluciones(3, 1));
         fase2.preguntas.Add("¿De qué color es el suelo?");
         fase2.soluciones.Add(new Soluciones(0, 2));
@@ -588,19 +588,19 @@ public class Memoria : MonoBehaviour
 
 
         fase3.imagen = salon2;
-        fase3.preguntas.Add("¿Dónde esta el gato?");
+        fase3.preguntas.Add("¿Dónde está el gato?");
         fase3.soluciones.Add(new Soluciones(15, 1));
-        fase3.preguntas.Add("¿De qué color es el sofa?");
+        fase3.preguntas.Add("¿De qué color es el sofá?");
         fase3.soluciones.Add(new Soluciones(3, 1));        
         fase3.preguntas.Add("¿De qué color son las cortinas?");
         fase3.soluciones.Add(new Soluciones(16, 2));
-        fase3.preguntas.Add("¿Cuantas macetas hay en la ventana?");
+        fase3.preguntas.Add("¿Cuántas macetas hay en la ventana?");
         fase3.soluciones.Add(new Soluciones(5, 1));
-        fase3.preguntas.Add("¿Donde esta la mesa?");
+        fase3.preguntas.Add("¿Dónde está la mesa?");
         fase3.soluciones.Add(new Soluciones(17, 2));
-        fase3.preguntas.Add("¿De qué color es la lampara?");
-        fase3.soluciones.Add(new Soluciones(16, 1));
-        fase3.preguntas.Add("¿Cuantos cuadros hay?");
+        fase3.preguntas.Add("¿De qué color es la lámpara?");
+        fase3.soluciones.Add(new Soluciones(20, 1));
+        fase3.preguntas.Add("¿Cuántos cuadros hay?");
         fase3.soluciones.Add(new Soluciones(5, 1));
 
         fasesTotales.Add(fase1);
@@ -615,7 +615,7 @@ public class Memoria : MonoBehaviour
     public void boton1Nivel2()
     {
         botonesNivel2.SetActive(false);
-        panelNivel2.transform.GetChild(0).GetComponent<Text>().text = "Memoriza esta imagen y dale al boton empezar";        
+        panelNivel2.transform.GetChild(0).GetComponent<Text>().text = "Memoriza esta imagen y dale al botón empezar";        
         if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].solucion==1)
         {
             puntos++;
@@ -633,7 +633,7 @@ public class Memoria : MonoBehaviour
     public void boton2Nivel2()
     {
         botonesNivel2.SetActive(false);
-        panelNivel2.transform.GetChild(0).GetComponent<Text>().text = "Memoriza esta imagen y dale al boton empezar";        
+        panelNivel2.transform.GetChild(0).GetComponent<Text>().text = "Memoriza esta imagen y dale al botón empezar";        
         if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].solucion == 2)
         {
             puntos++;
@@ -651,7 +651,7 @@ public class Memoria : MonoBehaviour
     public void boton3Nivel2()
     {
         botonesNivel2.SetActive(false);
-        panelNivel2.transform.GetChild(0).GetComponent<Text>().text = "Memoriza esta imagen y dale al boton empezar";       
+        panelNivel2.transform.GetChild(0).GetComponent<Text>().text = "Memoriza esta imagen y dale al botón empezar";       
         if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].solucion == 3)
         {
             puntos++;
@@ -669,7 +669,7 @@ public class Memoria : MonoBehaviour
     public void boton4Nivel2()
     {
         botonesNivel2.SetActive(false);
-        panelNivel2.transform.GetChild(0).GetComponent<Text>().text = "Memoriza esta imagen y dale al boton empezar";        
+        panelNivel2.transform.GetChild(0).GetComponent<Text>().text = "Memoriza esta imagen y dale al botón empezar";        
         if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].solucion == 4)
         {
             puntos++;
@@ -757,14 +757,14 @@ public class Memoria : MonoBehaviour
         {
             boton1.transform.GetChild(0).GetComponent<Text>().text = "Azul";
             boton2.transform.GetChild(0).GetComponent<Text>().text = "Rojo";
-            boton3.transform.GetChild(0).GetComponent<Text>().text = "Marron";
+            boton3.transform.GetChild(0).GetComponent<Text>().text = "Marrón";
             boton4.transform.GetChild(0).GetComponent<Text>().text = "Blanco";
 
         }
         else if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].pregunta == 1)
         {
             boton1.transform.GetChild(0).GetComponent<Text>().text = "Verde";
-            boton2.transform.GetChild(0).GetComponent<Text>().text = "Marron";
+            boton2.transform.GetChild(0).GetComponent<Text>().text = "Marrón";
             boton3.transform.GetChild(0).GetComponent<Text>().text = "Amarillo";
             boton4.transform.GetChild(0).GetComponent<Text>().text = "Violeta";
         }
@@ -813,14 +813,14 @@ public class Memoria : MonoBehaviour
         else if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].pregunta == 8)
         {
             boton1.transform.GetChild(0).GetComponent<Text>().text = "Soleado";
-            boton2.transform.GetChild(0).GetComponent<Text>().text = "Nieve";
-            boton3.transform.GetChild(0).GetComponent<Text>().text = "Lluvia";
-            boton4.transform.GetChild(0).GetComponent<Text>().text = "Viento";
+            boton2.transform.GetChild(0).GetComponent<Text>().text = "Lluvioso";
+            boton3.transform.GetChild(0).GetComponent<Text>().text = "Con nieve";
+            boton4.transform.GetChild(0).GetComponent<Text>().text = "Con viento";
         }
         else if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].pregunta == 9)
         {
-            boton1.transform.GetChild(0).GetComponent<Text>().text = "Cisne y vaca";
-            boton2.transform.GetChild(0).GetComponent<Text>().text = "Perros y cisne";
+            boton1.transform.GetChild(0).GetComponent<Text>().text = "Cisnes y vaca";
+            boton2.transform.GetChild(0).GetComponent<Text>().text = "Perros y cisnes";
             boton3.transform.GetChild(0).GetComponent<Text>().text = "Vaca y perro";
             boton4.transform.GetChild(0).GetComponent<Text>().text = "Vaca";
         }
@@ -841,7 +841,7 @@ public class Memoria : MonoBehaviour
         else if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].pregunta == 12)
         {
             boton1.transform.GetChild(0).GetComponent<Text>().text = "De rallas";
-            boton2.transform.GetChild(0).GetComponent<Text>().text = "De circulos";
+            boton2.transform.GetChild(0).GetComponent<Text>().text = "De círculos";
             boton3.transform.GetChild(0).GetComponent<Text>().text = "De lunares";
             boton4.transform.GetChild(0).GetComponent<Text>().text = "De cuadrados";
         }
@@ -869,15 +869,15 @@ public class Memoria : MonoBehaviour
         }
         else if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].pregunta == 16)
         {
-            boton1.transform.GetChild(0).GetComponent<Text>().text = "Morado";
+            boton1.transform.GetChild(0).GetComponent<Text>().text = "Negro";
             boton2.transform.GetChild(0).GetComponent<Text>().text = "Rosa";
             boton3.transform.GetChild(0).GetComponent<Text>().text = "Violeta";
-            boton4.transform.GetChild(0).GetComponent<Text>().text = "Verda";
+            boton4.transform.GetChild(0).GetComponent<Text>().text = "Verde";
         }
         else if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].pregunta == 17)
         {
             boton1.transform.GetChild(0).GetComponent<Text>().text = "Al lado del sofá";
-            boton2.transform.GetChild(0).GetComponent<Text>().text = "Delante del sofa";
+            boton2.transform.GetChild(0).GetComponent<Text>().text = "Delante del sofá";
             boton3.transform.GetChild(0).GetComponent<Text>().text = "Delanten del armario";
             boton4.transform.GetChild(0).GetComponent<Text>().text = "Al lado de la puerta";
         }
@@ -895,6 +895,13 @@ public class Memoria : MonoBehaviour
             boton3.transform.GetChild(0).GetComponent<Text>().text = "Enfrente del sofá";
             boton4.transform.GetChild(0).GetComponent<Text>().text = "Debajo de la televisión";
         }
+        else if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].pregunta == 20)
+        {
+            boton1.transform.GetChild(0).GetComponent<Text>().text = "Negro";
+            boton2.transform.GetChild(0).GetComponent<Text>().text = "Verde";
+            boton3.transform.GetChild(0).GetComponent<Text>().text = "Violeta";
+            boton4.transform.GetChild(0).GetComponent<Text>().text = "Verde";
+        }
     }
 
 
@@ -907,7 +914,7 @@ public class Memoria : MonoBehaviour
         fases fase3 = new fases();
 
         fase1.imagen = granja;
-        fase1.preguntas.Add("¿Cuántos arboles hay?");
+        fase1.preguntas.Add("¿Cuántos árboles hay?");
         fase1.soluciones.Add(new Soluciones(4, 3));
         fase1.preguntas.Add("¿De qué color es la casa?");
         fase1.soluciones.Add(new Soluciones(0, 2));
@@ -915,17 +922,17 @@ public class Memoria : MonoBehaviour
         fase1.soluciones.Add(new Soluciones(5, 4));
         fase1.preguntas.Add("¿De qué color es la barca?");
         fase1.soluciones.Add(new Soluciones(1, 2));
-        fase1.preguntas.Add("¿Cómo está el dia?");
+        fase1.preguntas.Add("¿Cómo está el día?");
         fase1.soluciones.Add(new Soluciones(8, 1));
         fase1.preguntas.Add("¿Qué especies de animales hay?");
         fase1.soluciones.Add(new Soluciones(9, 1));
 
         fase2.imagen = habitacion;
-        fase2.preguntas.Add("¿De qué color son las sabanas?");
+        fase2.preguntas.Add("¿De qué color son las sábanas?");
         fase2.soluciones.Add(new Soluciones(3, 3));
-        fase2.preguntas.Add("¿Dónde esta el espejo?");
-        fase2.soluciones.Add(new Soluciones(11, 4));
-        fase2.preguntas.Add("De qué color es la alfombra?");
+        fase2.preguntas.Add("¿Dónde está el espejo?");
+        fase2.soluciones.Add(new Soluciones(18, 1));
+        fase2.preguntas.Add("¿De qué color es la alfombra?");
         fase2.soluciones.Add(new Soluciones(1, 3));
         fase2.preguntas.Add("¿De qué color es el suelo?");
         fase2.soluciones.Add(new Soluciones(2, 4));
@@ -937,15 +944,15 @@ public class Memoria : MonoBehaviour
         fase3.imagen = salon;
         fase3.preguntas.Add("¿Dónde está la tele?");
         fase3.soluciones.Add(new Soluciones(19, 3));
-        fase3.preguntas.Add("¿De qué color es el sofa?");
+        fase3.preguntas.Add("¿De qué color es el sofá?");
         fase3.soluciones.Add(new Soluciones(2, 4));
         fase3.preguntas.Add("¿Dónde está la percha?");
         fase3.soluciones.Add(new Soluciones(13, 1));
-        fase3.preguntas.Add("¿De qué color es el telefono?");
+        fase3.preguntas.Add("¿De qué color es el teléfono?");
         fase3.soluciones.Add(new Soluciones(3, 2));
         fase3.preguntas.Add("¿Dónde está la alfombra?");
         fase3.soluciones.Add(new Soluciones(14, 1));
-        fase3.preguntas.Add("¿De qué color es la lampara?");
+        fase3.preguntas.Add("¿De qué color es la lámpara?");
         fase3.soluciones.Add(new Soluciones(0, 4));
         fase3.preguntas.Add("¿Cuántos cojines hay?");
         fase3.soluciones.Add(new Soluciones(5, 1));
@@ -1056,7 +1063,7 @@ public class Memoria : MonoBehaviour
             {
                 panelNivel3.transform.GetChild(1).GetComponent<Image>().sprite = fasesTotales[contadorFases].imagen;
                 botonesNivel3.SetActive(false);
-                panelNivel3.transform.GetChild(0).GetComponent<Text>().text = "Memoriza esta imagen y dale al boton empezar";
+                panelNivel3.transform.GetChild(0).GetComponent<Text>().text = "Memoriza esta imagen y dale al botón empezar";
             }
         }
         else
@@ -1103,9 +1110,9 @@ public class Memoria : MonoBehaviour
         fase1.soluciones.Add(new Soluciones("Verde"));
         fase1.preguntas.Add("¿De qué color es el vestido?");
         fase1.soluciones.Add(new Soluciones("Rojo"));
-        fase1.preguntas.Add("¿De qué color es la lampara?");
+        fase1.preguntas.Add("¿De qué color es la lámpara?");
         fase1.soluciones.Add(new Soluciones("Amarilla"));
-        fase1.preguntas.Add("¿De qué color es las sabanas?");
+        fase1.preguntas.Add("¿De qué color son las sábanas?");
         fase1.soluciones.Add(new Soluciones("Amarilla y blanca"));
         fase1.preguntas.Add("¿De qué color es la alfombra?");
         fase1.soluciones.Add(new Soluciones("Blanca y azul"));
@@ -1123,7 +1130,7 @@ public class Memoria : MonoBehaviour
         fase2.soluciones.Add(new Soluciones("Amarilla"));
         fase2.preguntas.Add("¿De qué color es el reloj?");
         fase2.soluciones.Add(new Soluciones("Rojo"));
-        fase2.preguntas.Add("¿De qué color es la lampara?");
+        fase2.preguntas.Add("¿De qué color es la lámpara?");
         fase2.soluciones.Add(new Soluciones("Blanca"));
         fase2.preguntas.Add("¿De qué color es la libreta?");
         fase2.soluciones.Add(new Soluciones("Rosa"));

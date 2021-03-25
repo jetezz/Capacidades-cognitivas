@@ -2958,9 +2958,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Memoriza esta imagen y dale al boton empezar
-
-'
+  m_Text: "Memoriza esta imagen y dale al bot\xF3n empezar\n"
 --- !u!222 &631610624
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4603,9 +4601,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Memoriza esta imagen y dale al boton empezar
-
-'
+  m_Text: "Memoriza esta imagen y dale al bot\xF3n empezar\n"
 --- !u!222 &1045187038
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6645,9 +6641,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Memoriza esta imagen y dale al boton empezar
-
-'
+  m_Text: "Memoriza esta imagen y dale al bot\xF3n empezar\n"
 --- !u!222 &1414611774
 CanvasRenderer:
   m_ObjectHideFlags: 0

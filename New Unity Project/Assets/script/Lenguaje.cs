@@ -174,8 +174,8 @@ public class Lenguaje : MonoBehaviour
         preguntas1.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
         aux.Clear();
 
-        aux.Add(new Pregunta1("Pulsa en la zapatilla de estar por casa", 1, 3));
-        aux.Add(new Pregunta1("Pulsa en las bota", 2, 3));
+        aux.Add(new Pregunta1("Pulsa en las zapatillas de estar por casa", 1, 3));
+        aux.Add(new Pregunta1("Pulsa en las botas", 2, 3));
         aux.Add(new Pregunta1("Pulsa en las chanclas", 3, 3));
         aux.Add(new Pregunta1("Pulsa en las deportiva", 4, 3));
         preguntas1.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
@@ -503,7 +503,7 @@ public class Lenguaje : MonoBehaviour
 
 
         panel3.SetActive(true);
-        textoPrincipal.GetComponent<Text>().text = "A que grupo corresponde estas palabras";
+        textoPrincipal.GetComponent<Text>().text = "A qué grupo corresponde estas palabras";
         siguientePreguntaN3();
 
     }
@@ -609,6 +609,8 @@ public class Lenguaje : MonoBehaviour
         fase1.Add(new Pregunta4("Piña", 1));     
         fase1.Add(new Pregunta4("Manzana", 1));
         fase1.Add(new Pregunta4("Melón", 1));
+        fase1.Add(new Pregunta4("Plátano", 1));
+        fase1.Add(new Pregunta4("Sandía", 1));
 
         fase1.Add(new Pregunta4("Zumo", 2));
         fase1.Add(new Pregunta4("Agua", 2));

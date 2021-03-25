@@ -109,7 +109,7 @@ public class Atencion : MonoBehaviour
 
 
         panel1.SetActive(true);
-        textoPrincipal.GetComponent<Text>().text = "Selecciona las imagenes que son iguales";
+        textoPrincipal.GetComponent<Text>().text = "Selecciona las imágenes que son iguales al ejemplo";
         siguientePreguntaN1();
     }
 
@@ -212,7 +212,7 @@ public class Atencion : MonoBehaviour
         numInicioN2 = Random.Range(0, 10);
         numNivel2 = numInicioN2;
         numMaximoN2 = numInicioN2 + 12;
-        repeticiones = 4;
+        repeticiones = 3;
 
         panel2.SetActive(true);
         textoPrincipal.GetComponent<Text>().text = "Selecciona todos los numeras de menor a mayor";
@@ -329,8 +329,8 @@ public class Atencion : MonoBehaviour
             textoPrincipal.GetComponent<Text>().text = "Ejercicio de atencion nivel 3 completado";
             panelFin.transform.GetChild(0).GetComponent<Text>().text = "tiempo";
             panelFin.transform.GetChild(1).GetComponent<Text>().text = tiempoEjercicio.ToString() + "s";
-            panelFin.transform.GetChild(2).GetComponent<Text>().text = "el tiempo minimo para completar el nivel es 300s";
-            if (tiempoEjercicio < 300)
+            panelFin.transform.GetChild(2).GetComponent<Text>().text = "el tiempo minimo para completar el nivel es 200s";
+            if (tiempoEjercicio < 200)
             {
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 4";
                 managerEjercicios.GetComponent<ManagerEjercicios>().usuario.atencion(4);
@@ -407,7 +407,7 @@ public class Atencion : MonoBehaviour
       
 
 
-        textoPrincipal.GetComponent<Text>().text = "Introduce el numero que falta 0-45";
+        textoPrincipal.GetComponent<Text>().text = "Introduce el numero que falta 0-48";
         tiempoEjercicio = 0;
         panel4.SetActive(true);
         siguientePreguntaN4();

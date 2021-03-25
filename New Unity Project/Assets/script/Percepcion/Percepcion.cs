@@ -222,7 +222,7 @@ public class Percepcion : MonoBehaviour
 
 
         panel1.SetActive(true);
-        textoPrincipal.GetComponent<Text>().text = "Selecciona las imagenes que son iguales al ejemplo";
+        textoPrincipal.GetComponent<Text>().text = "Selecciona las imágenes que son iguales al ejemplo";
         siguientePreguntaN1();
     }
 
@@ -424,7 +424,7 @@ public class Percepcion : MonoBehaviour
 
 
         panel2.SetActive(true);
-        textoPrincipal.GetComponent<Text>().text = "Selecciona las imagenes que son iguales";
+        textoPrincipal.GetComponent<Text>().text = "Selecciona las imágenes que son iguales al ejemplo";
 
         siguientePreguntaN2();
 
@@ -701,7 +701,7 @@ public class Percepcion : MonoBehaviour
 
 
         panel2.SetActive(true);
-        textoPrincipal.GetComponent<Text>().text = "Selecciona las imagenes que son iguales";
+        textoPrincipal.GetComponent<Text>().text = "Selecciona las imágenes que son iguales al ejemplo";
 
         siguientePreguntaN2();
 
