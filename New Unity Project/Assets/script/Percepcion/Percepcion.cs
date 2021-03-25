@@ -222,7 +222,7 @@ public class Percepcion : MonoBehaviour
 
 
         panel1.SetActive(true);
-        textoPrincipal.GetComponent<Text>().text = "Selecciona las imagenes que son iguales";
+        textoPrincipal.GetComponent<Text>().text = "Selecciona las imagenes que son iguales al ejemplo";
         siguientePreguntaN1();
     }
 
@@ -662,7 +662,7 @@ public class Percepcion : MonoBehaviour
         preguntas2.Add(new Pregunta2P(2, 2));
         preguntas2.Add(new Pregunta2P(3, 2));
         preguntas2.Add(new Pregunta2P(4, 2));
-        preguntas2.Add(new Pregunta2P(5, 2));    
+       
 
 
         preguntas2.Add(new Pregunta2P(0, 3));
@@ -679,8 +679,7 @@ public class Percepcion : MonoBehaviour
         preguntas2.Add(new Pregunta2P(3, 4));
         preguntas2.Add(new Pregunta2P(4, 4));
         preguntas2.Add(new Pregunta2P(5, 4));
-        preguntas2.Add(new Pregunta2P(6, 4));
-        preguntas2.Add(new Pregunta2P(7, 4));
+      
 
 
         preguntas2.Add(new Pregunta2P(0, 5));
@@ -688,8 +687,7 @@ public class Percepcion : MonoBehaviour
         preguntas2.Add(new Pregunta2P(2, 5));
         preguntas2.Add(new Pregunta2P(3, 5));
         preguntas2.Add(new Pregunta2P(4, 5));
-        preguntas2.Add(new Pregunta2P(5, 5));
-        preguntas2.Add(new Pregunta2P(6, 5));
+      
 
 
         preguntas2.Add(new Pregunta2P(0, 6));
@@ -697,8 +695,7 @@ public class Percepcion : MonoBehaviour
         preguntas2.Add(new Pregunta2P(2, 6));
         preguntas2.Add(new Pregunta2P(3, 6));
         preguntas2.Add(new Pregunta2P(4, 6));
-        preguntas2.Add(new Pregunta2P(5, 6));
-        preguntas2.Add(new Pregunta2P(6, 6));
+  
 
 
 
@@ -759,7 +756,7 @@ public class Percepcion : MonoBehaviour
             textoPrincipal.GetComponent<Text>().text = "Ejercicio de percepcion nivel 4 completado";
             panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
             panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 38 ";
-            if (puntos == 38)
+            if (puntos == 26)
             {
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Has completado todos los niveles de percepcion";
                 managerEjercicios.GetComponent<ManagerEjercicios>().usuario.percepcion(5);

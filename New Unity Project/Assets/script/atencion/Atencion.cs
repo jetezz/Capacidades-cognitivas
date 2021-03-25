@@ -383,14 +383,16 @@ public class Atencion : MonoBehaviour
         }
 
         tiempo = 1;
+        inputNumero.GetComponent<InputField>().Select();
+        inputNumero.GetComponent<InputField>().text = "";
+
     }
 
     void nivel4()
     {
         preguntas4 = new List<Pregunta4A>();
         List<int> aux = new List<int>();
-        List<int> aux2 = new List<int>();
-        List<int> aux3 = new List<int>();
+     
 
 
        
@@ -398,13 +400,11 @@ public class Atencion : MonoBehaviour
         for (int i = 0; i < 4; i++)
         {
             aux.Add(Random.Range(0, 49));
-            aux2.Add(Random.Range(0, 49));
-            aux3.Add(Random.Range(0, 49));
+          
         }        
              
         preguntas4.Add(new Pregunta4A(aux));     
-        preguntas4.Add(new Pregunta4A(aux2));       
-        preguntas4.Add(new Pregunta4A(aux3));
+      
 
 
         textoPrincipal.GetComponent<Text>().text = "Introduce el numero que falta 0-45";

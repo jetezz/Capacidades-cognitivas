@@ -163,7 +163,7 @@ public class Lenguaje : MonoBehaviour
         aux.Add(new Pregunta1("Pulsa en la falda", 1, 1));
         aux.Add(new Pregunta1("Pulsa en el calcetín", 2, 1));
         aux.Add(new Pregunta1("Pulsa en la chaqueta", 3, 1));
-        aux.Add(new Pregunta1("Pulsa en el pantalon", 4, 1));
+        aux.Add(new Pregunta1("Pulsa en el pantalón", 4, 1));
         preguntas1.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
         aux.Clear();
 
@@ -174,31 +174,31 @@ public class Lenguaje : MonoBehaviour
         preguntas1.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
         aux.Clear();
 
-        aux.Add(new Pregunta1("Pulsa en la zapatilla", 1, 3));
-        aux.Add(new Pregunta1("Pulsa en el bota", 2, 3));
-        aux.Add(new Pregunta1("Pulsa en el chancla", 3, 3));
-        aux.Add(new Pregunta1("Pulsa en el deportiva", 4, 3));
+        aux.Add(new Pregunta1("Pulsa en la zapatilla de estar por casa", 1, 3));
+        aux.Add(new Pregunta1("Pulsa en las bota", 2, 3));
+        aux.Add(new Pregunta1("Pulsa en las chanclas", 3, 3));
+        aux.Add(new Pregunta1("Pulsa en las deportiva", 4, 3));
         preguntas1.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
         aux.Clear();
 
         aux.Add(new Pregunta1("Pulsa en la guitarra", 1, 4));
         aux.Add(new Pregunta1("Pulsa en el tambor", 2, 4));
-        aux.Add(new Pregunta1("Pulsa en el flauta", 3, 4));
+        aux.Add(new Pregunta1("Pulsa en la flauta", 3, 4));
         aux.Add(new Pregunta1("Pulsa en el piano", 4, 4));
         preguntas1.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
         aux.Clear();
 
         aux.Add(new Pregunta1("Pulsa en el tomate", 1, 5));
-        aux.Add(new Pregunta1("Pulsa en el lechuga", 2, 5));
-        aux.Add(new Pregunta1("Pulsa en el zanahoria", 3, 5));
+        aux.Add(new Pregunta1("Pulsa en la lechuga", 2, 5));
+        aux.Add(new Pregunta1("Pulsa en la zanahoria", 3, 5));
         aux.Add(new Pregunta1("Pulsa en el pepino", 4, 5));
         preguntas1.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
         aux.Clear();
 
-        aux.Add(new Pregunta1("Pulsa en el circulo", 1, 6));
+        aux.Add(new Pregunta1("Pulsa en el círculo", 1, 6));
         aux.Add(new Pregunta1("Pulsa en el cuadrado", 2, 6));
-        aux.Add(new Pregunta1("Pulsa en el triangulo", 3, 6));
-        aux.Add(new Pregunta1("Pulsa en el rectangulo", 4, 6));
+        aux.Add(new Pregunta1("Pulsa en el triángulo", 3, 6));
+        aux.Add(new Pregunta1("Pulsa en el rectángulo", 4, 6));
         preguntas1.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
         aux.Clear();
 
@@ -484,21 +484,21 @@ public class Lenguaje : MonoBehaviour
         aux.Add(new Pregunta3("España - China - Portugal - Brasil - Francia", 1));
         aux.Add(new Pregunta3("Enero -  Marzo - Febrero - Abril", 2));
         aux.Add(new Pregunta3("Cuchillo - Tenedor - Cuchara - Platos - Cazo", 3));
-        aux.Add(new Pregunta3("Mesa - Silla - Escritorio - Sillon - Cama", 4));
-        aux.Add(new Pregunta3("Dormitorio - Salon - Cocina - Despacho - Cuarto - Baño", 5));
-        aux.Add(new Pregunta3("Paula - Ana - Josefa - Manuela - Rosa - Estefania", 6));
+        aux.Add(new Pregunta3("Mesa - Silla - Escritorio - Sillón - Cama", 4));
+        aux.Add(new Pregunta3("Dormitorio - Salón - Cocina - Despacho - Baño", 5));
+        aux.Add(new Pregunta3("Paula - Ana - Josefa - Manuela - Rosa - Estefanía", 6));
         aux.Add(new Pregunta3("Paco - José - Mario - Manuel - Pedro", 7));
         aux.Add(new Pregunta3("Tio - Prima - Abuela - Hijo - Sobrino - Nieto", 8));
         preguntas3 = DesordenarLista<Pregunta3>(aux);
 
         idYPregun.Add(0, "Ciudades");
-        idYPregun.Add(1, "Paises");
+        idYPregun.Add(1, "Países");
         idYPregun.Add(2, "Meses");
         idYPregun.Add(3, "Utensilios de cocina");
         idYPregun.Add(4, "Muebles");
-        idYPregun.Add(5, "Habitacion");
-        idYPregun.Add(6, "Nombre Mujer");
-        idYPregun.Add(7, "Nombre Hombre");
+        idYPregun.Add(5, "Habitaciones");
+        idYPregun.Add(6, "Nombres femeninos");
+        idYPregun.Add(7, "Nombres masculinos");
         idYPregun.Add(8, "Parientes");
 
 
@@ -606,24 +606,23 @@ public class Lenguaje : MonoBehaviour
         fase1.Add(new Pregunta4("Pimientos", 0));
 
         fase1.Add(new Pregunta4("Fresa", 1));
-        fase1.Add(new Pregunta4("Piña", 1));
-        fase1.Add(new Pregunta4("Naranja", 1));
+        fase1.Add(new Pregunta4("Piña", 1));     
         fase1.Add(new Pregunta4("Manzana", 1));
-        fase1.Add(new Pregunta4("Melon", 1));
+        fase1.Add(new Pregunta4("Melón", 1));
 
         fase1.Add(new Pregunta4("Zumo", 2));
         fase1.Add(new Pregunta4("Agua", 2));
         fase1.Add(new Pregunta4("Refrescos", 2));
         fase1.Add(new Pregunta4("Gaseosa", 2));
         fase1.Add(new Pregunta4("Vino", 2));
-        fase1.Add(new Pregunta4("Champan", 2));
+        fase1.Add(new Pregunta4("Champán", 2));
 
         
         fases4.Add(new FaseP4(DesordenarLista<Pregunta4>(fase1)));
 
 
         fase2.Add(new Pregunta4("pez", 3));
-        fase2.Add(new Pregunta4("tiburon", 3));
+        fase2.Add(new Pregunta4("tiburón", 3));
         fase2.Add(new Pregunta4("ballena", 3));
         fase2.Add(new Pregunta4("foca", 3));
         fase2.Add(new Pregunta4("estrella de mar", 3));
@@ -635,12 +634,12 @@ public class Lenguaje : MonoBehaviour
         fase2.Add(new Pregunta4("vaca", 4));
         fase2.Add(new Pregunta4("caballo", 4));
         fase2.Add(new Pregunta4("oso", 4));
-        fase2.Add(new Pregunta4("raton", 4));
+        fase2.Add(new Pregunta4("ratón", 4));
         fase2.Add(new Pregunta4("burro", 4));
 
         fase2.Add(new Pregunta4("loro", 5));
         fase2.Add(new Pregunta4("gaviota", 5));
-        fase2.Add(new Pregunta4("aguila", 5));
+        fase2.Add(new Pregunta4("águila", 5));
         fase2.Add(new Pregunta4("buitre", 5));
         fase2.Add(new Pregunta4("paloma", 5));
         fase2.Add(new Pregunta4("canario", 5));
@@ -669,7 +668,7 @@ public class Lenguaje : MonoBehaviour
                 }
                 else
                 {
-                    panel4.transform.GetChild(0).GetComponent<Text>().text = "Animales acuaticos";
+                    panel4.transform.GetChild(0).GetComponent<Text>().text = "Animales acuáticos";
                     panel4.transform.GetChild(1).GetComponent<Text>().text = "Animales terrestres";
                     panel4.transform.GetChild(2).GetComponent<Text>().text = "Aves";
                 }

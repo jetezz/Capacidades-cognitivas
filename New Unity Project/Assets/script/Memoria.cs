@@ -124,7 +124,7 @@ public class Memoria : MonoBehaviour
 
         fase2.imagen = granja;
         fase2.preguntas.Add("¿Dónde está la barca?");
-        fase2.preguntas.Add("¿Dónde está los patos?");
+        fase2.preguntas.Add("¿Dónde están los patos?");
         fase2.preguntas.Add("¿Dónde está la vaca?");
         fase2.preguntas.Add("¿Dónde está el árbol con fruta?");
         fase2.preguntas.Add("¿Dónde está la cabaña?");
@@ -134,7 +134,7 @@ public class Memoria : MonoBehaviour
         fase3.imagen = cocina;
         fase3.preguntas.Add("¿Dónde está el horno?");
         fase3.preguntas.Add("¿Dónde está el frigorifico?");
-        fase3.preguntas.Add("¿Dónde está el lavabo?");
+        fase3.preguntas.Add("¿Dónde está el fregadero?");
         fase3.preguntas.Add("¿Dónde está el microondas?");
 
         fase4.imagen = habitacion;
@@ -561,22 +561,22 @@ public class Memoria : MonoBehaviour
         fase1.imagen = granja;
         fase1.preguntas.Add("¿Cuántos arboles hay?");
         fase1.soluciones.Add(new Soluciones(5, 1));
-        fase1.preguntas.Add("De qué color es la casa?");
+        fase1.preguntas.Add("¿De qué color es la casa?");
         fase1.soluciones.Add(new Soluciones(0, 2));
-        fase1.preguntas.Add("Cuántas manzanas hay en el arbol?");
+        fase1.preguntas.Add("¿Cuántas manzanas hay en el arbol?");
         fase1.soluciones.Add(new Soluciones(6, 2));
-        fase1.preguntas.Add("De qué color es la barca?");
+        fase1.preguntas.Add("¿De qué color es la barca?");
         fase1.soluciones.Add(new Soluciones(1, 2));
-        fase1.preguntas.Add("Cómo está el dia?");
+        fase1.preguntas.Add("¿Cómo está el dia?");
         fase1.soluciones.Add(new Soluciones(8, 1));
-        fase1.preguntas.Add("Qué animales hay?");
+        fase1.preguntas.Add("¿Qué especies de animales hay?");
         fase1.soluciones.Add(new Soluciones(9, 1));
 
         fase2.imagen = habitacion;
         fase2.preguntas.Add("¿De qué color son las sabanas?");
         fase2.soluciones.Add(new Soluciones(0, 1));
         fase2.preguntas.Add("¿Dónde esta el espejo?");
-        fase2.soluciones.Add(new Soluciones(10, 1));
+        fase2.soluciones.Add(new Soluciones(18, 1));
         fase2.preguntas.Add("De qué color es la alfombra?");
         fase2.soluciones.Add(new Soluciones(3, 1));
         fase2.preguntas.Add("¿De qué color es el suelo?");
@@ -840,10 +840,10 @@ public class Memoria : MonoBehaviour
         }
         else if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].pregunta == 12)
         {
-            boton1.transform.GetChild(0).GetComponent<Text>().text = "Rallas";
-            boton2.transform.GetChild(0).GetComponent<Text>().text = "Circulos";
-            boton3.transform.GetChild(0).GetComponent<Text>().text = "Lunares";
-            boton4.transform.GetChild(0).GetComponent<Text>().text = "Cuadrados";
+            boton1.transform.GetChild(0).GetComponent<Text>().text = "De rallas";
+            boton2.transform.GetChild(0).GetComponent<Text>().text = "De circulos";
+            boton3.transform.GetChild(0).GetComponent<Text>().text = "De lunares";
+            boton4.transform.GetChild(0).GetComponent<Text>().text = "De cuadrados";
         }
         else if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].pregunta == 13)
         {
@@ -876,10 +876,24 @@ public class Memoria : MonoBehaviour
         }
         else if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].pregunta == 17)
         {
-            boton1.transform.GetChild(0).GetComponent<Text>().text = "Detras del sofa";
+            boton1.transform.GetChild(0).GetComponent<Text>().text = "Al lado del sofá";
             boton2.transform.GetChild(0).GetComponent<Text>().text = "Delante del sofa";
             boton3.transform.GetChild(0).GetComponent<Text>().text = "Delanten del armario";
             boton4.transform.GetChild(0).GetComponent<Text>().text = "Al lado de la puerta";
+        }
+        else if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].pregunta == 18)
+        {
+            boton1.transform.GetChild(0).GetComponent<Text>().text = "Encima del mueble";
+            boton2.transform.GetChild(0).GetComponent<Text>().text = "Encima de la cama";
+            boton3.transform.GetChild(0).GetComponent<Text>().text = "Delanten del armario";
+            boton4.transform.GetChild(0).GetComponent<Text>().text = "Al lado de la puerta";
+        }
+        else if (fasesTotales[contadorFases].soluciones[fasesTotales[contadorFases].contador].pregunta == 19)
+        {
+            boton1.transform.GetChild(0).GetComponent<Text>().text = "Al lado de la ventana";
+            boton2.transform.GetChild(0).GetComponent<Text>().text = "Al lado de la caman";
+            boton3.transform.GetChild(0).GetComponent<Text>().text = "Enfrente del sofá";
+            boton4.transform.GetChild(0).GetComponent<Text>().text = "Debajo de la televisión";
         }
     }
 
@@ -895,15 +909,15 @@ public class Memoria : MonoBehaviour
         fase1.imagen = granja;
         fase1.preguntas.Add("¿Cuántos arboles hay?");
         fase1.soluciones.Add(new Soluciones(4, 3));
-        fase1.preguntas.Add("De qué color es la casa?");
+        fase1.preguntas.Add("¿De qué color es la casa?");
         fase1.soluciones.Add(new Soluciones(0, 2));
-        fase1.preguntas.Add("Cuántas manzanas hay en el arbol?");
+        fase1.preguntas.Add("¿Cuántas manzanas hay en el árbol?");
         fase1.soluciones.Add(new Soluciones(5, 4));
-        fase1.preguntas.Add("De qué color es la barca?");
+        fase1.preguntas.Add("¿De qué color es la barca?");
         fase1.soluciones.Add(new Soluciones(1, 2));
-        fase1.preguntas.Add("Cómo está el dia?");
+        fase1.preguntas.Add("¿Cómo está el dia?");
         fase1.soluciones.Add(new Soluciones(8, 1));
-        fase1.preguntas.Add("Qué animales hay?");
+        fase1.preguntas.Add("¿Qué especies de animales hay?");
         fase1.soluciones.Add(new Soluciones(9, 1));
 
         fase2.imagen = habitacion;
@@ -921,18 +935,18 @@ public class Memoria : MonoBehaviour
         fase2.soluciones.Add(new Soluciones(12, 1));
 
         fase3.imagen = salon;
-        fase3.preguntas.Add("¿Dónde esta la tele?");
-        fase3.soluciones.Add(new Soluciones(10, 3));
+        fase3.preguntas.Add("¿Dónde está la tele?");
+        fase3.soluciones.Add(new Soluciones(19, 3));
         fase3.preguntas.Add("¿De qué color es el sofa?");
         fase3.soluciones.Add(new Soluciones(2, 4));
-        fase3.preguntas.Add("¿Dónde esta la percha?");
+        fase3.preguntas.Add("¿Dónde está la percha?");
         fase3.soluciones.Add(new Soluciones(13, 1));
         fase3.preguntas.Add("¿De qué color es el telefono?");
         fase3.soluciones.Add(new Soluciones(3, 2));
-        fase3.preguntas.Add("¿Dónde esta la alfombra?");
+        fase3.preguntas.Add("¿Dónde está la alfombra?");
         fase3.soluciones.Add(new Soluciones(14, 1));
         fase3.preguntas.Add("¿De qué color es la lampara?");
-        fase3.soluciones.Add(new Soluciones(3, 1));
+        fase3.soluciones.Add(new Soluciones(0, 4));
         fase3.preguntas.Add("¿Cuántos cojines hay?");
         fase3.soluciones.Add(new Soluciones(5, 1));
 
@@ -1116,7 +1130,7 @@ public class Memoria : MonoBehaviour
         fase2.preguntas.Add("¿De qué color es el teléfono?");
         fase2.soluciones.Add(new Soluciones("Negro"));
         fase2.preguntas.Add("¿De qué color es la camiseta?");
-        fase2.soluciones.Add(new Soluciones("Marron"));
+        fase2.soluciones.Add(new Soluciones("Marrón"));
         fase2.preguntas.Add("¿De qué color es el triciclo?");
         fase2.soluciones.Add(new Soluciones("Azul y amarillo"));
         fase2.preguntas.Add("¿De qué color son los cojines?");
