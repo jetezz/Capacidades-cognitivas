@@ -64,6 +64,8 @@ public class Lenguaje : MonoBehaviour
     ////
     ///nivel1
     List<Preguntas1> preguntas1 = new List<Preguntas1>();
+    List<Preguntas1> preguntas1aux = new List<Preguntas1>();
+
     public GameObject panel1;
     public GameObject boton1;
     public GameObject boton2;
@@ -90,6 +92,8 @@ public class Lenguaje : MonoBehaviour
     //
     //nivel 4
     List<FaseP4> fases4 = new List<FaseP4>();
+    List<FaseP4> fases4aux = new List<FaseP4>();
+
     public GameObject panel4;
     public GameObject palabra;
     public GameObject hand;
@@ -136,15 +140,15 @@ public class Lenguaje : MonoBehaviour
     {
         List<T> arr = input;
         List<T> arrDes = new List<T>();
-        arr.Add(input[input.Count - 1]);
+       
 
         while (arr.Count > 0)
         {
-            int val = Random.Range(0, arr.Count - 1);
+            int val = Random.Range(0, arr.Count);
             arrDes.Add(arr[val]);
             arr.RemoveAt(val);
         }
-        arrDes.RemoveAt(arrDes.Count - 1);
+       
 
         return arrDes;
     }
@@ -152,58 +156,63 @@ public class Lenguaje : MonoBehaviour
 
     void nivel1()
     {
+        preguntas1aux = new List<Preguntas1>();
         List<Pregunta1> aux = new List<Pregunta1>();
         aux.Add(new Pregunta1("Pulsa en el color azul", 1, 0));
         aux.Add(new Pregunta1("Pulsa en el color rojo", 2, 0));
         aux.Add(new Pregunta1("Pulsa en el color verde", 3, 0));
         aux.Add(new Pregunta1("Pulsa en el color negro", 4, 0));
-        preguntas1.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
+        preguntas1aux.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
         aux.Clear();
 
         aux.Add(new Pregunta1("Pulsa en la falda", 1, 1));
         aux.Add(new Pregunta1("Pulsa en el calcetín", 2, 1));
         aux.Add(new Pregunta1("Pulsa en la chaqueta", 3, 1));
         aux.Add(new Pregunta1("Pulsa en el pantalón", 4, 1));
-        preguntas1.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
+        preguntas1aux.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
         aux.Clear();
 
         aux.Add(new Pregunta1("Pulsa en el perro", 1, 2));
         aux.Add(new Pregunta1("Pulsa en el gato", 2, 2));
         aux.Add(new Pregunta1("Pulsa en el caballo", 3, 2));
         aux.Add(new Pregunta1("Pulsa en el oveja", 4, 2));
-        preguntas1.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
+        preguntas1aux.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
         aux.Clear();
 
         aux.Add(new Pregunta1("Pulsa en las zapatillas de estar por casa", 1, 3));
         aux.Add(new Pregunta1("Pulsa en las botas", 2, 3));
         aux.Add(new Pregunta1("Pulsa en las chanclas", 3, 3));
         aux.Add(new Pregunta1("Pulsa en las deportiva", 4, 3));
-        preguntas1.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
+        preguntas1aux.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
         aux.Clear();
 
         aux.Add(new Pregunta1("Pulsa en la guitarra", 1, 4));
         aux.Add(new Pregunta1("Pulsa en el tambor", 2, 4));
         aux.Add(new Pregunta1("Pulsa en la flauta", 3, 4));
         aux.Add(new Pregunta1("Pulsa en el piano", 4, 4));
-        preguntas1.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
+        preguntas1aux.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
         aux.Clear();
 
         aux.Add(new Pregunta1("Pulsa en el tomate", 1, 5));
         aux.Add(new Pregunta1("Pulsa en la lechuga", 2, 5));
         aux.Add(new Pregunta1("Pulsa en la zanahoria", 3, 5));
         aux.Add(new Pregunta1("Pulsa en el pepino", 4, 5));
-        preguntas1.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
+        preguntas1aux.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
         aux.Clear();
 
         aux.Add(new Pregunta1("Pulsa en el círculo", 1, 6));
         aux.Add(new Pregunta1("Pulsa en el cuadrado", 2, 6));
         aux.Add(new Pregunta1("Pulsa en el triángulo", 3, 6));
         aux.Add(new Pregunta1("Pulsa en el rectángulo", 4, 6));
-        preguntas1.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
+        preguntas1aux.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
         aux.Clear();
 
-
-
+        preguntas1aux = DesordenarLista<Preguntas1>(preguntas1aux);
+        preguntas1.Add(preguntas1aux[0]);
+        preguntas1.Add(preguntas1aux[1]);
+        preguntas1.Add(preguntas1aux[2]);
+        preguntas1.Add(preguntas1aux[3]);
+        preguntas1.Add(preguntas1aux[4]);
 
 
         panel1.SetActive(true);
@@ -239,8 +248,8 @@ public class Lenguaje : MonoBehaviour
                 panelFin.SetActive(true);
                 textoPrincipal.GetComponent<Text>().text = "Ejercicio de lenguaje nivel 1 completado";
                 panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-                panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 28 ";
-                if (puntos == 28)
+                panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 20 ";
+                if (puntos == 20)
                 {
                     panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 2";
                     managerEjercicios.GetComponent<ManagerEjercicios>().usuario.lenguaje(2);
@@ -595,58 +604,163 @@ public class Lenguaje : MonoBehaviour
     void nivel4()
     {
         List<Pregunta4> fase1 = new List<Pregunta4>();
+        List<Pregunta4> fasesaux = new List<Pregunta4>();
         List<Pregunta4> fase2 = new List<Pregunta4>();
 
-        fase1.Add(new Pregunta4("Cebolla", 0));
-        fase1.Add(new Pregunta4("Pepino", 0));
-        fase1.Add(new Pregunta4("Zanahoria", 0));
-        fase1.Add(new Pregunta4("Espinacas", 0));
-        fase1.Add(new Pregunta4("Guisantes", 0));
-        fase1.Add(new Pregunta4("Tomate", 0));
-        fase1.Add(new Pregunta4("Pimientos", 0));
+        fasesaux.Add(new Pregunta4("Cebolla", 0));
+        fasesaux.Add(new Pregunta4("Pepino", 0));
+        fasesaux.Add(new Pregunta4("Zanahoria", 0));
+        fasesaux.Add(new Pregunta4("Espinacas", 0));
+        fasesaux.Add(new Pregunta4("Guisantes", 0));
+        fasesaux.Add(new Pregunta4("Tomate", 0));
+        fasesaux.Add(new Pregunta4("Pimientos", 0));
+        fasesaux.Add(new Pregunta4("Brócoli", 0));
+        fasesaux.Add(new Pregunta4("Boniato", 0));
+        fasesaux.Add(new Pregunta4("Remolacha", 0));
+        fasesaux.Add(new Pregunta4("Coliflor", 0));
 
-        fase1.Add(new Pregunta4("Fresa", 1));
-        fase1.Add(new Pregunta4("Piña", 1));     
-        fase1.Add(new Pregunta4("Manzana", 1));
-        fase1.Add(new Pregunta4("Melón", 1));
-        fase1.Add(new Pregunta4("Plátano", 1));
-        fase1.Add(new Pregunta4("Sandía", 1));
 
-        fase1.Add(new Pregunta4("Zumo", 2));
-        fase1.Add(new Pregunta4("Agua", 2));
-        fase1.Add(new Pregunta4("Refrescos", 2));
-        fase1.Add(new Pregunta4("Gaseosa", 2));
-        fase1.Add(new Pregunta4("Vino", 2));
-        fase1.Add(new Pregunta4("Champán", 2));
+
+
+
+        fasesaux = DesordenarLista<Pregunta4>(fasesaux);
+        fase1.Add(fasesaux[0]);
+        fase1.Add(fasesaux[1]);
+        fase1.Add(fasesaux[2]);
+        fase1.Add(fasesaux[3]);
+        fase1.Add(fasesaux[4]);
+        fasesaux.Clear();
+
+
+
+        fasesaux.Add(new Pregunta4("Fresa", 1));
+        fasesaux.Add(new Pregunta4("Piña", 1));     
+        fasesaux.Add(new Pregunta4("Manzana", 1));
+        fasesaux.Add(new Pregunta4("Melón", 1));
+        fasesaux.Add(new Pregunta4("Plátano", 1));
+        fasesaux.Add(new Pregunta4("Sandía", 1));
+        fasesaux.Add(new Pregunta4("Pera", 1));
+        fasesaux.Add(new Pregunta4("Kiwi", 1));
+        fasesaux.Add(new Pregunta4("Uvas", 1));
+        fasesaux.Add(new Pregunta4("Melocotón", 1));
+
+
+
+
+
+        fasesaux = DesordenarLista<Pregunta4>(fasesaux);
+        fase1.Add(fasesaux[0]);
+        fase1.Add(fasesaux[1]);
+        fase1.Add(fasesaux[2]);
+        fase1.Add(fasesaux[3]);
+        fase1.Add(fasesaux[4]);
+        fasesaux.Clear();
 
         
-        fases4.Add(new FaseP4(DesordenarLista<Pregunta4>(fase1)));
+
+        fasesaux.Add(new Pregunta4("Zumo", 2));
+        fasesaux.Add(new Pregunta4("Agua", 2));
+        fasesaux.Add(new Pregunta4("Refrescos", 2));
+        fasesaux.Add(new Pregunta4("Gaseosa", 2));
+        fasesaux.Add(new Pregunta4("Vino", 2));
+        fasesaux.Add(new Pregunta4("Champán", 2));
+        fasesaux.Add(new Pregunta4("Cerveza", 2));
+        fasesaux.Add(new Pregunta4("Horchata", 2));
+        fasesaux.Add(new Pregunta4("Leche", 2));
 
 
-        fase2.Add(new Pregunta4("pez", 3));
-        fase2.Add(new Pregunta4("tiburón", 3));
-        fase2.Add(new Pregunta4("ballena", 3));
-        fase2.Add(new Pregunta4("foca", 3));
-        fase2.Add(new Pregunta4("estrella de mar", 3));
-        fase2.Add(new Pregunta4("sardina", 3));
-        fase2.Add(new Pregunta4("orca", 3));
 
-        fase2.Add(new Pregunta4("perro", 4));
-        fase2.Add(new Pregunta4("gato", 4));
-        fase2.Add(new Pregunta4("vaca", 4));
-        fase2.Add(new Pregunta4("caballo", 4));
-        fase2.Add(new Pregunta4("oso", 4));
-        fase2.Add(new Pregunta4("ratón", 4));
-        fase2.Add(new Pregunta4("burro", 4));
 
-        fase2.Add(new Pregunta4("loro", 5));
-        fase2.Add(new Pregunta4("gaviota", 5));
-        fase2.Add(new Pregunta4("águila", 5));
-        fase2.Add(new Pregunta4("buitre", 5));
-        fase2.Add(new Pregunta4("paloma", 5));
-        fase2.Add(new Pregunta4("canario", 5));
-        fase2.Add(new Pregunta4("cisne", 5));
-        fases4.Add(new FaseP4(DesordenarLista<Pregunta4>(fase2)));
+        fasesaux = DesordenarLista<Pregunta4>(fasesaux);
+        fase1.Add(fasesaux[0]);
+        fase1.Add(fasesaux[1]);
+        fase1.Add(fasesaux[2]);
+        fase1.Add(fasesaux[3]);
+        fase1.Add(fasesaux[4]);
+        fasesaux.Clear();
+
+
+        fases4aux.Add(new FaseP4(DesordenarLista<Pregunta4>(fase1),0,19));
+
+
+        fasesaux.Add(new Pregunta4("Pez", 3));
+        fasesaux.Add(new Pregunta4("Tiburón", 3));
+        fasesaux.Add(new Pregunta4("Ballena", 3));
+        fasesaux.Add(new Pregunta4("Foca", 3));
+        fasesaux.Add(new Pregunta4("Estrella de mar", 3));
+        fasesaux.Add(new Pregunta4("Sardina", 3));
+        fasesaux.Add(new Pregunta4("Orca", 3));
+        fasesaux.Add(new Pregunta4("Almejas", 3));
+        fasesaux.Add(new Pregunta4("Calamar", 3));
+        fasesaux.Add(new Pregunta4("Cangrejo", 3));
+        fasesaux.Add(new Pregunta4("Delfín", 3));
+        fasesaux.Add(new Pregunta4("Medusa", 3));
+
+
+
+
+
+
+        fasesaux = DesordenarLista<Pregunta4>(fasesaux);
+        fase2.Add(fasesaux[0]);
+        fase2.Add(fasesaux[1]);
+        fase2.Add(fasesaux[2]);
+        fase2.Add(fasesaux[3]);
+        fase2.Add(fasesaux[4]);
+        fasesaux.Clear();
+
+        fasesaux.Add(new Pregunta4("Perro", 4));
+        fasesaux.Add(new Pregunta4("Gato", 4));
+        fasesaux.Add(new Pregunta4("Vaca", 4));
+        fasesaux.Add(new Pregunta4("Caballo", 4));
+        fasesaux.Add(new Pregunta4("Oso", 4));
+        fasesaux.Add(new Pregunta4("Ratón", 4));
+        fasesaux.Add(new Pregunta4("Burro", 4));
+        fasesaux.Add(new Pregunta4("Cebra", 4));
+        fasesaux.Add(new Pregunta4("Tigre", 4));
+        fasesaux.Add(new Pregunta4("León", 4));
+        fasesaux.Add(new Pregunta4("Girafa", 4));
+
+
+
+
+
+        fasesaux = DesordenarLista<Pregunta4>(fasesaux);
+        fase2.Add(fasesaux[0]);
+        fase2.Add(fasesaux[1]);
+        fase2.Add(fasesaux[2]);
+        fase2.Add(fasesaux[3]);
+        fase2.Add(fasesaux[4]);
+        fasesaux.Clear();
+
+
+        fasesaux.Add(new Pregunta4("Loro", 5));
+        fasesaux.Add(new Pregunta4("Gaviota", 5));
+        fasesaux.Add(new Pregunta4("Águila", 5));
+        fasesaux.Add(new Pregunta4("Buitre", 5));
+        fasesaux.Add(new Pregunta4("Paloma", 5));
+        fasesaux.Add(new Pregunta4("Canario", 5));
+        fasesaux.Add(new Pregunta4("Cisne", 5));
+        fasesaux.Add(new Pregunta4("Patos", 5));
+        fasesaux.Add(new Pregunta4("Avestruz", 5));
+        fasesaux.Add(new Pregunta4("Búho", 5));
+        fasesaux.Add(new Pregunta4("Pingüinos", 5));
+        fasesaux.Add(new Pregunta4("Cuervos", 5));
+
+
+
+        fasesaux = DesordenarLista<Pregunta4>(fasesaux);
+        fase2.Add(fasesaux[0]);
+        fase2.Add(fasesaux[1]);
+        fase2.Add(fasesaux[2]);
+        fase2.Add(fasesaux[3]);
+        fase2.Add(fasesaux[4]);
+        fasesaux.Clear();
+
+
+        fases4aux.Add(new FaseP4(DesordenarLista<Pregunta4>(fase2),1,21));
+        fases4aux = DesordenarLista<FaseP4>(fases4aux);
+        fases4.Add(fases4aux[0]);
 
 
 
@@ -662,7 +776,7 @@ public class Lenguaje : MonoBehaviour
         {
             if (fases4[contador].contadorFase < fases4[contador].preguntas.Count)
             {
-                if (contador == 0)
+                if (fases4[contador].id == 0)
                 {
                     panel4.transform.GetChild(0).GetComponent<Text>().text = "Verduras";
                     panel4.transform.GetChild(1).GetComponent<Text>().text = "Frutas";
@@ -700,8 +814,8 @@ public class Lenguaje : MonoBehaviour
             panelFin.SetActive(true);
             textoPrincipal.GetComponent<Text>().text = "Ejercicio de lenguaje nivel 4 completado";
             panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 39 ";
-            if (puntos == 39)
+            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 15 ";
+            if (puntos == 15)
             {
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Has completado todos los niveles de lenguaje";
                 managerEjercicios.GetComponent<ManagerEjercicios>().usuario.lenguaje(5);
@@ -728,7 +842,7 @@ public class Lenguaje : MonoBehaviour
         block.SetActive(true);
         botonCorregir.SetActive(false);
         botonSiguiente.SetActive(true);
-        if (contador == 0)
+        if (fases4[contador].id == 0)
         {
             for (int i = 0; i < categoria1.transform.childCount; i++)
             {
@@ -941,11 +1055,14 @@ public class Pregunta4
 
 public class FaseP4
 {
-    public FaseP4(List<Pregunta4> pr)
+    public FaseP4(List<Pregunta4> pr,int i,int punt)
     {
         preguntas = new List<Pregunta4>();
         preguntas = pr;
+        id = i;
     }
     public List<Pregunta4> preguntas;
     public int contadorFase = 0;
+    public int id;
+    public int puntos;
 }

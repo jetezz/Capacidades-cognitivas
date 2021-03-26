@@ -52,15 +52,15 @@ public class Atencion : MonoBehaviour
     {
         List<T> arr = input;
         List<T> arrDes = new List<T>();
-        arr.Add(input[input.Count - 1]);
+      
 
         while (arr.Count > 0)
         {
-            int val = Random.Range(0, arr.Count - 1);
+            int val = Random.Range(0, arr.Count);
             arrDes.Add(arr[val]);
             arr.RemoveAt(val);
         }
-        arrDes.RemoveAt(arrDes.Count - 1);
+        
 
         return arrDes;
     }
@@ -104,8 +104,8 @@ public class Atencion : MonoBehaviour
         preguntas1.Add(new Pregunta1A("7", 0));
         preguntas1.Add(new Pregunta1A("8", 0));
         preguntas1.Add(new Pregunta1A("9", 0));
-     
 
+        preguntas1 = DesordenarLista<Pregunta1A>(preguntas1);
 
 
         panel1.SetActive(true);

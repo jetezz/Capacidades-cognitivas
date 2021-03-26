@@ -71,9 +71,24 @@ public class Memoria : MonoBehaviour
     private List<bool> posicionesPreguntas;
     private int movimientos = 0;
     private int numPreguntas = 0;
-   
 
 
+    public static List<T> DesordenarLista<T>(List<T> input)
+    {
+        List<T> arr = input;
+        List<T> arrDes = new List<T>();
+        arr.Add(input[input.Count - 1]);
+
+        while (arr.Count > 0)
+        {
+            int val = Random.Range(0, arr.Count - 1);
+            arrDes.Add(arr[val]);
+            arr.RemoveAt(val);
+        }
+        arrDes.RemoveAt(arrDes.Count - 1);
+
+        return arrDes;
+    }
 
 
     void Start()
@@ -606,6 +621,7 @@ public class Memoria : MonoBehaviour
         fasesTotales.Add(fase1);
         fasesTotales.Add(fase2);
         fasesTotales.Add(fase3);
+       
 
         panelNivel2.SetActive(true);
         panelNivel2.transform.GetChild(1).GetComponent<Image>().sprite = granja;

@@ -136,7 +136,7 @@ public class Praxia : MonoBehaviour
 
     void nivel1()
     {
-
+        List<Praxia1> aux = new List<Praxia1>();
         grupo1N1 = new Dictionary<int, Sprite>();
         grupo1N1.Add(0, desayunar);
         grupo1N1.Add(1, comprar);
@@ -149,17 +149,22 @@ public class Praxia : MonoBehaviour
         grupo1N1.Add(8, preparaMesa);
 
         preguntas1 = new List<Praxia1>();
-        preguntas1.Add(new Praxia1(0, "Desayunar"));
-        preguntas1.Add(new Praxia1(1, "Comprar en el supermercado"));
-        preguntas1.Add(new Praxia1(2, "Salir a correr"));
-        preguntas1.Add(new Praxia1(3, "Dormir"));
-        preguntas1.Add(new Praxia1(4, "Ducharse"));
-        preguntas1.Add(new Praxia1(5, "Fregar los platos"));
-        preguntas1.Add(new Praxia1(6, "Lavarse los dientes"));
-        preguntas1.Add(new Praxia1(7, "Poner la lavadora"));
-        preguntas1.Add(new Praxia1(8, "Preparar la mesa"));
+        aux.Add(new Praxia1(0, "Desayunar"));
+        aux.Add(new Praxia1(1, "Comprar en el supermercado"));
+        aux.Add(new Praxia1(2, "Salir a correr"));
+        aux.Add(new Praxia1(3, "Dormir"));
+        aux.Add(new Praxia1(4, "Ducharse"));
+        aux.Add(new Praxia1(5, "Fregar los platos"));
+        aux.Add(new Praxia1(6, "Lavarse los dientes"));
+        aux.Add(new Praxia1(7, "Poner la lavadora"));
+        aux.Add(new Praxia1(8, "Peinarse el pelo"));
 
-        preguntas1 = DesordenarLista<Praxia1>(preguntas1);
+        aux = DesordenarLista<Praxia1>(aux);
+
+        for(int i = 0; i < 5; i++)
+        {
+            preguntas1.Add(aux[i]);
+        }
 
         panel1.SetActive(true);
         siguientePreguntaN1();
@@ -174,7 +179,7 @@ public class Praxia : MonoBehaviour
         }
         else
         {
-            final("Ejercicio praxia nivel 1 completado",9,2);
+            final("Ejercicio praxia nivel 1 completado",5,2);
         }
     }
     void generarBotones1()
@@ -240,7 +245,7 @@ public class Praxia : MonoBehaviour
     void nivel2()
     {
         preguntas2 = new List<Praxia2>();
-
+        List<Praxia2> aux = new List<Praxia2>();
         grupo1N1 = new Dictionary<int, Sprite>();
         grupo1N1.Add(0, desayunar);
         grupo1N1.Add(1, comprar);
@@ -252,18 +257,23 @@ public class Praxia : MonoBehaviour
         grupo1N1.Add(7, ponerLavado);
         grupo1N1.Add(8, preparaMesa);
 
-        preguntas2.Add(new Praxia2(0, zumo));
-        preguntas2.Add(new Praxia2(1, cesta));
-        preguntas2.Add(new Praxia2(2, depor));
-        preguntas2.Add(new Praxia2(3, almohada));
-        preguntas2.Add(new Praxia2(4, alcachofa));
-        preguntas2.Add(new Praxia2(5, estropajo));
-        preguntas2.Add(new Praxia2(6, pasta));
-        preguntas2.Add(new Praxia2(7, detergente));
-        preguntas2.Add(new Praxia2(8, tenedor));
+        aux.Add(new Praxia2(0, zumo));
+        aux.Add(new Praxia2(1, cesta));
+        aux.Add(new Praxia2(2, depor));
+        aux.Add(new Praxia2(3, almohada));
+        aux.Add(new Praxia2(4, alcachofa));
+        aux.Add(new Praxia2(5, estropajo));
+        aux.Add(new Praxia2(6, pasta));
+        aux.Add(new Praxia2(7, detergente));
+        aux.Add(new Praxia2(8, tenedor));
+        aux = DesordenarLista<Praxia2>(aux);
 
+        for (int i = 0; i < 5; i++)
+        {
+            preguntas2.Add(aux[i]);
+        }
 
-        textoPrincipal.GetComponent<Text>().text = "pulsa la acción relacionada con la imagen de arriba";
+        textoPrincipal.GetComponent<Text>().text = "Pulsa la acción relacionada con la imagen";
         preguntas2 = DesordenarLista<Praxia2>(preguntas2);
      
         panel2.SetActive(true);
@@ -278,7 +288,7 @@ public class Praxia : MonoBehaviour
         }
         else
         {
-            final("Ejercicio praxia nivel 2 completado", 9, 3);
+            final("Ejercicio praxia nivel 2 completado", 5, 3);
         }
     }
     void generarBotones2()
@@ -404,16 +414,21 @@ public class Praxia : MonoBehaviour
 
 
 
-
+        List<Praxia3> aux = new List<Praxia3>();
         preguntas3 = new List<Praxia3>();
-        preguntas3.Add(new Praxia3(fase1));
-        preguntas3.Add(new Praxia3(fase2));
-        preguntas3.Add(new Praxia3(fase3));
-        preguntas3.Add(new Praxia3(fase4));
-        preguntas3.Add(new Praxia3(fase5));
-        preguntas3.Add(new Praxia3(fase6));
-        preguntas3.Add(new Praxia3(fase7));
-        preguntas3.Add(new Praxia3(fase8));
+        aux.Add(new Praxia3(fase1));
+        aux.Add(new Praxia3(fase2));
+        aux.Add(new Praxia3(fase3));
+        aux.Add(new Praxia3(fase4));
+        aux.Add(new Praxia3(fase5));
+        aux.Add(new Praxia3(fase6));
+        aux.Add(new Praxia3(fase7));
+        aux.Add(new Praxia3(fase8));
+        aux = DesordenarLista<Praxia3>(aux);
+        for(int i = 0; i < 5; i++)
+        {
+            preguntas3.Add(aux[i]);
+        }
 
 
         panel3.SetActive(true);
@@ -428,7 +443,7 @@ public class Praxia : MonoBehaviour
         }
         else
         {
-            final("Ejercicio praxia nivel 3 completado", 32, 4);
+            final("Ejercicio praxia nivel 3 completado", 20, 4);
         }
     }
     void generarBotones3()
@@ -539,6 +554,8 @@ public class Praxia : MonoBehaviour
 
         fase5 = DesordenarLista<Praxia1>(fase5);
         preguntas4.Add(new Praxia4(fase5));
+
+
 
         siguientePreguntaN4();
 

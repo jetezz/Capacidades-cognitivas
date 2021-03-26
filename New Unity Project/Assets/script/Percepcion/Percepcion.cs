@@ -123,7 +123,7 @@ public class Percepcion : MonoBehaviour
 
 
     //nivel1
-    List<Pregunta1P> preguntas1 = new List<Pregunta1P>();
+    List<Pregunta1P> preguntas1;
     public GameObject panel1;
     int numrespuestas = 0;
 
@@ -190,33 +190,48 @@ public class Percepcion : MonoBehaviour
     {
         List<T> arr = input;
         List<T> arrDes = new List<T>();
-        arr.Add(input[input.Count - 1]);
+       
 
         while (arr.Count > 0)
         {
-            int val = Random.Range(0, arr.Count - 1);
+            int val = Random.Range(0, arr.Count);
             arrDes.Add(arr[val]);
             arr.RemoveAt(val);
         }
-        arrDes.RemoveAt(arrDes.Count - 1);
+       
 
         return arrDes;
     }
 
     void nivel1()
     {
-        preguntas1.Add(new Pregunta1P(oveja,0));
-        preguntas1.Add(new Pregunta1P(perro, 0));
-        preguntas1.Add(new Pregunta1P(caballo, 0));
-        preguntas1.Add(new Pregunta1P(conejo, 0));
-        preguntas1.Add(new Pregunta1P(gato, 0));
+        preguntas1 = new List<Pregunta1P>();
+        List<Pregunta1P> aux = new List<Pregunta1P>();
 
-        preguntas1.Add(new Pregunta1P(circulo, 1));
-        preguntas1.Add(new Pregunta1P(cuadrado, 1));
-        preguntas1.Add(new Pregunta1P(rombo, 1));
-        preguntas1.Add(new Pregunta1P(rectangulo, 1));
-        preguntas1.Add(new Pregunta1P(triangulo, 1));
+        aux.Add(new Pregunta1P(oveja,0));
+        aux.Add(new Pregunta1P(perro, 0));
+        aux.Add(new Pregunta1P(caballo, 0));
+        aux.Add(new Pregunta1P(conejo, 0));
+        aux.Add(new Pregunta1P(gato, 0));
 
+        aux = DesordenarLista<Pregunta1P>(aux);
+        preguntas1.Add(aux[0]);
+        preguntas1.Add(aux[1]);
+        preguntas1.Add(aux[2]);
+        aux.Clear();
+
+        aux.Add(new Pregunta1P(circulo, 1));
+        aux.Add(new Pregunta1P(cuadrado, 1));
+        aux.Add(new Pregunta1P(rombo, 1));
+        aux.Add(new Pregunta1P(rectangulo, 1));
+        aux.Add(new Pregunta1P(triangulo, 1));
+
+        aux = DesordenarLista<Pregunta1P>(aux);
+        preguntas1.Add(aux[0]);
+        preguntas1.Add(aux[1]);
+        preguntas1.Add(aux[2]);
+
+        preguntas1 = DesordenarLista<Pregunta1P>(preguntas1);
 
 
 
@@ -240,8 +255,8 @@ public class Percepcion : MonoBehaviour
             panelFin.SetActive(true);
             textoPrincipal.GetComponent<Text>().text = "Ejercicio de percepcion nivel 1 completado";
             panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 40 ";
-            if (puntos == 40)
+            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 24 ";
+            if (puntos == 24)
             {
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 2";
                 managerEjercicios.GetComponent<ManagerEjercicios>().usuario.percepcion(2);
@@ -394,30 +409,40 @@ public class Percepcion : MonoBehaviour
        
 
         List<Pregunta2P> aux = new List<Pregunta2P>();
-        preguntas2.Add(new Pregunta2P(0, 0));
-        preguntas2.Add(new Pregunta2P(1, 0));
-        preguntas2.Add(new Pregunta2P(2, 0));
-        preguntas2.Add(new Pregunta2P(3, 0));
-        preguntas2.Add(new Pregunta2P(4, 0));
-        preguntas2.Add(new Pregunta2P(5, 0));
-        preguntas2.Add(new Pregunta2P(6, 0));
-        preguntas2.Add(new Pregunta2P(7, 0));
-        preguntas2.Add(new Pregunta2P(8, 0));
-        preguntas2.Add(new Pregunta2P(9, 0));
-        preguntas2.Add(new Pregunta2P(10, 0));
-       
+        int rand = 0;
+      
+        rand = Random.Range(0, 2);
+        if (rand == 0)
+        {
+            preguntas2.Add(new Pregunta2P(0, 0));
+            preguntas2.Add(new Pregunta2P(1, 0));
+            preguntas2.Add(new Pregunta2P(2, 0));
+            preguntas2.Add(new Pregunta2P(3, 0));
+            preguntas2.Add(new Pregunta2P(4, 0));
+            preguntas2.Add(new Pregunta2P(5, 0));
+            preguntas2.Add(new Pregunta2P(6, 0));
+            preguntas2.Add(new Pregunta2P(7, 0));
+            preguntas2.Add(new Pregunta2P(8, 0));
+            preguntas2.Add(new Pregunta2P(9, 0));
+            preguntas2.Add(new Pregunta2P(10, 0));
+        }
+        else
+        {
+            preguntas2.Add(new Pregunta2P(0, 1));
+            preguntas2.Add(new Pregunta2P(1, 1));
+            preguntas2.Add(new Pregunta2P(2, 1));
+            preguntas2.Add(new Pregunta2P(3, 1));
+            preguntas2.Add(new Pregunta2P(4, 1));
+            preguntas2.Add(new Pregunta2P(5, 1));
+            preguntas2.Add(new Pregunta2P(6, 1));
+            preguntas2.Add(new Pregunta2P(7, 1));
+            preguntas2.Add(new Pregunta2P(8, 1));
+            preguntas2.Add(new Pregunta2P(9, 1));
+            preguntas2.Add(new Pregunta2P(10, 1));
+        }
 
-        preguntas2.Add(new Pregunta2P(0, 1));
-        preguntas2.Add(new Pregunta2P(1, 1));
-        preguntas2.Add(new Pregunta2P(2, 1));
-        preguntas2.Add(new Pregunta2P(3, 1));
-        preguntas2.Add(new Pregunta2P(4, 1));
-        preguntas2.Add(new Pregunta2P(5, 1));
-        preguntas2.Add(new Pregunta2P(6, 1));
-        preguntas2.Add(new Pregunta2P(7, 1));
-        preguntas2.Add(new Pregunta2P(8, 1));
-        preguntas2.Add(new Pregunta2P(9, 1));
-        preguntas2.Add(new Pregunta2P(10, 1));
+        preguntas2 = DesordenarLista<Pregunta2P>(preguntas2);
+        
         
 
 
@@ -446,8 +471,8 @@ public class Percepcion : MonoBehaviour
                 panelFin.SetActive(true);
                 textoPrincipal.GetComponent<Text>().text = "Ejercicio de percepcion nivel 2 completado";
                 panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-                panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 44 ";
-                if (puntos == 44)
+                panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 22 ";
+                if (puntos == 22)
                 {
                     panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 3";
                     managerEjercicios.GetComponent<ManagerEjercicios>().usuario.percepcion(3);
@@ -464,8 +489,8 @@ public class Percepcion : MonoBehaviour
                 panelFin.SetActive(true);
                 textoPrincipal.GetComponent<Text>().text = "Ejercicio de percepcion nivel 3 completado";
                 panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-                panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 33 ";
-                if (puntos == 33)
+                panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 15 ";
+                if (puntos == 15)
                 {
                     panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 4";
                     managerEjercicios.GetComponent<ManagerEjercicios>().usuario.percepcion(4);
@@ -656,49 +681,61 @@ public class Percepcion : MonoBehaviour
         grupo5N3.Add(5, llave6);
         grupo5N3.Add(6, llave7);
 
-        List<Pregunta2P> aux = new List<Pregunta2P>();
+
+        List<GrupoPreguntas<Pregunta2P>> aux;
+        aux = new List<GrupoPreguntas<Pregunta2P>>();
+
         preguntas2.Add(new Pregunta2P(0, 2));
         preguntas2.Add(new Pregunta2P(1, 2));
         preguntas2.Add(new Pregunta2P(2, 2));
         preguntas2.Add(new Pregunta2P(3, 2));
         preguntas2.Add(new Pregunta2P(4, 2));
+        aux.Add(new GrupoPreguntas<Pregunta2P>(DesordenarLista<Pregunta2P>(preguntas2)));
        
 
-
+        preguntas2.Clear();
         preguntas2.Add(new Pregunta2P(0, 3));
         preguntas2.Add(new Pregunta2P(1, 3));
         preguntas2.Add(new Pregunta2P(2, 3));
         preguntas2.Add(new Pregunta2P(3, 3));
         preguntas2.Add(new Pregunta2P(4, 3));
-       
-      
+        aux.Add(new GrupoPreguntas<Pregunta2P>(DesordenarLista<Pregunta2P>(preguntas2)));
 
+
+
+
+
+        preguntas2.Clear();
         preguntas2.Add(new Pregunta2P(0, 4));
         preguntas2.Add(new Pregunta2P(1, 4));
         preguntas2.Add(new Pregunta2P(2, 4));
         preguntas2.Add(new Pregunta2P(3, 4));
         preguntas2.Add(new Pregunta2P(4, 4));
-        preguntas2.Add(new Pregunta2P(5, 4));
-      
+        
+        aux.Add(new GrupoPreguntas<Pregunta2P>(DesordenarLista<Pregunta2P>(preguntas2)));
 
-
+        preguntas2.Clear();
         preguntas2.Add(new Pregunta2P(0, 5));
         preguntas2.Add(new Pregunta2P(1, 5));
         preguntas2.Add(new Pregunta2P(2, 5));
         preguntas2.Add(new Pregunta2P(3, 5));
         preguntas2.Add(new Pregunta2P(4, 5));
-      
+        aux.Add(new GrupoPreguntas<Pregunta2P>(DesordenarLista<Pregunta2P>(preguntas2)));
 
-
+        preguntas2.Clear();
         preguntas2.Add(new Pregunta2P(0, 6));
         preguntas2.Add(new Pregunta2P(1, 6));
         preguntas2.Add(new Pregunta2P(2, 6));
         preguntas2.Add(new Pregunta2P(3, 6));
         preguntas2.Add(new Pregunta2P(4, 6));
-  
+        aux.Add(new GrupoPreguntas<Pregunta2P>(DesordenarLista<Pregunta2P>(preguntas2)));
 
 
-
+        preguntas2.Clear();
+        aux = DesordenarLista<GrupoPreguntas<Pregunta2P>>(aux);
+        preguntas2.AddRange(aux[0].lista);
+        preguntas2.AddRange(aux[1].lista);
+        preguntas2.AddRange(aux[2].lista);
 
         panel2.SetActive(true);
         textoPrincipal.GetComponent<Text>().text = "Selecciona las imágenes que son iguales al ejemplo";
@@ -734,8 +771,12 @@ public class Percepcion : MonoBehaviour
         aux.Add(new Pregunta42p(spor3, spor8, 4, 5));
         aux.Add(new Pregunta42p(spor4, spor5, 4, 6));
 
-        preguntas4 = DesordenarLista<Pregunta42p>(aux);
-        
+        aux = DesordenarLista<Pregunta42p>(aux);
+        preguntas4.Add(aux[0]);
+        preguntas4.Add(aux[1]);
+        preguntas4.Add(aux[2]);
+        preguntas4.Add(aux[3]);
+
 
         panel4.SetActive(true);
         textoPrincipal.GetComponent<Text>().text = "Selecciona los dos dibujos iguales";
@@ -755,8 +796,8 @@ public class Percepcion : MonoBehaviour
             panelFin.SetActive(true);
             textoPrincipal.GetComponent<Text>().text = "Ejercicio de percepcion nivel 4 completado";
             panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 38 ";
-            if (puntos == 26)
+            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 8 ";
+            if (puntos == 8)
             {
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Has completado todos los niveles de percepcion";
                 managerEjercicios.GetComponent<ManagerEjercicios>().usuario.percepcion(5);
@@ -774,7 +815,7 @@ public class Percepcion : MonoBehaviour
         
         if (izquierda == true)
         {
-            Debug.Log(id +"-"+ preguntas4[contador].solucion1.ToString());
+          
 
             if (preguntas4[contador].solucion1 == id)
             {               
@@ -789,7 +830,7 @@ public class Percepcion : MonoBehaviour
         }
         else
         {
-            Debug.Log(id +"-"+ preguntas4[contador].solucion2.ToString());
+          
 
             if (preguntas4[contador].solucion2 == id)
             {
@@ -883,4 +924,15 @@ public class Percepcion : MonoBehaviour
     public Sprite imagen2;
     public int solucion1;
     public int solucion2;
+}
+
+public class GrupoPreguntas <T>
+{
+    public GrupoPreguntas(List <T> lis)
+    {
+        lista = new List<T>();
+        lista = lis;
+    }
+
+    public List<T> lista;
 }

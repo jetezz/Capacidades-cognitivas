@@ -180,7 +180,8 @@ public class Gnoxias : MonoBehaviour
 
     void nivel1()
     {
-        preguntas1 = new List<Pregunta1G>();       
+        preguntas1 = new List<Pregunta1G>();
+        List<Pregunta1G> aux = new List<Pregunta1G>();
         trozosN1 = new Dictionary<int, Sprite>();
        
        
@@ -195,17 +196,24 @@ public class Gnoxias : MonoBehaviour
         trozosN1.Add(7, trozo8);
         trozosN1.Add(8, trozo9);
 
-        preguntas1.Add(new Pregunta1G(imagen1, 0));
-        preguntas1.Add(new Pregunta1G(imagen2, 1));
-        preguntas1.Add(new Pregunta1G(imagen3, 2));
-        preguntas1.Add(new Pregunta1G(imagen4, 3));
-        preguntas1.Add(new Pregunta1G(imagen5, 4));
-        preguntas1.Add(new Pregunta1G(imagen6, 5));
-        preguntas1.Add(new Pregunta1G(imagen7, 6));
-        preguntas1.Add(new Pregunta1G(imagen8, 7));
-        preguntas1.Add(new Pregunta1G(imagen9, 8));
+        aux.Add(new Pregunta1G(imagen1, 0));
+        aux.Add(new Pregunta1G(imagen2, 1));
+        aux.Add(new Pregunta1G(imagen3, 2));
+        aux.Add(new Pregunta1G(imagen4, 3));
+        aux.Add(new Pregunta1G(imagen5, 4));
+        aux.Add(new Pregunta1G(imagen6, 5));
+        aux.Add(new Pregunta1G(imagen7, 6));
+        aux.Add(new Pregunta1G(imagen8, 7));
+        aux.Add(new Pregunta1G(imagen9, 8));
 
-        preguntas1 = DesordenarLista<Pregunta1G>(preguntas1);
+
+        aux = DesordenarLista<Pregunta1G>(aux);
+        preguntas1.Add(aux[0]);
+        preguntas1.Add(aux[1]);
+        preguntas1.Add(aux[2]);
+        preguntas1.Add(aux[3]);
+        preguntas1.Add(aux[4]);
+
         panel1.SetActive(true);
         textoPrincipal.GetComponent<Text>().text = "Selecciona el trozo que corresponde a la imagen";
         siguientePreguntaN1();
@@ -223,8 +231,8 @@ public class Gnoxias : MonoBehaviour
             panelFin.SetActive(true);
             textoPrincipal.GetComponent<Text>().text = "Ejercicio de Gnoxia nivel 1 completado";
             panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 9 ";
-            if (puntos == 9)
+            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 5 ";
+            if (puntos == 5)
             {
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 2";
                 managerEjercicios.GetComponent<ManagerEjercicios>().usuario.gnosia(2);
@@ -339,30 +347,36 @@ public class Gnoxias : MonoBehaviour
 
 
         preguntas2 = new List<Pregunta2G>();
+        List<Pregunta2G> aux = new List<Pregunta2G>();
 
-        preguntas2.Add(new Pregunta2G(siluetasN2[0], 0, 1));
-        preguntas2.Add(new Pregunta2G(siluetasN2[1], 1, 1));
-        preguntas2.Add(new Pregunta2G(siluetasN2[2], 2, 1));
-        preguntas2.Add(new Pregunta2G(siluetasN2[3], 3, 1));
-        preguntas2.Add(new Pregunta2G(siluetasN2[4], 4, 1));
-        preguntas2.Add(new Pregunta2G(siluetasN2[5], 5, 1));
+        aux.Add(new Pregunta2G(siluetasN2[0], 0, 1));
+        aux.Add(new Pregunta2G(siluetasN2[1], 1, 1));
+        aux.Add(new Pregunta2G(siluetasN2[2], 2, 1));
+        aux.Add(new Pregunta2G(siluetasN2[3], 3, 1));
+        aux.Add(new Pregunta2G(siluetasN2[4], 4, 1));
+        aux.Add(new Pregunta2G(siluetasN2[5], 5, 1));
 
-        preguntas2.Add(new Pregunta2G(siluetasN2[6], 6, 2));
-        preguntas2.Add(new Pregunta2G(siluetasN2[7], 7, 2));
-        preguntas2.Add(new Pregunta2G(siluetasN2[8], 8, 2));
-        preguntas2.Add(new Pregunta2G(siluetasN2[9], 9, 2));
-        preguntas2.Add(new Pregunta2G(siluetasN2[10], 10, 2));
-        preguntas2.Add(new Pregunta2G(siluetasN2[11], 11, 2));
-        preguntas2.Add(new Pregunta2G(siluetasN2[12], 12, 2));
+        aux.Add(new Pregunta2G(siluetasN2[6], 6, 2));
+        aux.Add(new Pregunta2G(siluetasN2[7], 7, 2));
+        aux.Add(new Pregunta2G(siluetasN2[8], 8, 2));
+        aux.Add(new Pregunta2G(siluetasN2[9], 9, 2));
+        aux.Add(new Pregunta2G(siluetasN2[10], 10, 2));
+        aux.Add(new Pregunta2G(siluetasN2[11], 11, 2));
+        aux.Add(new Pregunta2G(siluetasN2[12], 12, 2));
 
-        preguntas2.Add(new Pregunta2G(siluetasN2[13], 13, 3));
-        preguntas2.Add(new Pregunta2G(siluetasN2[14], 14, 3));
-        preguntas2.Add(new Pregunta2G(siluetasN2[15], 15, 3));
-        preguntas2.Add(new Pregunta2G(siluetasN2[16], 16, 3));
-        preguntas2.Add(new Pregunta2G(siluetasN2[17], 17, 3));
-        preguntas2.Add(new Pregunta2G(siluetasN2[18], 18, 3));
+        aux.Add(new Pregunta2G(siluetasN2[13], 13, 3));
+        aux.Add(new Pregunta2G(siluetasN2[14], 14, 3));
+        aux.Add(new Pregunta2G(siluetasN2[15], 15, 3));
+        aux.Add(new Pregunta2G(siluetasN2[16], 16, 3));
+        aux.Add(new Pregunta2G(siluetasN2[17], 17, 3));
+        aux.Add(new Pregunta2G(siluetasN2[18], 18, 3));
 
-        preguntas2 = DesordenarLista<Pregunta2G>(preguntas2);
+        aux = DesordenarLista<Pregunta2G>(aux);
+        for(int i = 0; i < 12; i++)
+        {
+            preguntas2.Add(aux[i]);
+        }
+        
 
         panel2.SetActive(true);
 
@@ -386,8 +400,8 @@ public class Gnoxias : MonoBehaviour
             panelFin.SetActive(true);
             textoPrincipal.GetComponent<Text>().text = "Ejercicio de Gnoxia nivel 2 completado";
             panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 19 ";
-            if (puntos == 19)
+            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 12 ";
+            if (puntos == 12)
             {
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 3";
                 managerEjercicios.GetComponent<ManagerEjercicios>().usuario.gnosia(3);
@@ -518,22 +532,29 @@ public class Gnoxias : MonoBehaviour
         siluetasN2.Add(18, s19);
 
         preguntas3 = new List<Pregunta3G>();
+        List<Pregunta3G> aux = new List<Pregunta3G>();
 
+   
         preguntas3.Add(generarPreguntas(1));
         preguntas3.Add(generarPreguntas(1));
+        preguntas3.Add(generarPreguntas(2));
+        preguntas3.Add(generarPreguntas(2));
+        preguntas3.Add(generarPreguntas(3));
+        preguntas3.Add(generarPreguntas(3));
         preguntas3.Add(generarPreguntas(1));
         preguntas3.Add(generarPreguntas(1));
+        preguntas3.Add(generarPreguntas(2));
+        preguntas3.Add(generarPreguntas(2));
+        preguntas3.Add(generarPreguntas(3));
+        preguntas3.Add(generarPreguntas(3));
+   
 
-        preguntas3.Add(generarPreguntas(2));
-        preguntas3.Add(generarPreguntas(2));
-        preguntas3.Add(generarPreguntas(2));
-        preguntas3.Add(generarPreguntas(2));
 
-        preguntas3.Add(generarPreguntas(3));
-        preguntas3.Add(generarPreguntas(3));
-        preguntas3.Add(generarPreguntas(3));
-        preguntas3.Add(generarPreguntas(3));
-        preguntas3.Add(generarPreguntas(3));
+
+
+
+
+
 
 
 
@@ -595,8 +616,8 @@ public class Gnoxias : MonoBehaviour
             panelFin.SetActive(true);
             textoPrincipal.GetComponent<Text>().text = "Ejercicio de Gnosia nivel 3 completado";
             panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 39 ";
-            if (puntos == 39)
+            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 36 ";
+            if (puntos == 36)
             {
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 4";
                 managerEjercicios.GetComponent<ManagerEjercicios>().usuario.gnosia(4);
