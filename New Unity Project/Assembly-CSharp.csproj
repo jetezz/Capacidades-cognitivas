@@ -57,7 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\script\orientacion\SlotOrientacion.cs" />
-    <Compile Include="Assets\script\Memoria.cs" />
+    <Compile Include="Assets\script\Memoria\Memoria.cs" />
     <Compile Include="Assets\script\ItemSlot.cs" />
     <Compile Include="Assets\script\Ejemplojson.cs" />
     <Compile Include="Assets\script\orientacion\Orientacion.cs" />
