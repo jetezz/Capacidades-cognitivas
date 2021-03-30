@@ -75,7 +75,8 @@ public class Calculo : MonoBehaviour
     int preguntas4 = 5;
     List<Grupo2> conjunto2;
     public float precioTotal = 0;
-    public float precioInput = 0;
+    public GameObject botonesN4;
+    
  
     public static List<T> DesordenarLista<T>(List<T> input)
     {
@@ -148,20 +149,20 @@ public class Calculo : MonoBehaviour
     void nivel1()
     {
         preguntas1 = new List<Calculo1>();
-        preguntas1.Add(new Calculo1(c5, true, "¿Es una moneda de 5 centimos?",true));
-        preguntas1.Add(new Calculo1(c10, true, "¿Es una moneda de 10 centimos?",true));
-        preguntas1.Add(new Calculo1(c20, true, "¿Es una moneda de 20 centimos?", true));
-        preguntas1.Add(new Calculo1(c50, true, "¿Es una moneda de 50 centimos?", true));
+        preguntas1.Add(new Calculo1(c5, true, "¿Es una moneda de 5 céntimos?",true));
+        preguntas1.Add(new Calculo1(c10, true, "¿Es una moneda de 10 céntimos?",true));
+        preguntas1.Add(new Calculo1(c20, true, "¿Es una moneda de 20 céntimos?", true));
+        preguntas1.Add(new Calculo1(c50, true, "¿Es una moneda de 50 céntimos?", true));
         preguntas1.Add(new Calculo1(e5, true, "¿Es un billete de 5 euros?", false));
         preguntas1.Add(new Calculo1(e10, true, "¿Es un billete de 10 euros?", false));
         preguntas1.Add(new Calculo1(e20, true, "¿Es un billete de 20 euros?", false));
         preguntas1.Add(new Calculo1(e50, true, "¿Es un billete de 50 euros?", false));
 
 
-        preguntas1.Add(new Calculo1(c10, false, "¿Es una moneda de 5 centimos?", true));
-        preguntas1.Add(new Calculo1(c5, false, "¿Es una moneda de 10 centimos?", true));
-        preguntas1.Add(new Calculo1(c50, false, "¿Es una moneda de 20 centimos?", true));
-        preguntas1.Add(new Calculo1(c20, false, "¿Es una moneda de 50 centimos?", true));
+        preguntas1.Add(new Calculo1(c10, false, "¿Es una moneda de 5 céntimos?", true));
+        preguntas1.Add(new Calculo1(c5, false, "¿Es una moneda de 10 céntimos?", true));
+        preguntas1.Add(new Calculo1(c50, false, "¿Es una moneda de 20 céntimos?", true));
+        preguntas1.Add(new Calculo1(c20, false, "¿Es una moneda de 50 céntimos?", true));
         preguntas1.Add(new Calculo1(e50, false, "¿Es un billete de 5 euros?", false));
         preguntas1.Add(new Calculo1(e20, false, "¿Es un billete de 10 euros?", false));
         preguntas1.Add(new Calculo1(e10, false, "¿Es un billete de 20 euros?", false));
@@ -274,6 +275,11 @@ public class Calculo : MonoBehaviour
         tiempo = 1;
         contador++;
         siguientePreguntaN2();
+    }
+    public void botonBorrar()
+    {
+        dinero = 0;
+        precio.GetComponent<Text>().text = dinero.ToString();
     }
     void nivel3()
     {
@@ -532,6 +538,7 @@ public class Calculo : MonoBehaviour
         if (contador < preguntas4)
         {
             generarGruposN4();
+            generarBotonesN4();
         }
         else
         {
@@ -551,14 +558,33 @@ public class Calculo : MonoBehaviour
         }
         precioTotal = (float)(Math.Round(precioTotal * 100) / 100);
     }
+    void generarBotonesN4()
+    {
+        List<float_bool> aux = new List<float_bool>();
+        aux.Add(new float_bool(precioTotal, true));
 
-    public void inputPrecio(string pre)
-    {
-        precioInput = float.Parse(pre,System.Globalization.CultureInfo.InvariantCulture);
+        for(int i = 0; i < 2; i++)
+        {
+            float rando = UnityEngine.Random.Range(-10, 10);
+            aux.Add(new float_bool(precioTotal + rando,false));
+        }
+
+        aux = DesordenarLista<float_bool>(aux);
+
+        for(int i = 0; i < 3; i++)
+        {
+            botonesN4.transform.GetChild(i).GetChild(0).GetComponent<Text>().text = aux[i].num.ToString() + "€";
+            botonesN4.transform.GetChild(i).GetComponent<IdSeleccion>().correcto = aux[i].correcto;
+        }
+
+
     }
-    public void botonNivel4()
+
+   
+    public void botonNivel4(int i)
     {
-        if (precioInput == precioTotal)
+        
+        if (botonesN4.transform.GetChild(i).GetComponent<IdSeleccion>().correcto)
         {
             puntos++;
             imagenCorreccion.GetComponent<Image>().sprite = tick;
@@ -571,6 +597,7 @@ public class Calculo : MonoBehaviour
         contador++;
         destruirObjetos();
         siguientePreguntaN4();
+        
     }
 
     void Update()
@@ -686,4 +713,16 @@ class Grupo2
     public Sprite img;
     public Sprite eti;
     public float precio;
+}
+
+class float_bool
+{
+    public float_bool(float nu,bool corr)
+    {
+        num = nu;
+        correcto = corr;
+    }
+
+    public float num;
+    public bool correcto;
 }

@@ -150,7 +150,7 @@ public class Orientacion : MonoBehaviour
         preguntas1 = new List<Orientacion1>();
         preguntas1.Add(new Orientacion1(or1, true, "El perro está dentro de la cama"));
         preguntas1.Add(new Orientacion1(or2, false, "La pelota está encima de la silla"));
-        preguntas1.Add(new Orientacion1(or3, true, "La niña está detras del ordenador"));
+        preguntas1.Add(new Orientacion1(or3, true, "La niña está detrás del ordenador"));
         preguntas1.Add(new Orientacion1(or3, false, "El ordenador está detras de la niña"));
         preguntas1.Add(new Orientacion1(or4, false, "La bicicleta está delante de la niña"));
         preguntas1.Add(new Orientacion1(or4, true, "La niña está delante de la bicicleta"));
@@ -200,8 +200,8 @@ public class Orientacion : MonoBehaviour
     {
         preguntas2 = new List<Orientacion2>();
         preguntas2.Add(new Orientacion2(1, "selecciona la pelota que está debajo de la mesa", pre1N2));
-        preguntas2.Add(new Orientacion2(0, "selecciona la pelota que está arriba de la mesa", pre1N2));
-        preguntas2.Add(new Orientacion2(0, "selecciona la pelota que está encima de la  de la silla", pre2N2));
+        preguntas2.Add(new Orientacion2(0, "selecciona la pelota que está encima de la mesa", pre1N2));
+        preguntas2.Add(new Orientacion2(0, "selecciona la pelota que está encima  de la silla", pre2N2));
         preguntas2.Add(new Orientacion2(1, "selecciona la pelota que está al lado de la silla", pre2N2));
         preguntas2.Add(new Orientacion2(0, "selecciona la pelota que está al lado de la cama", pre3N2));
         preguntas2.Add(new Orientacion2(1, "selecciona la pelota que está encima de la cama", pre3N2));
@@ -281,22 +281,22 @@ public class Orientacion : MonoBehaviour
         fase3.Add(n13);
         fase3.Add(n14);
 
-        preguntas3.Add(new Orientacion3(fase1, "pulsa el jarron que está encima de la mesa",0));
-        preguntas3.Add(new Orientacion3(fase1, "pulsa el jarron que está debajo de la mesa", 1));
-        preguntas3.Add(new Orientacion3(fase1, "pulsa el jarron que está a la izquierda de la mesa", 2));
-        preguntas3.Add(new Orientacion3(fase1, "pulsa el jarron que está a la derecha de la mesa", 3));
-        preguntas3.Add(new Orientacion3(fase1, "pulsa la lampara que está delante de la mesa", 4));
-        preguntas3.Add(new Orientacion3(fase1, "pulsa la lampara que está detras de la mesa", 5));
+        preguntas3.Add(new Orientacion3(fase1, "pulsa el maceta que está encima de la mesa",0));
+        preguntas3.Add(new Orientacion3(fase1, "pulsa el maceta que está debajo de la mesa", 1));
+        preguntas3.Add(new Orientacion3(fase1, "pulsa el maceta que está a la izquierda de la mesa", 2));
+        preguntas3.Add(new Orientacion3(fase1, "pulsa el maceta que está a la derecha de la mesa", 3));
+        preguntas3.Add(new Orientacion3(fase1, "pulsa la lámpara que está delante de la mesa", 4));
+        preguntas3.Add(new Orientacion3(fase1, "pulsa la lámpara que está detrás de la mesa", 5));
 
-        preguntas3.Add(new Orientacion3(fase2, "pulsa el jarron que está entra la lampara y la mesa", 4));
-        preguntas3.Add(new Orientacion3(fase2, "pulsa la lampara que está a la derecha de la mesa", 5));
+        preguntas3.Add(new Orientacion3(fase2, "pulsa el maceta que está entra la lámpara y la mesa", 4));
+        preguntas3.Add(new Orientacion3(fase2, "pulsa la lámpara que está a la derecha de la mesa", 5));
 
 
 
         preguntas3.Add(new Orientacion3(fase3, "Pulsa el gato que está delante de la mesa", 0));
         preguntas3.Add(new Orientacion3(fase3, "Pulsa el gato que está encima de la mesa", 1));
         preguntas3.Add(new Orientacion3(fase3, "Pulsa el gato que está a la derecha de la mesa", 2));
-        preguntas3.Add(new Orientacion3(fase3, "Pulsa el gato que está detras de la mesa", 3));
+        preguntas3.Add(new Orientacion3(fase3, "Pulsa el gato que está detrás de la mesa", 3));
         preguntas3.Add(new Orientacion3(fase3, "Pulsa el gato que está a la izquierda de la mesa", 4));
         preguntas3.Add(new Orientacion3(fase3, "Pulsa el gato que está debajo de la mesa", 5));
 
@@ -360,12 +360,12 @@ public class Orientacion : MonoBehaviour
     void nivel4()
     {
         preguntas4 = new List<Orientacion4>();
-        preguntas4.Add(new Orientacion4(2, 2, "coloca el cuadrado a la derecha del circulo", 1));
-        preguntas4.Add(new Orientacion4(1, 3, "coloca el rombo debajo del circulo", 2));
-        preguntas4.Add(new Orientacion4(1, 1, "coloca el triangulo arriba del circulo", 3));
-        preguntas4.Add(new Orientacion4(0, 2, "coloca el rectangulo a la izquierda del circulo", 4));
+        preguntas4.Add(new Orientacion4(2, 2, "coloca el cuadrado a la derecha del círculo", 1));
+        preguntas4.Add(new Orientacion4(1, 3, "coloca el rombo debajo del círculo", 2));
+        preguntas4.Add(new Orientacion4(1, 1, "coloca el triángulo arriba del círculo", 3));
+        preguntas4.Add(new Orientacion4(0, 2, "coloca el rectangulo a la izquierda del círculo", 4));
         preguntas4.Add(new Orientacion4(3, 2, "coloca el rombo a la derecha del cuadrado", 2));
-        preguntas4.Add(new Orientacion4(4, 2, "coloca el triangulo a la derecha del rombo", 3));
+        preguntas4.Add(new Orientacion4(4, 2, "coloca el triángulo a la derecha del rombo", 3));
         preguntas4.Add(new Orientacion4(4, 3, "coloca el cuadrado debajo del triangulo", 1));
         preguntas4.Add(new Orientacion4(3, 3, "coloca el rectangulo a la izquierda del cuadrado", 4));
 
