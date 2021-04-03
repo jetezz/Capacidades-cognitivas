@@ -6556,6 +6556,8 @@ MonoBehaviour:
   c10: {fileID: 21300000, guid: bc77379909c5d3b44b9afc828c2f1a74, type: 3}
   c20: {fileID: 21300000, guid: 274ac145484ea3440a2c32bd58f0ecae, type: 3}
   c50: {fileID: 21300000, guid: 8a4755768defc0442882268cddc5c437, type: 3}
+  e1: {fileID: 21300000, guid: 000274beeda626147bc367d055178fef, type: 3}
+  e2: {fileID: 21300000, guid: d76ed01a4d4528348baf8d8a9f684076, type: 3}
   e5: {fileID: 21300000, guid: 8c2ebcb568c94c64698b953001d045c2, type: 3}
   e10: {fileID: 21300000, guid: 3071d3070ca0c7a4ab159bdf93102e36, type: 3}
   e20: {fileID: 21300000, guid: 3cef0eb3c3579ec4fbfa5a670bbf8911, type: 3}

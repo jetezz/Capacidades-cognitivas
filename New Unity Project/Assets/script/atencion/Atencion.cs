@@ -67,7 +67,9 @@ public class Atencion : MonoBehaviour
     void Start()
     {
         managerEjercicios = GameObject.FindWithTag("MEje");
-       
+
+      
+        
         
         if (managerEjercicios.GetComponent<ManagerEjercicios>().nivel == 1)
         {

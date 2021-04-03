@@ -41,8 +41,9 @@ public class Memoria : MonoBehaviour
     public Sprite cocina;
     public Sprite habitacion;
     public Sprite salon;
-   
+    public Sprite cocina2;
     public Sprite salon2;
+    public Sprite salon3;
     public Sprite cuarto;
     public Sprite zoo;
 
@@ -62,7 +63,9 @@ public class Memoria : MonoBehaviour
     public GameObject botonesFase2;
     public GameObject botonesFase3;
     public GameObject botonesFase4;
-    
+    public GameObject botonesFase5;
+    public GameObject botonesFase6;
+
 
     public AudioClip aPregunta1;
     public AudioClip aPregunta2;
@@ -116,9 +119,8 @@ public class Memoria : MonoBehaviour
 
         managerEjercicios = GameObject.FindWithTag("MEje");
 
-        nivel4();
-        nivel = 4;
-        /*
+    
+        
         if (managerEjercicios.GetComponent<ManagerEjercicios>().nivel == 1)
         {
             nivel1();
@@ -138,7 +140,7 @@ public class Memoria : MonoBehaviour
             nivel4();
             nivel = 4;
         }
-        */
+        
         
     }
     /// NIVEL 1
@@ -185,6 +187,22 @@ public class Memoria : MonoBehaviour
         aux4.Add(new PreguntasN1("¿Dónde está la lámpara?", 4));
 
         pregRandom.Add(new MemoriaN1(aux4, habitacion, botonesFase4));
+
+        List<PreguntasN1> aux5 = new List<PreguntasN1>();
+        aux5.Add(new PreguntasN1("¿Dónde está el frigorífico?", 0));
+        aux5.Add(new PreguntasN1("¿Dónde está la mesa?", 1));
+        aux5.Add(new PreguntasN1("¿Dónde está la ventana?", 2));
+        aux5.Add(new PreguntasN1("¿Dónde está la fregadero?", 3));       
+
+        pregRandom.Add(new MemoriaN1(aux5, cocina2, botonesFase5));
+
+        List<PreguntasN1> aux6 = new List<PreguntasN1>();
+        aux6.Add(new PreguntasN1("¿Dónde está el sillón?", 0));
+        aux6.Add(new PreguntasN1("¿Dónde está la televisión?", 1));
+        aux6.Add(new PreguntasN1("¿Dónde está la lámpara?", 2));
+       
+
+        pregRandom.Add(new MemoriaN1(aux6, salon3, botonesFase6));
 
         pregRandom = DesordenarLista<MemoriaN1>(pregRandom);
 
@@ -296,7 +314,9 @@ public class Memoria : MonoBehaviour
         List<MemoriaN2> fase1 = new List<MemoriaN2>();
         List<MemoriaN2> fase2 = new List<MemoriaN2>();
         List<MemoriaN2> fase3 = new List<MemoriaN2>();
-      
+        List<MemoriaN2> fase4 = new List<MemoriaN2>();
+        List<MemoriaN2> fase5 = new List<MemoriaN2>();
+
 
         List<string> colores = new List<string>();
         colores.Add("Rojo");
@@ -309,6 +329,7 @@ public class Memoria : MonoBehaviour
         colores.Add("Negro");
         colores.Add("Rosa");
         colores.Add("Morada");
+        colores.Add("Naranja");
 
 
 
@@ -393,8 +414,27 @@ public class Memoria : MonoBehaviour
         fase3.Add(new MemoriaN2("¿Cuántos cuadros hay? ", numeros, 1));
 
         pregRandom.Add(new ListMemoriaN2(fase3, salon2));
+
+        fase4.Add(new MemoriaN2("¿Cuantos cojines hay?", numeros, 1));
+        fase4.Add(new MemoriaN2("¿Dónde está la ventana?", posicion, 0));
+        fase4.Add(new MemoriaN2("¿De qué color es la televisión?", colores, 1));
+        fase4.Add(new MemoriaN2("¿De qué color es la alfombra? ", colores, 4));
+        fase4.Add(new MemoriaN2("¿de qué color es la pared?", colores, 4));        
+
+        pregRandom.Add(new ListMemoriaN2(fase4, salon3));
+
+        fase5.Add(new MemoriaN2("¿Cuántas sillas hay?", numeros, 1));
+        fase5.Add(new MemoriaN2("¿De qué color son las sillas?", colores, 1));
+        fase5.Add(new MemoriaN2("¿Dónde está el frigorifico?", posicion, 0));
+        fase5.Add(new MemoriaN2("¿De qué color es el mantel? ", colores, 10));
+        fase5.Add(new MemoriaN2("¿De qué color es el frigorifico?", colores, 4));
+
+        pregRandom.Add(new ListMemoriaN2(fase5, cocina2));
+
+
         pregRandom = DesordenarLista<ListMemoriaN2>(pregRandom);
-        for(int i = 0; i < 2; i++)
+        pregRandom = DesordenarLista<ListMemoriaN2>(pregRandom);
+        for (int i = 0; i < 2; i++)
         {
             preguntas2.Add(pregRandom[i]);
         }
@@ -409,8 +449,12 @@ public class Memoria : MonoBehaviour
 
     void cargarImagen()
     {
-        panelNivel2.transform.GetChild(0).GetComponent<Image>().sprite = preguntas2[contador].imagen;
-        textoPrincipal.GetComponent<Text>().text = "Memoriza esta imagen y dale al botón empezar";
+        if (contador < preguntas2.Count)
+        {
+            panelNivel2.transform.GetChild(0).GetComponent<Image>().sprite = preguntas2[contador].imagen;
+            textoPrincipal.GetComponent<Text>().text = "Memoriza esta imagen y dale al botón empezar";
+        }
+        
     }
     public void botonEmpezar()
     {

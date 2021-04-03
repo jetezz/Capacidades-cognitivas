@@ -31,6 +31,11 @@ public class Gnoxias : MonoBehaviour
     public Sprite imagen7;
     public Sprite imagen8;
     public Sprite imagen9;
+    public Sprite imagen10;
+    public Sprite imagen11;
+    public Sprite imagen12;
+    public Sprite imagen13;
+    public Sprite imagen14;
     //trozos
     public Sprite trozo1;
     public Sprite trozo2;
@@ -41,6 +46,11 @@ public class Gnoxias : MonoBehaviour
     public Sprite trozo7;
     public Sprite trozo8;
     public Sprite trozo9;
+    public Sprite trozo10;
+    public Sprite trozo11;
+    public Sprite trozo12;
+    public Sprite trozo13;
+    public Sprite trozo14;
     // ////////////////////
 
     //grupo1 n2 animales    
@@ -133,15 +143,15 @@ public class Gnoxias : MonoBehaviour
     {
         List<T> arr = input;
         List<T> arrDes = new List<T>();
-        arr.Add(input[input.Count - 1]);
+      
 
         while (arr.Count > 0)
         {
-            int val = Random.Range(0, arr.Count - 1);
+            int val = Random.Range(0, arr.Count);
             arrDes.Add(arr[val]);
             arr.RemoveAt(val);
         }
-        arrDes.RemoveAt(arrDes.Count - 1);
+        
 
         return arrDes;
     }
@@ -150,6 +160,7 @@ public class Gnoxias : MonoBehaviour
     {
      
         managerEjercicios = GameObject.FindWithTag("MEje");
+
         
         
         if (managerEjercicios.GetComponent<ManagerEjercicios>().nivel == 1)
@@ -195,6 +206,11 @@ public class Gnoxias : MonoBehaviour
         trozosN1.Add(6, trozo7);
         trozosN1.Add(7, trozo8);
         trozosN1.Add(8, trozo9);
+        trozosN1.Add(9, trozo10);
+        trozosN1.Add(10, trozo11);
+        trozosN1.Add(11, trozo12);
+        trozosN1.Add(12, trozo13);
+        trozosN1.Add(13, trozo14);
 
         aux.Add(new Pregunta1G(imagen1, 0));
         aux.Add(new Pregunta1G(imagen2, 1));
@@ -205,14 +221,19 @@ public class Gnoxias : MonoBehaviour
         aux.Add(new Pregunta1G(imagen7, 6));
         aux.Add(new Pregunta1G(imagen8, 7));
         aux.Add(new Pregunta1G(imagen9, 8));
+        aux.Add(new Pregunta1G(imagen10, 9));
+        aux.Add(new Pregunta1G(imagen11, 10));
+        aux.Add(new Pregunta1G(imagen12, 11));
+        aux.Add(new Pregunta1G(imagen13, 12));
+        aux.Add(new Pregunta1G(imagen14, 13));
 
 
         aux = DesordenarLista<Pregunta1G>(aux);
-        preguntas1.Add(aux[0]);
-        preguntas1.Add(aux[1]);
-        preguntas1.Add(aux[2]);
-        preguntas1.Add(aux[3]);
-        preguntas1.Add(aux[4]);
+        for(int i=0; i < 10; i++)
+        {
+            preguntas1.Add(aux[i]);
+        }
+       
 
         panel1.SetActive(true);
         textoPrincipal.GetComponent<Text>().text = "Selecciona el trozo que corresponde a la imagen";
@@ -231,8 +252,8 @@ public class Gnoxias : MonoBehaviour
             panelFin.SetActive(true);
             textoPrincipal.GetComponent<Text>().text = "Ejercicio de Gnoxia nivel 1 completado";
             panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 5 ";
-            if (puntos == 5)
+            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 10 ";
+            if (puntos == 10)
             {
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 2";
                 managerEjercicios.GetComponent<ManagerEjercicios>().usuario.gnosia(2);

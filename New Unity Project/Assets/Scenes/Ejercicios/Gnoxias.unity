@@ -3893,6 +3893,11 @@ MonoBehaviour:
   imagen7: {fileID: 21300000, guid: b2d80e83eb8192246abfb50c57e828c2, type: 3}
   imagen8: {fileID: 21300000, guid: 19d49d1bf2608b246a3505437d588e0c, type: 3}
   imagen9: {fileID: 21300000, guid: 425f87298d56ef54aa6027484b950fd6, type: 3}
+  imagen10: {fileID: 21300000, guid: f540b9232c9665e4da7222f2a1a78810, type: 3}
+  imagen11: {fileID: 21300000, guid: 53385f950a9630744b658b4e76941b32, type: 3}
+  imagen12: {fileID: 21300000, guid: 5c4d2fe2a6b98ed43a579e38cb27747b, type: 3}
+  imagen13: {fileID: 21300000, guid: 8a3bdf890b9aaaf4fa12d17366710e25, type: 3}
+  imagen14: {fileID: 21300000, guid: 2f38e5aa3934d974f9a99cfc1875c25c, type: 3}
   trozo1: {fileID: 21300000, guid: 062cd8ea5e3e24141b403b485ffbc6a4, type: 3}
   trozo2: {fileID: 21300000, guid: dc61dca6fa76a3a48b595e8807b87583, type: 3}
   trozo3: {fileID: 21300000, guid: 9116853220fdd934eaa601392a2cdeb3, type: 3}
@@ -3902,6 +3907,11 @@ MonoBehaviour:
   trozo7: {fileID: 21300000, guid: 8ebcba3a071667f4eac230a3e6d4eb3c, type: 3}
   trozo8: {fileID: 21300000, guid: 7f9b3953109f89a4bac0fd94e1bce92f, type: 3}
   trozo9: {fileID: 21300000, guid: c1df510a78dc82c4db3925782a9526b4, type: 3}
+  trozo10: {fileID: 21300000, guid: 3329b0d5b27c1aa4e9ff5d1c192f6267, type: 3}
+  trozo11: {fileID: 21300000, guid: 565f6025b8f90a947ad3345168c120b4, type: 3}
+  trozo12: {fileID: 21300000, guid: 79dbb08975ea32542884ddfe8349e8ff, type: 3}
+  trozo13: {fileID: 21300000, guid: 0214f298609e5d249bb2c081aed03c77, type: 3}
+  trozo14: {fileID: 21300000, guid: 24d4aaa852d474742ab6edda58479f99, type: 3}
   f1: {fileID: 21300000, guid: 232914bb539670044808029f09fb96f7, type: 3}
   f2: {fileID: 21300000, guid: 09310a44a1afe844c84d01534f924d99, type: 3}
   f3: {fileID: 21300000, guid: 5b04f8a36a3444146bcf3c625a8f6ee0, type: 3}
