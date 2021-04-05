@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Percepcion : MonoBehaviour
 {
+    GameObject sonidos;
     private GameObject managerEjercicios;
     private int contador = 0;
     public int puntos = 0;
@@ -158,10 +159,10 @@ public class Percepcion : MonoBehaviour
         
 
         managerEjercicios = GameObject.FindWithTag("MEje");
+        sonidos = GameObject.FindWithTag("Sonido");
 
-      
-        
-        
+
+
         if (managerEjercicios.GetComponent<ManagerEjercicios>().nivel == 1)
         {
             nivel1();
@@ -267,6 +268,7 @@ public class Percepcion : MonoBehaviour
             {
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 1";
             }
+            sonidos.GetComponent<Sonidos>().repSonido(4);
         }
     }
     List<Sprite> gruposN1(int grupo)
@@ -341,10 +343,12 @@ public class Percepcion : MonoBehaviour
             panel.transform.GetChild(id + 1).gameObject.SetActive(false);
             puntos++;
             imagenCorreccion.GetComponent<Image>().sprite = tick;
+            sonidos.GetComponent<Sonidos>().repSonido(2);
         }
         else
         {
             imagenCorreccion.GetComponent<Image>().sprite = cruz;
+            sonidos.GetComponent<Sonidos>().repSonido(3);
 
         }
         tiempo = 1;
@@ -502,6 +506,7 @@ public class Percepcion : MonoBehaviour
                     panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 3";
                 }
             }
+            sonidos.GetComponent<Sonidos>().repSonido(4);
         }
 
     }
@@ -808,6 +813,7 @@ public class Percepcion : MonoBehaviour
             {
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 4";
             }
+            sonidos.GetComponent<Sonidos>().repSonido(4);
         }
     }
     public void eventoSeleccionNivel4(int id, bool izquierda)
@@ -822,10 +828,12 @@ public class Percepcion : MonoBehaviour
 
                 puntos++;
                 imagenCorreccion.GetComponent<Image>().sprite = tick;
+                sonidos.GetComponent<Sonidos>().repSonido(2);
             }
             else
             {
                 imagenCorreccion.GetComponent<Image>().sprite = cruz;
+                sonidos.GetComponent<Sonidos>().repSonido(3);
             }          
         }
         else
@@ -836,10 +844,12 @@ public class Percepcion : MonoBehaviour
             {
                 puntos++;
                 imagenCorreccion.GetComponent<Image>().sprite = tick;
+                sonidos.GetComponent<Sonidos>().repSonido(2);
             }
             else
             {
                 imagenCorreccion.GetComponent<Image>().sprite = cruz;
+                sonidos.GetComponent<Sonidos>().repSonido(3);
             }
         }
 

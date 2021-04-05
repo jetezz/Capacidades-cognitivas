@@ -10,6 +10,7 @@ TagManager:
   - MEje
   - panelSalir
   - DragParent
+  - Sonido
   layers:
   - Default
   - TransparentFX

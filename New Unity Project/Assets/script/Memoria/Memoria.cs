@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class Memoria : MonoBehaviour
 {
+    GameObject sonidos;
     private GameObject managerEjercicios;
     private int contador = 0;
     public int puntos = 0;
@@ -26,7 +27,7 @@ public class Memoria : MonoBehaviour
     int respuesta2 = 0;
     int respuesta3 = 0;
     int respuesta4 = 0;
-    private AudioSource fuenteDeAudio;
+   
     public GameObject imagenRespuesta;
     public GameObject imagenRespuesta2;
     public GameObject imagenRespuesta3;
@@ -67,8 +68,7 @@ public class Memoria : MonoBehaviour
     public GameObject botonesFase6;
 
 
-    public AudioClip aPregunta1;
-    public AudioClip aPregunta2;
+   
 
     /////// nivel2
     public GameObject panelNivel2;
@@ -114,8 +114,9 @@ public class Memoria : MonoBehaviour
 
     void Start()
     {
-        fuenteDeAudio = GetComponent<AudioSource>();
+       
         fasesTotales = new List<fases>();
+        sonidos = GameObject.FindWithTag("Sonido");
 
         managerEjercicios = GameObject.FindWithTag("MEje");
 
@@ -266,7 +267,7 @@ public class Memoria : MonoBehaviour
             if (puntos == preguntasMaximas)
             {
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 2";
-                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.memoria(5);
+                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.memoria(2);
                 GameObject managerUsuario = GameObject.FindWithTag("MUsu");
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
             }
@@ -274,6 +275,7 @@ public class Memoria : MonoBehaviour
             {
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 1";
             }
+            sonidos.GetComponent<Sonidos>().repSonido(4);
         }
 
 
@@ -293,11 +295,14 @@ public class Memoria : MonoBehaviour
             preguntasMaximas++;
             puntos++;
             imagenCorreccion.GetComponent<Image>().sprite = tick;
+            sonidos.GetComponent<Sonidos>().repSonido(2);
         }
         else
         {
             puntos--;
             imagenCorreccion.GetComponent<Image>().sprite = cruz;
+            sonidos.GetComponent<Sonidos>().repSonido(3);
+
         }
         tiempo = 1;        
         siguientePreguntaN1();
@@ -483,21 +488,43 @@ public class Memoria : MonoBehaviour
         }
         else
         {
-            panelFin.SetActive(true);
-            textoPrincipal.GetComponent<Text>().text = "Ejercicio de memoria nivel 2 completado";
-            panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son " + preguntasMaximas.ToString();
-            if (puntos == preguntasMaximas)
+            if (nivel == 2)
             {
-                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 3";
-                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.memoria(5);
-                GameObject managerUsuario = GameObject.FindWithTag("MUsu");
-                managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+                panelFin.SetActive(true);
+                textoPrincipal.GetComponent<Text>().text = "Ejercicio de memoria nivel 2 completado";
+                panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
+                panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son " + preguntasMaximas.ToString();
+                if (puntos == preguntasMaximas)
+                {
+                    panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 3";
+                    managerEjercicios.GetComponent<ManagerEjercicios>().usuario.memoria(3);
+                    GameObject managerUsuario = GameObject.FindWithTag("MUsu");
+                    managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+                }
+                else
+                {
+                    panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 2";
+                }
             }
             else
             {
-                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 2";
+                panelFin.SetActive(true);
+                textoPrincipal.GetComponent<Text>().text = "Ejercicio de memoria nivel 3 completado";
+                panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
+                panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son " + preguntasMaximas.ToString();
+                if (puntos == preguntasMaximas)
+                {
+                    panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 4";
+                    managerEjercicios.GetComponent<ManagerEjercicios>().usuario.memoria(4);
+                    GameObject managerUsuario = GameObject.FindWithTag("MUsu");
+                    managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+                }
+                else
+                {
+                    panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 3";
+                }
             }
+            sonidos.GetComponent<Sonidos>().repSonido(4);
         }
         
        
@@ -548,10 +575,12 @@ public class Memoria : MonoBehaviour
         {
             puntos++;            
             imagenCorreccion.GetComponent<Image>().sprite = tick;
+            sonidos.GetComponent<Sonidos>().repSonido(2);
         }
         else
         {
             imagenCorreccion.GetComponent<Image>().sprite = cruz;
+            sonidos.GetComponent<Sonidos>().repSonido(3);
         }
 
         tiempo = 1;
@@ -925,6 +954,7 @@ public class Memoria : MonoBehaviour
     public void botonInicio()
     {
         SceneManager.LoadScene(0);
+        sonidos.GetComponent<Sonidos>().repSonido(1);
     }
   
 }

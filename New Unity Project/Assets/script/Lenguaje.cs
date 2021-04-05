@@ -112,7 +112,8 @@ public class Lenguaje : MonoBehaviour
 
         managerEjercicios = GameObject.FindWithTag("MEje");
 
-        
+        nivel3();
+        /*
         if (managerEjercicios.GetComponent<ManagerEjercicios>().nivel == 1)
         {
             nivel1();
@@ -134,7 +135,7 @@ public class Lenguaje : MonoBehaviour
             nivel4();
             nivel = 4;
         }
-        
+        */
     }
     public static List<T> DesordenarLista<T>(List<T> input)
     {
@@ -208,11 +209,10 @@ public class Lenguaje : MonoBehaviour
         aux.Clear();
 
         preguntas1aux = DesordenarLista<Preguntas1>(preguntas1aux);
-        preguntas1.Add(preguntas1aux[0]);
-        preguntas1.Add(preguntas1aux[1]);
-        preguntas1.Add(preguntas1aux[2]);
-        preguntas1.Add(preguntas1aux[3]);
-        preguntas1.Add(preguntas1aux[4]);
+       for(int i = 0; i < 5; i++)
+        {
+            preguntas1.Add(preguntas1aux[i]);
+        }
 
 
         panel1.SetActive(true);

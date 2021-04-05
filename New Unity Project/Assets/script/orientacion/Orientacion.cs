@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Orientacion : MonoBehaviour
 {
+    GameObject sonidos;
     private GameObject managerEjercicios;
     private int contador = 0;
     public int puntos = 0;
@@ -77,24 +78,24 @@ public class Orientacion : MonoBehaviour
     {
         List<T> arr = input;
         List<T> arrDes = new List<T>();
-        arr.Add(input[input.Count - 1]);
+       
 
         while (arr.Count > 0)
         {
-            int val = Random.Range(0, arr.Count - 1);
+            int val = Random.Range(0, arr.Count);
             arrDes.Add(arr[val]);
             arr.RemoveAt(val);
         }
-        arrDes.RemoveAt(arrDes.Count - 1);
+        
 
         return arrDes;
     }
     void Start()
     {
         managerEjercicios = GameObject.FindWithTag("MEje");
+        sonidos = GameObject.FindWithTag("Sonido");
 
-        
-        
+
         if (managerEjercicios.GetComponent<ManagerEjercicios>().nivel == 1)
         {
             nivel1();
@@ -139,6 +140,7 @@ public class Orientacion : MonoBehaviour
 
 
         }
+        sonidos.GetComponent<Sonidos>().repSonido(4);
     }
 
 
@@ -185,10 +187,14 @@ public class Orientacion : MonoBehaviour
         {
             puntos++;
             imagenCorreccion.GetComponent<Image>().sprite = tick;
+            sonidos.GetComponent<Sonidos>().repSonido(2);
+
         }
         else
         {
             imagenCorreccion.GetComponent<Image>().sprite = cruz;
+            sonidos.GetComponent<Sonidos>().repSonido(3);
+
         }
         tiempo = 1;
         contador++;
@@ -243,10 +249,12 @@ public class Orientacion : MonoBehaviour
         {
             puntos++;
             imagenCorreccion.GetComponent<Image>().sprite = tick;
+            sonidos.GetComponent<Sonidos>().repSonido(2);
         }
         else
         {
             imagenCorreccion.GetComponent<Image>().sprite = cruz;
+            sonidos.GetComponent<Sonidos>().repSonido(3);
         }
         tiempo = 1;
         contador++;
@@ -347,10 +355,12 @@ public class Orientacion : MonoBehaviour
         {
             puntos++;
             imagenCorreccion.GetComponent<Image>().sprite = tick;
+            sonidos.GetComponent<Sonidos>().repSonido(2);
         }
         else
         {
             imagenCorreccion.GetComponent<Image>().sprite = cruz;
+            sonidos.GetComponent<Sonidos>().repSonido(3);
         }
         tiempo = 1;
         contador++;
@@ -390,10 +400,12 @@ public class Orientacion : MonoBehaviour
         {
             puntos++;
             imagenCorreccion.GetComponent<Image>().sprite = tick;
+            sonidos.GetComponent<Sonidos>().repSonido(2);
         }
         else
         {
             imagenCorreccion.GetComponent<Image>().sprite = cruz;
+            sonidos.GetComponent<Sonidos>().repSonido(3);
         }
         tiempo = 1;
         contador++;

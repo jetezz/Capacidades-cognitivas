@@ -7782,8 +7782,6 @@ MonoBehaviour:
   botonesFase4: {fileID: 517956637}
   botonesFase5: {fileID: 1854278350}
   botonesFase6: {fileID: 4127545}
-  aPregunta1: {fileID: 8300000, guid: 7f1b0985d1684e7459bbb6eea42a1e1c, type: 3}
-  aPregunta2: {fileID: 8300000, guid: f10d995402f8d224d98cbf3b0755d5d9, type: 3}
   panelNivel2: {fileID: 1806881789}
   botones: {fileID: 298392939}
   panelNivel3: {fileID: 2025279212}
@@ -10553,7 +10551,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2068913392
 RectTransform:
   m_ObjectHideFlags: 0

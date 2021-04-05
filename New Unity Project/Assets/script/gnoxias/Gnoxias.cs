@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Gnoxias : MonoBehaviour
 {
+    GameObject sonidos;
     private GameObject managerEjercicios;
     private int contador = 0;
     public int puntos = 0;
@@ -160,9 +161,9 @@ public class Gnoxias : MonoBehaviour
     {
      
         managerEjercicios = GameObject.FindWithTag("MEje");
+        sonidos = GameObject.FindWithTag("Sonido");
 
-        
-        
+
         if (managerEjercicios.GetComponent<ManagerEjercicios>().nivel == 1)
         {
             nivel1();
@@ -264,6 +265,7 @@ public class Gnoxias : MonoBehaviour
             {
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 1";
             }
+            sonidos.GetComponent<Sonidos>().repSonido(4);
         }
     }
     void generarBotonesN1()
@@ -311,10 +313,12 @@ public class Gnoxias : MonoBehaviour
         {
             puntos++;
             imagenCorreccion.GetComponent<Image>().sprite = tick;
+            sonidos.GetComponent<Sonidos>().repSonido(2);
         }
         else
         {
             imagenCorreccion.GetComponent<Image>().sprite = cruz;
+            sonidos.GetComponent<Sonidos>().repSonido(3);
         }
         tiempo = 1;
         contador++;
@@ -433,7 +437,8 @@ public class Gnoxias : MonoBehaviour
             {
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 2";
             }
-            
+            sonidos.GetComponent<Sonidos>().repSonido(4);
+
         }
     }
     void generarBotonesN2()
@@ -481,10 +486,12 @@ public class Gnoxias : MonoBehaviour
         {
             puntos++;
             imagenCorreccion.GetComponent<Image>().sprite = tick;
+            sonidos.GetComponent<Sonidos>().repSonido(2);
         }
         else
         {
             imagenCorreccion.GetComponent<Image>().sprite = cruz;
+            sonidos.GetComponent<Sonidos>().repSonido(3);
         }
         tiempo = 1;
         contador++;
@@ -649,6 +656,7 @@ public class Gnoxias : MonoBehaviour
             {
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 3";
             }
+            sonidos.GetComponent<Sonidos>().repSonido(4);
         }
     }
     void generarBotonesN3()
@@ -707,10 +715,12 @@ public class Gnoxias : MonoBehaviour
             puntos++;
             imagenCorreccion.GetComponent<Image>().sprite = tick;
             panel3.transform.GetChild(id).gameObject.SetActive(false);
+            sonidos.GetComponent<Sonidos>().repSonido(2);
         }
         else
         {
             imagenCorreccion.GetComponent<Image>().sprite = cruz;
+            sonidos.GetComponent<Sonidos>().repSonido(3);
         }
         tiempo = 1;
         numRespuestas++;
@@ -772,6 +782,7 @@ public class Gnoxias : MonoBehaviour
             {
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 4";
             }
+            sonidos.GetComponent<Sonidos>().repSonido(4);
         }
     }
     public void botonN4(int id)
@@ -781,11 +792,13 @@ public class Gnoxias : MonoBehaviour
         {
             puntos++;
             imagenCorreccion.GetComponent<Image>().sprite = tick;
+            sonidos.GetComponent<Sonidos>().repSonido(2);
             panel4.transform.GetChild(id+1).GetComponent<Image>().sprite = preguntasN4[contador].imagen;           
         }
         else
         {
             imagenCorreccion.GetComponent<Image>().sprite = cruz;
+            sonidos.GetComponent<Sonidos>().repSonido(3);
         }
         contador++;
         tiempo = 1;

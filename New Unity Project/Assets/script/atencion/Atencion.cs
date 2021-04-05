@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class Atencion : MonoBehaviour
 {
+    GameObject sonidos;
     private GameObject managerEjercicios;
     private int contador = 0;
     public int puntos = 0;
@@ -67,10 +68,10 @@ public class Atencion : MonoBehaviour
     void Start()
     {
         managerEjercicios = GameObject.FindWithTag("MEje");
+        sonidos = GameObject.FindWithTag("Sonido");
 
-      
-        
-        
+
+
         if (managerEjercicios.GetComponent<ManagerEjercicios>().nivel == 1)
         {
             nivel1();
@@ -141,7 +142,7 @@ public class Atencion : MonoBehaviour
             {
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 1";
             }
-
+            sonidos.GetComponent<Sonidos>().repSonido(4);
         }
     }
 
@@ -188,10 +189,12 @@ public class Atencion : MonoBehaviour
             panel1.transform.GetChild(id).gameObject.SetActive(false);
             puntos++;
             imagenCorreccion.GetComponent<Image>().sprite = tick;
+            sonidos.GetComponent<Sonidos>().repSonido(2);
         }
         else
         {
             imagenCorreccion.GetComponent<Image>().sprite = cruz;
+            sonidos.GetComponent<Sonidos>().repSonido(3);
         }
 
         tiempo = 1;
@@ -253,6 +256,7 @@ public class Atencion : MonoBehaviour
                 {
                     panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 2";
                 }
+                sonidos.GetComponent<Sonidos>().repSonido(4);
             }
             else
             {
@@ -292,6 +296,7 @@ public class Atencion : MonoBehaviour
         {
             puntos++;
             imagenCorreccion.GetComponent<Image>().sprite = tick;
+            sonidos.GetComponent<Sonidos>().repSonido(2);
             numNivel2++;
             panel2.transform.GetChild(id).gameObject.SetActive(false);
 
@@ -299,6 +304,7 @@ public class Atencion : MonoBehaviour
         else
         {
             imagenCorreccion.GetComponent<Image>().sprite = cruz;
+            sonidos.GetComponent<Sonidos>().repSonido(3);
         }
         tiempo = 1;
         siguientePreguntaN2();
@@ -343,6 +349,7 @@ public class Atencion : MonoBehaviour
             {
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 3";
             }
+            sonidos.GetComponent<Sonidos>().repSonido(4);
         }
     }
     void generarNumerosN3()
@@ -375,12 +382,14 @@ public class Atencion : MonoBehaviour
         if (respuestaN3 == preguntas3[contador])
         {
             imagenCorreccion.GetComponent<Image>().sprite = tick;
+            sonidos.GetComponent<Sonidos>().repSonido(2);
             contador++;
             siguientePreguntaN3();
         }
         else
         {
             imagenCorreccion.GetComponent<Image>().sprite = cruz;
+            sonidos.GetComponent<Sonidos>().repSonido(3);
             tiempoEjercicio += 5;
         }
 
@@ -439,6 +448,7 @@ public class Atencion : MonoBehaviour
             {
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 4";
             }
+            sonidos.GetComponent<Sonidos>().repSonido(4);
         }
     }
     void generarNumerosN4()
@@ -489,6 +499,7 @@ public class Atencion : MonoBehaviour
         if (esta)
         {
             imagenCorreccion.GetComponent<Image>().sprite = tick;
+            sonidos.GetComponent<Sonidos>().repSonido(2);
             numeros4.transform.GetChild(posicionNumN4).GetComponent<Text>().text = respuestaN3.ToString();
             posicionNumN4++;
             numRespuestas++;
@@ -503,6 +514,7 @@ public class Atencion : MonoBehaviour
         else
         {
             imagenCorreccion.GetComponent<Image>().sprite = cruz;
+            sonidos.GetComponent<Sonidos>().repSonido(3);
             tiempoEjercicio += 5;
         }       
         

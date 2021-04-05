@@ -10,7 +10,7 @@ using System;
 
 public class Calculo : MonoBehaviour
 {
-
+    GameObject sonidos;
     private GameObject managerEjercicios;
     private int contador = 0;
     public int puntos = 0;
@@ -100,9 +100,9 @@ public class Calculo : MonoBehaviour
     void Start()
     {
         managerEjercicios = GameObject.FindWithTag("MEje");
+        sonidos = GameObject.FindWithTag("Sonido");
 
-     
-        
+
         if (managerEjercicios.GetComponent<ManagerEjercicios>().nivel == 1)
         {
             nivel1();
@@ -148,6 +148,7 @@ public class Calculo : MonoBehaviour
 
 
         }
+        sonidos.GetComponent<Sonidos>().repSonido(4);
     }
     void nivel1()
     {
@@ -209,10 +210,12 @@ public class Calculo : MonoBehaviour
         {
             puntos++;
             imagenCorreccion.GetComponent<Image>().sprite = tick;
+            sonidos.GetComponent<Sonidos>().repSonido(2);
         }
         else
         {
             imagenCorreccion.GetComponent<Image>().sprite = cruz;
+            sonidos.GetComponent<Sonidos>().repSonido(3);
         }
         tiempo = 1;
         contador++;
@@ -278,10 +281,12 @@ public class Calculo : MonoBehaviour
         {
             puntos++;
             imagenCorreccion.GetComponent<Image>().sprite = tick;
+            sonidos.GetComponent<Sonidos>().repSonido(2);
         }
         else
         {
             imagenCorreccion.GetComponent<Image>().sprite = cruz;
+            sonidos.GetComponent<Sonidos>().repSonido(3);
         }
         puntosMaximos++;
         tiempo = 1;
@@ -550,11 +555,13 @@ public class Calculo : MonoBehaviour
         {
             puntos++;
             imagenCorreccion.GetComponent<Image>().sprite = tick;
+            sonidos.GetComponent<Sonidos>().repSonido(2);
         }
     
         else
         {
             imagenCorreccion.GetComponent<Image>().sprite = cruz;
+            sonidos.GetComponent<Sonidos>().repSonido(3);
         }
         puntosMaximos++;
         tiempo = 1;
@@ -647,10 +654,12 @@ public class Calculo : MonoBehaviour
         {
             puntos++;
             imagenCorreccion.GetComponent<Image>().sprite = tick;
+            sonidos.GetComponent<Sonidos>().repSonido(2);
         }
         else
         {
             imagenCorreccion.GetComponent<Image>().sprite = cruz;
+            sonidos.GetComponent<Sonidos>().repSonido(3);
         }
         tiempo = 1;
         contador++;
