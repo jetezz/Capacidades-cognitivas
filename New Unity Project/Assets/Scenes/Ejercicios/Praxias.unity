@@ -3545,11 +3545,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2432825681940522641, guid: b3a8f4731d778cb48ade52da2fe9b3e6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 494.92
+      value: 724
       objectReference: {fileID: 0}
     - target: {fileID: 2432825681940522641, guid: b3a8f4731d778cb48ade52da2fe9b3e6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -342
+      value: -417
       objectReference: {fileID: 0}
     - target: {fileID: 2432825681940522642, guid: b3a8f4731d778cb48ade52da2fe9b3e6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3654,6 +3654,18 @@ PrefabInstance:
     - target: {fileID: 2432825682090202900, guid: b3a8f4731d778cb48ade52da2fe9b3e6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5047270402528627724, guid: b3a8f4731d778cb48ade52da2fe9b3e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 579958827}
+    - target: {fileID: 5047270402528627724, guid: b3a8f4731d778cb48ade52da2fe9b3e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: siguienteEjercicio
+      objectReference: {fileID: 0}
+    - target: {fileID: 5047270402528627724, guid: b3a8f4731d778cb48ade52da2fe9b3e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Praxia, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3a8f4731d778cb48ade52da2fe9b3e6, type: 3}

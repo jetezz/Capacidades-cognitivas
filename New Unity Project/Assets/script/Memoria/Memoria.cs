@@ -956,6 +956,10 @@ public class Memoria : MonoBehaviour
         SceneManager.LoadScene(0);
         sonidos.GetComponent<Sonidos>().repSonido(1);
     }
+    public void siguienteEjercicio()
+    {
+        managerEjercicios.GetComponent<ManagerEjercicios>().iniciarEjercicio();
+    }
   
 }
 

@@ -431,6 +431,10 @@ public class Orientacion : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+    public void siguienteEjercicio()
+    {
+        managerEjercicios.GetComponent<ManagerEjercicios>().iniciarEjercicio();
+    }
 }
 
 

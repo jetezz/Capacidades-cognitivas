@@ -825,6 +825,10 @@ public class Gnoxias : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+    public void siguienteEjercicio()
+    {
+        managerEjercicios.GetComponent<ManagerEjercicios>().iniciarEjercicio();
+    }
 }
 
 

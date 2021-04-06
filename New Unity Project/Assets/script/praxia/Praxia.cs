@@ -649,6 +649,10 @@ public class Praxia : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+    public void siguienteEjercicio()
+    {
+        managerEjercicios.GetComponent<ManagerEjercicios>().iniciarEjercicio();
+    }
 }
 
 class Praxia1

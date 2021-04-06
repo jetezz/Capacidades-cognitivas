@@ -144,49 +144,80 @@ public class Usuario
         return estadisticas.calculo.Last().valor.ToString();
     }
 
-    public int getPeorEstadistica()
+    public List<int> getPeorEstadistica()
     {
-        int ejercicio = 0;
+        
+        List<int> listaEjercicios = new List<int>();
+
         int nivel = estadisticas.memoria.Last().valor;
 
         if (estadisticas.lenguaje.Last().valor < nivel)
-        {
-            ejercicio = 1;
+        {            
             nivel = estadisticas.lenguaje.Last().valor;
         }
 
         if (estadisticas.percepcion.Last().valor < nivel)
-        {
-            ejercicio = 2;
+        {            
             nivel = estadisticas.percepcion.Last().valor;
         }
 
         if (estadisticas.atencion.Last().valor < nivel)
-        {
-            ejercicio = 3;
+        {            
             nivel = estadisticas.atencion.Last().valor;
         }
         if (estadisticas.gnosias.Last().valor < nivel)
-        {
-            ejercicio = 4;
+        {            
             nivel = estadisticas.gnosias.Last().valor;
         }
         if (estadisticas.praxias.Last().valor < nivel)
-        {
-            ejercicio = 5;
+        {            
             nivel = estadisticas.praxias.Last().valor;
         }
         if (estadisticas.orientacion.Last().valor < nivel)
-        {
-            ejercicio = 6;
+        {            
             nivel = estadisticas.orientacion.Last().valor;
         }
         if (estadisticas.calculo.Last().valor < nivel)
-        {
-            ejercicio = 7;
+        {            
             nivel = estadisticas.calculo.Last().valor;
         }
-        return ejercicio;
+
+
+
+        if(estadisticas.memoria.Last().valor == nivel)
+        {
+            listaEjercicios.Add(0);
+        }
+        if (estadisticas.lenguaje.Last().valor == nivel)
+        {
+            listaEjercicios.Add(1);
+        }
+        if (estadisticas.percepcion.Last().valor == nivel)
+        {
+            listaEjercicios.Add(2);
+        }
+        if (estadisticas.atencion.Last().valor == nivel)
+        {
+            listaEjercicios.Add(3);
+        }
+        if (estadisticas.gnosias.Last().valor == nivel)
+        {
+            listaEjercicios.Add(4);
+        }
+        if (estadisticas.praxias.Last().valor == nivel)
+        {
+            listaEjercicios.Add(5);
+        }
+        if (estadisticas.orientacion.Last().valor == nivel)
+        {
+            listaEjercicios.Add(6);
+        }
+        if (estadisticas.calculo.Last().valor == nivel)
+        {
+            listaEjercicios.Add(7);
+        }
+
+        return listaEjercicios;
     }
 
     public int getNivelEstadistica(int est)

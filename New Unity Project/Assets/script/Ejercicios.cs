@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class Ejercicios : MonoBehaviour
 {
-    
+    GameObject sonidos;    
     public int id;
     public GameObject panel;
     public string valoresCapacidades;
@@ -16,6 +16,8 @@ public class Ejercicios : MonoBehaviour
     public int ejercicio;
     public int nivel;
     public GameObject panelElegirEjercicio;
+    public GameObject panelElegirEjercicios;
+    List<int> listaEjercicios=new List<int>();
     public void botonCerrarPanel()
     {
         panel.SetActive(false);
@@ -57,10 +59,15 @@ public class Ejercicios : MonoBehaviour
     public void botonTextInicial()
     {
         SceneManager.LoadScene(4);
+        sonidos = GameObject.FindWithTag("Sonido");
+        sonidos.GetComponent<Sonidos>().repSonido(0);
     }
     public void activarPanelElegir()
     {
         panelElegirEjercicio.SetActive(true);
+        sonidos = GameObject.FindWithTag("Sonido");
+        sonidos.GetComponent<Sonidos>().repSonido(0);
+
     }
 
     public void botonEmpezarEjercicios(int niv)
@@ -68,12 +75,116 @@ public class Ejercicios : MonoBehaviour
         GameObject managerEjercicios;
         managerEjercicios = GameObject.FindWithTag("MEje");       
         managerEjercicios.GetComponent<ManagerEjercicios>().iniciarEpecial(ejercicio,niv);
-        
+        sonidos = GameObject.FindWithTag("Sonido");
+        sonidos.GetComponent<Sonidos>().repSonido(0);
+
+
     }
 
 
     public void botonSelecionarEjercicio(int eje)
     {
         ejercicio = eje;
+        sonidos = GameObject.FindWithTag("Sonido");
+        sonidos.GetComponent<Sonidos>().repSonido(0);
+
+    }
+    public void ejerciciosEspecificos()
+    {
+        panelElegirEjercicios.SetActive(true);
+        sonidos = GameObject.FindWithTag("Sonido");
+        sonidos.GetComponent<Sonidos>().repSonido(0);
+
+    }
+    public void sumarEjercicio(int ejer)
+    {
+        if (listaEjercicios.Count < 8)
+        {
+            listaEjercicios.Add(ejer);
+            sonidos = GameObject.FindWithTag("Sonido");
+            sonidos.GetComponent<Sonidos>().repSonido(0);
+        }
+
+        mostrarEjercicios();
+
+
+    }
+
+    void mostrarEjercicios()
+    {
+        string aux="";
+        
+        for (int i = 0; i < listaEjercicios.Count; i++)
+        {
+           switch (listaEjercicios[i])
+            {
+                case 0:
+                    {
+                        aux += "Memoria,";
+                        break;
+                    }
+                case 1:
+                    {
+                        aux += "Lenguaje,";
+                        break;
+                    }
+                case 2:
+                    {
+                        aux += "Percepción,";
+                        break;
+                    }
+                case 3:
+                    {
+                        aux += "Atención,";
+
+                        break;
+                    }
+                case 4:
+                    {
+                        aux += "Gnosias,";
+
+                        break;
+                    }
+                case 5:
+                    {
+                        aux += "Prasias,";
+                        break;
+                    }
+                case 6:
+                    {
+                        aux += "Orientación,";
+                        break;
+                    }
+                case 7:
+                    {
+                        aux += "Cálculo,";
+                        break;
+                    }
+
+
+
+            }
+        }
+
+        panelElegirEjercicios.transform.GetChild(1).GetComponent<Text>().text = aux;
+    }
+
+    public void empezarEjerciciosSeleccionados()
+    {
+        sonidos = GameObject.FindWithTag("Sonido");
+        sonidos.GetComponent<Sonidos>().repSonido(0);
+        GameObject managerEjercicios;
+        managerEjercicios = GameObject.FindWithTag("MEje");
+        managerEjercicios.GetComponent<ManagerEjercicios>().recibirLista(listaEjercicios);
+    }
+    public void ejerciciosAutomaticos()
+    {
+        sonidos=GameObject.FindWithTag("Sonido");
+        sonidos.GetComponent<Sonidos>().repSonido(0);
+        GameObject managerEjercicios;
+        managerEjercicios = GameObject.FindWithTag("MEje");
+        managerEjercicios.GetComponent<ManagerEjercicios>().ejerciciosAutomaticos();
     }
 }
+
+

@@ -13,6 +13,7 @@ public class ManagerEjercicios : MonoBehaviour
     public int nivel;
     private GameObject managerUsuario;
     public Usuario usuario;
+    public List<int> listaEjercicios;
 
 
 
@@ -22,6 +23,7 @@ public class ManagerEjercicios : MonoBehaviour
         {
             managerEjercicios = this;
             DontDestroyOnLoad(gameObject);
+            listaEjercicios = new List<int>();          
         }
         else if (managerEjercicios != this)
         {
@@ -31,47 +33,13 @@ public class ManagerEjercicios : MonoBehaviour
   
 
 
-    public void iniciarConUsuario()
+    public void ejerciciosAutomaticos()
     {
         managerUsuario = GameObject.FindWithTag("MUsu");
         usuario = managerUsuario.GetComponent<ManagerUsuario>().getUsuarioSeleccionado();
         
-        ejercicio = usuario.getPeorEstadistica();
-        ejercicio = 1;
-        nivel = usuario.getNivelEstadistica(ejercicio);
-
-        if (ejercicio == 0)
-        {
-            SceneManager.LoadScene(9);
-        }
-        if (ejercicio == 1)
-        {
-            SceneManager.LoadScene(8);
-        }
-        if (ejercicio == 2)
-        {
-            SceneManager.LoadScene(11);
-        }
-        if (ejercicio == 3)
-        {
-            SceneManager.LoadScene(5);
-        }
-        if (ejercicio == 4)
-        {
-            SceneManager.LoadScene(7);
-        }
-        if (ejercicio == 5)
-        {
-            SceneManager.LoadScene(12);
-        }
-        if (ejercicio == 6)
-        {
-            SceneManager.LoadScene(10);
-        }
-        if (ejercicio == 6)
-        {
-            SceneManager.LoadScene(6);
-        }
+        listaEjercicios = usuario.getPeorEstadistica();
+        iniciarEjercicio();
     }
 
     public void iniciarEpecial(int eje, int niv) 
@@ -80,59 +48,77 @@ public class ManagerEjercicios : MonoBehaviour
         usuario = managerUsuario.GetComponent<ManagerUsuario>().getUsuarioSeleccionado();
         nivel = niv;
         ejercicio = eje;
-        if (ejercicio == 0)
+        irEscena();
+        
+    }
+    public void recibirLista(List<int> ejer)
+    {
+        listaEjercicios = ejer;
+        iniciarEjercicio();
+    }
+  
+    public void iniciarEjercicio()
+    {
+        if (listaEjercicios.Count > 0)
         {
-            SceneManager.LoadScene(9);
+            managerUsuario = GameObject.FindWithTag("MUsu");
+            ejercicio = listaEjercicios[0];
+            usuario = managerUsuario.GetComponent<ManagerUsuario>().getUsuarioSeleccionado();
+            nivel = usuario.getNivelEstadistica(listaEjercicios[0]);
+            listaEjercicios.RemoveAt(0);
+            irEscena();
         }
-        if (ejercicio == 1)
+        else
         {
-            SceneManager.LoadScene(8);
-        }
-        if (ejercicio == 2)
-        {
-            SceneManager.LoadScene(11);
-        }
-        if (ejercicio == 3)
-        {
-            SceneManager.LoadScene(5);
-        }
-        if (ejercicio == 4)
-        {
-            SceneManager.LoadScene(7);
-        }
-        if (ejercicio == 5)
-        {
-            SceneManager.LoadScene(12);
-        }
-        if (ejercicio == 6)
-        {
-            SceneManager.LoadScene(10);
-        }
-        if (ejercicio == 7)
-        {
-            SceneManager.LoadScene(6);
+            SceneManager.LoadScene(0);
         }
     }
-
-   
-
-
-
-
-
-
-
-
-
-
-   
-
-
-
-
-
-
-
-
-
+    void irEscena()
+    {
+        switch (ejercicio)
+        {
+            case 0:
+                {
+                    SceneManager.LoadScene(9);
+                    break;
+                }
+            case 1:
+                {
+                    SceneManager.LoadScene(8);
+                    break;
+                }
+            case 2:
+                {
+                    SceneManager.LoadScene(11);
+                    break;
+                }
+            case 3:
+                {
+                    SceneManager.LoadScene(5);
+                    break;
+                }
+            case 4:
+                {
+                    SceneManager.LoadScene(7);
+                    break;
+                }
+            case 5:
+                {
+                    SceneManager.LoadScene(12);
+                    break;
+                }
+            case 6:
+                {
+                    SceneManager.LoadScene(10);
+                    break;
+                }
+            case 7:
+                {
+                    SceneManager.LoadScene(6);
+                    break;
+                }
+        }
+    }
 }
+
+

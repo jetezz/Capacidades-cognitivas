@@ -1805,6 +1805,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5047270402528627724, guid: b3a8f4731d778cb48ade52da2fe9b3e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1925857544}
+    - target: {fileID: 5047270402528627724, guid: b3a8f4731d778cb48ade52da2fe9b3e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: siguienteEjercicio
+      objectReference: {fileID: 0}
+    - target: {fileID: 5047270402528627724, guid: b3a8f4731d778cb48ade52da2fe9b3e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Percepcion, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3a8f4731d778cb48ade52da2fe9b3e6, type: 3}
 --- !u!224 &338529180 stripped
