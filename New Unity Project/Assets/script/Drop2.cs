@@ -4,9 +4,10 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 
-public class Drop2 : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
+public class Drop2 : MonoBehaviour, IDropHandler
 {
     public GameObject lenguaje;
+    GameObject sonidos;
     public void OnDrop(PointerEventData eventData)
     {
         Drag2 d = eventData.pointerDrag.GetComponent<Drag2>();
@@ -15,16 +16,10 @@ public class Drop2 : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointer
             d.pointofreturn = this.transform;
             lenguaje.GetComponent<Lenguaje>().comprobarNumRespuesta();
         }
+        sonidos = GameObject.FindWithTag("Sonido");
+        sonidos.GetComponent<Sonidos>().repSonido(6);
 
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-       
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-       
-    }
+  
 }

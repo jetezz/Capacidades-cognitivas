@@ -114,6 +114,8 @@ public class Praxia : MonoBehaviour
     }
     void final(string nivel,int pMax,int siguienteNnivel)
     {
+        textoPrincipal.GetComponent<Text>().text = "Finalizado los ejercicios de Prasia nivel " + (siguienteNnivel - 1).ToString();
+
         panelFin.SetActive(true);
         textoPrincipal.GetComponent<Text>().text = nivel;
         panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();

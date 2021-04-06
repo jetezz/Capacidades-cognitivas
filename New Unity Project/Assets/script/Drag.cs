@@ -11,11 +11,11 @@ public class Drag : MonoBehaviour,IBeginDragHandler,IEndDragHandler,IDragHandler
     private CanvasGroup canvasGroup;
     public int id;
     public Vector3 posInicial;
+    GameObject sonidos;
 
-    
-    
-    
-   
+
+
+
     public void iniciarposicion()
     {
         posInicial = transform.position;
@@ -28,6 +28,8 @@ public class Drag : MonoBehaviour,IBeginDragHandler,IEndDragHandler,IDragHandler
         // canvasGroup.alpha = .6f;
         //canvasGroup.blocksRaycasts = false;
         GetComponent<CanvasGroup>().blocksRaycasts = false;
+        sonidos = GameObject.FindWithTag("Sonido");
+        sonidos.GetComponent<Sonidos>().repSonido(5);
     }
 
     public void OnDrag(PointerEventData eventData)

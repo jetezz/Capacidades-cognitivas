@@ -1473,6 +1473,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 657915053893931520, guid: db7df5df3e357c14289c9289dfcf3365, type: 3}
+      propertyPath: drag
+      value: 
+      objectReference: {fileID: 8300000, guid: bf0b6355075ad7d49ba807e33a3b354a, type: 3}
+    - target: {fileID: 657915053893931520, guid: db7df5df3e357c14289c9289dfcf3365, type: 3}
+      propertyPath: drop
+      value: 
+      objectReference: {fileID: 8300000, guid: 9097c998af2dfd6499fedcf7fb39ed63, type: 3}
+    - target: {fileID: 657915053893931520, guid: db7df5df3e357c14289c9289dfcf3365, type: 3}
+      propertyPath: money
+      value: 
+      objectReference: {fileID: 8300000, guid: 641897284280a8749acd4afb55e3e5ac, type: 3}
     - target: {fileID: 657915053893931521, guid: db7df5df3e357c14289c9289dfcf3365, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1520,6 +1532,22 @@ PrefabInstance:
     - target: {fileID: 657915053893931522, guid: db7df5df3e357c14289c9289dfcf3365, type: 3}
       propertyPath: m_Name
       value: ManagerSonidos
+      objectReference: {fileID: 0}
+    - target: {fileID: 657915053893931523, guid: db7df5df3e357c14289c9289dfcf3365, type: 3}
+      propertyPath: Priority
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 657915053893931523, guid: db7df5df3e357c14289c9289dfcf3365, type: 3}
+      propertyPath: m_Volume
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 657915053893931523, guid: db7df5df3e357c14289c9289dfcf3365, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 657915053893931523, guid: db7df5df3e357c14289c9289dfcf3365, type: 3}
+      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db7df5df3e357c14289c9289dfcf3365, type: 3}

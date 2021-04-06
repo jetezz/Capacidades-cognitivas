@@ -465,6 +465,8 @@ public class Memoria : MonoBehaviour
     {
 
         siguientePreguntaN2();
+        sonidos.GetComponent<Sonidos>().repSonido(0);
+
     }
      void siguientePreguntaN2()
     {
@@ -678,6 +680,7 @@ public class Memoria : MonoBehaviour
     public void botonEmpezar4()
     {
         siguientePreguntaNivel4();
+        sonidos.GetComponent<Sonidos>().repSonido(0);
     }
   
 
@@ -844,7 +847,8 @@ public class Memoria : MonoBehaviour
         botonCorregir.SetActive(false);
         botonSiguienteN4.SetActive(true);
         panelBloqueo.SetActive(true);
-        
+        sonidos.GetComponent<Sonidos>().repSonido(0);
+
     }
     public void botonSiguientePreguntaN4()
     {
@@ -852,6 +856,7 @@ public class Memoria : MonoBehaviour
         panelBloqueo.SetActive(false);
         botonSiguienteN4.SetActive(false);
         tiempo = 0;
+        sonidos.GetComponent<Sonidos>().repSonido(0);
     }
 
     public void Update()

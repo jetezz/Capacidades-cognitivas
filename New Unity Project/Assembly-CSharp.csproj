@@ -63,7 +63,7 @@
     <Compile Include="Assets\script\orientacion\Orientacion.cs" />
     <Compile Include="Assets\script\ManagerUsuario.cs" />
     <Compile Include="Assets\script\Ejercicios.cs" />
-    <Compile Include="Assets\script\Drag2.cs" />
+    <Compile Include="Assets\script\Lenguaje\Drag2.cs" />
     <Compile Include="Assets\script\praxia\Praxia.cs" />
     <Compile Include="Assets\script\atencion\Atencion.cs" />
     <Compile Include="Assets\script\Test.cs" />

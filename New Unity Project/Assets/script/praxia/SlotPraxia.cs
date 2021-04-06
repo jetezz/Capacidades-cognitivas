@@ -8,6 +8,7 @@ public class SlotPraxia : MonoBehaviour, IDropHandler
 {
     public GameObject praxia;
     public int id;
+    GameObject sonidos;
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -24,6 +25,8 @@ public class SlotPraxia : MonoBehaviour, IDropHandler
         }
 
         praxia.GetComponent<Praxia>().nuevaRespuesta();
+        sonidos = GameObject.FindWithTag("Sonido");
+        sonidos.GetComponent<Sonidos>().repSonido(6);
 
     }
 }

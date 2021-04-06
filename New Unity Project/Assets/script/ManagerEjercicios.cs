@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System;
+
 
 public class ManagerEjercicios : MonoBehaviour
 {
@@ -16,7 +16,22 @@ public class ManagerEjercicios : MonoBehaviour
     public List<int> listaEjercicios;
 
 
+    public static List<T> DesordenarLista<T>(List<T> input)
+    {
+        List<T> arr = input;
+        List<T> arrDes = new List<T>();
 
+
+        while (arr.Count > 0)
+        {
+            int val = Random.Range(0, arr.Count);
+            arrDes.Add(arr[val]);
+            arr.RemoveAt(val);
+        }
+
+
+        return arrDes;
+    }
     private void Awake()
     {
         if (managerEjercicios == null)
@@ -39,6 +54,7 @@ public class ManagerEjercicios : MonoBehaviour
         usuario = managerUsuario.GetComponent<ManagerUsuario>().getUsuarioSeleccionado();
         
         listaEjercicios = usuario.getPeorEstadistica();
+        listaEjercicios = DesordenarLista<int>(listaEjercicios);
         iniciarEjercicio();
     }
 

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Lenguaje : MonoBehaviour
 {
+    GameObject sonidos;
     private AudioSource fuenteDeAudio;
     private GameObject managerEjercicios;
     private int contador = 0;
@@ -111,9 +112,10 @@ public class Lenguaje : MonoBehaviour
         fuenteDeAudio = GetComponent<AudioSource>();        
 
         managerEjercicios = GameObject.FindWithTag("MEje");
+        sonidos = GameObject.FindWithTag("Sonido");
 
-        
-        
+
+
         if (managerEjercicios.GetComponent<ManagerEjercicios>().nivel == 1)
         {
             nivel1();
@@ -260,6 +262,7 @@ public class Lenguaje : MonoBehaviour
                 {
                     panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 1";
                 }
+                sonidos.GetComponent<Sonidos>().repSonido(4);
             }
         }
     }
@@ -323,11 +326,13 @@ public class Lenguaje : MonoBehaviour
             puntos++;
             imagenCorreccion.GetComponent<Image>().sprite = tick;
             panel1.transform.GetChild(i - 1).gameObject.SetActive(false);
+            sonidos.GetComponent<Sonidos>().repSonido(2);
 
         }
         else
         {
             imagenCorreccion.GetComponent<Image>().sprite = cruz;
+            sonidos.GetComponent<Sonidos>().repSonido(3);
 
         }
         preguntas1[contador].contador++;
@@ -402,6 +407,7 @@ public class Lenguaje : MonoBehaviour
             {
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 2";
             }
+            sonidos.GetComponent<Sonidos>().repSonido(4);
         }
     }
     public void botonNivel2(int i)
@@ -410,10 +416,12 @@ public class Lenguaje : MonoBehaviour
         {
             puntos++;
             imagenCorreccion.GetComponent<Image>().sprite = tick;
+            sonidos.GetComponent<Sonidos>().repSonido(2);
         }
         else
         {
             imagenCorreccion.GetComponent<Image>().sprite = cruz;
+            sonidos.GetComponent<Sonidos>().repSonido(3);
 
         }
         contador++;
@@ -541,6 +549,7 @@ public class Lenguaje : MonoBehaviour
             {
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 3";
             }
+            sonidos.GetComponent<Sonidos>().repSonido(4);
         }
     }
 
@@ -589,10 +598,12 @@ public class Lenguaje : MonoBehaviour
         {
             puntos++;
             imagenCorreccion.GetComponent<Image>().sprite = tick;
+            sonidos.GetComponent<Sonidos>().repSonido(2);
         }
         else
         {
             imagenCorreccion.GetComponent<Image>().sprite = cruz;
+            sonidos.GetComponent<Sonidos>().repSonido(3);
 
         }
         contador++;
@@ -826,6 +837,7 @@ public class Lenguaje : MonoBehaviour
             {
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 4";
             }
+            sonidos.GetComponent<Sonidos>().repSonido(4);
         }
     }
 

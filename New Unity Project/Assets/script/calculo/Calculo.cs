@@ -129,6 +129,7 @@ public class Calculo : MonoBehaviour
     }
     void final(string nivel, int pMax, int siguienteNnivel)
     {
+        textoPrincipal.GetComponent<Text>().text = "Finalizado los ejercicios de Calculo nivel " + (siguienteNnivel - 1).ToString();
         panelFin.SetActive(true);
         textoPrincipal.GetComponent<Text>().text = nivel;
         panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
@@ -274,6 +275,8 @@ public class Calculo : MonoBehaviour
         dinero= (float)(Math.Round(dinero*100)/100);
 
         precio.GetComponent<Text>().text = dinero.ToString();
+       
+        sonidos.GetComponent<Sonidos>().repSonido(7);
     }
     public void botonPagarN2()
     {
@@ -296,7 +299,10 @@ public class Calculo : MonoBehaviour
     public void botonBorrar()
     {
         dinero = 0;
-        precio.GetComponent<Text>().text = dinero.ToString();
+        precio.GetComponent<Text>().text = dinero.ToString();            
+        sonidos.GetComponent<Sonidos>().repSonido(1);
+
+
     }
     void nivel3()
     {
