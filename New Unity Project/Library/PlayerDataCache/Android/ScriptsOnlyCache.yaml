@@ -30,13 +30,10 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
-    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
-    - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -994,7 +991,7 @@ ScriptsOnlyBuild:
     className: Ejemplojson
   - hash:
       serializedVersion: 2
-      Hash: 9daae2d9c658d79a101124c625049f54
+      Hash: c7085e4fb10358717fb456094b6b0ec5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Orientacion
@@ -1144,7 +1141,7 @@ ScriptsOnlyBuild:
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
-      Hash: 7c0372bacd02a8167f9dd86f879234e9
+      Hash: e309c1b2ab0cc9b5aad29942625ae1fe
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Praxia
@@ -1258,7 +1255,7 @@ ScriptsOnlyBuild:
     className: Outline
   - hash:
       serializedVersion: 2
-      Hash: 089e871386e75360b192c658bb79adef
+      Hash: 2dc02fbf54a3ccd72f11a9a22ee101ae
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Sonidos

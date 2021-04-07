@@ -13,6 +13,7 @@ public class Sonidos : MonoBehaviour
     public AudioClip drag;
     public AudioClip drop;
     public AudioClip money;
+    public AudioClip click;
 
 
 
@@ -37,6 +38,7 @@ public class Sonidos : MonoBehaviour
             listaAudios.Add(5, drag);
             listaAudios.Add(6, drop);
             listaAudios.Add(7, money);
+            listaAudios.Add(8, click);
         }
         else if (sonidos != this)
         {

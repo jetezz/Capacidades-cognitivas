@@ -1857,6 +1857,13 @@ MonoBehaviour:
   lavarDientes: {fileID: 21300000, guid: 4f1775bff503c464fa7fa2954b62d799, type: 3}
   ponerLavado: {fileID: 21300000, guid: 9c080b5e0600a3742bdd860cf9c387e6, type: 3}
   preparaMesa: {fileID: 21300000, guid: ce38e47be7b0f7945a197d6bc0dfb468, type: 3}
+  cocinar: {fileID: 21300000, guid: 4417a76fe2f2dae4bbafde5161373215, type: 3}
+  futbol: {fileID: 21300000, guid: 71c97259d28725640b1aaa95064427ba, type: 3}
+  leer: {fileID: 21300000, guid: b154fbe2d68bdcd418bf38947ea480a3, type: 3}
+  pasear: {fileID: 21300000, guid: 1540aab888706da4c9d4752354725e02, type: 3}
+  cantar: {fileID: 21300000, guid: df24db66737a23f48833b32cbbe7498e, type: 3}
+  bailar: {fileID: 21300000, guid: 6c68add54ddadb049b3e170e92f13004, type: 3}
+  conducir: {fileID: 21300000, guid: 677cc8a3771a1f9479e3942b3c8d1436, type: 3}
   zumo: {fileID: 21300000, guid: 05ec1382f99675146bc38df6cd21f8cc, type: 3}
   cesta: {fileID: 21300000, guid: 8875ef5f8ea20cc45a08c0166112dd85, type: 3}
   depor: {fileID: 21300000, guid: 0a61da50f92ec104a83b2e9cfa7a9c2e, type: 3}
@@ -1866,6 +1873,12 @@ MonoBehaviour:
   pasta: {fileID: 21300000, guid: 4483879b3425e05498a74a3b0026e407, type: 3}
   detergente: {fileID: 21300000, guid: fe17390cda99d3a4a9c94a276f6d6758, type: 3}
   tenedor: {fileID: 21300000, guid: b46a6994211801245b76d81a7c15359c, type: 3}
+  sarten: {fileID: 21300000, guid: 71b26637cbe93f141b725daf27ca29c0, type: 3}
+  pelota: {fileID: 21300000, guid: dcbc5b1b6ff81054687b80b1d1836721, type: 3}
+  libro: {fileID: 21300000, guid: 62db2ba7dfadb23418a9d998f6422d58, type: 3}
+  correa: {fileID: 21300000, guid: 31accb7e26bce634d9b79d65e67a5814, type: 3}
+  micro: {fileID: 21300000, guid: abdffa126cd29cc48b7a49721a68f30f, type: 3}
+  coche: {fileID: 21300000, guid: db2d4af05ba690f4092841699d57f32d, type: 3}
   panel1: {fileID: 1487697470}
   panel2: {fileID: 1733132051}
   panel3: {fileID: 1513699937}

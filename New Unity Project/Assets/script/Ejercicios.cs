@@ -37,6 +37,8 @@ public class Ejercicios : MonoBehaviour
             panelCapacidades.SetActive(false);
             panel.transform.GetChild(6).gameObject.SetActive(false);
             panel.transform.GetChild(7).gameObject.SetActive(false);
+            panel.transform.GetChild(8).gameObject.SetActive(false);
+            panel.transform.GetChild(9).gameObject.SetActive(false);
 
 
         }
@@ -50,6 +52,8 @@ public class Ejercicios : MonoBehaviour
 
             panel.transform.GetChild(6).gameObject.SetActive(true);
             panel.transform.GetChild(7).gameObject.SetActive(true);
+            panel.transform.GetChild(8).gameObject.SetActive(true);
+            panel.transform.GetChild(9).gameObject.SetActive(true);
         }
 
         

@@ -14,10 +14,12 @@ public class Test : MonoBehaviour
     public int nivel = 0;
     private GameObject managerUsuario;
     public int ultimosPuntos = 0;
-   
+    GameObject sonidos;
+
 
     public void Start()
     {
+        sonidos = GameObject.FindWithTag("Sonido");
         preguntas = new List<string>();
         preguntas.Add("¿Sabe en qué año estamos?");
         preguntas.Add("¿En qué época del año?");
@@ -35,7 +37,7 @@ public class Test : MonoBehaviour
         preguntas.Add("Si tinene 24 pesetas y le restas 3 ¿Cuantas le quedan? (21)");
         preguntas.Add("Si tinene 21 pesetas y le restas 3 ¿Cuantas le quedan? (18)");
         preguntas.Add("Si tinene 18 pesetas y le restas 3 ¿Cuantas le quedan? (15)");
-        preguntas.Add("Repita estos 3 numeros al reves : 5-9-2");
+        preguntas.Add("Repita estos 3 numeros al revés : 5-9-2");
         preguntas.Add("¿Recuerdas las palabras PESETA-CABALLO-MANZANA?");
         preguntas.Add("¿Qué es esto?, (mostrar un boligrafo)");
         preguntas.Add("¿Qué es esto? (mostrar un reloj)");
@@ -61,34 +63,40 @@ public class Test : MonoBehaviour
         puntos++;
         ultimosPuntos = 1;
         siguientePregunta();
+        sonidos.GetComponent<Sonidos>().repSonido(8);
     }
     public void botonIncorrecto()
     {
         ultimosPuntos = 0;
         siguientePregunta();
+        sonidos.GetComponent<Sonidos>().repSonido(8);
     }
     public void Boton0puntos()
     {
         ultimosPuntos = 0;
         siguientePregunta();
+        sonidos.GetComponent<Sonidos>().repSonido(8);
     }
     public void Boton1puntos()
     {
         puntos++;
         ultimosPuntos = 1;
         siguientePregunta();
+        sonidos.GetComponent<Sonidos>().repSonido(8);
     }
     public void Boton2puntos()
     {
         puntos += 2;
         ultimosPuntos = 2;
         siguientePregunta();
+        sonidos.GetComponent<Sonidos>().repSonido(8);
     }
     public void Boton3puntos()
     {
         puntos += 3;
         ultimosPuntos = 3;
         siguientePregunta();
+        sonidos.GetComponent<Sonidos>().repSonido(8);
     }
 
     public void botonPreguntaAtras()
@@ -98,7 +106,7 @@ public class Test : MonoBehaviour
             puntos -= ultimosPuntos;
             contador -= 2;
             siguientePregunta();
-           
+            sonidos.GetComponent<Sonidos>().repSonido(1);
         }
     }
     void siguientePregunta()
@@ -215,9 +223,11 @@ public class Test : MonoBehaviour
             managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
 
         }
+        sonidos.GetComponent<Sonidos>().repSonido(4);
     }
     public void botonInicio()
     {
-        SceneManager.LoadScene(0);
+        sonidos.GetComponent<Sonidos>().repSonido(1);
+        SceneManager.LoadScene(0);        
     }
 }

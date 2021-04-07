@@ -28,6 +28,14 @@ public class Praxia : MonoBehaviour
     public Sprite lavarDientes;
     public Sprite ponerLavado;
     public Sprite preparaMesa;
+    public Sprite cocinar;
+    public Sprite futbol;
+    public Sprite leer;
+    public Sprite pasear;
+    public Sprite cantar;
+    public Sprite bailar;
+    public Sprite conducir;
+
 
     //grupo1 N2
     public Sprite zumo;
@@ -39,6 +47,12 @@ public class Praxia : MonoBehaviour
     public Sprite pasta;
     public Sprite detergente;
     public Sprite tenedor;
+    public Sprite sarten;
+    public Sprite pelota;
+    public Sprite libro;
+    public Sprite correa;
+    public Sprite micro;
+    public Sprite coche;
 
 
 
@@ -151,8 +165,18 @@ public class Praxia : MonoBehaviour
         grupo1N1.Add(6, lavarDientes);
         grupo1N1.Add(7, ponerLavado);
         grupo1N1.Add(8, preparaMesa);
+        grupo1N1.Add(9, cocinar);
+        grupo1N1.Add(10, futbol);
+        grupo1N1.Add(11, leer);
+        grupo1N1.Add(12, pasear);
+        grupo1N1.Add(13, cantar);
+        grupo1N1.Add(14, bailar);
+        grupo1N1.Add(15, conducir);
+       
 
-        preguntas1 = new List<Praxia1>();
+     
+
+    preguntas1 = new List<Praxia1>();
         aux.Add(new Praxia1(0, "Desayunar"));
         aux.Add(new Praxia1(1, "Comprar en el supermercado"));
         aux.Add(new Praxia1(2, "Salir a correr"));
@@ -162,10 +186,18 @@ public class Praxia : MonoBehaviour
         aux.Add(new Praxia1(6, "Lavarse los dientes"));
         aux.Add(new Praxia1(7, "Poner la lavadora"));
         aux.Add(new Praxia1(8, "Peinarse el pelo"));
+        aux.Add(new Praxia1(9, "Cocinar"));
+        aux.Add(new Praxia1(10, "Jugar al futbol"));
+        aux.Add(new Praxia1(11, "Leer un libro"));
+        aux.Add(new Praxia1(12, "Pasear al perro"));
+        aux.Add(new Praxia1(13, "Cantar"));
+        aux.Add(new Praxia1(14, "Bailar"));
+        aux.Add(new Praxia1(15, "Conducir"));
+        
 
         aux = DesordenarLista<Praxia1>(aux);
 
-        for(int i = 0; i < 5; i++)
+        for(int i = 0; i < 12; i++)
         {
             preguntas1.Add(aux[i]);
         }
@@ -183,7 +215,7 @@ public class Praxia : MonoBehaviour
         }
         else
         {
-            final("Ejercicio praxia nivel 1 completado",5,2);
+            final("Ejercicio praxia nivel 1 completado",12,2);
         }
     }
     void generarBotones1()
@@ -263,6 +295,14 @@ public class Praxia : MonoBehaviour
         grupo1N1.Add(7, ponerLavado);
         grupo1N1.Add(8, preparaMesa);
 
+        grupo1N1.Add(9, cocinar);
+        grupo1N1.Add(10, futbol);
+        grupo1N1.Add(11, leer);
+        grupo1N1.Add(12, pasear);
+        grupo1N1.Add(13, cantar);
+        grupo1N1.Add(14, bailar);
+        grupo1N1.Add(15, conducir);
+
         aux.Add(new Praxia2(0, zumo));
         aux.Add(new Praxia2(1, cesta));
         aux.Add(new Praxia2(2, depor));
@@ -272,9 +312,15 @@ public class Praxia : MonoBehaviour
         aux.Add(new Praxia2(6, pasta));
         aux.Add(new Praxia2(7, detergente));
         aux.Add(new Praxia2(8, tenedor));
+        aux.Add(new Praxia2(9, sarten));
+        aux.Add(new Praxia2(10, pelota));
+        aux.Add(new Praxia2(11, libro));
+        aux.Add(new Praxia2(12, correa));
+        aux.Add(new Praxia2(13, micro));
+        aux.Add(new Praxia2(15, coche));
         aux = DesordenarLista<Praxia2>(aux);
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 12; i++)
         {
             preguntas2.Add(aux[i]);
         }
@@ -294,7 +340,7 @@ public class Praxia : MonoBehaviour
         }
         else
         {
-            final("Ejercicio praxia nivel 2 completado", 5, 3);
+            final("Ejercicio praxia nivel 2 completado", 12, 3);
         }
     }
     void generarBotones2()
@@ -649,10 +695,12 @@ public class Praxia : MonoBehaviour
     }
     public void irInicio()
     {
+        sonidos.GetComponent<Sonidos>().repSonido(1);
         SceneManager.LoadScene(0);
     }
     public void siguienteEjercicio()
     {
+        sonidos.GetComponent<Sonidos>().repSonido(0);
         managerEjercicios.GetComponent<ManagerEjercicios>().iniciarEjercicio();
     }
 }

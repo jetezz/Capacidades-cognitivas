@@ -881,10 +881,12 @@ public class Percepcion : MonoBehaviour
 
        public void irInicio()
     {
+        sonidos.GetComponent<Sonidos>().repSonido(1);
         SceneManager.LoadScene(0);
     }
     public void siguienteEjercicio()
     {
+        sonidos.GetComponent<Sonidos>().repSonido(0);
         managerEjercicios.GetComponent<ManagerEjercicios>().iniciarEjercicio();
     }
 

@@ -23,6 +23,11 @@ public class Orientacion : MonoBehaviour
     public Sprite or3;
     public Sprite or4;
     public Sprite or5;
+    public Sprite or6;
+    public Sprite or7;
+    public Sprite or8;
+    public Sprite or9;
+    public Sprite or10;
 
 
     public GameObject pre1N2;
@@ -71,6 +76,7 @@ public class Orientacion : MonoBehaviour
     //nivel4
     public GameObject panel4;
     List<Orientacion4> preguntas4;
+    int numRespuestas = 0;
 
 
 
@@ -154,11 +160,14 @@ public class Orientacion : MonoBehaviour
         preguntas1 = new List<Orientacion1>();
         preguntas1.Add(new Orientacion1(or1, true, "El perro está dentro de la cama"));
         preguntas1.Add(new Orientacion1(or2, false, "La pelota está encima de la silla"));
-        preguntas1.Add(new Orientacion1(or3, true, "La niña está detrás del ordenador"));
-        preguntas1.Add(new Orientacion1(or3, false, "El ordenador está detras de la niña"));
-        preguntas1.Add(new Orientacion1(or4, false, "La bicicleta está delante de la niña"));
+        preguntas1.Add(new Orientacion1(or3, true, "La niña está detrás del ordenador"));        
         preguntas1.Add(new Orientacion1(or4, true, "La niña está delante de la bicicleta"));
         preguntas1.Add(new Orientacion1(or5, true, "Los periquitos están dentro de la jaula"));
+        preguntas1.Add(new Orientacion1(or6, false, "El profesor está detras de la pizarra"));
+        preguntas1.Add(new Orientacion1(or7, true, "El ciclista está encima de la bici"));
+        preguntas1.Add(new Orientacion1(or8, false, "La pelota está encima de la mesa"));
+        preguntas1.Add(new Orientacion1(or9, false, "El libro está debajo de la mesa"));
+        preguntas1.Add(new Orientacion1(or10, false, "El gato está encima de la silla"));
 
         preguntas1 = DesordenarLista<Orientacion1>(preguntas1);
         panel1.SetActive(true);
@@ -177,7 +186,7 @@ public class Orientacion : MonoBehaviour
         }
         else
         {
-            final("Ejercicio orientacion nivel 1 completado", 7, 2);
+            final("Ejercicio orientacion nivel 1 completado", 10, 2);
         }
     }
  
@@ -298,7 +307,7 @@ public class Orientacion : MonoBehaviour
         preguntas3.Add(new Orientacion3(fase1, "pulsa la lámpara que está delante de la mesa", 4));
         preguntas3.Add(new Orientacion3(fase1, "pulsa la lámpara que está detrás de la mesa", 5));
 
-        preguntas3.Add(new Orientacion3(fase2, "pulsa el maceta que está entra la lámpara y la mesa", 4));
+        preguntas3.Add(new Orientacion3(fase2, "pulsa el maceta que está entre la lámpara y la mesa", 4));
         preguntas3.Add(new Orientacion3(fase2, "pulsa la lámpara que está a la derecha de la mesa", 5));
 
 
@@ -372,14 +381,27 @@ public class Orientacion : MonoBehaviour
     void nivel4()
     {
         preguntas4 = new List<Orientacion4>();
-        preguntas4.Add(new Orientacion4(2, 2, "coloca el cuadrado a la derecha del círculo", 1));
-        preguntas4.Add(new Orientacion4(1, 3, "coloca el rombo debajo del círculo", 2));
-        preguntas4.Add(new Orientacion4(1, 1, "coloca el triángulo arriba del círculo", 3));
-        preguntas4.Add(new Orientacion4(0, 2, "coloca el rectangulo a la izquierda del círculo", 4));
-        preguntas4.Add(new Orientacion4(3, 2, "coloca el rombo a la derecha del cuadrado", 2));
-        preguntas4.Add(new Orientacion4(4, 2, "coloca el triángulo a la derecha del rombo", 3));
-        preguntas4.Add(new Orientacion4(4, 3, "coloca el cuadrado debajo del triangulo", 1));
-        preguntas4.Add(new Orientacion4(3, 3, "coloca el rectangulo a la izquierda del cuadrado", 4));
+        preguntas4.Add(new Orientacion4(2, 2, "coloca el cuadrado a la derecha del círculo amarillo", 1));
+        preguntas4.Add(new Orientacion4(4, 5, "coloca el rombo debajo del círculo rojo", 2));
+        preguntas4.Add(new Orientacion4(4, 0, "coloca el triángulo arriba del círculo verde", 3));
+        preguntas4.Add(new Orientacion4(0, 4, "coloca el rectangulo a la izquierda del círculo azul", 4));
+
+        preguntas4.Add(new Orientacion4(5, 4, "coloca el rombo a la derecha circulo rojo", 2));
+        preguntas4.Add(new Orientacion4(5, 1, "coloca el triángulo a la derecha del circulo verde", 3));
+        preguntas4.Add(new Orientacion4(1, 3, "coloca el cuadrado debajo del circulo amarillo", 1));
+        preguntas4.Add(new Orientacion4(1, 5, "coloca el rectangulo a la debajo del circulo azul", 4));
+
+        preguntas4.Add(new Orientacion4(0, 2, "coloca el cuadrado a la izquierda del círculo amarillo", 1));
+        preguntas4.Add(new Orientacion4(4, 3, "coloca el rombo arriba del círculo rojo", 2));
+        preguntas4.Add(new Orientacion4(4, 2, "coloca el triángulo abajo del círculo verde", 3));
+        preguntas4.Add(new Orientacion4(2, 4, "coloca el rectangulo a la derecha del círculo azul", 4));
+
+
+
+        panel4.transform.GetChild(2).GetComponent<Drag>().iniciarposicion();
+        panel4.transform.GetChild(3).GetComponent<Drag>().iniciarposicion();
+        panel4.transform.GetChild(4).GetComponent<Drag>().iniciarposicion();
+        panel4.transform.GetChild(5).GetComponent<Drag>().iniciarposicion();
 
         panel4.SetActive(true);
         siguientePreguntaN4();
@@ -409,6 +431,14 @@ public class Orientacion : MonoBehaviour
             imagenCorreccion.GetComponent<Image>().sprite = cruz;
             sonidos.GetComponent<Sonidos>().repSonido(3);
         }
+        numRespuestas++;
+        if (numRespuestas == 4)
+        {
+            panel4.transform.GetChild(2).GetComponent<Drag>().resetPosition();
+            panel4.transform.GetChild(3).GetComponent<Drag>().resetPosition();
+            panel4.transform.GetChild(4).GetComponent<Drag>().resetPosition();
+            panel4.transform.GetChild(5).GetComponent<Drag>().resetPosition();
+        }
         tiempo = 1;
         contador++;
         siguientePreguntaN4();
@@ -431,10 +461,12 @@ public class Orientacion : MonoBehaviour
 
     public void irInicio()
     {
+        sonidos.GetComponent<Sonidos>().repSonido(1);
         SceneManager.LoadScene(0);
     }
     public void siguienteEjercicio()
     {
+        sonidos.GetComponent<Sonidos>().repSonido(0);
         managerEjercicios.GetComponent<ManagerEjercicios>().iniciarEjercicio();
     }
 }

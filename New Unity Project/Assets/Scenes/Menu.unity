@@ -1482,6 +1482,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 9097c998af2dfd6499fedcf7fb39ed63, type: 3}
     - target: {fileID: 657915053893931520, guid: db7df5df3e357c14289c9289dfcf3365, type: 3}
+      propertyPath: click
+      value: 
+      objectReference: {fileID: 8300000, guid: c66b49b231eae3b44bf2961a2d746075, type: 3}
+    - target: {fileID: 657915053893931520, guid: db7df5df3e357c14289c9289dfcf3365, type: 3}
       propertyPath: money
       value: 
       objectReference: {fileID: 8300000, guid: 641897284280a8749acd4afb55e3e5ac, type: 3}

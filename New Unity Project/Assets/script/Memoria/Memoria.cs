@@ -155,7 +155,7 @@ public class Memoria : MonoBehaviour
 
         aux.Add(new PreguntasN1("¿Dónde está la bañera?",0));
         aux.Add(new PreguntasN1("¿Dónde está el lavabo?",1));
-        aux.Add(new PreguntasN1("¿¿Dónde está el espejo??",2));
+        aux.Add(new PreguntasN1("¿Dónde está el espejo?",2));
         aux.Add(new PreguntasN1("¿Dónde está la lavadora?",3));
         aux.Add(new PreguntasN1("¿Dónde está el calentador?",4));
         aux.Add(new PreguntasN1("¿Dónde está el váter?",5));
@@ -958,11 +958,12 @@ public class Memoria : MonoBehaviour
 
     public void botonInicio()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         sonidos.GetComponent<Sonidos>().repSonido(1);
     }
     public void siguienteEjercicio()
     {
+        sonidos.GetComponent<Sonidos>().repSonido(0);
         managerEjercicios.GetComponent<ManagerEjercicios>().iniciarEjercicio();
     }
   
