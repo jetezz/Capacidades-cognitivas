@@ -144,6 +144,45 @@ public class Memoria : MonoBehaviour
         
         
     }
+    void final(string nivel, int pMax, int pMin, int siguienteNnivel,bool ultimo)
+    {
+        textoPrincipal.GetComponent<Text>().text = "Finalizado los ejercicios de Memoria nivel " + (siguienteNnivel - 1).ToString();
+        panelFin.SetActive(true);
+        textoPrincipal.GetComponent<Text>().text = nivel;
+        panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
+        panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son " + pMax;
+        if (puntos == pMax)
+        {
+            panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel " + siguienteNnivel;
+            managerEjercicios.GetComponent<ManagerEjercicios>().usuario.memoria(siguienteNnivel);
+            GameObject managerUsuario = GameObject.FindWithTag("MUsu");
+            managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+        }
+        else
+        {
+            if (puntos < pMin)
+            {
+                if (!ultimo)
+                {
+                    siguienteNnivel--;
+                }
+                siguienteNnivel--;
+                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Bajas al nivel " + siguienteNnivel;
+                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.memoria(siguienteNnivel);
+                GameObject managerUsuario = GameObject.FindWithTag("MUsu");
+                managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+            }
+            else
+            {
+                siguienteNnivel--;
+                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel " + siguienteNnivel;
+            }
+
+
+
+        }
+        sonidos.GetComponent<Sonidos>().repSonido(4);
+    }
     /// NIVEL 1
     void nivel1()
     {
@@ -260,22 +299,7 @@ public class Memoria : MonoBehaviour
         }
         else
         {
-            panelFin.SetActive(true);
-            textoPrincipal.GetComponent<Text>().text = "Ejercicio de memoria nivel 1 completado";
-            panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son " + preguntasMaximas.ToString();
-            if (puntos == preguntasMaximas)
-            {
-                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 2";
-                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.memoria(2);
-                GameObject managerUsuario = GameObject.FindWithTag("MUsu");
-                managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
-            }
-            else
-            {
-                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 1";
-            }
-            sonidos.GetComponent<Sonidos>().repSonido(4);
+            final("Ejercicio de Memoria nivel1 completado", preguntasMaximas, 0, 2,false);
         }
 
 
@@ -492,39 +516,13 @@ public class Memoria : MonoBehaviour
         {
             if (nivel == 2)
             {
-                panelFin.SetActive(true);
-                textoPrincipal.GetComponent<Text>().text = "Ejercicio de memoria nivel 2 completado";
-                panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-                panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son " + preguntasMaximas.ToString();
-                if (puntos == preguntasMaximas)
-                {
-                    panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 3";
-                    managerEjercicios.GetComponent<ManagerEjercicios>().usuario.memoria(3);
-                    GameObject managerUsuario = GameObject.FindWithTag("MUsu");
-                    managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
-                }
-                else
-                {
-                    panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 2";
-                }
+                final("Ejercicio de Memoria nivel2 completado", preguntasMaximas, preguntasMaximas / 2, 3,false);
+
             }
             else
             {
-                panelFin.SetActive(true);
-                textoPrincipal.GetComponent<Text>().text = "Ejercicio de memoria nivel 3 completado";
-                panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-                panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son " + preguntasMaximas.ToString();
-                if (puntos == preguntasMaximas)
-                {
-                    panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 4";
-                    managerEjercicios.GetComponent<ManagerEjercicios>().usuario.memoria(4);
-                    GameObject managerUsuario = GameObject.FindWithTag("MUsu");
-                    managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
-                }
-                else
-                {
-                    panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 3";
-                }
+                final("Ejercicio de Memoria nivel3 completado", preguntasMaximas, preguntasMaximas/2,4,false);
+
             }
             sonidos.GetComponent<Sonidos>().repSonido(4);
         }
@@ -600,7 +598,7 @@ public class Memoria : MonoBehaviour
 
     void nivel4()
     {
-
+       
         fases fase1 = new fases();
         fases fase2 = new fases();
         fases fase3 = new fases();
@@ -614,10 +612,14 @@ public class Memoria : MonoBehaviour
         fase1.soluciones.Add(new Soluciones("Amarilla"));
         fase1.preguntas.Add("¿De qué color son las sábanas?");
         fase1.soluciones.Add(new Soluciones("Amarilla y blanca"));
-        fase1.preguntas.Add("¿De qué color es la alfombra?");
-        fase1.soluciones.Add(new Soluciones("Blanca y azul"));
-        fase1.preguntas.Add("¿De qué color es la almohada?");
-        fase1.soluciones.Add(new Soluciones("Blanca"));
+        /*
+        aux.preguntas.Add("¿De qué color es la alfombra?");
+        aux.soluciones.Add(new Soluciones("Blanca y azul"));
+        aux.preguntas.Add("¿De qué color es la almohada?");
+        aux.soluciones.Add(new Soluciones("Blanca"));
+        */
+        
+
 
         fase2.imagen = salon;
         fase2.preguntas.Add("¿De qué color es el sofá?");
@@ -628,6 +630,7 @@ public class Memoria : MonoBehaviour
         fase2.soluciones.Add(new Soluciones("Blanca"));
         fase2.preguntas.Add("¿De qué color es la alfombra?");
         fase2.soluciones.Add(new Soluciones("Amarilla"));
+        /*
         fase2.preguntas.Add("¿De qué color es el reloj?");
         fase2.soluciones.Add(new Soluciones("Rojo"));
         fase2.preguntas.Add("¿De qué color es la lámpara?");
@@ -642,7 +645,7 @@ public class Memoria : MonoBehaviour
         fase2.soluciones.Add(new Soluciones("Azul y amarillo"));
         fase2.preguntas.Add("¿De qué color son los cojines?");
         fase2.soluciones.Add(new Soluciones("amarillos"));
-
+        */
 
 
         fase3.imagen = zoo;
@@ -654,14 +657,17 @@ public class Memoria : MonoBehaviour
         fase3.soluciones.Add(new Soluciones("4"));
         fase3.preguntas.Add("¿Cuántas mariposas hay?");
         fase3.soluciones.Add(new Soluciones("3"));
+        /*
         fase3.preguntas.Add("¿Cuántas niñas hay?");
         fase3.soluciones.Add(new Soluciones("1"));
         fase3.preguntas.Add("¿Cuántas nubes hay?");
         fase3.soluciones.Add(new Soluciones("4"));
+        */
 
         fasesTotales.Add(fase1);
         fasesTotales.Add(fase2);
         fasesTotales.Add(fase3);
+        fasesTotales = DesordenarLista<fases>(fasesTotales);
 
         panelNivel4.SetActive(true);
         panelNivel4.transform.GetChild(0).GetComponent<Image>().sprite = cuarto;
@@ -762,21 +768,8 @@ public class Memoria : MonoBehaviour
             contadorFases++;
             if (contadorFases == fasesTotales.Count)
             {
-                panelFin.SetActive(true);
-                panelFin.transform.GetChild(3).GetComponent<Text>().text = puntos.ToString();
-                panelFin.transform.GetChild(4).GetComponent<Text>().text = "Los puntos maximos de esta prueba son 23 ";
+                final("Ejercicio de Memoria nivel4 completado", preguntasMaximas, preguntasMaximas / 2, 4,true);
 
-                if (puntos == 23)
-                {
-                    panelFin.transform.GetChild(5).GetComponent<Text>().text = "Superado el nivel maximo";
-                    managerEjercicios.GetComponent<ManagerEjercicios>().usuario.memoria(5);
-                    GameObject managerUsuario = GameObject.FindWithTag("MUsu");
-                    managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
-                }
-                else
-                {
-                    panelFin.transform.GetChild(5).GetComponent<Text>().text = "Se mantiene el nivel 4 en memoria";
-                }
             }
             else
             {
@@ -806,6 +799,7 @@ public class Memoria : MonoBehaviour
         respuesta4 = 0;
         for (int i =0; i< numPreguntas;i++)
         {
+            preguntasMaximas++;
             if (posicionesPreguntas[i] == true)
             {
                 puntos++;

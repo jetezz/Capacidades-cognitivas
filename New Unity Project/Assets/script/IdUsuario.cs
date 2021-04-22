@@ -6,6 +6,8 @@ public class IdUsuario : MonoBehaviour
 {   
     public int id;   
     public GameObject lista;
+    public GameObject estadisticas;
+    
 
     public void clickUsuario()
     {
@@ -26,6 +28,12 @@ public class IdUsuario : MonoBehaviour
         ejercicios.GetComponent<Ejercicios>().ActivarPanel();
 
     }
-   
+    public void estadisticasUsuario()
+    {
+        estadisticas.GetComponent<EsEstadiscitcas>().usuarioPulsado(id);
+    }
+    
+  
+
 }
 

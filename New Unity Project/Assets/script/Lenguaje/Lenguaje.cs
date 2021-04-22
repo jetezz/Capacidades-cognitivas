@@ -155,7 +155,45 @@ public class Lenguaje : MonoBehaviour
 
         return arrDes;
     }
+    void final(string nivel, int pMax, int pMin, int siguienteNnivel,bool ultimo)
+    {
+        textoPrincipal.GetComponent<Text>().text = "Finalizado los ejercicios de Lenguaje nivel " + (siguienteNnivel - 1).ToString();
+        panelFin.SetActive(true);
+        textoPrincipal.GetComponent<Text>().text = nivel;
+        panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
+        panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son " + pMax;
+        if (puntos == pMax)
+        {
+            panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel " + siguienteNnivel;
+            managerEjercicios.GetComponent<ManagerEjercicios>().usuario.lenguaje(siguienteNnivel);
+            GameObject managerUsuario = GameObject.FindWithTag("MUsu");
+            managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+        }
+        else
+        {
+            if (puntos < pMin)
+            {
+                if (!ultimo)
+                {
+                    siguienteNnivel--;
+                }
+                siguienteNnivel--;
+                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Bajas al nivel " + siguienteNnivel;
+                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.lenguaje(siguienteNnivel);
+                GameObject managerUsuario = GameObject.FindWithTag("MUsu");
+                managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+            }
+            else
+            {
+                siguienteNnivel--;
+                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel " + siguienteNnivel;
+            }
 
+
+
+        }
+        sonidos.GetComponent<Sonidos>().repSonido(4);
+    }
 
     void nivel1()
     {
@@ -247,22 +285,7 @@ public class Lenguaje : MonoBehaviour
             }
             else
             {
-                panelFin.SetActive(true);
-                textoPrincipal.GetComponent<Text>().text = "Ejercicio de lenguaje nivel 1 completado";
-                panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-                panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 20 ";
-                if (puntos == 20)
-                {
-                    panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 2";
-                    managerEjercicios.GetComponent<ManagerEjercicios>().usuario.lenguaje(2);
-                    GameObject managerUsuario = GameObject.FindWithTag("MUsu");
-                    managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
-                }
-                else
-                {
-                    panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 1";
-                }
-                sonidos.GetComponent<Sonidos>().repSonido(4);
+                final("Ejercicio de Gnosia nivel1 completado", 20, 0, 2,false);
             }
         }
     }
@@ -392,22 +415,8 @@ public class Lenguaje : MonoBehaviour
         }
         else
         {
-            panelFin.SetActive(true);
-            textoPrincipal.GetComponent<Text>().text = "Ejercicio de lenguaje nivel 2 completado";
-            panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 11 ";
-            if (puntos == 11)
-            {
-                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 3";
-                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.lenguaje(3);
-                GameObject managerUsuario = GameObject.FindWithTag("MUsu");
-                managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
-            }
-            else
-            {
-                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 2";
-            }
-            sonidos.GetComponent<Sonidos>().repSonido(4);
+                final("Ejercicio de Lenguaje nivel2 completado", 11, 4, 3,false);
+
         }
     }
     public void botonNivel2(int i)
@@ -534,22 +543,8 @@ public class Lenguaje : MonoBehaviour
         }
         else
         {
-            panelFin.SetActive(true);
-            textoPrincipal.GetComponent<Text>().text = "Ejercicio de lenguaje nivel 3 completado";
-            panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 9 ";
-            if (puntos == 9)
-            {
-                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 4";
-                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.lenguaje(3);
-                GameObject managerUsuario = GameObject.FindWithTag("MUsu");
-                managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
-            }
-            else
-            {
-                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 3";
-            }
-            sonidos.GetComponent<Sonidos>().repSonido(4);
+            final("Ejercicio de Lenguaje nivel3 completado", 9, 4, 4,false);
+
         }
     }
 
@@ -822,22 +817,8 @@ public class Lenguaje : MonoBehaviour
         }
         else
         {
-            panelFin.SetActive(true);
-            textoPrincipal.GetComponent<Text>().text = "Ejercicio de lenguaje nivel 4 completado";
-            panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 15 ";
-            if (puntos == 15)
-            {
-                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Has completado todos los niveles de lenguaje";
-                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.lenguaje(5);
-                GameObject managerUsuario = GameObject.FindWithTag("MUsu");
-                managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
-            }
-            else
-            {
-                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 4";
-            }
-            sonidos.GetComponent<Sonidos>().repSonido(4);
+            final("Ejercicio de Lenguaje nivel4 completado", 15, 6, 4,true);
+
         }
     }
 

@@ -3,11 +3,13 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - Atencion
     - Calculo
+    - CodeMonkey.Assets
     - Drag
     - Drag2
     - Drop2
     - Ejemplojson
     - Ejercicios
+    - EsEstadiscitcas
     - Gnoxias
     - IdSeleccion
     - IdUsuario
@@ -25,15 +27,19 @@ ScriptsOnlyBuild:
     - SlotPraxia
     - Sonidos
     - Test
+    - WindowsGraph
     - menu
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
+    - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -637,7 +643,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1514}
     - Class: 114
+      Script: {instanceID: 1920}
+    - Class: 114
       Script: {instanceID: 2104}
+    - Class: 114
+      Script: {instanceID: 2264}
     - Class: 114
       Script: {instanceID: 2468}
     - Class: 114
@@ -647,7 +657,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2994}
     - Class: 114
+      Script: {instanceID: 3004}
+    - Class: 114
+      Script: {instanceID: 3182}
+    - Class: 114
+      Script: {instanceID: 3330}
+    - Class: 114
+      Script: {instanceID: 3438}
+    - Class: 114
+      Script: {instanceID: 3972}
+    - Class: 114
+      Script: {instanceID: 4150}
+    - Class: 114
       Script: {instanceID: 4454}
+    - Class: 114
+      Script: {instanceID: 22328}
+    - Class: 114
+      Script: {instanceID: 35970}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -740,6 +766,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4454}
     - Class: 114
       Script: {instanceID: 4578}
+    - Class: 114
+      Script: {instanceID: 38840}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1147,7 +1175,7 @@ ScriptsOnlyBuild:
     className: Praxia
   - hash:
       serializedVersion: 2
-      Hash: a74c49e50fad52a530298b4544d52e9d
+      Hash: cbd112416eb5efda27e963f89c334072
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Atencion
@@ -1183,7 +1211,7 @@ ScriptsOnlyBuild:
     className: MarkerTrack
   - hash:
       serializedVersion: 2
-      Hash: 76bccecc2ed04ed94d3c1de7ed6c0fd8
+      Hash: 40a4fd4457a6b64434b117d1a20d1dfe
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SlotPraxia
@@ -1219,7 +1247,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 8397422941f4803daa8c0729d2a890f9
+      Hash: 838263285d7393247a9652015169d71b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Percepcion
@@ -1237,7 +1265,7 @@ ScriptsOnlyBuild:
     className: ContentSizeFitter
   - hash:
       serializedVersion: 2
-      Hash: 329554de06905192a985fe5297de3b63
+      Hash: b3214ae848133674969dbb1101bd188c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: IdUsuario
@@ -1559,6 +1587,60 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
+  - hash:
+      serializedVersion: 2
+      Hash: 85e0072129f45f62b9e5e0e8b75f7f04
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EsEstadiscitcas
+  - hash:
+      serializedVersion: 2
+      Hash: 4ae5b67f312d2eb54e8bd08403c48989
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: WindowsGraph
+  - hash:
+      serializedVersion: 2
+      Hash: fa653120b8e2e20f2e5fa15091afeb95
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: CodeMonkey.Utils
+    className: Button_Sprite
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: CodeMonkey.MonoBehaviours
+    className: CameraFollow
+  - hash:
+      serializedVersion: 2
+      Hash: e4bdd198714ebacf1ebef1367327eff4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: CodeMonkey
+    className: Assets
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: CodeMonkey.MonoBehaviours
+    className: ComponentActions
+  - hash:
+      serializedVersion: 2
+      Hash: 05cede3f915399cac147f9e5eea79328
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: CodeMonkey.MonoBehaviours
+    className: PositionRendererSorter
+  - hash:
+      serializedVersion: 2
+      Hash: a2b249e27e25a975ba9d3c9b8e130910
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: CodeMonkey.Utils
+    className: Button_UI
+  - hash:
+      serializedVersion: 2
+      Hash: 5b1d3232bdaba52e260d32a9eb24296b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: CodeMonkey.MonoBehaviours
+    className: CameraFollowSetup
   platform: 13
   scenePathNames:
   - Assets/Scenes/Menu.unity

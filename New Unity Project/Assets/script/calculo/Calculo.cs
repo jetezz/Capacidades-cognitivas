@@ -127,7 +127,7 @@ public class Calculo : MonoBehaviour
         
         
     }
-    void final(string nivel, int pMax, int siguienteNnivel)
+    void final(string nivel, int pMax,int pMin, int siguienteNnivel,bool ultimo)
     {
         textoPrincipal.GetComponent<Text>().text = "Finalizado los ejercicios de Calculo nivel " + (siguienteNnivel - 1).ToString();
         panelFin.SetActive(true);
@@ -143,9 +143,24 @@ public class Calculo : MonoBehaviour
         }
         else
         {
-
-            siguienteNnivel--;
-            panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel " + siguienteNnivel;
+            if(puntos< pMin)
+            {
+                if (!ultimo)
+                {
+                    siguienteNnivel--;
+                }
+                siguienteNnivel--;
+                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Bajas al nivel " + siguienteNnivel;
+                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.calculo(siguienteNnivel);
+                GameObject managerUsuario = GameObject.FindWithTag("MUsu");
+                managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+            }
+            else
+            {
+                siguienteNnivel--;
+                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel " + siguienteNnivel;
+            }
+            
 
 
         }
@@ -202,7 +217,7 @@ public class Calculo : MonoBehaviour
         }
         else
         {
-            final("Ejercicio de calculo nivel1 completado", 16, 2);
+            final("Ejercicio de calculo nivel1 completado", 16,8, 2,false);
         }
     }
     public void respuestaN1(bool respuesta)
@@ -263,7 +278,7 @@ public class Calculo : MonoBehaviour
         }
         else
         {
-            final("Ejercicio de calculo nivel2 completado", puntosMaximos, 3);
+            final("Ejercicio de calculo nivel2 completado", puntosMaximos,puntosMaximos/2, 3,false);
         }
         
     }
@@ -467,7 +482,7 @@ public class Calculo : MonoBehaviour
 
         preguntas3 = DesordenarLista<Calculo3>(preguntas3);
 
-        textoPrincipal.GetComponent<Text>().text = "Pulsa en el grupo que contenga el mismo dinero que el grupo de ariba";
+        textoPrincipal.GetComponent<Text>().text = "Pulsa en el grupo que contenga el mismo dinero que el grupo de arriba";
         siguientePreguntaN3();
 
     }
@@ -482,7 +497,7 @@ public class Calculo : MonoBehaviour
         }
         else
         {
-            final("Ejercicio de calculo nivel3 completado", puntosMaximos, 4);
+            final("Ejercicio de calculo nivel3 completado", puntosMaximos,puntosMaximos/2, 4,false);
         }
     }
     void generarGruposN3()
@@ -614,7 +629,7 @@ public class Calculo : MonoBehaviour
         }
         else
         {
-            final("Ejercicio de calculo nivel4 completado", 5, 5);
+            final("Ejercicio de calculo nivel4 completado", 5,4, 4,true);
         }
     }
     void generarGruposN4()

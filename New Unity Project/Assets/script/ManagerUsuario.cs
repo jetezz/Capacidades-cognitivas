@@ -251,9 +251,94 @@ public class Usuario
         }
         return 0;
     }
+    public int getNumIntentos(int est)
+    {
+        if (est == 0)
+        {
+            return estadisticas.memoria.Count;
+        }
+        else if (est == 1)
+        {
+            return estadisticas.lenguaje.Count;
+        }
+        else if (est == 2)
+        {
+            return estadisticas.percepcion.Count;
+        }
+        else if (est == 3)
+        {
+            return estadisticas.atencion.Count;
+        }
+        else if (est == 4)
+        {
+            return estadisticas.gnosias.Count;
+        }
+        else if (est == 5)
+        {
+            return estadisticas.praxias.Count;
+        }
+        else if (est == 6)
+        {
+            return estadisticas.orientacion.Count;
+        }
+        else if (est == 7)
+        {
+            return estadisticas.calculo.Count;
+        }
+        return 0;
+    }
+    public int getNivelMax(int est)
+    {
+        if (est == 0)
+        {
+            return numMas(estadisticas.memoria);
+        }
+        else if (est == 1)
+        {
+            return numMas(estadisticas.lenguaje);
+        }
+        else if (est == 2)
+        {
+            return numMas(estadisticas.percepcion);
+        }
+        else if (est == 3)
+        {
+            return numMas(estadisticas.atencion);
+        }
+        else if (est == 4)
+        {
+            return numMas(estadisticas.gnosias);
+        }
+        else if (est == 5)
+        {
+            return numMas(estadisticas.praxias);
+        }
+        else if (est == 6)
+        {
+            return numMas(estadisticas.orientacion);
+        }
+        else if (est == 7)
+        {
+            return numMas(estadisticas.calculo);
+        }
+        return 0;
+
+    }
+    int numMas(List <Dato> list)
+    {
+        int inicial = 0;
+        for(int i = 0; i < list.Count; i++)
+        {
+            if (list[i].valor > inicial)
+            {
+                inicial = list[i].valor;
+            }
+        }
+        return inicial;
+    }
 
 
-}
+    }
 
 [System.Serializable]
 public class Estadisticas

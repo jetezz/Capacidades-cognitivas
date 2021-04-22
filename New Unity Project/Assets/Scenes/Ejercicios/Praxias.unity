@@ -575,6 +575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   praxia: {fileID: 579958826}
   id: 0
+  correcto: 0
 --- !u!1 &215994610
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,8 +985,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -468, y: -113}
-  m_SizeDelta: {x: 795.166, y: 88.3545}
+  m_AnchoredPosition: {x: -468, y: -179.5209}
+  m_SizeDelta: {x: 795.17, y: 149.3964}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &286433160
 MonoBehaviour:
@@ -1993,6 +1994,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   praxia: {fileID: 579958826}
   id: 0
+  correcto: 0
 --- !u!1 &646560790
 GameObject:
   m_ObjectHideFlags: 0
@@ -2399,6 +2401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   praxia: {fileID: 579958826}
   id: 0
+  correcto: 0
 --- !u!1 &1091400207
 GameObject:
   m_ObjectHideFlags: 0
@@ -2540,8 +2543,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 472, y: -113}
-  m_SizeDelta: {x: 795.166, y: 88.3545}
+  m_AnchoredPosition: {x: 472, y: -179.52}
+  m_SizeDelta: {x: 795.17, y: 149.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1093742753
 MonoBehaviour:
@@ -2825,6 +2828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   praxia: {fileID: 579958826}
   id: 0
+  correcto: 0
 --- !u!1 &1219840618
 GameObject:
   m_ObjectHideFlags: 0
@@ -3090,6 +3094,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   praxia: {fileID: 579958826}
   id: 0
+  correcto: 0
 --- !u!1001 &1280954300
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3450,8 +3455,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 472, y: 145}
-  m_SizeDelta: {x: 795.166, y: 88.3545}
+  m_AnchoredPosition: {x: 472, y: 117.02}
+  m_SizeDelta: {x: 795.17, y: 144.31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1407363435
 MonoBehaviour:
@@ -3820,8 +3825,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -468, y: 145}
-  m_SizeDelta: {x: 795.166, y: 88.3545}
+  m_AnchoredPosition: {x: -468, y: 117.02246}
+  m_SizeDelta: {x: 795.17, y: 144.3095}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1492766826
 MonoBehaviour:
@@ -4482,6 +4487,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   praxia: {fileID: 579958826}
   id: 0
+  correcto: 0
 --- !u!1 &1622108482
 GameObject:
   m_ObjectHideFlags: 0

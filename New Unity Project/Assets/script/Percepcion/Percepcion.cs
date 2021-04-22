@@ -148,9 +148,12 @@ public class Percepcion : MonoBehaviour
     public GameObject panel4;
     public GameObject ImagenSleccionada;
     List<Pregunta42p> preguntas4;
-   
-   
-  
+    public int respu1;
+    public int respu2;
+
+
+
+
 
 
 
@@ -204,6 +207,45 @@ public class Percepcion : MonoBehaviour
         return arrDes;
     }
 
+    void final(string nivel, int pMax, int pMin, int siguienteNnivel,bool ultimo)
+    {
+        textoPrincipal.GetComponent<Text>().text = "Finalizado los ejercicios de Percepcion nivel " + (siguienteNnivel - 1).ToString();
+        panelFin.SetActive(true);
+        textoPrincipal.GetComponent<Text>().text = nivel;
+        panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
+        panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son " + pMax;
+        if (puntos == pMax)
+        {
+            panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel " + siguienteNnivel;
+            managerEjercicios.GetComponent<ManagerEjercicios>().usuario.percepcion(siguienteNnivel);
+            GameObject managerUsuario = GameObject.FindWithTag("MUsu");
+            managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+        }
+        else
+        {
+            if (puntos < pMin)
+            {
+                if (!ultimo)
+                {
+                    siguienteNnivel--;
+                }
+                siguienteNnivel--;
+                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Bajas al nivel " + siguienteNnivel;
+                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.percepcion(siguienteNnivel);
+                GameObject managerUsuario = GameObject.FindWithTag("MUsu");
+                managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+            }
+            else
+            {
+                siguienteNnivel--;
+                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel " + siguienteNnivel;
+            }
+
+
+
+        }
+        sonidos.GetComponent<Sonidos>().repSonido(4);
+    }
     void nivel1()
     {
         preguntas1 = new List<Pregunta1P>();
@@ -253,22 +295,8 @@ public class Percepcion : MonoBehaviour
         }
         else
         {
-            panelFin.SetActive(true);
-            textoPrincipal.GetComponent<Text>().text = "Ejercicio de percepcion nivel 1 completado";
-            panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 24 ";
-            if (puntos == 24)
-            {
-                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 2";
-                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.percepcion(2);
-                GameObject managerUsuario = GameObject.FindWithTag("MUsu");
-                managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
-            }
-            else
-            {
-                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 1";
-            }
-            sonidos.GetComponent<Sonidos>().repSonido(4);
+            final("Ejercicio Percepcion nivel 1 completado", 24, 0, 2,false);
+
         }
     }
     List<Sprite> gruposN1(int grupo)
@@ -472,39 +500,13 @@ public class Percepcion : MonoBehaviour
         {
             if (preguntas2[contador - 1].grupo < 2)
             {
-                panelFin.SetActive(true);
-                textoPrincipal.GetComponent<Text>().text = "Ejercicio de percepcion nivel 2 completado";
-                panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-                panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 22 ";
-                if (puntos == 22)
-                {
-                    panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 3";
-                    managerEjercicios.GetComponent<ManagerEjercicios>().usuario.percepcion(3);
-                    GameObject managerUsuario = GameObject.FindWithTag("MUsu");
-                    managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
-                }
-                else
-                {
-                    panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 2";
-                }
+                final("Ejercicio Percepcion nivel 2 completado", 22, 10, 3,false);
+
             }
             else
             {
-                panelFin.SetActive(true);
-                textoPrincipal.GetComponent<Text>().text = "Ejercicio de percepcion nivel 3 completado";
-                panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-                panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 15 ";
-                if (puntos == 15)
-                {
-                    panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 4";
-                    managerEjercicios.GetComponent<ManagerEjercicios>().usuario.percepcion(4);
-                    GameObject managerUsuario = GameObject.FindWithTag("MUsu");
-                    managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
-                }
-                else
-                {
-                    panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 3";
-                }
+                final("Ejercicio Percepcion nivel 3 completado", 15, 6, 4,false);
+
             }
             sonidos.GetComponent<Sonidos>().repSonido(4);
         }
@@ -774,7 +776,7 @@ public class Percepcion : MonoBehaviour
         aux.Add(new Pregunta42p(spor3, spor6, 10, 12));
         aux.Add(new Pregunta42p(spor3, spor7, 5, 11));
         aux.Add(new Pregunta42p(spor3, spor8, 4, 5));
-        aux.Add(new Pregunta42p(spor4, spor5, 4, 6));
+        
 
         aux = DesordenarLista<Pregunta42p>(aux);
         preguntas4.Add(aux[0]);
@@ -794,26 +796,14 @@ public class Percepcion : MonoBehaviour
         {
             panel4.transform.GetChild(0).GetComponent<Image>().sprite = preguntas4[contador].imagen1;
             panel4.transform.GetChild(1).GetComponent<Image>().sprite = preguntas4[contador].imagen2;
+            respu1 = preguntas4[contador].solucion1;
+            respu2 = preguntas4[contador].solucion2;
 
         }
         else
         {
-            panelFin.SetActive(true);
-            textoPrincipal.GetComponent<Text>().text = "Ejercicio de percepcion nivel 4 completado";
-            panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 8 ";
-            if (puntos == 8)
-            {
-                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Has completado todos los niveles de percepcion";
-                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.percepcion(5);
-                GameObject managerUsuario = GameObject.FindWithTag("MUsu");
-                managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
-            }
-            else
-            {
-                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 4";
-            }
-            sonidos.GetComponent<Sonidos>().repSonido(4);
+            final("Ejercicio Percepcion nivel 4 completado", 8, 4, 4,true);
+
         }
     }
     public void eventoSeleccionNivel4(int id, bool izquierda)

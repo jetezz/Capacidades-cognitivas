@@ -126,28 +126,42 @@ public class Praxia : MonoBehaviour
         }
         
     }
-    void final(string nivel,int pMax,int siguienteNnivel)
+    void final(string nivel, int pMax, int pMin, int siguienteNnivel,bool ultimo)
     {
         textoPrincipal.GetComponent<Text>().text = "Finalizado los ejercicios de Prasia nivel " + (siguienteNnivel - 1).ToString();
-
         panelFin.SetActive(true);
         textoPrincipal.GetComponent<Text>().text = nivel;
         panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
         panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son " + pMax;
         if (puntos == pMax)
         {
-            panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel "+ siguienteNnivel;
+            panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel " + siguienteNnivel;
             managerEjercicios.GetComponent<ManagerEjercicios>().usuario.praxia(siguienteNnivel);
             GameObject managerUsuario = GameObject.FindWithTag("MUsu");
             managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
         }
         else
         {
-           
-            siguienteNnivel--;
-            panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel " + siguienteNnivel;
-            
-           
+            if (puntos < pMin)
+            {
+                if (!ultimo)
+                {
+                    siguienteNnivel--;
+                }
+                siguienteNnivel--;
+                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Bajas al nivel " + siguienteNnivel;
+                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.praxia(siguienteNnivel);
+                GameObject managerUsuario = GameObject.FindWithTag("MUsu");
+                managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+            }
+            else
+            {
+                siguienteNnivel--;
+                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel " + siguienteNnivel;
+            }
+
+
+
         }
         sonidos.GetComponent<Sonidos>().repSonido(4);
     }
@@ -215,7 +229,7 @@ public class Praxia : MonoBehaviour
         }
         else
         {
-            final("Ejercicio praxia nivel 1 completado",12,2);
+            final("Ejercicio praxia nivel 1 completado",12,0,2,false);
         }
     }
     void generarBotones1()
@@ -340,7 +354,7 @@ public class Praxia : MonoBehaviour
         }
         else
         {
-            final("Ejercicio praxia nivel 2 completado", 12, 3);
+            final("Ejercicio praxia nivel 2 completado", 12,6, 3,false);
         }
     }
     void generarBotones2()
@@ -498,7 +512,7 @@ public class Praxia : MonoBehaviour
         }
         else
         {
-            final("Ejercicio praxia nivel 3 completado", 20, 4);
+            final("Ejercicio praxia nivel 3 completado", 20,10, 4,false);
         }
     }
     void generarBotones3()
@@ -554,6 +568,8 @@ public class Praxia : MonoBehaviour
         preguntas4 = new List<Praxia4>();
         panel4.SetActive(true);
 
+        List<Praxia4> aux = new List<Praxia4>();
+
         List < Praxia1 > fase1= new List<Praxia1>();
         fase1.Add(new Praxia1(0, "Llamar a un restaurante"));
         fase1.Add(new Praxia1(1, "Reservar una mesa"));
@@ -563,7 +579,7 @@ public class Praxia : MonoBehaviour
         fase1.Add(new Praxia1(5, "Pedir los platos al camarero"));
 
         fase1 = DesordenarLista<Praxia1>(fase1);
-        preguntas4.Add(new Praxia4(fase1));
+        aux.Add(new Praxia4(fase1));
 
 
         List<Praxia1> fase2 = new List<Praxia1>();
@@ -575,7 +591,7 @@ public class Praxia : MonoBehaviour
         fase2.Add(new Praxia1(3, "Buscar el asiento"));
 
         fase2 = DesordenarLista<Praxia1>(fase2);
-        preguntas4.Add(new Praxia4(fase2));
+        aux.Add(new Praxia4(fase2));
 
         List<Praxia1> fase3 = new List<Praxia1>();
         fase3.Add(new Praxia1(3, "Comer"));
@@ -586,7 +602,7 @@ public class Praxia : MonoBehaviour
         fase3.Add(new Praxia1(5, "Lavar los platos"));
 
         fase3 = DesordenarLista<Praxia1>(fase3);
-        preguntas4.Add(new Praxia4(fase3));
+        aux.Add(new Praxia4(fase3));
 
 
         List<Praxia1> fase4 = new List<Praxia1>();
@@ -598,7 +614,7 @@ public class Praxia : MonoBehaviour
         fase4.Add(new Praxia1(0, "Elaboro una lista de la compra"));
 
         fase4 = DesordenarLista<Praxia1>(fase4);
-        preguntas4.Add(new Praxia4(fase4));
+        aux.Add(new Praxia4(fase4));
 
 
         List<Praxia1> fase5 = new List<Praxia1>();
@@ -610,8 +626,14 @@ public class Praxia : MonoBehaviour
         fase5.Add(new Praxia1(1, "Echar el jabon y el suavante"));
 
         fase5 = DesordenarLista<Praxia1>(fase5);
-        preguntas4.Add(new Praxia4(fase5));
+        aux.Add(new Praxia4(fase5));
 
+        aux = DesordenarLista<Praxia4>(aux);
+
+        for(int i = 0; i < 3; i++)
+        {
+            preguntas4.Add(aux[i]);
+        }
 
 
         siguientePreguntaN4();
@@ -628,7 +650,7 @@ public class Praxia : MonoBehaviour
         }
         else
         {
-            final("Ejercicio praxia nivel 4 completado", 30, 5);
+            final("Ejercicio praxia nivel 4 completado", 15,6, 4,true);
         }
     }
     void generarBotones4()
@@ -645,7 +667,7 @@ public class Praxia : MonoBehaviour
     {
         for(int i = 0; i < 6; i++)
         {
-            if (resultados[i])
+            if (slotsN4.transform.GetChild(i).GetComponent<SlotPraxia>().correcto)
             {
                 puntos++;
                 slotsN4.transform.GetChild(i).GetComponent<Image>().color = Color.green;

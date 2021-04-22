@@ -125,10 +125,9 @@ public class Orientacion : MonoBehaviour
         }
         
     }
-    void final(string nivel, int pMax, int siguienteNnivel)
+    void final(string nivel, int pMax, int pMin, int siguienteNnivel,bool ultimo)
     {
         textoPrincipal.GetComponent<Text>().text = "Finalizado los ejercicios de Orientacion nivel " + (siguienteNnivel - 1).ToString();
-
         panelFin.SetActive(true);
         textoPrincipal.GetComponent<Text>().text = nivel;
         panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
@@ -142,9 +141,24 @@ public class Orientacion : MonoBehaviour
         }
         else
         {
+            if (puntos < pMin)
+            {
+                if (!ultimo)
+                {
+                    siguienteNnivel--;
+                }
+                siguienteNnivel--;
+                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Bajas al nivel " + siguienteNnivel;
+                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.orientacion(siguienteNnivel);
+                GameObject managerUsuario = GameObject.FindWithTag("MUsu");
+                managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+            }
+            else
+            {
+                siguienteNnivel--;
+                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel " + siguienteNnivel;
+            }
 
-            siguienteNnivel--;
-            panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel " + siguienteNnivel;
 
 
         }
@@ -186,7 +200,7 @@ public class Orientacion : MonoBehaviour
         }
         else
         {
-            final("Ejercicio orientacion nivel 1 completado", 10, 2);
+            final("Ejercicio orientacion nivel 1 completado", 10,0, 2,false);
         }
     }
  
@@ -250,7 +264,7 @@ public class Orientacion : MonoBehaviour
         }
         else
         {
-            final("Ejercicio orientacion nivel 2 completado", 12, 3);
+            final("Ejercicio orientacion nivel 2 completado", 12,6, 3,false);
         }
     }
 
@@ -300,14 +314,14 @@ public class Orientacion : MonoBehaviour
         fase3.Add(n13);
         fase3.Add(n14);
 
-        preguntas3.Add(new Orientacion3(fase1, "pulsa el maceta que está encima de la mesa",0));
-        preguntas3.Add(new Orientacion3(fase1, "pulsa el maceta que está debajo de la mesa", 1));
-        preguntas3.Add(new Orientacion3(fase1, "pulsa el maceta que está a la izquierda de la mesa", 2));
-        preguntas3.Add(new Orientacion3(fase1, "pulsa el maceta que está a la derecha de la mesa", 3));
+        preguntas3.Add(new Orientacion3(fase1, "pulsa la maceta que está encima de la mesa",0));
+        preguntas3.Add(new Orientacion3(fase1, "pulsa la maceta que está debajo de la mesa", 1));
+        preguntas3.Add(new Orientacion3(fase1, "pulsa la maceta que está a la izquierda de la mesa", 2));
+        preguntas3.Add(new Orientacion3(fase1, "pulsa la maceta que está a la derecha de la mesa", 3));
         preguntas3.Add(new Orientacion3(fase1, "pulsa la lámpara que está delante de la mesa", 4));
         preguntas3.Add(new Orientacion3(fase1, "pulsa la lámpara que está detrás de la mesa", 5));
 
-        preguntas3.Add(new Orientacion3(fase2, "pulsa el maceta que está entre la lámpara y la mesa", 4));
+        preguntas3.Add(new Orientacion3(fase2, "pulsa la maceta que está entre la lámpara y la mesa", 4));
         preguntas3.Add(new Orientacion3(fase2, "pulsa la lámpara que está a la derecha de la mesa", 5));
 
 
@@ -337,7 +351,7 @@ public class Orientacion : MonoBehaviour
         }
         else
         {
-            final("Ejercicio orientacion nivel 3 completado", 14, 4);
+            final("Ejercicio orientacion nivel 3 completado", 14,7, 4,false);
         }
     }
     void generarBotonesN3()
@@ -414,7 +428,7 @@ public class Orientacion : MonoBehaviour
         }
         else
         {
-            final("Ejercicio orientacion nivel4 completado", 8, 5);
+            final("Ejercicio orientacion nivel4 completado", 12,6, 4,true);
         }
     }
 
@@ -434,6 +448,7 @@ public class Orientacion : MonoBehaviour
         numRespuestas++;
         if (numRespuestas == 4)
         {
+            numRespuestas = 0;
             panel4.transform.GetChild(2).GetComponent<Drag>().resetPosition();
             panel4.transform.GetChild(3).GetComponent<Drag>().resetPosition();
             panel4.transform.GetChild(4).GetComponent<Drag>().resetPosition();

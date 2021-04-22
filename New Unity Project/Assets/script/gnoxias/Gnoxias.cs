@@ -188,7 +188,45 @@ public class Gnoxias : MonoBehaviour
         
         
     }
+    void final(string nivel, int pMax, int pMin, int siguienteNnivel,bool ultimo)
+    {
+        textoPrincipal.GetComponent<Text>().text = "Finalizado los ejercicios de Gnosia nivel " + (siguienteNnivel - 1).ToString();
+        panelFin.SetActive(true);
+        textoPrincipal.GetComponent<Text>().text = nivel;
+        panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
+        panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son " + pMax;
+        if (puntos == pMax)
+        {
+            panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel " + siguienteNnivel;
+            managerEjercicios.GetComponent<ManagerEjercicios>().usuario.gnosia(siguienteNnivel);
+            GameObject managerUsuario = GameObject.FindWithTag("MUsu");
+            managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+        }
+        else
+        {
+            if (puntos < pMin)
+            {
+                if (!ultimo)
+                {
+                    siguienteNnivel--;
+                }
+                siguienteNnivel--;
+                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Bajas al nivel " + siguienteNnivel;
+                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.gnosia(siguienteNnivel);
+                GameObject managerUsuario = GameObject.FindWithTag("MUsu");
+                managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+            }
+            else
+            {
+                siguienteNnivel--;
+                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel " + siguienteNnivel;
+            }
 
+
+
+        }
+        sonidos.GetComponent<Sonidos>().repSonido(4);
+    }
 
     void nivel1()
     {
@@ -250,22 +288,7 @@ public class Gnoxias : MonoBehaviour
         }
         else
         {
-            panelFin.SetActive(true);
-            textoPrincipal.GetComponent<Text>().text = "Ejercicio de Gnoxia nivel 1 completado";
-            panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 10 ";
-            if (puntos == 10)
-            {
-                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 2";
-                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.gnosia(2);
-                GameObject managerUsuario = GameObject.FindWithTag("MUsu");
-                managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
-            }
-            else
-            {
-                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 1";
-            }
-            sonidos.GetComponent<Sonidos>().repSonido(4);
+            final("Ejercicio de Gnosia nivel1 completado", 10, 0, 2,false);
         }
     }
     void generarBotonesN1()
@@ -422,22 +445,8 @@ public class Gnoxias : MonoBehaviour
         }
         else
         {
-            panelFin.SetActive(true);
-            textoPrincipal.GetComponent<Text>().text = "Ejercicio de Gnoxia nivel 2 completado";
-            panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 12 ";
-            if (puntos == 12)
-            {
-                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 3";
-                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.gnosia(3);
-                GameObject managerUsuario = GameObject.FindWithTag("MUsu");
-                managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
-            }
-            else
-            {
-                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 2";
-            }
-            sonidos.GetComponent<Sonidos>().repSonido(4);
+            final("Ejercicio de Gnosia nivel1 completado", 12, 5, 3,false);
+
 
         }
     }
@@ -641,22 +650,8 @@ public class Gnoxias : MonoBehaviour
         }
         else
         {
-            panelFin.SetActive(true);
-            textoPrincipal.GetComponent<Text>().text = "Ejercicio de Gnosia nivel 3 completado";
-            panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 36 ";
-            if (puntos == 36)
-            {
-                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 4";
-                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.gnosia(4);
-                GameObject managerUsuario = GameObject.FindWithTag("MUsu");
-                managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
-            }
-            else
-            {
-                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 3";
-            }
-            sonidos.GetComponent<Sonidos>().repSonido(4);
+            final("Ejercicio de Gnosia nivel1 completado", 36, 12, 4,false);
+
         }
     }
     void generarBotonesN3()
@@ -767,22 +762,8 @@ public class Gnoxias : MonoBehaviour
         }
         else
         {
-            panelFin.SetActive(true);
-            textoPrincipal.GetComponent<Text>().text = "Ejercicio de Gnosia nivel 4 completado";
-            panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-            panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son 12 ";
-            if (puntos == 12)
-            {
-                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Has completado todos los ejercicios de gnosias";
-                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.gnosia(5);
-                GameObject managerUsuario = GameObject.FindWithTag("MUsu");
-                managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
-            }
-            else
-            {
-                panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 4";
-            }
-            sonidos.GetComponent<Sonidos>().repSonido(4);
+            final("Ejercicio de Gnosia nivel1 completado", 12, 6, 4,true);
+
         }
     }
     public void botonN4(int id)
