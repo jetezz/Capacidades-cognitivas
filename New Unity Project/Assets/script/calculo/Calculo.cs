@@ -21,6 +21,7 @@ public class Calculo : MonoBehaviour
     public GameObject imagenCorreccion;
     public Sprite tick;
     public Sprite cruz;
+    int preguntasTotales = 0;
     
 
     public Sprite c5;
@@ -59,6 +60,7 @@ public class Calculo : MonoBehaviour
 
 
     //nivel 1
+    Dictionary<int, Sprite> imagenesN1;
     public GameObject panel1;
     List<Calculo1> preguntas1;
     // nivel2
@@ -159,6 +161,9 @@ public class Calculo : MonoBehaviour
             {
                 siguienteNnivel--;
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel " + siguienteNnivel;
+                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.calculo(siguienteNnivel);
+                GameObject managerUsuario = GameObject.FindWithTag("MUsu");
+                managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
             }
             
 
@@ -168,25 +173,38 @@ public class Calculo : MonoBehaviour
     }
     void nivel1()
     {
+        preguntasTotales = 0;
+        imagenesN1 = new Dictionary<int, Sprite>();
+        imagenesN1.Add(0, c5);
+        imagenesN1.Add(1, c10);
+        imagenesN1.Add(2, c20);
+        imagenesN1.Add(3, c50);
+        imagenesN1.Add(4, e5);
+        imagenesN1.Add(5, e10);
+        imagenesN1.Add(6, e20);
+        imagenesN1.Add(7, e50);
+ 
+
         preguntas1 = new List<Calculo1>();
-        preguntas1.Add(new Calculo1(c5, true, "¿Es una moneda de 5 céntimos?",true));
-        preguntas1.Add(new Calculo1(c10, true, "¿Es una moneda de 10 céntimos?",true));
-        preguntas1.Add(new Calculo1(c20, true, "¿Es una moneda de 20 céntimos?", true));
-        preguntas1.Add(new Calculo1(c50, true, "¿Es una moneda de 50 céntimos?", true));
-        preguntas1.Add(new Calculo1(e5, true, "¿Es un billete de 5 euros?", false));
-        preguntas1.Add(new Calculo1(e10, true, "¿Es un billete de 10 euros?", false));
-        preguntas1.Add(new Calculo1(e20, true, "¿Es un billete de 20 euros?", false));
-        preguntas1.Add(new Calculo1(e50, true, "¿Es un billete de 50 euros?", false));
+        preguntas1.Add(new Calculo1(0, "Pulsa la moneda de 5 céntimos",true));
+        preguntas1.Add(new Calculo1(1, "Pulsa la moneda de 10 céntimos", true));
+        preguntas1.Add(new Calculo1(2, "Pulsa la moneda de 20 céntimos", true));
+        preguntas1.Add(new Calculo1(3, "Pulsa la moneda de 50 céntimos", true));
+        preguntas1.Add(new Calculo1(4, "Pulsa el billete de 5 euros", false));
+        preguntas1.Add(new Calculo1(5, "Pulsa el billete de 10 euros", false));
+        preguntas1.Add(new Calculo1(6, "Pulsa el billete de 20 euros", false));
+        preguntas1.Add(new Calculo1(7, "Pulsa el billete de 50 euros", false));
+        preguntas1.Add(new Calculo1(0, "Pulsa la moneda de 5 céntimos", true));
+        preguntas1.Add(new Calculo1(1, "Pulsa la moneda de 10 céntimos", true));
+        preguntas1.Add(new Calculo1(2, "Pulsa la moneda de 20 céntimos", true));
+        preguntas1.Add(new Calculo1(3, "Pulsa la moneda de 50 céntimos", true));
+        preguntas1.Add(new Calculo1(4, "Pulsa el billete de 5 euros", false));
+        preguntas1.Add(new Calculo1(5, "Pulsa el billete de 10 euros", false));
+        preguntas1.Add(new Calculo1(6, "Pulsa el billete de 20 euros", false));
+        preguntas1.Add(new Calculo1(7, "Pulsa el billete de 50 euros", false));
 
 
-        preguntas1.Add(new Calculo1(c10, false, "¿Es una moneda de 5 céntimos?", true));
-        preguntas1.Add(new Calculo1(c5, false, "¿Es una moneda de 10 céntimos?", true));
-        preguntas1.Add(new Calculo1(c50, false, "¿Es una moneda de 20 céntimos?", true));
-        preguntas1.Add(new Calculo1(c20, false, "¿Es una moneda de 50 céntimos?", true));
-        preguntas1.Add(new Calculo1(e50, false, "¿Es un billete de 5 euros?", false));
-        preguntas1.Add(new Calculo1(e20, false, "¿Es un billete de 10 euros?", false));
-        preguntas1.Add(new Calculo1(e10, false, "¿Es un billete de 20 euros?", false));
-        preguntas1.Add(new Calculo1(e5, false, "¿Es un billete de 50 euros?", false));
+
 
         preguntas1 = DesordenarLista<Calculo1>(preguntas1);
 
@@ -200,29 +218,56 @@ public class Calculo : MonoBehaviour
         if (contador < preguntas1.Count)
         {
             textoPrincipal.GetComponent<Text>().text = preguntas1[contador].pregunta;
-            panel1.transform.GetChild(0).gameObject.SetActive(false);
-            panel1.transform.GetChild(1).gameObject.SetActive(false);
+            panel1.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
+            panel1.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+            panel1.transform.GetChild(1).GetChild(0).gameObject.SetActive(false);
+            panel1.transform.GetChild(1).GetChild(1).gameObject.SetActive(false);
+            
 
-            if (preguntas1[contador].moneta)
-            {
-                panel1.transform.GetChild(0).gameObject.SetActive(true);
-                panel1.transform.GetChild(0).GetComponent<Image>().sprite = preguntas1[contador].imagen;
-            }
-            else
-            {
-                panel1.transform.GetChild(1).gameObject.SetActive(true);
-                panel1.transform.GetChild(1).GetComponent<Image>().sprite = preguntas1[contador].imagen;
-            }
-           
+            generarBotonesN1();
         }
         else
         {
-            final("Ejercicio de calculo nivel1 completado", 16,8, 2,false);
+            final("Ejercicio de calculo nivel1 completado", preguntasTotales,preguntasTotales/2, 2,false);
         }
     }
-    public void respuestaN1(bool respuesta)
+    public void generarBotonesN1()
     {
-        if (respuesta == preguntas1[contador].correcion)
+        List<Botones2> aux = new List<Botones2>();
+        aux.Add(new Botones2(imagenesN1[preguntas1[contador].imagen], true,preguntas1[contador].moneta));
+        bool auxmoneda = true;
+
+        int rand = UnityEngine.Random.Range(0, imagenesN1.Count);
+        while(rand== preguntas1[contador].imagen)
+        {
+            rand = UnityEngine.Random.Range(0, imagenesN1.Count);
+        }
+        if (rand > 3)
+        {
+            auxmoneda = false;
+        }
+        aux.Add(new Botones2(imagenesN1[rand], false,auxmoneda));
+
+        aux = DesordenarLista<Botones2>(aux);
+
+        for(int i = 0; i< 2; i++)
+        {
+            if (aux[i].moneda)
+            {
+                panel1.transform.GetChild(i).GetChild(1).gameObject.SetActive(true);
+                panel1.transform.GetChild(i).GetChild(1).GetComponent<Image>().sprite = aux[i].img;
+            }
+            else
+            {
+                panel1.transform.GetChild(i).GetChild(0).gameObject.SetActive(true);
+                panel1.transform.GetChild(i).GetChild(0).GetComponent<Image>().sprite = aux[i].img;
+            }
+            panel1.transform.GetChild(i).GetComponent<IdSeleccion>().correcto = aux[i].correc;
+        }
+    }
+    public void respuestaN1(int respuesta)
+    {
+        if (panel1.transform.GetChild(respuesta).GetComponent<IdSeleccion>().correcto)
         {
             puntos++;
             imagenCorreccion.GetComponent<Image>().sprite = tick;
@@ -235,6 +280,7 @@ public class Calculo : MonoBehaviour
         }
         tiempo = 1;
         contador++;
+        preguntasTotales++;
         siguientePreguntaN1();
 
     }
@@ -719,15 +765,14 @@ public class Calculo : MonoBehaviour
 
 class Calculo1
 {
-    public Calculo1(Sprite img,bool corr, string pre, bool mo)
+    public Calculo1(int img, string pre, bool mo)
     {
-        imagen = img;
-        correcion = corr;
+        imagen = img;        
         pregunta = pre;
         moneta = mo;
     }
 
-    public Sprite imagen;
+    public int imagen;
     public bool correcion;
     public string pregunta;
     public bool moneta;
@@ -820,4 +865,16 @@ class float_bool
 
     public float num;
     public bool correcto;
+}
+class Botones2
+{
+    public Botones2(Sprite im, bool cor,bool mon)
+    {
+        img = im;
+        correc = cor;
+        moneda = mon;
+    }
+    public Sprite img;
+    public bool correc;
+    public bool moneda;
 }

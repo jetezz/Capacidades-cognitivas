@@ -336,7 +336,54 @@ public class Usuario
         }
         return inicial;
     }
+    public List<int> getTabla(int est)
+    {
+        List<int> aux = new List<int>();
+        if (est == 0)
+        {
+            return generarLista(estadisticas.memoria);
+        }
+        else if (est == 1)
+        {
+            return generarLista(estadisticas.lenguaje);
+        }
+        else if (est == 2)
+        {
+            return generarLista(estadisticas.percepcion);
+        }
+        else if (est == 3)
+        {
+            return generarLista(estadisticas.atencion);
+        }
+        else if (est == 4)
+        {
+            return generarLista(estadisticas.gnosias);
+        }
+        else if (est == 5)
+        {
+            return generarLista(estadisticas.praxias);
+        }
+        else if (est == 6)
+        {
+            return generarLista(estadisticas.orientacion);
+        }
+        else if (est == 7)
+        {
+            return generarLista(estadisticas.calculo);
+        }
 
+        return aux;
+    }
+    public List<int> generarLista(List<Dato> datos)
+    {
+        List<int> aux = new List<int>();
+
+        for(int i = 0; i < datos.Count; i++)
+        {
+            aux.Add(datos[i].valor);
+        }
+        return aux;
+    }
 
     }
 

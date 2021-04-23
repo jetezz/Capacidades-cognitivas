@@ -187,6 +187,9 @@ public class Lenguaje : MonoBehaviour
             {
                 siguienteNnivel--;
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel " + siguienteNnivel;
+                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.lenguaje(siguienteNnivel);
+                GameObject managerUsuario = GameObject.FindWithTag("MUsu");
+                managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
             }
 
 
@@ -285,7 +288,7 @@ public class Lenguaje : MonoBehaviour
             }
             else
             {
-                final("Ejercicio de Gnosia nivel1 completado", 20, 0, 2,false);
+                final("Ejercicio de Lenguaje nivel1 completado", 20, 0, 2,false);
             }
         }
     }

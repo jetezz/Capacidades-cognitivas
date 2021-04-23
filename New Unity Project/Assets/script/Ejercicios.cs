@@ -189,6 +189,14 @@ public class Ejercicios : MonoBehaviour
         managerEjercicios = GameObject.FindWithTag("MEje");
         managerEjercicios.GetComponent<ManagerEjercicios>().ejerciciosAutomaticos();
     }
+
+    public void cerrarElegirEspecificos()
+    {
+        panelElegirEjercicios.SetActive(false);
+        listaEjercicios.Clear();
+        mostrarEjercicios();
+
+    }
 }
 
 

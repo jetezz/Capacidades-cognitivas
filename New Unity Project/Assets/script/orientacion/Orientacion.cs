@@ -64,6 +64,7 @@ public class Orientacion : MonoBehaviour
     //nivel1
     public GameObject panel1;   
     List<Orientacion1> preguntas1;
+    Dictionary<int, Sprite> imagenesN1;
 
     //nivel2
     public GameObject panel2;
@@ -157,6 +158,9 @@ public class Orientacion : MonoBehaviour
             {
                 siguienteNnivel--;
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel " + siguienteNnivel;
+                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.orientacion(siguienteNnivel);
+                GameObject managerUsuario = GameObject.FindWithTag("MUsu");
+                managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
             }
 
 
@@ -168,20 +172,32 @@ public class Orientacion : MonoBehaviour
 
     void nivel1()
     {
-        
+        imagenesN1 = new Dictionary<int, Sprite>();
+        imagenesN1.Add(0, or1);
+        imagenesN1.Add(1, or2);
+        imagenesN1.Add(2, or3);
+        imagenesN1.Add(3, or4);
+        imagenesN1.Add(4, or5);
+        imagenesN1.Add(5, or6);
+        imagenesN1.Add(6, or7);
+        imagenesN1.Add(7, or8);
+        imagenesN1.Add(8, or9);
+        imagenesN1.Add(9, or10);
 
 
         preguntas1 = new List<Orientacion1>();
-        preguntas1.Add(new Orientacion1(or1, true, "El perro está dentro de la cama"));
-        preguntas1.Add(new Orientacion1(or2, false, "La pelota está encima de la silla"));
-        preguntas1.Add(new Orientacion1(or3, true, "La niña está detrás del ordenador"));        
-        preguntas1.Add(new Orientacion1(or4, true, "La niña está delante de la bicicleta"));
-        preguntas1.Add(new Orientacion1(or5, true, "Los periquitos están dentro de la jaula"));
-        preguntas1.Add(new Orientacion1(or6, false, "El profesor está detras de la pizarra"));
-        preguntas1.Add(new Orientacion1(or7, true, "El ciclista está encima de la bici"));
-        preguntas1.Add(new Orientacion1(or8, false, "La pelota está encima de la mesa"));
-        preguntas1.Add(new Orientacion1(or9, false, "El libro está debajo de la mesa"));
-        preguntas1.Add(new Orientacion1(or10, false, "El gato está encima de la silla"));
+        preguntas1.Add(new Orientacion1(0,  "Pulsa la foto del perro dentro de la cama"));        
+        preguntas1.Add(new Orientacion1(1,  "Pulsa la foto de la pelota debajo de la silla"));
+        preguntas1.Add(new Orientacion1(2,  "Pulsa la foto de a niña detrás del ordenador"));        
+        preguntas1.Add(new Orientacion1(3,  "Pulsa la foto del a niña delante de la bicicleta"));
+        preguntas1.Add(new Orientacion1(4,  "Pulsa la foto de los periquitos dentro de la jaula"));      
+        preguntas1.Add(new Orientacion1(5,  "Pulsa la foto del profesor delante de la pizarra"));
+        preguntas1.Add(new Orientacion1(6,  "Pulsa la foto del ciclista encima de la bici"));
+        preguntas1.Add(new Orientacion1(7,  "Pulsa la foto de la pelota debajo de la mesa"));
+        preguntas1.Add(new Orientacion1(8,  "Pulsa la foto del libro encima de la mesa"));
+        preguntas1.Add(new Orientacion1(9,  "Pulsa la foto del gato delante de la silla"));
+
+
 
         preguntas1 = DesordenarLista<Orientacion1>(preguntas1);
         panel1.SetActive(true);
@@ -193,7 +209,7 @@ public class Orientacion : MonoBehaviour
     {
         if (contador < preguntas1.Count)
         {
-            panel1.transform.GetChild(0).GetComponent<Image>().sprite = preguntas1[contador].imagen;
+            generarImagenesN1();
             textoPrincipal.GetComponent<Text>().text = preguntas1[contador].pregunta;
            
 
@@ -204,11 +220,29 @@ public class Orientacion : MonoBehaviour
         }
     }
  
+    void generarImagenesN1()
+    {
+        List<Botones> aux = new List<Botones>();
+        aux.Add(new Botones(imagenesN1[preguntas1[contador].imagen],true));
 
-    public void botonPulsadoN1(bool i)
+        int rand = Random.Range(0, imagenesN1.Count);
+        while(rand== preguntas1[contador].imagen)
+        {
+            rand = Random.Range(0, imagenesN1.Count);
+        }
+        aux.Add(new Botones(imagenesN1[rand], false));
+
+        aux = DesordenarLista<Botones>(aux);
+        for(int i = 0; i < 2; i++)
+        {
+            panel1.transform.GetChild(i).GetComponent<Image>().sprite = aux[i].img;
+            panel1.transform.GetChild(i).GetComponent<IdSeleccion>().correcto = aux[i].correc;
+        }
+    }
+    public void botonPulsadoN1(int i)
     {
         
-        if (i == preguntas1[contador].solucion)
+        if (panel1.transform.GetChild(i).GetComponent<IdSeleccion>().correcto)
         {
             puntos++;
             imagenCorreccion.GetComponent<Image>().sprite = tick;
@@ -489,14 +523,12 @@ public class Orientacion : MonoBehaviour
 
 class Orientacion1
 {
-    public Orientacion1(Sprite img,bool sol, string pre)
+    public Orientacion1(int img, string pre)
     {
-        imagen = img;
-        solucion = sol;
+        imagen = img;        
         pregunta = pre;
     }
-    public Sprite imagen;
-    public bool solucion;
+    public int imagen;    
     public string pregunta;
 }
 

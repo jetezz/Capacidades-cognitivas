@@ -220,6 +220,9 @@ public class Gnoxias : MonoBehaviour
             {
                 siguienteNnivel--;
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel " + siguienteNnivel;
+                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.gnosia(siguienteNnivel);
+                GameObject managerUsuario = GameObject.FindWithTag("MUsu");
+                managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
             }
 
 
@@ -445,7 +448,7 @@ public class Gnoxias : MonoBehaviour
         }
         else
         {
-            final("Ejercicio de Gnosia nivel1 completado", 12, 5, 3,false);
+            final("Ejercicio de Gnosia nivel2 completado", 12, 5, 3,false);
 
 
         }
@@ -650,7 +653,7 @@ public class Gnoxias : MonoBehaviour
         }
         else
         {
-            final("Ejercicio de Gnosia nivel1 completado", 36, 12, 4,false);
+            final("Ejercicio de Gnosia nivel3 completado", 36, 12, 4,false);
 
         }
     }
@@ -762,7 +765,7 @@ public class Gnoxias : MonoBehaviour
         }
         else
         {
-            final("Ejercicio de Gnosia nivel1 completado", 12, 6, 4,true);
+            final("Ejercicio de Gnosia nivel4 completado", 12, 6, 4,true);
 
         }
     }

@@ -98,7 +98,7 @@ public class Atencion : MonoBehaviour
     }
     void final(string nivel, int pMax, int pMin, int siguienteNnivel,bool ultimo)
     {
-        textoPrincipal.GetComponent<Text>().text = "Finalizado los ejercicios de Calculo nivel " + (siguienteNnivel - 1).ToString();
+        textoPrincipal.GetComponent<Text>().text = "Finalizado los ejercicios de Atención nivel " + (siguienteNnivel - 1).ToString();
         panelFin.SetActive(true);
         textoPrincipal.GetComponent<Text>().text = nivel;
         panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
@@ -129,6 +129,9 @@ public class Atencion : MonoBehaviour
             {
                 siguienteNnivel--;
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel " + siguienteNnivel;
+                managerEjercicios.GetComponent<ManagerEjercicios>().usuario.atencion(siguienteNnivel);
+                GameObject managerUsuario = GameObject.FindWithTag("MUsu");
+                managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
             }
 
 
@@ -167,7 +170,7 @@ public class Atencion : MonoBehaviour
         }
         else
         {
-            final("Ejercicio de calculo nivel1 completado", 36, 15, 2,false);
+            final("Ejercicio de Atención nivel1 completado", 36, 15, 2,false);
         }
     }
 
@@ -289,6 +292,9 @@ public class Atencion : MonoBehaviour
                     else
                     {
                         panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 2";
+                        managerEjercicios.GetComponent<ManagerEjercicios>().usuario.atencion(2);
+                        GameObject managerUsuario = GameObject.FindWithTag("MUsu");
+                        managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
                     }
                     
                 }
@@ -393,6 +399,9 @@ public class Atencion : MonoBehaviour
                 else
                 {
                     panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 3";
+                    managerEjercicios.GetComponent<ManagerEjercicios>().usuario.atencion(3);
+                    GameObject managerUsuario = GameObject.FindWithTag("MUsu");
+                    managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
                 }
                 
             }
@@ -503,6 +512,9 @@ public class Atencion : MonoBehaviour
                 else
                 {
                     panelFin.transform.GetChild(3).GetComponent<Text>().text = "Te mantienes en el nivel 4";
+                    managerEjercicios.GetComponent<ManagerEjercicios>().usuario.atencion(4);
+                    GameObject managerUsuario = GameObject.FindWithTag("MUsu");
+                    managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
                 }
               
             }

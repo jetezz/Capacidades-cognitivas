@@ -8,13 +8,21 @@ public class WindowsGraph : MonoBehaviour
 {
    [SerializeField] private Sprite circleSprite;
     private RectTransform graphContainer;
+    public GameObject container;
 
-    private void Awake()
+    public void crearEstadisticas(List<int> list)
     {
-        graphContainer = transform.Find("graphContainer").GetComponent<RectTransform>();
-        
-        List<int> valueList = new List<int>() { 5, 98, 56, 45, 30, 22, 17, 15, 13, 17, 25, 37, 40, 36, 33 };
-        ShowGraph(valueList);
+        limpiarTabla();
+
+        graphContainer = transform.Find("graphContainer").GetComponent<RectTransform>();     
+        ShowGraph(list);
+    }
+    public void limpiarTabla()
+    {
+        while (container.transform.childCount > 0)
+        {
+            DestroyImmediate(container.transform.GetChild(0).gameObject);
+        }
     }
 
     private GameObject createCircle(Vector2 anchoredPosicition)
@@ -32,7 +40,7 @@ public class WindowsGraph : MonoBehaviour
     private void ShowGraph(List<int> valueList)
     {
         float graphHeight = graphContainer.sizeDelta.y;
-        float yMaximum = 100f;
+        float yMaximum = 5f;
         float xSize = 50f;
         GameObject LastCircleGameObject = null;
         for(int i = 0; i < valueList.Count; i++)
