@@ -977,7 +977,7 @@ ScriptsOnlyBuild:
     className: LayoutElement
   - hash:
       serializedVersion: 2
-      Hash: 491fda63a24a66f588e01e190aec8334
+      Hash: b64556d13828bce99d29e38c3c7fd8cd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Memoria
@@ -1355,7 +1355,7 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
-      Hash: 3b3ce4628ee2240c501a8fc0e5ab017f
+      Hash: 8319ba00207eabaa54e8a05da0f73253
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Calculo

@@ -47,6 +47,9 @@ public class Memoria : MonoBehaviour
     public Sprite salon3;
     public Sprite cuarto;
     public Sprite zoo;
+    public Sprite bano2;
+    public Sprite habitacion2;
+    public Sprite salon4;
 
     List<fases> fasesTotales;
     
@@ -66,9 +69,12 @@ public class Memoria : MonoBehaviour
     public GameObject botonesFase4;
     public GameObject botonesFase5;
     public GameObject botonesFase6;
+    public GameObject botonesFase7;
+    public GameObject botonesFase8;
+    public GameObject botonesFase9;
 
 
-   
+
 
     /////// nivel2
     public GameObject panelNivel2;
@@ -239,17 +245,48 @@ public class Memoria : MonoBehaviour
 
         pregRandom.Add(new MemoriaN1(aux5, cocina2, botonesFase5));
 
+        /*
         List<PreguntasN1> aux6 = new List<PreguntasN1>();
         aux6.Add(new PreguntasN1("¿Dónde está el sillón?", 0));
         aux6.Add(new PreguntasN1("¿Dónde está la televisión?", 1));
-        aux6.Add(new PreguntasN1("¿Dónde está la lámpara?", 2));
-       
+        aux6.Add(new PreguntasN1("¿Dónde está la lámpara?", 2));       
 
         pregRandom.Add(new MemoriaN1(aux6, salon3, botonesFase6));
+        */
+
+        List<PreguntasN1> aux7 = new List<PreguntasN1>();
+        aux7.Add(new PreguntasN1("¿Dónde está el lavabo?", 0));
+        aux7.Add(new PreguntasN1("¿Dónde está el papel higiénico?", 1));
+        aux7.Add(new PreguntasN1("¿Dónde está el retrete?", 2));
+        aux7.Add(new PreguntasN1("¿Dónde está la toalla?", 3));
+        aux7.Add(new PreguntasN1("¿Dónde está el espejo?", 4));
+        aux7.Add(new PreguntasN1("¿Dónde está la escobilla?", 5));
+
+        pregRandom.Add(new MemoriaN1(aux7, bano2, botonesFase7));
+
+
+        List<PreguntasN1> aux8 = new List<PreguntasN1>();
+        aux8.Add(new PreguntasN1("¿Dónde está la cama?", 0));
+        aux8.Add(new PreguntasN1("¿Dónde está la lámpara?", 1));
+        aux8.Add(new PreguntasN1("¿Dónde está la mesita?", 2));
+        aux8.Add(new PreguntasN1("¿Dónde está el cuadro?", 3));
+        aux8.Add(new PreguntasN1("¿Dónde está la ventana?", 4));
+        aux8.Add(new PreguntasN1("¿Dónde está la alfombra?", 5));
+
+        pregRandom.Add(new MemoriaN1(aux8, habitacion2, botonesFase8));
+
+        List<PreguntasN1> aux9 = new List<PreguntasN1>();
+        aux9.Add(new PreguntasN1("¿Dónde está el sofá?", 0));
+        aux9.Add(new PreguntasN1("¿Dónde está la chimenea?", 1));
+        aux9.Add(new PreguntasN1("¿Dónde está la ventana?", 2));
+        aux9.Add(new PreguntasN1("¿Dónde está el reloj?", 3));
+        aux9.Add(new PreguntasN1("¿Dónde está la mesa?", 4));        
+
+        pregRandom.Add(new MemoriaN1(aux9, salon4, botonesFase9));
 
         pregRandom = DesordenarLista<MemoriaN1>(pregRandom);
 
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 3; i++)
         {
             preguntas1.Add(pregRandom[i]);
         }
@@ -280,6 +317,7 @@ public class Memoria : MonoBehaviour
             }
             else
             {
+                preguntas1[contador].escena.SetActive(false);
                 contador++;                  
                 iniciarFaseN1();
                 
@@ -319,6 +357,7 @@ public class Memoria : MonoBehaviour
                     break;
                 }
             }
+
             preguntasMaximas++;
             puntos++;
             imagenCorreccion.GetComponent<Image>().sprite = tick;
