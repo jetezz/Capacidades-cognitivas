@@ -81,6 +81,7 @@ public class ManagerEjercicios : MonoBehaviour
             ejercicio = listaEjercicios[0];
             usuario = managerUsuario.GetComponent<ManagerUsuario>().getUsuarioSeleccionado();
             nivel = usuario.getNivelEstadistica(listaEjercicios[0]);
+            randomnivel();
             listaEjercicios.RemoveAt(0);
             irEscena();
         }
@@ -88,6 +89,50 @@ public class ManagerEjercicios : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
+    }
+    void randomnivel()
+    {
+        int rand = Random.Range(0,10);
+        
+        switch (nivel)
+        {
+            case 2:
+                {
+                    if (rand >= 7)
+                    {
+                        nivel = 1;
+                    }
+                    break;
+                }
+            case 3:
+                {
+                    if (rand >= 7)
+                    {
+                        nivel = 2;
+                    }
+
+                    if (rand == 9)
+                    {
+                        nivel = 1;
+                    }
+                    break;
+                }
+            case 4:
+                {
+                    if (rand >= 7)
+                    {
+                        nivel = 3;
+                    }
+
+                    if (rand == 9)
+                    {
+                        nivel = 2;
+                    }
+                    break;
+                }
+        }
+
+    
     }
     void irEscena()
     {

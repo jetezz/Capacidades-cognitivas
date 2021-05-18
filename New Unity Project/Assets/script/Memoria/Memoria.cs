@@ -486,21 +486,21 @@ public class Memoria : MonoBehaviour
 
         pregRandom.Add(new ListMemoriaN2(fase3, salon2));
 
-        fase4.Add(new MemoriaN2("¿Cuantos cojines hay?", numeros, 1));
-        fase4.Add(new MemoriaN2("¿Dónde está la ventana?", posicion, 0));
-        fase4.Add(new MemoriaN2("¿De qué color es la televisión?", colores, 1));
-        fase4.Add(new MemoriaN2("¿De qué color es la alfombra? ", colores, 4));
-        fase4.Add(new MemoriaN2("¿de qué color es la pared?", colores, 4));        
+        fase4.Add(new MemoriaN2("¿De qué color es el sofá?", colores, 10));
+        fase4.Add(new MemoriaN2("¿Cuántos libros hay?", numeros, 2));
+        fase4.Add(new MemoriaN2("¿De qué color es el suelo?", colores, 1));
+        fase4.Add(new MemoriaN2("¿Cuántas velas hay? ", numeros, 1));
+        fase4.Add(new MemoriaN2("¿de qué color es la pared?", colores, 1));        
 
-        pregRandom.Add(new ListMemoriaN2(fase4, salon3));
+        pregRandom.Add(new ListMemoriaN2(fase4, salon4));
 
-        fase5.Add(new MemoriaN2("¿Cuántas sillas hay?", numeros, 1));
-        fase5.Add(new MemoriaN2("¿De qué color son las sillas?", colores, 1));
-        fase5.Add(new MemoriaN2("¿Dónde está el frigorifico?", posicion, 0));
-        fase5.Add(new MemoriaN2("¿De qué color es el mantel? ", colores, 10));
-        fase5.Add(new MemoriaN2("¿De qué color es el frigorifico?", colores, 4));
+        fase5.Add(new MemoriaN2("¿De qué color es la cama?", colores, 4));
+        fase5.Add(new MemoriaN2("¿Cuántos cuadros hay?", numeros, 0));
+        fase5.Add(new MemoriaN2("¿De qué color es la alfombra?", colores, 4));
+        fase5.Add(new MemoriaN2("¿Cuántas mesitas hay? ", numeros, 0));
+        fase5.Add(new MemoriaN2("¿Cuántas lamparas hay?", numeros, 0));
 
-        pregRandom.Add(new ListMemoriaN2(fase5, cocina2));
+        pregRandom.Add(new ListMemoriaN2(fase5, habitacion2));
 
 
         pregRandom = DesordenarLista<ListMemoriaN2>(pregRandom);

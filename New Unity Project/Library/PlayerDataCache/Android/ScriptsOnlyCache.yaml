@@ -1229,7 +1229,7 @@ ScriptsOnlyBuild:
     className: StandaloneInputModule
   - hash:
       serializedVersion: 2
-      Hash: d52f3250cc8812c03d0dac07f8f14eb5
+      Hash: a11f1c6fc6ff26a95dfc76a2f49ecfb9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Test
@@ -1657,4 +1657,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Ejercicios/Percepcion.unity
   - Assets/Scenes/Ejercicios/Praxias.unity
   - Assets/Scenes/ManagerEjercicios.unity
-  playerPath: C:/Users/JesusCuadraTellez/Desktop/tfg/aplicacion/tfg/New Unity Project/aplicacion.apk
+  playerPath: C:/Users/JesusCuadraTellez/Desktop/tfg/aplicacion/tfg/New Unity Project/capacidadesCognitivas.apk

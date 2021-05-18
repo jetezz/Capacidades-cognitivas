@@ -432,7 +432,7 @@ public class Praxia : MonoBehaviour
 
     void nivel3()
     {
-        textoPrincipal.GetComponent<Text>().text = "Pulsa las secuencia de la primera a la ultima";
+        textoPrincipal.GetComponent<Text>().text = "Pulsa las secuencia de la primera a la última";
         List<string> fase1 = new List<string>();
         List<string> fase2 = new List<string>();
         List<string> fase3 = new List<string>();
@@ -447,7 +447,7 @@ public class Praxia : MonoBehaviour
         fase1.Add("Freir el huevo");
         fase1.Add("Comer el huevo");
 
-        fase2.Add("Meter la camiseta en la lavadora");
+        fase2.Add("Meter la camisa en la lavadora");
         fase2.Add("Tender la camisa");
         fase2.Add("Planchar la camisa");
         fase2.Add("Guardar la camisa en el armario");
@@ -462,7 +462,7 @@ public class Praxia : MonoBehaviour
         fase4.Add("Comprar");
         fase4.Add("Pagar");
 
-        fase5.Add("Saltan al campo de futbol");
+        fase5.Add("Entran al campo de fútbol");
         fase5.Add("Meten un gol");
         fase5.Add("Pitan el final del partido");
         fase5.Add("Celebran la victoria");
@@ -472,7 +472,7 @@ public class Praxia : MonoBehaviour
         fase6.Add("Cortarse el pelo");
         fase6.Add("Peinarse el pelo");
 
-        fase7.Add("Nos reunimos los amigos");
+        fase7.Add("Quedo con mis amigos");
         fase7.Add("Compramos las entradas");
         fase7.Add("Vemos la pelicula");
         fase7.Add("Salimos del cine");

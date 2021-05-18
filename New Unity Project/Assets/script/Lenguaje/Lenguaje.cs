@@ -532,7 +532,7 @@ public class Lenguaje : MonoBehaviour
 
 
         panel3.SetActive(true);
-        textoPrincipal.GetComponent<Text>().text = "A qué grupo corresponde estas palabras";
+        textoPrincipal.GetComponent<Text>().text = "A qué grupo corresponden estas palabras";
         siguientePreguntaN3();
 
     }
