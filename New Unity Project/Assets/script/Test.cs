@@ -13,7 +13,7 @@ public class Test : MonoBehaviour
     public GameObject textoAlternativo;
     public GameObject botonAtras;
 
-    public int contadorPruebas=0;
+    
 
 
     public GameObject panelAviso;
@@ -71,6 +71,7 @@ public class Test : MonoBehaviour
 
     public void botonQuitarAviso()
     {
+        sonidos.GetComponent<Sonidos>().repSonido(8);
         panelAviso.SetActive(false);
         siguientePregunta();
     }
@@ -82,12 +83,7 @@ public class Test : MonoBehaviour
         siguientePregunta();
         sonidos.GetComponent<Sonidos>().repSonido(8);
 
-        int aux = 0;
-        for (int i = 0; i < listaPregunta.Count; i++)
-        {
-            aux += listaPregunta[i].puntos;
-        }
-        contadorPruebas = aux;
+       
     }
 
 

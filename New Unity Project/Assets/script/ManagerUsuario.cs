@@ -19,17 +19,16 @@ public class ManagerUsuario : MonoBehaviour
         {
             managerUsuario = this;
             DontDestroyOnLoad(gameObject);
-        }else if (managerUsuario != this)
+            usuarios = GameObject.FindWithTag("Json").GetComponent<Ejemplojson>().cargarUsuarios();
+        }
+        else if (managerUsuario != this)
         {
             Destroy(gameObject);
         }
     }
 
-    private void Start()
-    {
-      
-        usuarios = GameObject.FindWithTag("Json").GetComponent<Ejemplojson>().cargarUsuarios();        
-    }
+  
+
 
     public void addUser(Usuario usuario)
     {
@@ -56,6 +55,18 @@ public class ManagerUsuario : MonoBehaviour
     public Usuario getUsuarioSeleccionado()
     {
         return usuarioSeleccionado;
+    }
+
+    public bool comprobarSiHayUsuarios()
+    {
+        if (usuarios.Count > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
    
 

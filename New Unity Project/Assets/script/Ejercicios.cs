@@ -33,7 +33,7 @@ public class Ejercicios : MonoBehaviour
         panel.transform.GetChild(3).GetComponent<Text>().text = usuario.Description;
         if (usuario.estadisticas.textInicial == false)
         {
-            panel.transform.GetChild(5).gameObject.SetActive(true);
+            
             panelCapacidades.SetActive(false);
             panel.transform.GetChild(6).gameObject.SetActive(false);
             panel.transform.GetChild(7).gameObject.SetActive(false);
@@ -44,7 +44,7 @@ public class Ejercicios : MonoBehaviour
         }
         else
         {
-            panel.transform.GetChild(5).gameObject.SetActive(false);
+            
             panelCapacidades.SetActive(true);
             valoresCapacidades = string.Format(usuario.getMemoria() + "{0}{0}" + usuario.getLenguaje() + "{0}{0}" + usuario.getPercepcion() + "{0}{0}" + usuario.getAtencion() + "{0}{0}" + usuario.getGnosias() + "{0}{0}" +usuario.getPraxias() + "{0}{0}" + usuario.getOrientacion() + "{0}{0}" + usuario.getCalculo(), Environment.NewLine);
 

@@ -10,10 +10,15 @@ public class EsEstadiscitcas : MonoBehaviour
     public GameObject container;
     int id;
     Usuario usuario;
+    GameObject sonidos;
 
-
+    private void Start()
+    {
+        sonidos = GameObject.FindWithTag("Sonido");
+    }
     public void usuarioPulsado(int i)
     {
+        sonidos.GetComponent<Sonidos>().repSonido(0);
         id = i;
         panel.SetActive(true);
         GameObject managerUsuario = GameObject.FindWithTag("MUsu");
@@ -22,6 +27,7 @@ public class EsEstadiscitcas : MonoBehaviour
     }
     public void pulsarCapacidad(int num)
     {
+        sonidos.GetComponent<Sonidos>().repSonido(8);
         panelDatos.SetActive(true);
         panelDatos.transform.GetChild(1).GetComponent<Text>().text = usuario.getNumIntentos(num).ToString();
         panelDatos.transform.GetChild(3).GetComponent<Text>().text = usuario.getNivelMax(num).ToString();
@@ -68,6 +74,7 @@ public class EsEstadiscitcas : MonoBehaviour
     }
     public void cerrarEstadisticas()
     {
+        sonidos.GetComponent<Sonidos>().repSonido(1);
         container.GetComponent<WindowsGraph>().limpiarTabla();
         panelDatos.SetActive(false);
         panel.SetActive(false);

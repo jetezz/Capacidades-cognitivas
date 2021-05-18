@@ -57,33 +57,56 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\script\orientacion\SlotOrientacion.cs" />
-    <Compile Include="Assets\script\Memoria.cs" />
+    <Compile Include="Assets\CodeMonkey\Utils\Button_UI.cs" />
+    <Compile Include="Assets\script\Memoria\Memoria.cs" />
     <Compile Include="Assets\script\ItemSlot.cs" />
+    <Compile Include="Assets\CodeMonkey\Utils\World_Mesh.cs" />
     <Compile Include="Assets\script\Ejemplojson.cs" />
+    <Compile Include="Assets\CodeMonkey\Utils\UI_TextComplex.cs" />
     <Compile Include="Assets\script\orientacion\Orientacion.cs" />
     <Compile Include="Assets\script\ManagerUsuario.cs" />
+    <Compile Include="Assets\script\WindowsGraph.cs" />
+    <Compile Include="Assets\CodeMonkey\Utils\Button_Sprite.cs" />
+    <Compile Include="Assets\CodeMonkey\MonoBehaviours\CameraFollowSetup.cs" />
+    <Compile Include="Assets\CodeMonkey\MonoBehaviours\CameraFollow.cs" />
+    <Compile Include="Assets\CodeMonkey\Assets.cs" />
     <Compile Include="Assets\script\Ejercicios.cs" />
-    <Compile Include="Assets\script\Drag2.cs" />
+    <Compile Include="Assets\CodeMonkey\Utils\World_Sprite.cs" />
+    <Compile Include="Assets\script\Lenguaje\Drag2.cs" />
+    <Compile Include="Assets\CodeMonkey\Utils\World_Bar.cs" />
+    <Compile Include="Assets\CodeMonkey\Utils\UtilsClass.cs" />
+    <Compile Include="Assets\CodeMonkey\MonoBehaviours\PositionRendererSorter.cs" />
     <Compile Include="Assets\script\praxia\Praxia.cs" />
     <Compile Include="Assets\script\atencion\Atencion.cs" />
     <Compile Include="Assets\script\Test.cs" />
     <Compile Include="Assets\script\praxia\SlotPraxia.cs" />
     <Compile Include="Assets\script\Lista.cs" />
+    <Compile Include="Assets\CodeMonkey\Utils\FunctionUpdater.cs" />
     <Compile Include="Assets\script\Percepcion\Percepcion.cs" />
     <Compile Include="Assets\script\ManagerEjercicios.cs" />
     <Compile Include="Assets\script\IdUsuario.cs" />
     <Compile Include="Assets\script\pru2.cs" />
+    <Compile Include="Assets\script\Sonidos.cs" />
+    <Compile Include="Assets\CodeMonkey\Utils\FunctionTimer.cs" />
     <Compile Include="Assets\script\calculo\Calculo.cs" />
+    <Compile Include="Assets\CodeMonkey\Utils\UI_Bar.cs" />
     <Compile Include="Assets\script\Drag.cs" />
     <Compile Include="Assets\script\gnoxias\Gnoxias.cs" />
     <Compile Include="Assets\script\Drop2.cs" />
     <Compile Include="Assets\script\MenuEjercicios.cs" />
     <Compile Include="Assets\script\IdSeleccion.cs" />
-    <Compile Include="Assets\script\Lenguaje.cs" />
+    <Compile Include="Assets\script\Lenguaje\Lenguaje.cs" />
     <Compile Include="Assets\script\MoveSystem.cs" />
     <Compile Include="Assets\script\Drop.cs" />
+    <Compile Include="Assets\CodeMonkey\MonoBehaviours\ComponentActions.cs" />
     <Compile Include="Assets\script\menu.cs" />
+    <Compile Include="Assets\CodeMonkey\Utils\UI_Sprite.cs" />
+    <Compile Include="Assets\CodeMonkey\Utils\UI_BarMultiple.cs" />
     <Compile Include="Assets\script\pru.cs" />
+    <Compile Include="Assets\script\EsEstadiscitcas.cs" />
+    <Compile Include="Assets\CodeMonkey\CMDebug.cs" />
+    <Compile Include="Assets\CodeMonkey\Utils\FunctionPeriodic.cs" />
+    <Compile Include="Assets\script\MenuPrincipal.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -92,6 +115,7 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <None Include="Assets\CodeMonkey\README.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
