@@ -1175,8 +1175,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1714266352}
-        m_TargetAssemblyTypeName: Lista, Assembly-CSharp
+      - m_Target: {fileID: 1963064116}
+        m_TargetAssemblyTypeName: UsuarioEscena, Assembly-CSharp
         m_MethodName: botonNuevoUsuario
         m_Mode: 1
         m_Arguments:
@@ -1601,7 +1601,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1249133789240214046, guid: 3903a704231eaf7448eb9a55df5602c8, type: 3}
   m_PrefabInstance: {fileID: 1249133789879493358}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1249133789879493359}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 577523e6de10a9d459d0e7b868c70d4e, type: 3}
@@ -1708,7 +1708,7 @@ RectTransform:
   - {fileID: 1966382268}
   - {fileID: 4871095619123843064}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1794,6 +1794,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1937543952}
   m_CullTransparentMesh: 1
+--- !u!1 &1963064115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1963064117}
+  - component: {fileID: 1963064116}
+  m_Layer: 0
+  m_Name: Usuario
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1963064116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963064115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da305376bbe778f448f68dc5df10f922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  botonEliminarUsuario: {fileID: 31770623}
+  lista: {fileID: 1249133789879493359}
+--- !u!4 &1963064117
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963064115}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 968.7394, y: 482.13168, z: -78.103966}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1966382267 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4804977850912767065, guid: 7df045a064cff0c4db0e77ee92b9ece8, type: 3}
@@ -1868,7 +1913,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1249133789879493358
 PrefabInstance:
@@ -2141,6 +2186,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3903a704231eaf7448eb9a55df5602c8, type: 3}
+--- !u!1 &1249133789879493359 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1249133790342984386, guid: 3903a704231eaf7448eb9a55df5602c8, type: 3}
+  m_PrefabInstance: {fileID: 1249133789879493358}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4422723768797708603
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2228,7 +2278,15 @@ PrefabInstance:
     - target: {fileID: 4804977850298216699, guid: 7df045a064cff0c4db0e77ee92b9ece8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1714266352}
+      objectReference: {fileID: 1963064116}
+    - target: {fileID: 4804977850298216699, guid: 7df045a064cff0c4db0e77ee92b9ece8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: botonBorrarUsuario
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804977850298216699, guid: 7df045a064cff0c4db0e77ee92b9ece8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UsuarioEscena, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4804977850310715938, guid: 7df045a064cff0c4db0e77ee92b9ece8, type: 3}
       propertyPath: m_Type
       value: 0
@@ -2520,8 +2578,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -809.83, y: 416}
-  m_SizeDelta: {x: 205.6685, y: 169.5908}
+  m_AnchoredPosition: {x: -841.2298, y: 434.07867}
+  m_SizeDelta: {x: 142.8689, y: 133.4335}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4871095617834776665
 MonoBehaviour:
@@ -2599,7 +2657,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: df7770bbffe08484d925751bacedca7b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2f67afe527af54c4a8fe03486258a5b2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

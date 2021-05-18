@@ -1476,7 +1476,6 @@ MonoBehaviour:
   imagenAlternativa: {fileID: 1899259779}
   textoAlternativo: {fileID: 810102216}
   botonAtras: {fileID: 1971860481}
-  contadorPruebas: 0
   panelAviso: {fileID: 642725340}
   panelPreguntas: {fileID: 194419146}
   contador: 0
@@ -2834,8 +2833,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 164.66, y: 354.3274}
-  m_SizeDelta: {x: 1163, y: 133.4273}
+  m_AnchoredPosition: {x: 163.70847, y: 225.87378}
+  m_SizeDelta: {x: 1161.0969, y: 390.3345}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1987190368
 MonoBehaviour:

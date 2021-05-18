@@ -18,10 +18,16 @@ public class Ejercicios : MonoBehaviour
     public GameObject panelElegirEjercicio;
     public GameObject panelElegirEjercicios;
     List<int> listaEjercicios=new List<int>();
+
+    private void Start()
+    {
+        sonidos = GameObject.FindWithTag("Sonido");
+    }
     public void botonCerrarPanel()
     {
         panel.SetActive(false);
-       
+        sonidos.GetComponent<Sonidos>().repSonido(1);
+
     }
     public void ActivarPanel()
     {        
@@ -39,6 +45,7 @@ public class Ejercicios : MonoBehaviour
             panel.transform.GetChild(7).gameObject.SetActive(false);
             panel.transform.GetChild(8).gameObject.SetActive(false);
             panel.transform.GetChild(9).gameObject.SetActive(false);
+            panel.transform.GetChild(12).gameObject.SetActive(true);
 
 
         }
@@ -54,22 +61,24 @@ public class Ejercicios : MonoBehaviour
             panel.transform.GetChild(7).gameObject.SetActive(true);
             panel.transform.GetChild(8).gameObject.SetActive(true);
             panel.transform.GetChild(9).gameObject.SetActive(true);
+            panel.transform.GetChild(12).gameObject.SetActive(false);
+
         }
 
-        
-        
+
+
     }
 
     public void botonTextInicial()
     {
         SceneManager.LoadScene(4);
-        sonidos = GameObject.FindWithTag("Sonido");
+        
         sonidos.GetComponent<Sonidos>().repSonido(0);
     }
     public void activarPanelElegir()
     {
         panelElegirEjercicio.SetActive(true);
-        sonidos = GameObject.FindWithTag("Sonido");
+        
         sonidos.GetComponent<Sonidos>().repSonido(0);
 
     }
@@ -79,7 +88,7 @@ public class Ejercicios : MonoBehaviour
         GameObject managerEjercicios;
         managerEjercicios = GameObject.FindWithTag("MEje");       
         managerEjercicios.GetComponent<ManagerEjercicios>().iniciarEpecial(ejercicio,niv);
-        sonidos = GameObject.FindWithTag("Sonido");
+        
         sonidos.GetComponent<Sonidos>().repSonido(0);
 
 
@@ -89,14 +98,45 @@ public class Ejercicios : MonoBehaviour
     public void botonSelecionarEjercicio(int eje)
     {
         ejercicio = eje;
-        sonidos = GameObject.FindWithTag("Sonido");
+        if (eje == 0)
+        {
+            panelElegirEjercicio.transform.GetChild(14).GetComponent<Text>().text="Memoria";
+        }else if (eje == 1)
+        {
+            panelElegirEjercicio.transform.GetChild(14).GetComponent<Text>().text = "Lenguaje";
+        }
+        else if (eje == 2)
+        {
+            panelElegirEjercicio.transform.GetChild(14).GetComponent<Text>().text = "Percepción";
+        }
+        else if (eje == 3)
+        {
+            panelElegirEjercicio.transform.GetChild(14).GetComponent<Text>().text = "Atención";
+        }
+        else if (eje == 4)
+        {
+            panelElegirEjercicio.transform.GetChild(14).GetComponent<Text>().text = "Gnosias";
+        }
+        else if (eje == 5)
+        {
+            panelElegirEjercicio.transform.GetChild(14).GetComponent<Text>().text = "Praxias";
+        }
+        else if (eje == 6)
+        {
+            panelElegirEjercicio.transform.GetChild(14).GetComponent<Text>().text = "Orientación";
+        }
+        else if (eje == 7)
+        {
+            panelElegirEjercicio.transform.GetChild(14).GetComponent<Text>().text = "Calculo";
+        }
+        
         sonidos.GetComponent<Sonidos>().repSonido(0);
 
     }
     public void ejerciciosEspecificos()
     {
         panelElegirEjercicios.SetActive(true);
-        sonidos = GameObject.FindWithTag("Sonido");
+        
         sonidos.GetComponent<Sonidos>().repSonido(0);
 
     }
@@ -105,7 +145,7 @@ public class Ejercicios : MonoBehaviour
         if (listaEjercicios.Count < 8)
         {
             listaEjercicios.Add(ejer);
-            sonidos = GameObject.FindWithTag("Sonido");
+            
             sonidos.GetComponent<Sonidos>().repSonido(0);
         }
 
@@ -113,7 +153,11 @@ public class Ejercicios : MonoBehaviour
 
 
     }
-
+    public void cerrarPanelEjercicioEspecifico()
+    {
+        panelElegirEjercicio.SetActive(false);
+        sonidos.GetComponent<Sonidos>().repSonido(1);
+    }
     void mostrarEjercicios()
     {
         string aux="";
@@ -175,7 +219,7 @@ public class Ejercicios : MonoBehaviour
 
     public void empezarEjerciciosSeleccionados()
     {
-        sonidos = GameObject.FindWithTag("Sonido");
+       
         sonidos.GetComponent<Sonidos>().repSonido(0);
         GameObject managerEjercicios;
         managerEjercicios = GameObject.FindWithTag("MEje");
@@ -183,7 +227,7 @@ public class Ejercicios : MonoBehaviour
     }
     public void ejerciciosAutomaticos()
     {
-        sonidos=GameObject.FindWithTag("Sonido");
+        
         sonidos.GetComponent<Sonidos>().repSonido(0);
         GameObject managerEjercicios;
         managerEjercicios = GameObject.FindWithTag("MEje");

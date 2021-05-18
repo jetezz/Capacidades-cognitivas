@@ -20,12 +20,14 @@ public class Lista : MonoBehaviour
     public bool borrar = false;
 
     public int idSeleccion = 0;
-    
+
+    GameObject sonidos;
 
 
 
     void Start()
     {
+        sonidos = GameObject.FindWithTag("Sonido");
         managerUsuarios = GameObject.FindWithTag("MUsu");
         crearLista();
     }
@@ -113,6 +115,7 @@ public class Lista : MonoBehaviour
         canvas.transform.GetChild(5).gameObject.SetActive(true);
         canvas.transform.GetChild(6).gameObject.SetActive(true);
         panelEliminarUsuario.SetActive(false);
+        sonidos.GetComponent<Sonidos>().repSonido(8);
     }
     public int darId()
     {
@@ -140,6 +143,13 @@ public class Lista : MonoBehaviour
             managerUsuarios.GetComponent<ManagerUsuario>().addUser(new Usuario(nombre, descripcion));            
             anadieUsuario();
             managerUsuarios.GetComponent<ManagerUsuario>().guardarUsuarios();
+            sonidos.GetComponent<Sonidos>().repSonido(8);
+
+        }
+        else
+        {
+            sonidos.GetComponent<Sonidos>().repSonido(3);
+
         }
     }
 
@@ -161,8 +171,9 @@ public class Lista : MonoBehaviour
         canvas.transform.GetChild(3).gameObject.SetActive(false);
         canvas.transform.GetChild(4).gameObject.SetActive(false);
         canvas.transform.GetChild(5).gameObject.SetActive(false);
-        canvas.transform.GetChild(6).gameObject.SetActive(false);            
-      
+        canvas.transform.GetChild(6).gameObject.SetActive(false);
+        sonidos.GetComponent<Sonidos>().repSonido(8);
+
     }
     public void botonSalirPanelUsuarios()
     {
@@ -171,6 +182,8 @@ public class Lista : MonoBehaviour
         canvas.transform.GetChild(4).gameObject.SetActive(true);
         canvas.transform.GetChild(5).gameObject.SetActive(true);
         canvas.transform.GetChild(6).gameObject.SetActive(true);
+        sonidos.GetComponent<Sonidos>().repSonido(1);
+
     }
     public void abrirPanelCaracteristicas(int id)
     {
@@ -190,6 +203,7 @@ public class Lista : MonoBehaviour
     public void cerrarCaracteristicas()
     {
         panelCaracteristicas.SetActive(false);
+        sonidos.GetComponent<Sonidos>().repSonido(2);
     }
 
 }
