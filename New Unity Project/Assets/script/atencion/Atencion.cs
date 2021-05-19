@@ -248,7 +248,7 @@ public class Atencion : MonoBehaviour
         repeticiones = 3;
 
         panel2.SetActive(true);
-        textoPrincipal.GetComponent<Text>().text = "Selecciona todos los numeros de menor a mayor";
+        textoPrincipal.GetComponent<Text>().text = "Selecciona todos los números de menor a mayor";
         siguientePreguntaN2();
     }
 
@@ -362,7 +362,7 @@ public class Atencion : MonoBehaviour
         preguntas3.Add(Random.Range(30, 36));
 
 
-        textoPrincipal.GetComponent<Text>().text = "Introduce el numero que falta 0-35";
+        textoPrincipal.GetComponent<Text>().text = "Introduce el número que falta 0-35";
         tiempoEjercicio = 0;
         panel3.SetActive(true);
         siguientePreguntaN3();
@@ -474,7 +474,7 @@ public class Atencion : MonoBehaviour
       
 
 
-        textoPrincipal.GetComponent<Text>().text = "Introduce el numero que falta 0-48";
+        textoPrincipal.GetComponent<Text>().text = "Introduce el número que falta 0-48";
         tiempoEjercicio = 0;
         panel4.SetActive(true);
         siguientePreguntaN4();

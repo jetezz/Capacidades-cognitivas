@@ -278,7 +278,7 @@ public class Gnoxias : MonoBehaviour
        
 
         panel1.SetActive(true);
-        textoPrincipal.GetComponent<Text>().text = "Selecciona el trozo que corresponde a la imagen";
+        textoPrincipal.GetComponent<Text>().text = "Selecciona el trozo que corresponde a la imágen";
         siguientePreguntaN1();
 
     }
@@ -431,7 +431,7 @@ public class Gnoxias : MonoBehaviour
 
         panel2.SetActive(true);
 
-        textoPrincipal.GetComponent<Text>().text = "Seleciona la imagen que corresponde a la silueta";
+        textoPrincipal.GetComponent<Text>().text = "Selecciona la imágen que corresponde a la silueta";
         siguientePreguntaN2();
 
 
@@ -602,7 +602,7 @@ public class Gnoxias : MonoBehaviour
 
 
         panel3.SetActive(true);
-        textoPrincipal.GetComponent<Text>().text = "Selecciona las imagenes que aparecen en la silueta";
+        textoPrincipal.GetComponent<Text>().text = "Selecciona las imágenes que aparecen en la silueta";
         siguientePreguntaN3();
 
     }
@@ -753,7 +753,7 @@ public class Gnoxias : MonoBehaviour
 
         preguntasN4 = DesordenarLista<Pregunta4G>(preguntasN4);
         panel4.SetActive(true);
-        textoPrincipal.GetComponent<Text>().text = "Selecciona la casilla a la que corresponde esta imagen ";
+        textoPrincipal.GetComponent<Text>().text = "Selecciona la casilla a la que corresponde esta imágen ";
         siguientePreguntaN4();
     }
     void siguientePreguntaN4()

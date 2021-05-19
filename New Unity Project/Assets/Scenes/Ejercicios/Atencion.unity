@@ -1732,7 +1732,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Numero
+  m_Text: "N\xFAmero"
 --- !u!222 &264251076
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7644,7 +7644,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Numero
+  m_Text: "N\xFAmero"
 --- !u!222 &1174253178
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12388,11 +12388,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5685390976144708508, guid: 56614a7255ee34a41af6cbed1eccb7db, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1.8643188
+      value: -1.8642578
       objectReference: {fileID: 0}
     - target: {fileID: 5685390976144708508, guid: 56614a7255ee34a41af6cbed1eccb7db, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 5.819397
+      value: 5.819336
       objectReference: {fileID: 0}
     - target: {fileID: 5685390976144708508, guid: 56614a7255ee34a41af6cbed1eccb7db, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -13044,11 +13044,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2432825682090202900, guid: b3a8f4731d778cb48ade52da2fe9b3e6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1.8645
+      value: -1.864502
       objectReference: {fileID: 0}
     - target: {fileID: 2432825682090202900, guid: b3a8f4731d778cb48ade52da2fe9b3e6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.47027
+      value: 0.47021484
       objectReference: {fileID: 0}
     - target: {fileID: 2432825682090202900, guid: b3a8f4731d778cb48ade52da2fe9b3e6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
