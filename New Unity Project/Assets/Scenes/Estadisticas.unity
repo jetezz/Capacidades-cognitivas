@@ -1355,7 +1355,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Orientacion
+  m_Text: "Orientaci\xF3n"
 --- !u!222 &611880666
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1434,7 +1434,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Atencion
+  m_Text: "Atenci\xF3n"
 --- !u!222 &661273543
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2917,7 +2917,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Nivel maximo
+  m_Text: "Nivel m\xE1ximo"
 --- !u!222 &1343942607
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3062,7 +3062,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Calculo
+  m_Text: "C\xE1lculo"
 --- !u!222 &1400321420
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4520,7 +4520,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Percepcion
+  m_Text: "Percepci\xF3n"
 --- !u!222 &2062971258
 CanvasRenderer:
   m_ObjectHideFlags: 0

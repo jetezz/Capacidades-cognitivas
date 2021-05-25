@@ -209,11 +209,11 @@ public class Percepcion : MonoBehaviour
 
     void final(string nivel, int pMax, int pMin, int siguienteNnivel,bool ultimo)
     {
-        textoPrincipal.GetComponent<Text>().text = "Finalizado los ejercicios de Percepcion nivel " + (siguienteNnivel - 1).ToString();
+        textoPrincipal.GetComponent<Text>().text = "Finalizado los ejercicios de Percepción nivel " + (siguienteNnivel - 1).ToString();
         panelFin.SetActive(true);
         textoPrincipal.GetComponent<Text>().text = nivel;
         panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-        panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son " + pMax;
+        panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos máximos son " + pMax;
         if (puntos == pMax)
         {
             panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel " + siguienteNnivel;
@@ -298,7 +298,7 @@ public class Percepcion : MonoBehaviour
         }
         else
         {
-            final("Ejercicio Percepcion nivel 1 completado", 24, 0, 2,false);
+            final("Ejercicio Percepción nivel 1 completado", 24, 0, 2,false);
 
         }
     }
@@ -503,12 +503,12 @@ public class Percepcion : MonoBehaviour
         {
             if (preguntas2[contador - 1].grupo < 2)
             {
-                final("Ejercicio Percepcion nivel 2 completado", 22, 10, 3,false);
+                final("Ejercicio Percepción nivel 2 completado", 22, 10, 3,false);
 
             }
             else
             {
-                final("Ejercicio Percepcion nivel 3 completado", 15, 6, 4,false);
+                final("Ejercicio Percepción nivel 3 completado", 15, 6, 4,false);
 
             }
             sonidos.GetComponent<Sonidos>().repSonido(4);
@@ -789,7 +789,7 @@ public class Percepcion : MonoBehaviour
 
 
         panel4.SetActive(true);
-        textoPrincipal.GetComponent<Text>().text = "Selecciona los dos dibujos iguales";
+        textoPrincipal.GetComponent<Text>().text = "Selecciona el dibujo que es igual en ambos lados (color y forma)";
         siguientepreguntaN4();
 
     }
@@ -805,7 +805,7 @@ public class Percepcion : MonoBehaviour
         }
         else
         {
-            final("Ejercicio Percepcion nivel 4 completado", 8, 4, 4,true);
+            final("Ejercicio Percepción nivel 4 completado", 4, 2, 4,true);
 
         }
     }
@@ -846,14 +846,12 @@ public class Percepcion : MonoBehaviour
             }
         }
 
-        numrespuestas++;
-        tiempo = 1;
-        if (numrespuestas == 2)
-        {
-            numrespuestas = 0;
-            contador++;
-            siguientepreguntaN4();
-        }
+        
+        tiempo = 1;       
+        
+        contador++;
+        siguientepreguntaN4();
+        
 
     } 
     

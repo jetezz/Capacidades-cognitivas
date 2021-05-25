@@ -8,7 +8,8 @@ using UnityEngine.SceneManagement;
 
 public class Ejercicios : MonoBehaviour
 {
-    GameObject sonidos;    
+    GameObject sonidos;
+    public GameObject informacion;
     public int id;
     public GameObject panel;
     public string valoresCapacidades;
@@ -239,6 +240,20 @@ public class Ejercicios : MonoBehaviour
         panelElegirEjercicios.SetActive(false);
         listaEjercicios.Clear();
         mostrarEjercicios();
+
+    }
+    public void abrirInformacion()
+    {
+        informacion.SetActive(true);
+        sonidos.GetComponent<Sonidos>().repSonido(5);
+
+    }
+
+    public void cerrarInformacion()
+    {
+        informacion.SetActive(false);
+        sonidos.GetComponent<Sonidos>().repSonido(5);
+
 
     }
 }

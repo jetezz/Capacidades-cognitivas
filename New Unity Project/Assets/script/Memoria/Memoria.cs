@@ -156,7 +156,7 @@ public class Memoria : MonoBehaviour
         panelFin.SetActive(true);
         textoPrincipal.GetComponent<Text>().text = nivel;
         panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-        panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son " + pMax;
+        panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos máximos son " + pMax;
         if (puntos == pMax)
         {
             panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel " + siguienteNnivel;
@@ -392,11 +392,10 @@ public class Memoria : MonoBehaviour
         List<string> colores = new List<string>();
         colores.Add("Rojo");
         colores.Add("Azul");
-        colores.Add("Marron");
+        colores.Add("Marrón");
         colores.Add("Blanco");
         colores.Add("Verde");
-        colores.Add("Amarillo");
-        colores.Add("Violeta");
+        colores.Add("Amarillo");        
         colores.Add("Negro");
         colores.Add("Rosa");
         colores.Add("Morada");
@@ -447,7 +446,7 @@ public class Memoria : MonoBehaviour
         posicion2.Add("Encima de la cama");
         posicion2.Add("Delanten del armario");
         posicion2.Add("Al lado de la ventana");
-        posicion2.Add("Al lado de la caman");
+        posicion2.Add("Al lado de la cama");
         posicion2.Add("Enfrente del sofá");
         posicion2.Add("Debajo de la televisión");
 
@@ -461,7 +460,7 @@ public class Memoria : MonoBehaviour
         fase1.Add(new MemoriaN2("¿De qué color es la casa?", colores,0));
         fase1.Add(new MemoriaN2("¿Cuántas manzanas hay en el árbol?", numeros,4));
         fase1.Add(new MemoriaN2("¿De qué color es la barca?", colores,2));
-        fase1.Add(new MemoriaN2("¿Cómo está el dia?", clima,0));
+        fase1.Add(new MemoriaN2("¿Cómo está el día?", clima,0));
         fase1.Add(new MemoriaN2("¿Qué especies de animales hay ? ", animales, 0));
 
         pregRandom.Add(new ListMemoriaN2(fase1, granja));
@@ -478,15 +477,15 @@ public class Memoria : MonoBehaviour
 
         fase3.Add(new MemoriaN2("¿Dónde está el gato?", posicion2, 0));
         fase3.Add(new MemoriaN2("¿De qué color es el sofá?", colores, 5));
-        fase3.Add(new MemoriaN2("¿De qué color son las cortinas?", colores, 8));
+        fase3.Add(new MemoriaN2("¿De qué color son las cortinas?", colores, 7));
         fase3.Add(new MemoriaN2("¿Cuántas macetas hay en la ventana? ", numeros, 1));
         fase3.Add(new MemoriaN2("¿Dónde está la mesa?", posicion2, 13));
-        fase3.Add(new MemoriaN2("¿De qué color es la lámpara? ", colores, 9));
+        fase3.Add(new MemoriaN2("¿De qué color es la lámpara? ", colores, 8));
         fase3.Add(new MemoriaN2("¿Cuántos cuadros hay? ", numeros, 1));
 
         pregRandom.Add(new ListMemoriaN2(fase3, salon2));
 
-        fase4.Add(new MemoriaN2("¿De qué color es el sofá?", colores, 10));
+        fase4.Add(new MemoriaN2("¿De qué color es el sofá?", colores, 9));
         fase4.Add(new MemoriaN2("¿Cuántos libros hay?", numeros, 2));
         fase4.Add(new MemoriaN2("¿De qué color es el suelo?", colores, 1));
         fase4.Add(new MemoriaN2("¿Cuántas velas hay? ", numeros, 1));
@@ -494,11 +493,11 @@ public class Memoria : MonoBehaviour
 
         pregRandom.Add(new ListMemoriaN2(fase4, salon4));
 
-        fase5.Add(new MemoriaN2("¿De qué color es la cama?", colores, 4));
+        fase5.Add(new MemoriaN2("¿De qué color es la colcha?", colores, 4));
         fase5.Add(new MemoriaN2("¿Cuántos cuadros hay?", numeros, 0));
         fase5.Add(new MemoriaN2("¿De qué color es la alfombra?", colores, 4));
         fase5.Add(new MemoriaN2("¿Cuántas mesitas hay? ", numeros, 0));
-        fase5.Add(new MemoriaN2("¿Cuántas lamparas hay?", numeros, 0));
+        fase5.Add(new MemoriaN2("¿Cuántas lámparas hay?", numeros, 0));
 
         pregRandom.Add(new ListMemoriaN2(fase5, habitacion2));
 

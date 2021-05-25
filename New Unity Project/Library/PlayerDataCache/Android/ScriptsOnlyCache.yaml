@@ -675,7 +675,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4488}
     - Class: 114
-      Script: {instanceID: 4890}
+      Script: {instanceID: 4892}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -889,7 +889,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4488}
     - Class: 114
-      Script: {instanceID: 63710}
+      Script: {instanceID: 4658}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1119,7 +1119,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: 623b1ab94356399851ef7404833ef4cf
+      Hash: 44e8dc7c5814ab12a42355a39a9e90a0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Ejercicios
@@ -1593,7 +1593,7 @@ ScriptsOnlyBuild:
     className: menu
   - hash:
       serializedVersion: 2
-      Hash: 64d84311739b504704fe7a8de83106cc
+      Hash: b1cf573a743adfd3bf239d633e5c37b5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MenuPrincipal
@@ -1603,6 +1603,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SpriteAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 089f4c3101f88f11853fc517740c5e8b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UsuarioEscena
   - hash:
       serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
@@ -1651,12 +1657,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
-  - hash:
-      serializedVersion: 2
-      Hash: 089f4c3101f88f11853fc517740c5e8b
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: UsuarioEscena
   platform: 13
   scenePathNames:
   - Assets/Scenes/Menu.unity
@@ -1673,4 +1673,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Ejercicios/Percepcion.unity
   - Assets/Scenes/Ejercicios/Praxias.unity
   - Assets/Scenes/ManagerEjercicios.unity
-  playerPath: C:/Users/JesusCuadraTellez/Desktop/Git/tfg/tfg/New Unity Project/capacidadesCognitivas.apk
+  playerPath: C:/Users/JesusCuadraTellez/Desktop/tfg/aplicacion/tfg/New Unity Project/capacidadesCognitivas.apk

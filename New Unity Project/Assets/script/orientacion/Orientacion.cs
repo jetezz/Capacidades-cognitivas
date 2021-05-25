@@ -128,11 +128,11 @@ public class Orientacion : MonoBehaviour
     }
     void final(string nivel, int pMax, int pMin, int siguienteNnivel,bool ultimo)
     {
-        textoPrincipal.GetComponent<Text>().text = "Finalizado los ejercicios de Orientacion nivel " + (siguienteNnivel - 1).ToString();
+        textoPrincipal.GetComponent<Text>().text = "Finalizado los ejercicios de Orientación nivel " + (siguienteNnivel - 1).ToString();
         panelFin.SetActive(true);
         textoPrincipal.GetComponent<Text>().text = nivel;
         panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-        panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son " + pMax;
+        panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos máximos son " + pMax;
         if (puntos == pMax)
         {
             panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel " + siguienteNnivel;
@@ -216,7 +216,7 @@ public class Orientacion : MonoBehaviour
         }
         else
         {
-            final("Ejercicio orientacion nivel 1 completado", 10,0, 2,false);
+            final("Ejercicio orientación nivel 1 completado", 10,0, 2,false);
         }
     }
  
@@ -264,18 +264,18 @@ public class Orientacion : MonoBehaviour
     void nivel2()
     {
         preguntas2 = new List<Orientacion2>();
-        preguntas2.Add(new Orientacion2(1, "selecciona la pelota que está debajo de la mesa", pre1N2));
-        preguntas2.Add(new Orientacion2(0, "selecciona la pelota que está encima de la mesa", pre1N2));
-        preguntas2.Add(new Orientacion2(0, "selecciona la pelota que está encima  de la silla", pre2N2));
-        preguntas2.Add(new Orientacion2(1, "selecciona la pelota que está al lado de la silla", pre2N2));
-        preguntas2.Add(new Orientacion2(0, "selecciona la pelota que está al lado de la cama", pre3N2));
-        preguntas2.Add(new Orientacion2(1, "selecciona la pelota que está encima de la cama", pre3N2));
-        preguntas2.Add(new Orientacion2(0, "selecciona el peluche que está debajo de la silla", pre4N2));
-        preguntas2.Add(new Orientacion2(1, "selecciona el peluche que está encima de la silla", pre4N2));
-        preguntas2.Add(new Orientacion2(1, "selecciona el peluche que está encima de la mesa", pre5N2));
-        preguntas2.Add(new Orientacion2(0, "selecciona el peluche que está debajo de la mesa", pre5N2));
-        preguntas2.Add(new Orientacion2(0, "selecciona el peluche que está encima de la cama", pre6N2));
-        preguntas2.Add(new Orientacion2(1, "selecciona el peluche que está al lado de la cama", pre6N2));
+        preguntas2.Add(new Orientacion2(1, "Selecciona la pelota que está debajo de la mesa", pre1N2));
+        preguntas2.Add(new Orientacion2(0, "Selecciona la pelota que está encima de la mesa", pre1N2));
+        preguntas2.Add(new Orientacion2(0, "Selecciona la pelota que está encima  de la silla", pre2N2));
+        preguntas2.Add(new Orientacion2(1, "Selecciona la pelota que está al lado de la silla", pre2N2));
+        preguntas2.Add(new Orientacion2(0, "Selecciona la pelota que está al lado de la cama", pre3N2));
+        preguntas2.Add(new Orientacion2(1, "Selecciona la pelota que está encima de la cama", pre3N2));
+        preguntas2.Add(new Orientacion2(0, "Selecciona el peluche que está debajo de la silla", pre4N2));
+        preguntas2.Add(new Orientacion2(1, "Selecciona el peluche que está encima de la silla", pre4N2));
+        preguntas2.Add(new Orientacion2(1, "Selecciona el peluche que está encima de la mesa", pre5N2));
+        preguntas2.Add(new Orientacion2(0, "Selecciona el peluche que está debajo de la mesa", pre5N2));
+        preguntas2.Add(new Orientacion2(0, "Selecciona el peluche que está encima de la cama", pre6N2));
+        preguntas2.Add(new Orientacion2(1, "Selecciona el peluche que está al lado de la cama", pre6N2));
 
         preguntas2 = DesordenarLista<Orientacion2>(preguntas2);
         panel2.SetActive(true);
@@ -298,7 +298,7 @@ public class Orientacion : MonoBehaviour
         }
         else
         {
-            final("Ejercicio orientacion nivel 2 completado", 12,6, 3,false);
+            final("Ejercicio orientación nivel 2 completado", 12,6, 3,false);
         }
     }
 
@@ -348,15 +348,15 @@ public class Orientacion : MonoBehaviour
         fase3.Add(n13);
         fase3.Add(n14);
 
-        preguntas3.Add(new Orientacion3(fase1, "pulsa la maceta que está encima de la mesa",0));
-        preguntas3.Add(new Orientacion3(fase1, "pulsa la maceta que está debajo de la mesa", 1));
-        preguntas3.Add(new Orientacion3(fase1, "pulsa la maceta que está a la izquierda de la mesa", 2));
-        preguntas3.Add(new Orientacion3(fase1, "pulsa la maceta que está a la derecha de la mesa", 3));
-        preguntas3.Add(new Orientacion3(fase1, "pulsa la lámpara que está delante de la mesa", 4));
-        preguntas3.Add(new Orientacion3(fase1, "pulsa la lámpara que está detrás de la mesa", 5));
-
-        preguntas3.Add(new Orientacion3(fase2, "pulsa la maceta que está entre la lámpara y la mesa", 4));
-        preguntas3.Add(new Orientacion3(fase2, "pulsa la lámpara que está a la derecha de la mesa", 5));
+        preguntas3.Add(new Orientacion3(fase1, "Pulsa la maceta que está encima de la mesa",0));
+        preguntas3.Add(new Orientacion3(fase1, "Pulsa la maceta que está debajo de la mesa", 1));
+        preguntas3.Add(new Orientacion3(fase1, "Pulsa la maceta que está a la izquierda de la mesa", 2));
+        preguntas3.Add(new Orientacion3(fase1, "Pulsa la maceta que está a la derecha de la mesa", 3));
+        preguntas3.Add(new Orientacion3(fase1, "Pulsa la lámpara que está delante de la mesa", 4));
+        preguntas3.Add(new Orientacion3(fase1, "Pulsa la lámpara que está detrás de la mesa", 5));
+                                                
+        preguntas3.Add(new Orientacion3(fase2, "Pulsa la maceta que está entre la lámpara y la mesa", 4));
+        preguntas3.Add(new Orientacion3(fase2, "Pulsa la lámpara que está a la derecha de la mesa", 5));
 
 
 
@@ -385,7 +385,7 @@ public class Orientacion : MonoBehaviour
         }
         else
         {
-            final("Ejercicio orientacion nivel 3 completado", 14,7, 4,false);
+            final("Ejercicio orientación nivel 3 completado", 14,7, 4,false);
         }
     }
     void generarBotonesN3()
@@ -429,20 +429,20 @@ public class Orientacion : MonoBehaviour
     void nivel4()
     {
         preguntas4 = new List<Orientacion4>();
-        preguntas4.Add(new Orientacion4(2, 2, "coloca el cuadrado a la derecha del círculo amarillo", 1));
-        preguntas4.Add(new Orientacion4(4, 5, "coloca el rombo debajo del círculo rojo", 2));
-        preguntas4.Add(new Orientacion4(4, 0, "coloca el triángulo arriba del círculo verde", 3));
-        preguntas4.Add(new Orientacion4(0, 4, "coloca el rectangulo a la izquierda del círculo azul", 4));
-
-        preguntas4.Add(new Orientacion4(5, 4, "coloca el rombo a la derecha circulo rojo", 2));
-        preguntas4.Add(new Orientacion4(5, 1, "coloca el triángulo a la derecha del circulo verde", 3));
-        preguntas4.Add(new Orientacion4(1, 3, "coloca el cuadrado debajo del circulo amarillo", 1));
-        preguntas4.Add(new Orientacion4(1, 5, "coloca el rectangulo a la debajo del circulo azul", 4));
-
-        preguntas4.Add(new Orientacion4(0, 2, "coloca el cuadrado a la izquierda del círculo amarillo", 1));
-        preguntas4.Add(new Orientacion4(4, 3, "coloca el rombo arriba del círculo rojo", 2));
-        preguntas4.Add(new Orientacion4(4, 2, "coloca el triángulo abajo del círculo verde", 3));
-        preguntas4.Add(new Orientacion4(2, 4, "coloca el rectangulo a la derecha del círculo azul", 4));
+        preguntas4.Add(new Orientacion4(2, 2, "Coloca el cuadrado a la derecha del círculo amarillo", 1));
+        preguntas4.Add(new Orientacion4(4, 5, "Coloca el rombo debajo del círculo rojo", 2));
+        preguntas4.Add(new Orientacion4(4, 0, "Coloca el triángulo arriba del círculo verde", 3));
+        preguntas4.Add(new Orientacion4(0, 4, "Coloca el rectángulo a la izquierda del círculo azul", 4));
+                                               
+        preguntas4.Add(new Orientacion4(5, 4, "Coloca el rombo a la derecha círculo rojo", 2));
+        preguntas4.Add(new Orientacion4(5, 1, "Coloca el triángulo a la derecha del círculo verde", 3));
+        preguntas4.Add(new Orientacion4(1, 3, "Coloca el cuadrado debajo del círculo amarillo", 1));
+        preguntas4.Add(new Orientacion4(1, 5, "Coloca el rectángulo a la debajo del círculo azul", 4));
+                                               
+        preguntas4.Add(new Orientacion4(0, 2, "Coloca el cuadrado a la izquierda del círculo amarillo", 1));
+        preguntas4.Add(new Orientacion4(4, 3, "Coloca el rombo arriba del círculo rojo", 2));
+        preguntas4.Add(new Orientacion4(4, 2, "Coloca el triángulo abajo del círculo verde", 3));
+        preguntas4.Add(new Orientacion4(2, 4, "Coloca el rectángulo a la derecha del círculo azul", 4));
 
 
 
@@ -462,7 +462,7 @@ public class Orientacion : MonoBehaviour
         }
         else
         {
-            final("Ejercicio orientacion nivel4 completado", 12,6, 4,true);
+            final("Ejercicio orientación nivel 4 completado", 12,6, 4,true);
         }
     }
 

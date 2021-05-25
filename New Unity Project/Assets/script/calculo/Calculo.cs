@@ -134,11 +134,11 @@ public class Calculo : MonoBehaviour
     }
     void final(string nivel, int pMax,int pMin, int siguienteNnivel,bool ultimo)
     {
-        textoPrincipal.GetComponent<Text>().text = "Finalizado los ejercicios de Calculo nivel " + (siguienteNnivel - 1).ToString();
+        textoPrincipal.GetComponent<Text>().text = "Finalizado los ejercicios de Cálculo nivel " + (siguienteNnivel - 1).ToString();
         panelFin.SetActive(true);
         textoPrincipal.GetComponent<Text>().text = nivel;
         panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-        panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son " + pMax;
+        panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos máximos son " + pMax;
         if (puntos == pMax)
         {
             panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel " + siguienteNnivel;
@@ -231,7 +231,7 @@ public class Calculo : MonoBehaviour
         }
         else
         {
-            final("Ejercicio de calculo nivel1 completado", preguntasTotales,preguntasTotales/2, 2,false);
+            final("Ejercicio de cálculo nivel1 completado", preguntasTotales,preguntasTotales/2, 2,false);
         }
     }
     public void generarBotonesN1()
@@ -603,7 +603,7 @@ public class Calculo : MonoBehaviour
         }
         else
         {
-            final("Ejercicio de calculo nivel3 completado", puntosMaximos,puntosMaximos/2, nivel+1,false);
+            final("Ejercicio de cálculo nivel3 completado", puntosMaximos,puntosMaximos/2, nivel+1,false);
         }
     }
     void generarGruposN3()
@@ -722,7 +722,7 @@ public class Calculo : MonoBehaviour
         conjunto2.Add(new Grupo2(img9, etiqueta9, 50.35f));
         
         panel4.SetActive(true);
-        textoPrincipal.GetComponent<Text>().text = "calcula la suma de estos objetos";
+        textoPrincipal.GetComponent<Text>().text = "Calcula la suma de estos objetos";
         siguientePreguntaN4();
     }
     void siguientePreguntaN4()
@@ -735,7 +735,7 @@ public class Calculo : MonoBehaviour
         }
         else
         {
-            final("Ejercicio de calculo nivel4 completado", 5,4, 4,true);
+            final("Ejercicio de cálculo nivel4 completado", 5,4, 4,true);
         }
     }
     void generarGruposN4()

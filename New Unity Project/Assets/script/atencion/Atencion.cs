@@ -102,7 +102,7 @@ public class Atencion : MonoBehaviour
         panelFin.SetActive(true);
         textoPrincipal.GetComponent<Text>().text = nivel;
         panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-        panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son " + pMax;
+        panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos máximos son " + pMax;
         if (puntos == pMax)
         {
             panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel " + siguienteNnivel;
@@ -269,10 +269,10 @@ public class Atencion : MonoBehaviour
             {
 
                 panelFin.SetActive(true);
-                textoPrincipal.GetComponent<Text>().text = "Ejercicio de atencion nivel 2 completado";
+                textoPrincipal.GetComponent<Text>().text = "Ejercicio de atención nivel 2 completado";
                 panelFin.transform.GetChild(0).GetComponent<Text>().text = "tiempo";
                 panelFin.transform.GetChild(1).GetComponent<Text>().text = tiempoEjercicio.ToString() + "s";
-                panelFin.transform.GetChild(2).GetComponent<Text>().text = "el tiempo minimo para completar el nivel es 80s";
+                panelFin.transform.GetChild(2).GetComponent<Text>().text = "el tiempo mínimo para completar el nivel es 80s";
                 if (tiempoEjercicio < 80)
                 {
                     panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 3";
@@ -376,10 +376,10 @@ public class Atencion : MonoBehaviour
         else
         {
             panelFin.SetActive(true);
-            textoPrincipal.GetComponent<Text>().text = "Ejercicio de atencion nivel 3 completado";
+            textoPrincipal.GetComponent<Text>().text = "Ejercicio de atención nivel 3 completado";
             panelFin.transform.GetChild(0).GetComponent<Text>().text = "tiempo";
             panelFin.transform.GetChild(1).GetComponent<Text>().text = tiempoEjercicio.ToString() + "s";
-            panelFin.transform.GetChild(2).GetComponent<Text>().text = "el tiempo minimo para completar el nivel es 200s";
+            panelFin.transform.GetChild(2).GetComponent<Text>().text = "el tiempo mínimo para completar el nivel es 200s";
             if (tiempoEjercicio < 300)
             {
                 panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel 4";
@@ -489,13 +489,13 @@ public class Atencion : MonoBehaviour
         else
         {
             panelFin.SetActive(true);
-            textoPrincipal.GetComponent<Text>().text = "Ejercicio de atencion nivel 4 completado";
+            textoPrincipal.GetComponent<Text>().text = "Ejercicio de atención nivel 4 completado";
             panelFin.transform.GetChild(0).GetComponent<Text>().text = "tiempo";
             panelFin.transform.GetChild(1).GetComponent<Text>().text = tiempoEjercicio.ToString() + "s";
-            panelFin.transform.GetChild(2).GetComponent<Text>().text = "el tiempo minimo para completar el nivel es 300s";
+            panelFin.transform.GetChild(2).GetComponent<Text>().text = "el tiempo mínimo para completar el nivel es 300s";
             if (tiempoEjercicio < 300)
             {
-                panelFin.transform.GetChild(3).GetComponent<Text>().text = "has completado todos los niveles de atencion";
+                panelFin.transform.GetChild(3).GetComponent<Text>().text = "has completado todos los niveles de atención";
                 managerEjercicios.GetComponent<ManagerEjercicios>().usuario.atencion(4);
                 GameObject managerUsuario = GameObject.FindWithTag("MUsu");
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();

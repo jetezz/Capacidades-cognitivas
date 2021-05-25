@@ -11,6 +11,7 @@ public class MenuPrincipal : MonoBehaviour
     public GameObject botonEstadisticas;
 
     public GameObject panelMensaje;
+    public GameObject informacion;
 
     public Sprite ejercicios;
     public Sprite ejercicios1;
@@ -84,5 +85,20 @@ public class MenuPrincipal : MonoBehaviour
         }
         
     }
+    public void abrirInformacion()
+    {
+        informacion.SetActive(true);
+        sonidos.GetComponent<Sonidos>().repSonido(5);
+
+    }
+
+    public void cerrarInformacion()
+    {
+        informacion.SetActive(false);
+        sonidos.GetComponent<Sonidos>().repSonido(5);
+
+
+    }
+
 
 }

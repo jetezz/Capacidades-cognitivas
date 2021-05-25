@@ -194,7 +194,7 @@ public class Gnoxias : MonoBehaviour
         panelFin.SetActive(true);
         textoPrincipal.GetComponent<Text>().text = nivel;
         panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-        panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son " + pMax;
+        panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos máximos son " + pMax;
         if (puntos == pMax)
         {
             panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel " + siguienteNnivel;
@@ -278,7 +278,7 @@ public class Gnoxias : MonoBehaviour
        
 
         panel1.SetActive(true);
-        textoPrincipal.GetComponent<Text>().text = "Selecciona el trozo que corresponde a la imágen";
+        textoPrincipal.GetComponent<Text>().text = "Selecciona el trozo que corresponde a la imagen";
         siguientePreguntaN1();
 
     }
@@ -431,7 +431,7 @@ public class Gnoxias : MonoBehaviour
 
         panel2.SetActive(true);
 
-        textoPrincipal.GetComponent<Text>().text = "Selecciona la imágen que corresponde a la silueta";
+        textoPrincipal.GetComponent<Text>().text = "Selecciona la imagen que corresponde a la silueta";
         siguientePreguntaN2();
 
 
@@ -753,7 +753,7 @@ public class Gnoxias : MonoBehaviour
 
         preguntasN4 = DesordenarLista<Pregunta4G>(preguntasN4);
         panel4.SetActive(true);
-        textoPrincipal.GetComponent<Text>().text = "Selecciona la casilla a la que corresponde esta imágen ";
+        textoPrincipal.GetComponent<Text>().text = "Selecciona la casilla a la que corresponde esta imagen ";
         siguientePreguntaN4();
     }
     void siguientePreguntaN4()

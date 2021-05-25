@@ -45,11 +45,11 @@ public class EsEstadiscitcas : MonoBehaviour
         }
         else if (num == 2)
         {
-            categoria = "Percepcion";
+            categoria = "Percepción";
         }
         else if (num == 3)
         {
-            categoria = "Atencion";
+            categoria = "Atención";
         }
         else if (num == 4)
         {
@@ -61,11 +61,11 @@ public class EsEstadiscitcas : MonoBehaviour
         }
         else if (num == 6)
         {
-            categoria = "Orientacion";
+            categoria = "Orientación";
         }
         else if (num == 7)
         {
-            categoria = "Calculo";
+            categoria = "Cálculo";
         }
         container.transform.GetChild(2).gameObject.SetActive(true);
         container.transform.GetChild(2).GetComponent<Text>().text = categoria;

@@ -161,7 +161,7 @@ public class Lenguaje : MonoBehaviour
         panelFin.SetActive(true);
         textoPrincipal.GetComponent<Text>().text = nivel;
         panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-        panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son " + pMax;
+        panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos máximos son " + pMax;
         if (puntos == pMax)
         {
             panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel " + siguienteNnivel;
@@ -226,7 +226,7 @@ public class Lenguaje : MonoBehaviour
         aux.Add(new Pregunta1("Pulsa en las zapatillas de estar por casa", 1, 3));
         aux.Add(new Pregunta1("Pulsa en las botas", 2, 3));
         aux.Add(new Pregunta1("Pulsa en las chanclas", 3, 3));
-        aux.Add(new Pregunta1("Pulsa en las deportiva", 4, 3));
+        aux.Add(new Pregunta1("Pulsa en las deportivas", 4, 3));
         preguntas1aux.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
         aux.Clear();
 
@@ -288,7 +288,7 @@ public class Lenguaje : MonoBehaviour
             }
             else
             {
-                final("Ejercicio de Lenguaje nivel1 completado", 20, 0, 2,false);
+                final("Ejercicio de Lenguaje nivel 1 completado", 20, 0, 2,false);
             }
         }
     }
@@ -418,7 +418,7 @@ public class Lenguaje : MonoBehaviour
         }
         else
         {
-                final("Ejercicio de Lenguaje nivel2 completado", 11, 4, 3,false);
+                final("Ejercicio de Lenguaje nivel 2 completado", 11, 4, 3,false);
 
         }
     }
@@ -517,11 +517,11 @@ public class Lenguaje : MonoBehaviour
         aux.Add(new Pregunta3("Dormitorio - Salón - Cocina - Despacho - Baño", 5));
         aux.Add(new Pregunta3("Paula - Ana - Josefa - Manuela - Rosa - Estefanía", 6));
         aux.Add(new Pregunta3("Paco - José - Mario - Manuel - Pedro", 7));
-        aux.Add(new Pregunta3("Tio - Prima - Abuela - Hijo - Sobrino - Nieto", 8));
+        aux.Add(new Pregunta3("Tío - Prima - Abuela - Hijo - Sobrino - Nieto", 8));
         preguntas3 = DesordenarLista<Pregunta3>(aux);
 
         idYPregun.Add(0, "Ciudades");
-        idYPregun.Add(1, "Países");
+        idYPregun.Add(1, "Paises");
         idYPregun.Add(2, "Meses");
         idYPregun.Add(3, "Utensilios de cocina");
         idYPregun.Add(4, "Muebles");
@@ -532,7 +532,7 @@ public class Lenguaje : MonoBehaviour
 
 
         panel3.SetActive(true);
-        textoPrincipal.GetComponent<Text>().text = "A qué grupo corresponden estas palabras";
+        textoPrincipal.GetComponent<Text>().text = "¿A qué grupo corresponden estas palabras?";
         siguientePreguntaN3();
 
     }
@@ -546,7 +546,7 @@ public class Lenguaje : MonoBehaviour
         }
         else
         {
-            final("Ejercicio de Lenguaje nivel3 completado", 9, 4, 4,false);
+            final("Ejercicio de Lenguaje nivel 3 completado", 9, 4, 4,false);
 
         }
     }
@@ -820,7 +820,7 @@ public class Lenguaje : MonoBehaviour
         }
         else
         {
-            final("Ejercicio de Lenguaje nivel4 completado", 15, 6, 4,true);
+            final("Ejercicio de Lenguaje nivel 4 completado", 15, 6, 4,true);
 
         }
     }

@@ -132,7 +132,7 @@ public class Praxia : MonoBehaviour
         panelFin.SetActive(true);
         textoPrincipal.GetComponent<Text>().text = nivel;
         panelFin.transform.GetChild(1).GetComponent<Text>().text = puntos.ToString();
-        panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos maximos son " + pMax;
+        panelFin.transform.GetChild(2).GetComponent<Text>().text = "Los puntos máximos son " + pMax;
         if (puntos == pMax)
         {
             panelFin.transform.GetChild(3).GetComponent<Text>().text = "Pasas al nivel " + siguienteNnivel;
@@ -205,7 +205,7 @@ public class Praxia : MonoBehaviour
         aux.Add(new Praxia1(7, "Poner la lavadora"));
         aux.Add(new Praxia1(8, "Peinarse el pelo"));
         aux.Add(new Praxia1(9, "Cocinar"));
-        aux.Add(new Praxia1(10, "Jugar al futbol"));
+        aux.Add(new Praxia1(10, "Jugar al fútbol"));
         aux.Add(new Praxia1(11, "Leer un libro"));
         aux.Add(new Praxia1(12, "Pasear al perro"));
         aux.Add(new Praxia1(13, "Cantar"));
@@ -467,14 +467,14 @@ public class Praxia : MonoBehaviour
         fase5.Add("Pitan el final del partido");
         fase5.Add("Celebran la victoria");
 
-        fase6.Add("Llegar a la peluqueria");
+        fase6.Add("Llegar a la peluquería");
         fase6.Add("Lavarse el pelo");
         fase6.Add("Cortarse el pelo");
         fase6.Add("Peinarse el pelo");
 
         fase7.Add("Quedo con mis amigos");
         fase7.Add("Compramos las entradas");
-        fase7.Add("Vemos la pelicula");
+        fase7.Add("Vemos la película");
         fase7.Add("Salimos del cine");
 
         fase8.Add("Sacamos la tarta");
@@ -579,7 +579,7 @@ public class Praxia : MonoBehaviour
         fase1.Add(new Praxia1(1, "Reservar una mesa"));
         fase1.Add(new Praxia1(2, "Ir al restaurante"));
         fase1.Add(new Praxia1(3, "Aguardar en la entrada del restaurante"));
-        fase1.Add(new Praxia1(4, "Leer el menu"));
+        fase1.Add(new Praxia1(4, "Leer el menú"));
         fase1.Add(new Praxia1(5, "Pedir los platos al camarero"));
 
         fase1 = DesordenarLista<Praxia1>(fase1);
@@ -587,11 +587,11 @@ public class Praxia : MonoBehaviour
 
 
         List<Praxia1> fase2 = new List<Praxia1>();
-        fase2.Add(new Praxia1(1, "Esperar al tren en el anden"));
-        fase2.Add(new Praxia1(2, "Subir al tren"));
+        fase2.Add(new Praxia1(1, "Esperar al trén en el andén"));
+        fase2.Add(new Praxia1(2, "Subir al trén"));
         fase2.Add(new Praxia1(0, "Comprar los billetes"));
-        fase2.Add(new Praxia1(5, "Salir de la estacion de trenes"));
-        fase2.Add(new Praxia1(4, "Bajar del tren"));
+        fase2.Add(new Praxia1(5, "Salir de la estación de trenes"));
+        fase2.Add(new Praxia1(4, "Bajar del trén"));
         fase2.Add(new Praxia1(3, "Buscar el asiento"));
 
         fase2 = DesordenarLista<Praxia1>(fase2);
@@ -627,7 +627,7 @@ public class Praxia : MonoBehaviour
         fase5.Add(new Praxia1(4, "Teder la ropa"));
         fase5.Add(new Praxia1(5, "Planchar la ropa"));
         fase5.Add(new Praxia1(2, "Seleccionar el programa de lavado"));
-        fase5.Add(new Praxia1(1, "Echar el jabon y el suavante"));
+        fase5.Add(new Praxia1(1, "Echar el jabón y el suavizante"));
 
         fase5 = DesordenarLista<Praxia1>(fase5);
         aux.Add(new Praxia4(fase5));
