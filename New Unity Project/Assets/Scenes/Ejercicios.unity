@@ -618,7 +618,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.4029, y: -198.4564}
+  m_AnchoredPosition: {x: -11, y: -251.58}
   m_SizeDelta: {x: 1464.1512, y: 541.8356}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &210952524
@@ -656,12 +656,12 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "1- Ejercicios espec\xEDficos con nivel autom\xE1tico. De esta forma puedes
     elegir que capacidades cognitivas quieres trabajar y el programa adapta el nivel
-    al usuario.\n\n2- Ejercicio y nivel espec\xEDfico. Aqu\xED decides tu tanto el
-    ejercicio que se quiere trabajar como el nivel de dificultad que quieres que
-    tenga.\n\n3- Ejercicios autom\xE1ticos. En este apartado la aplicaci\xF3n selecciona
-    las capacidades menos trabajadas y las adapta al nivel del usuario.\n\n4- Examen
-    MEC. Puedes volver a repetir el examen MEC para reajustar los niveles del usuario
-    o para ver la evoluci\xF3n.\n"
+    al usuario.\n\n2- Ejercicio y nivel espec\xEDfico. Aqu\xED puedes decidir tanto
+    el ejercicio qu\xE9 se quiere trabajar como el nivel de dificultad.\n\n3- Ejercicios
+    autom\xE1ticos. En este apartado la aplicaci\xF3n selecciona las capacidades
+    menos trabajadas y las adapta al nivel del usuario.\n\n4- Examen MEC. Puedes
+    volver a repetir el examen MEC para realizar una reevaluaci\xF3n, reajustar los
+    niveles del usuario o para ver la evoluci\xF3n.\n"
 --- !u!222 &210952525
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8494,8 +8494,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -25.5918, y: 218.7922}
-  m_SizeDelta: {x: 1536.05, y: 250.4831}
+  m_AnchoredPosition: {x: -27.5604, y: 202.0591}
+  m_SizeDelta: {x: 1532.113, y: 283.9493}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1976782159
 MonoBehaviour:
@@ -8531,9 +8531,10 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Para empezar con el entrenamiento de los usuarios es necesario realizar
-    un examen MEC. Este examen asigna los niveles iniciales del usuarios.\n\nDespu\xE9s
-    de realizar este examen puedes decidir como quieres realizar los ejercicios,
-    hay diferentes formas:\n"
+    el examen mec MEC (es una evaluaci\xF3n para valorar el nivel cognitivo de la
+    persona). Este examen asigna los niveles iniciales del usuarios.\n\nDespu\xE9s
+    de realizarlo puedes decidir como quieres llevar a cabo los ejercicios. Hay diferentes
+    formas:\n"
 --- !u!222 &1976782160
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -1474,7 +1474,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.212, y: -221}
+  m_AnchoredPosition: {x: -10, y: -250}
   m_SizeDelta: {x: 1317, y: 467.0287}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1130910649
@@ -2106,8 +2106,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -22.638, y: 182}
-  m_SizeDelta: {x: 1366.7, y: 245.51}
+  m_AnchoredPosition: {x: -20, y: 166.31}
+  m_SizeDelta: {x: 1380.4802, y: 393.1548}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1817003273
 MonoBehaviour:
@@ -2142,9 +2142,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Esta aplicaci\xF3n est\xE1 destinada a facilitar el seguimiento de las
-    capacidades cognitivas de los usuarios, especialmente personas mayores , ni\xF1os
-    peque\xF1os o con problemas.\n\nLa aplicaci\xF3n tiene dos partes:\n\t\n\t"
+  m_Text: "Esta aplicaci\xF3n est\xE1 destinada para trabajar, estimular, prevenir
+    y facilitar el seguimiento de las capacidades cognitivas de los usuarios, especialmente
+    personas mayores o con cualquier enfermedad que afecte y dificulte el funcionamiento
+    de dichas capacidades. Tambi\xE9n la pueden usarla tanto ni\xF1os como personas
+    para evitar y prevenir alteraciones cognitivas \n\nLa aplicaci\xF3n tiene dos
+    partes:\n\n\t\n\t"
 --- !u!222 &1817003274
 CanvasRenderer:
   m_ObjectHideFlags: 0

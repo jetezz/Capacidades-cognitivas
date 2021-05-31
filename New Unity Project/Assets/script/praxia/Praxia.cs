@@ -661,7 +661,7 @@ public class Praxia : MonoBehaviour
     {
         for(int i = 0; i < 6; i++)
         {
-            panel4.transform.GetChild(i).GetComponent<Text>().text = preguntas4[contador].preguntas[i].pregunta;
+            panel4.transform.GetChild(i+1).GetComponent<Text>().text = preguntas4[contador].preguntas[i].pregunta;
             slotsN4.transform.GetChild(i).GetComponent<SlotPraxia>().id= preguntas4[contador].preguntas[i].id;
             slotsN4.transform.GetChild(i).GetComponent<Image>().color = Color.grey;
             drags.transform.GetChild(i).GetComponent<Drag>().resetPosition();
