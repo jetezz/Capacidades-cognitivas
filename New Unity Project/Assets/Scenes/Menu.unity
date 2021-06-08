@@ -599,7 +599,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &316381431
 GameObject:
@@ -761,8 +761,556 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &562112635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 562112637}
+  - component: {fileID: 562112636}
+  - component: {fileID: 562112638}
+  - component: {fileID: 562112639}
+  - component: {fileID: 562112644}
+  - component: {fileID: 562112643}
+  - component: {fileID: 562112642}
+  - component: {fileID: 562112641}
+  - component: {fileID: 562112640}
+  m_Layer: 0
+  m_Name: audios
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &562112636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562112635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfefdeee569e8cd4d968a43e687cc199, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audiosMemoria: []
+  audioM1: {fileID: 8300000, guid: 6d641b752c9a4c14d8b9e9bf42862bd9, type: 3}
+  audioM2: {fileID: 8300000, guid: 911996e7918aa8140a83d2fce58163bd, type: 3}
+  audioM3: {fileID: 8300000, guid: 63aec5f471a960749997396f4f478b92, type: 3}
+  audioM4: {fileID: 8300000, guid: ac1acd460ffd34148ab496def54df032, type: 3}
+  audioM5: {fileID: 0}
+  audioM6: {fileID: 0}
+  audioM7: {fileID: 0}
+  audioM8: {fileID: 0}
+  audioM9: {fileID: 0}
+  audioM10: {fileID: 0}
+  audioM11: {fileID: 0}
+  audioM12: {fileID: 0}
+  audioM13: {fileID: 0}
+  audioM14: {fileID: 0}
+  audioM15: {fileID: 0}
+  audioM16: {fileID: 0}
+  audioM17: {fileID: 0}
+  audioM18: {fileID: 0}
+  audioM19: {fileID: 0}
+  audioM20: {fileID: 0}
+  audioM21: {fileID: 0}
+  audioM22: {fileID: 0}
+  audioM23: {fileID: 0}
+  audioM24: {fileID: 0}
+  audioM25: {fileID: 0}
+  audioM26: {fileID: 0}
+  audioM27: {fileID: 0}
+  audioM28: {fileID: 0}
+  audioM29: {fileID: 0}
+  audioM30: {fileID: 0}
+  audioM31: {fileID: 0}
+  audioM32: {fileID: 0}
+  audioM33: {fileID: 0}
+  audioM34: {fileID: 0}
+  audioM35: {fileID: 0}
+  audioM36: {fileID: 0}
+  audioM37: {fileID: 0}
+  audioM38: {fileID: 0}
+  audioM39: {fileID: 0}
+  audioM40: {fileID: 0}
+  audioM41: {fileID: 0}
+  audioM42: {fileID: 0}
+  audioM43: {fileID: 0}
+  audioM44: {fileID: 0}
+  audioM45: {fileID: 0}
+  audioM46: {fileID: 0}
+  audioM47: {fileID: 0}
+  audioM48: {fileID: 0}
+  audioM49: {fileID: 0}
+  audioM50: {fileID: 0}
+--- !u!4 &562112637
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562112635}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 863.237, y: 531.9817, z: -145.134}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &562112638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562112635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e2958e07559324ebbf8f271152cdbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audiosLenguaje: []
+  audioL1: {fileID: 8300000, guid: b3a0e5efa97b1154dbadbdae8dd2f0b0, type: 3}
+  audioL2: {fileID: 0}
+  audioL3: {fileID: 0}
+  audioL4: {fileID: 0}
+  audioL5: {fileID: 0}
+  audioL6: {fileID: 0}
+  audioL7: {fileID: 0}
+  audioL8: {fileID: 0}
+  audioL9: {fileID: 0}
+  audioL10: {fileID: 0}
+  audioL11: {fileID: 0}
+  audioL12: {fileID: 0}
+  audioL13: {fileID: 0}
+  audioL14: {fileID: 0}
+  audioL15: {fileID: 0}
+  audioL16: {fileID: 0}
+  audioL17: {fileID: 0}
+  audioL18: {fileID: 0}
+  audioL19: {fileID: 0}
+  audioL20: {fileID: 0}
+  audioL21: {fileID: 0}
+  audioL22: {fileID: 0}
+  audioL23: {fileID: 0}
+  audioL24: {fileID: 0}
+  audioL25: {fileID: 0}
+  audioL26: {fileID: 0}
+  audioL27: {fileID: 0}
+  audioL28: {fileID: 0}
+  audioL29: {fileID: 0}
+  audioL30: {fileID: 0}
+  audioL31: {fileID: 0}
+  audioL32: {fileID: 0}
+  audioL33: {fileID: 0}
+  audioL34: {fileID: 0}
+  audioL35: {fileID: 0}
+  audioL36: {fileID: 0}
+  audioL37: {fileID: 0}
+  audioL38: {fileID: 0}
+  audioL39: {fileID: 0}
+  audioL40: {fileID: 0}
+  audioL41: {fileID: 0}
+  audioL42: {fileID: 0}
+  audioL43: {fileID: 0}
+  audioL44: {fileID: 0}
+  audioL45: {fileID: 0}
+  audioL46: {fileID: 0}
+  audioL47: {fileID: 0}
+  audioL48: {fileID: 0}
+  audioL49: {fileID: 0}
+  audioL50: {fileID: 0}
+--- !u!114 &562112639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562112635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0859838367ff1746ad5b8e89ba1391f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audiosPercepcion: []
+  audioP0: {fileID: 8300000, guid: 69ea00917d5d1f44b90b70e899b35cbd, type: 3}
+  audioP1: {fileID: 0}
+  audioP2: {fileID: 0}
+  audioP3: {fileID: 0}
+  audioP4: {fileID: 0}
+  audioP5: {fileID: 0}
+  audioP6: {fileID: 0}
+  audioP7: {fileID: 0}
+  audioP8: {fileID: 0}
+  audioP9: {fileID: 0}
+  audioP10: {fileID: 0}
+  audioP11: {fileID: 0}
+  audioP12: {fileID: 0}
+  audioP13: {fileID: 0}
+  audioP14: {fileID: 0}
+  audioP15: {fileID: 0}
+  audioP16: {fileID: 0}
+  audioP17: {fileID: 0}
+  audioP18: {fileID: 0}
+  audioP19: {fileID: 0}
+  audioP20: {fileID: 0}
+  audioP21: {fileID: 0}
+  audioP22: {fileID: 0}
+  audioP23: {fileID: 0}
+  audioP24: {fileID: 0}
+  audioP25: {fileID: 0}
+  audioP26: {fileID: 0}
+  audioP27: {fileID: 0}
+  audioP28: {fileID: 0}
+  audioP29: {fileID: 0}
+  audioP30: {fileID: 0}
+  audioP31: {fileID: 0}
+  audioP32: {fileID: 0}
+  audioP33: {fileID: 0}
+  audioP34: {fileID: 0}
+  audioP35: {fileID: 0}
+  audioP36: {fileID: 0}
+  audioP37: {fileID: 0}
+  audioP38: {fileID: 0}
+  audioP39: {fileID: 0}
+  audioP40: {fileID: 0}
+  audioP41: {fileID: 0}
+  audioP42: {fileID: 0}
+  audioP43: {fileID: 0}
+  audioP44: {fileID: 0}
+  audioP45: {fileID: 0}
+  audioP46: {fileID: 0}
+  audioP47: {fileID: 0}
+  audioP48: {fileID: 0}
+  audioP49: {fileID: 0}
+  audioP50: {fileID: 0}
+--- !u!114 &562112640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562112635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 808cc99afdaa5004c87062ea1e2980a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audiosCalculo: []
+  audioC0: {fileID: 8300000, guid: eb65b31267f0fd74fad1757f015c0c48, type: 3}
+  audioC1: {fileID: 0}
+  audioC2: {fileID: 0}
+  audioC3: {fileID: 0}
+  audioC4: {fileID: 0}
+  audioC5: {fileID: 0}
+  audioC6: {fileID: 0}
+  audioC7: {fileID: 0}
+  audioC8: {fileID: 0}
+  audioC9: {fileID: 0}
+  audioC10: {fileID: 0}
+  audioC11: {fileID: 0}
+  audioC12: {fileID: 0}
+  audioC13: {fileID: 0}
+  audioC14: {fileID: 0}
+  audioC15: {fileID: 0}
+  audioC16: {fileID: 0}
+  audioC17: {fileID: 0}
+  audioC18: {fileID: 0}
+  audioC19: {fileID: 0}
+  audioC20: {fileID: 0}
+  audioC21: {fileID: 0}
+  audioC22: {fileID: 0}
+  audioC23: {fileID: 0}
+  audioC24: {fileID: 0}
+  audioC25: {fileID: 0}
+  audioC26: {fileID: 0}
+  audioC27: {fileID: 0}
+  audioC28: {fileID: 0}
+  audioC29: {fileID: 0}
+  audioC30: {fileID: 0}
+  audioC31: {fileID: 0}
+  audioC32: {fileID: 0}
+  audioC33: {fileID: 0}
+  audioC34: {fileID: 0}
+  audioC35: {fileID: 0}
+  audioC36: {fileID: 0}
+  audioC37: {fileID: 0}
+  audioC38: {fileID: 0}
+  audioC39: {fileID: 0}
+  audioC40: {fileID: 0}
+  audioC41: {fileID: 0}
+  audioC42: {fileID: 0}
+  audioC43: {fileID: 0}
+  audioC44: {fileID: 0}
+  audioC45: {fileID: 0}
+  audioC46: {fileID: 0}
+  audioC47: {fileID: 0}
+  audioC48: {fileID: 0}
+  audioC49: {fileID: 0}
+  audioC50: {fileID: 0}
+--- !u!114 &562112641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562112635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95217fd090e94ed419b81bd5936eeb45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audiosOrientacion: []
+  audioO0: {fileID: 8300000, guid: 37f3a281e13048e4e87f5bd00c8ec066, type: 3}
+  audioO1: {fileID: 0}
+  audioO2: {fileID: 0}
+  audioO3: {fileID: 0}
+  audioO4: {fileID: 0}
+  audioO5: {fileID: 0}
+  audioO6: {fileID: 0}
+  audioO7: {fileID: 0}
+  audioO8: {fileID: 0}
+  audioO9: {fileID: 0}
+  audioO10: {fileID: 0}
+  audioO11: {fileID: 0}
+  audioO12: {fileID: 0}
+  audioO13: {fileID: 0}
+  audioO14: {fileID: 0}
+  audioO15: {fileID: 0}
+  audioO16: {fileID: 0}
+  audioO17: {fileID: 0}
+  audioO18: {fileID: 0}
+  audioO19: {fileID: 0}
+  audioO20: {fileID: 0}
+  audioO21: {fileID: 0}
+  audioO22: {fileID: 0}
+  audioO23: {fileID: 0}
+  audioO24: {fileID: 0}
+  audioO25: {fileID: 0}
+  audioO26: {fileID: 0}
+  audioO27: {fileID: 0}
+  audioO28: {fileID: 0}
+  audioO29: {fileID: 0}
+  audioO30: {fileID: 0}
+  audioO31: {fileID: 0}
+  audioO32: {fileID: 0}
+  audioO33: {fileID: 0}
+  audioO34: {fileID: 0}
+  audioO35: {fileID: 0}
+  audioO36: {fileID: 0}
+  audioO37: {fileID: 0}
+  audioO38: {fileID: 0}
+  audioO39: {fileID: 0}
+  audioO40: {fileID: 0}
+  audioO41: {fileID: 0}
+  audioO42: {fileID: 0}
+  audioO43: {fileID: 0}
+  audioO44: {fileID: 0}
+  audioO45: {fileID: 0}
+  audioO46: {fileID: 0}
+  audioO47: {fileID: 0}
+  audioO48: {fileID: 0}
+  audioO49: {fileID: 0}
+  audioO50: {fileID: 0}
+--- !u!114 &562112642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562112635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28abc7a1a779cfd489ccf26a08c109cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audiosPraxia: []
+  audioP0: {fileID: 8300000, guid: 4a62885cfd6fc9c449eedc70c51e9ab7, type: 3}
+  audioP1: {fileID: 0}
+  audioP2: {fileID: 0}
+  audioP3: {fileID: 0}
+  audioP4: {fileID: 0}
+  audioP5: {fileID: 0}
+  audioP6: {fileID: 0}
+  audioP7: {fileID: 0}
+  audioP8: {fileID: 0}
+  audioP9: {fileID: 0}
+  audioP10: {fileID: 0}
+  audioP11: {fileID: 0}
+  audioP12: {fileID: 0}
+  audioP13: {fileID: 0}
+  audioP14: {fileID: 0}
+  audioP15: {fileID: 0}
+  audioP16: {fileID: 0}
+  audioP17: {fileID: 0}
+  audioP18: {fileID: 0}
+  audioP19: {fileID: 0}
+  audioP20: {fileID: 0}
+  audioP21: {fileID: 0}
+  audioP22: {fileID: 0}
+  audioP23: {fileID: 0}
+  audioP24: {fileID: 0}
+  audioP25: {fileID: 0}
+  audioP26: {fileID: 0}
+  audioP27: {fileID: 0}
+  audioP28: {fileID: 0}
+  audioP29: {fileID: 0}
+  audioP30: {fileID: 0}
+  audioP31: {fileID: 0}
+  audioP32: {fileID: 0}
+  audioP33: {fileID: 0}
+  audioP34: {fileID: 0}
+  audioP35: {fileID: 0}
+  audioP36: {fileID: 0}
+  audioP37: {fileID: 0}
+  audioP38: {fileID: 0}
+  audioP39: {fileID: 0}
+  audioP40: {fileID: 0}
+  audioP41: {fileID: 0}
+  audioP42: {fileID: 0}
+  audioP43: {fileID: 0}
+  audioP44: {fileID: 0}
+  audioP45: {fileID: 0}
+  audioP46: {fileID: 0}
+  audioP47: {fileID: 0}
+  audioP48: {fileID: 0}
+  audioP49: {fileID: 0}
+  audioP50: {fileID: 0}
+--- !u!114 &562112643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562112635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d3f5770fa786c48959e50f564aa892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audiosgnosias: []
+  audioG0: {fileID: 8300000, guid: eaab3744bddfa104f99e1c31f10903fc, type: 3}
+  audioG1: {fileID: 0}
+  audioG2: {fileID: 0}
+  audioG3: {fileID: 0}
+  audioG4: {fileID: 0}
+  audioG5: {fileID: 0}
+  audioG6: {fileID: 0}
+  audioG7: {fileID: 0}
+  audioG8: {fileID: 0}
+  audioG9: {fileID: 0}
+  audioG10: {fileID: 0}
+  audioG11: {fileID: 0}
+  audioG12: {fileID: 0}
+  audioG13: {fileID: 0}
+  audioG14: {fileID: 0}
+  audioG15: {fileID: 0}
+  audioG16: {fileID: 0}
+  audioG17: {fileID: 0}
+  audioG18: {fileID: 0}
+  audioG19: {fileID: 0}
+  audioG20: {fileID: 0}
+  audioG21: {fileID: 0}
+  audioG22: {fileID: 0}
+  audioG23: {fileID: 0}
+  audioG24: {fileID: 0}
+  audioG25: {fileID: 0}
+  audioG26: {fileID: 0}
+  audioG27: {fileID: 0}
+  audioG28: {fileID: 0}
+  audioG29: {fileID: 0}
+  audioG30: {fileID: 0}
+  audioG31: {fileID: 0}
+  audioG32: {fileID: 0}
+  audioG33: {fileID: 0}
+  audioG34: {fileID: 0}
+  audioG35: {fileID: 0}
+  audioG36: {fileID: 0}
+  audioG37: {fileID: 0}
+  audioG38: {fileID: 0}
+  audioG39: {fileID: 0}
+  audioG40: {fileID: 0}
+  audioG41: {fileID: 0}
+  audioG42: {fileID: 0}
+  audioG43: {fileID: 0}
+  audioG44: {fileID: 0}
+  audioG45: {fileID: 0}
+  audioG46: {fileID: 0}
+  audioG47: {fileID: 0}
+  audioG48: {fileID: 0}
+  audioG49: {fileID: 0}
+  audioG50: {fileID: 0}
+--- !u!114 &562112644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562112635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38d19bee5e6fe25449bcc54795eedc0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audiosAtencion: []
+  audioA0: {fileID: 8300000, guid: 79310fc59cb59a24e868213b7460649f, type: 3}
+  audioA1: {fileID: 0}
+  audioA2: {fileID: 0}
+  audioA3: {fileID: 0}
+  audioA4: {fileID: 0}
+  audioA5: {fileID: 0}
+  audioA6: {fileID: 0}
+  audioA7: {fileID: 0}
+  audioA8: {fileID: 0}
+  audioA9: {fileID: 0}
+  audioA10: {fileID: 0}
+  audioA11: {fileID: 0}
+  audioA12: {fileID: 0}
+  audioA13: {fileID: 0}
+  audioA14: {fileID: 0}
+  audioA15: {fileID: 0}
+  audioA16: {fileID: 0}
+  audioA17: {fileID: 0}
+  audioA18: {fileID: 0}
+  audioA19: {fileID: 0}
+  audioA20: {fileID: 0}
+  audioA21: {fileID: 0}
+  audioA22: {fileID: 0}
+  audioA23: {fileID: 0}
+  audioA24: {fileID: 0}
+  audioA25: {fileID: 0}
+  audioA26: {fileID: 0}
+  audioA27: {fileID: 0}
+  audioA28: {fileID: 0}
+  audioA29: {fileID: 0}
+  audioA30: {fileID: 0}
+  audioA31: {fileID: 0}
+  audioA32: {fileID: 0}
+  audioA33: {fileID: 0}
+  audioA34: {fileID: 0}
+  audioA35: {fileID: 0}
+  audioA36: {fileID: 0}
+  audioA37: {fileID: 0}
+  audioA38: {fileID: 0}
+  audioA39: {fileID: 0}
+  audioA40: {fileID: 0}
+  audioA41: {fileID: 0}
+  audioA42: {fileID: 0}
+  audioA43: {fileID: 0}
+  audioA44: {fileID: 0}
+  audioA45: {fileID: 0}
+  audioA46: {fileID: 0}
+  audioA47: {fileID: 0}
+  audioA48: {fileID: 0}
+  audioA49: {fileID: 0}
+  audioA50: {fileID: 0}
 --- !u!1 &577908368
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,7 +1388,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.8586426, y: 6.39563}
+  m_AnchoredPosition: {x: 4.8583984, y: 6.395508}
   m_SizeDelta: {x: -53.278, y: -42.3293}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &596252893
@@ -1801,7 +2349,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1554988638
 GameObject:
@@ -2145,9 +2693,8 @@ MonoBehaviour:
   m_Text: "Esta aplicaci\xF3n est\xE1 destinada para trabajar, estimular, prevenir
     y facilitar el seguimiento de las capacidades cognitivas de los usuarios, especialmente
     personas mayores o con cualquier enfermedad que afecte y dificulte el funcionamiento
-    de dichas capacidades. Tambi\xE9n la pueden usarla tanto ni\xF1os como personas
-    para evitar y prevenir alteraciones cognitivas \n\nLa aplicaci\xF3n tiene dos
-    partes:\n\n\t\n\t"
+    de dichas capacidades. Tambi\xE9n pueden usarla tanto ni\xF1os como adultos para
+    evitar y prevenir alteraciones cognitivas \n\nLa aplicaci\xF3n tiene dos partes:\n\n\t\n\t"
 --- !u!222 &1817003274
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2318,9 +2865,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: menu, Assembly-CSharp
-        m_MethodName: salir
+      - m_Target: {fileID: 225442759}
+        m_TargetAssemblyTypeName: MenuPrincipal, Assembly-CSharp
+        m_MethodName: cerrarAplicacion
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2466,7 +3013,7 @@ RectTransform:
   - {fileID: 970593700}
   - {fileID: 596252892}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2571,6 +3118,10 @@ PrefabInstance:
       propertyPath: money
       value: 
       objectReference: {fileID: 8300000, guid: 641897284280a8749acd4afb55e3e5ac, type: 3}
+    - target: {fileID: 657915053893931520, guid: db7df5df3e357c14289c9289dfcf3365, type: 3}
+      propertyPath: audios
+      value: 
+      objectReference: {fileID: 562112635}
     - target: {fileID: 657915053893931521, guid: db7df5df3e357c14289c9289dfcf3365, type: 3}
       propertyPath: m_RootOrder
       value: 2

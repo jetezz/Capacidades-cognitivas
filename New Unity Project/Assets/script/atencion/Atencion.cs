@@ -155,6 +155,7 @@ public class Atencion : MonoBehaviour
 
 
         panel1.SetActive(true);
+        sonidos.GetComponent<Sonidos>().repAudio(3,0);
         textoPrincipal.GetComponent<Text>().text = "Selecciona las imágenes que son iguales al ejemplo";
         siguientePreguntaN1();
     }
@@ -170,7 +171,7 @@ public class Atencion : MonoBehaviour
         }
         else
         {
-            final("Ejercicio de Atención nivel1 completado", 36, 15, 2,false);
+            final("Ejercicio de Atención nivel 1 completado", 36, 15, 2,false);
         }
     }
 
@@ -248,6 +249,7 @@ public class Atencion : MonoBehaviour
         repeticiones = 3;
 
         panel2.SetActive(true);
+        sonidos.GetComponent<Sonidos>().repAudio(3, 1);
         textoPrincipal.GetComponent<Text>().text = "Selecciona todos los números de menor a mayor";
         siguientePreguntaN2();
     }
@@ -361,7 +363,7 @@ public class Atencion : MonoBehaviour
 
         preguntas3.Add(Random.Range(30, 36));
 
-
+        sonidos.GetComponent<Sonidos>().repAudio(3, 2);
         textoPrincipal.GetComponent<Text>().text = "Introduce el número que falta 0-35";
         tiempoEjercicio = 0;
         panel3.SetActive(true);
@@ -470,10 +472,10 @@ public class Atencion : MonoBehaviour
           
         }        
              
-        preguntas4.Add(new Pregunta4A(aux));     
-      
+        preguntas4.Add(new Pregunta4A(aux));
 
 
+        sonidos.GetComponent<Sonidos>().repAudio(3, 3);
         textoPrincipal.GetComponent<Text>().text = "Introduce el número que falta 0-48";
         tiempoEjercicio = 0;
         panel4.SetActive(true);

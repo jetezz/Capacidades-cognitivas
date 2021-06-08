@@ -195,22 +195,22 @@ public class Praxia : MonoBehaviour
      
 
     preguntas1 = new List<Praxia1>();
-        aux.Add(new Praxia1(0, "Desayunar"));
-        aux.Add(new Praxia1(1, "Comprar en el supermercado"));
-        aux.Add(new Praxia1(2, "Salir a correr"));
-        aux.Add(new Praxia1(3, "Dormir"));
-        aux.Add(new Praxia1(4, "Ducharse"));
-        aux.Add(new Praxia1(5, "Fregar los platos"));
-        aux.Add(new Praxia1(6, "Lavarse los dientes"));
-        aux.Add(new Praxia1(7, "Poner la lavadora"));
-        aux.Add(new Praxia1(8, "Peinarse el pelo"));
-        aux.Add(new Praxia1(9, "Cocinar"));
-        aux.Add(new Praxia1(10, "Jugar al fútbol"));
-        aux.Add(new Praxia1(11, "Leer un libro"));
-        aux.Add(new Praxia1(12, "Pasear al perro"));
-        aux.Add(new Praxia1(13, "Cantar"));
-        aux.Add(new Praxia1(14, "Bailar"));
-        aux.Add(new Praxia1(15, "Conducir"));
+        aux.Add(new Praxia1(0, "Desayunar",0));
+        aux.Add(new Praxia1(1, "Comprar en el supermercado",1));
+        aux.Add(new Praxia1(2, "Salir a correr",2));
+        aux.Add(new Praxia1(3, "Dormir",3));
+        aux.Add(new Praxia1(4, "Ducharse",4));
+        aux.Add(new Praxia1(5, "Fregar los platos",5));
+        aux.Add(new Praxia1(6, "Lavarse los dientes",6));
+        aux.Add(new Praxia1(7, "Poner la lavadora",7));
+        aux.Add(new Praxia1(8, "Peinarse el pelo",8));
+        aux.Add(new Praxia1(9, "Cocinar",9));
+        aux.Add(new Praxia1(10, "Jugar al fútbol",10));
+        aux.Add(new Praxia1(11, "Leer un libro",11));
+        aux.Add(new Praxia1(12, "Pasear al perro",12));
+        aux.Add(new Praxia1(13, "Cantar",13));
+        aux.Add(new Praxia1(14, "Bailar",14));
+        aux.Add(new Praxia1(15, "Conducir",15));
         
 
         aux = DesordenarLista<Praxia1>(aux);
@@ -228,6 +228,7 @@ public class Praxia : MonoBehaviour
     {
         if (contador < preguntas1.Count)
         {
+            sonidos.GetComponent<Sonidos>().repAudio(5, preguntas1[contador].audio);
             textoPrincipal.GetComponent<Text>().text = preguntas1[contador].pregunta;
             generarBotones1();
         }
@@ -342,7 +343,7 @@ public class Praxia : MonoBehaviour
         {
             preguntas2.Add(aux[i]);
         }
-
+        sonidos.GetComponent<Sonidos>().repAudio(5, 16);
         textoPrincipal.GetComponent<Text>().text = "Pulsa la acción relacionada con la imagen";
         preguntas2 = DesordenarLista<Praxia2>(preguntas2);
      
@@ -432,6 +433,7 @@ public class Praxia : MonoBehaviour
 
     void nivel3()
     {
+        sonidos.GetComponent<Sonidos>().repAudio(5, 17);
         textoPrincipal.GetComponent<Text>().text = "Pulsa las secuencia de la primera a la última";
         List<string> fase1 = new List<string>();
         List<string> fase2 = new List<string>();
@@ -524,7 +526,7 @@ public class Praxia : MonoBehaviour
         List<Praxia1> aux = new List<Praxia1>();
         for(int i = 0; i < preguntas3[contador].preguntas.Count; i++)
         {
-            aux.Add(new Praxia1(i, preguntas3[contador].preguntas[i]));
+            aux.Add(new Praxia1(i, preguntas3[contador].preguntas[i],-1));
         }
         aux = DesordenarLista<Praxia1>(aux);
         for(int i = 0; i < 4; i++)
@@ -562,7 +564,7 @@ public class Praxia : MonoBehaviour
     }
     void nivel4()
     {
-        
+        sonidos.GetComponent<Sonidos>().repAudio(5, 18);
         textoPrincipal.GetComponent<Text>().text = "Indica el orden de las secuencias";
         for (int i = 0; i < 6; i++)
         {
@@ -575,59 +577,59 @@ public class Praxia : MonoBehaviour
         List<Praxia4> aux = new List<Praxia4>();
 
         List < Praxia1 > fase1= new List<Praxia1>();
-        fase1.Add(new Praxia1(0, "Llamar a un restaurante"));
-        fase1.Add(new Praxia1(1, "Reservar una mesa"));
-        fase1.Add(new Praxia1(2, "Ir al restaurante"));
-        fase1.Add(new Praxia1(3, "Aguardar en la entrada del restaurante"));
-        fase1.Add(new Praxia1(4, "Leer el menú"));
-        fase1.Add(new Praxia1(5, "Pedir los platos al camarero"));
+        fase1.Add(new Praxia1(0, "Llamar a un restaurante",-1));
+        fase1.Add(new Praxia1(1, "Reservar una mesa",-1));
+        fase1.Add(new Praxia1(2, "Ir al restaurante",-1));
+        fase1.Add(new Praxia1(3, "Aguardar en la entrada del restaurante",-1));
+        fase1.Add(new Praxia1(4, "Leer el menú", -1));
+        fase1.Add(new Praxia1(5, "Pedir los platos al camarero", -1));
 
         fase1 = DesordenarLista<Praxia1>(fase1);
         aux.Add(new Praxia4(fase1));
 
 
         List<Praxia1> fase2 = new List<Praxia1>();
-        fase2.Add(new Praxia1(1, "Esperar al trén en el andén"));
-        fase2.Add(new Praxia1(2, "Subir al trén"));
-        fase2.Add(new Praxia1(0, "Comprar los billetes"));
-        fase2.Add(new Praxia1(5, "Salir de la estación de trenes"));
-        fase2.Add(new Praxia1(4, "Bajar del trén"));
-        fase2.Add(new Praxia1(3, "Buscar el asiento"));
+        fase2.Add(new Praxia1(1, "Esperar al trén en el andén", -1));
+        fase2.Add(new Praxia1(2, "Subir al trén", -1));
+        fase2.Add(new Praxia1(0, "Comprar los billetes", -1));
+        fase2.Add(new Praxia1(5, "Salir de la estación de trenes", -1));
+        fase2.Add(new Praxia1(4, "Bajar del trén", -1));
+        fase2.Add(new Praxia1(3, "Buscar el asiento", -1));
 
         fase2 = DesordenarLista<Praxia1>(fase2);
         aux.Add(new Praxia4(fase2));
 
         List<Praxia1> fase3 = new List<Praxia1>();
-        fase3.Add(new Praxia1(3, "Comer"));
-        fase3.Add(new Praxia1(1, "Cocinar la comida"));
-        fase3.Add(new Praxia1(2, "Poner la mesa"));
-        fase3.Add(new Praxia1(4, "Tirar los restos de comida"));
-        fase3.Add(new Praxia1(0, "Pensar la comida"));
-        fase3.Add(new Praxia1(5, "Lavar los platos"));
+        fase3.Add(new Praxia1(3, "Comer", -1));
+        fase3.Add(new Praxia1(1, "Cocinar la comida", -1));
+        fase3.Add(new Praxia1(2, "Poner la mesa", -1));
+        fase3.Add(new Praxia1(4, "Tirar los restos de comida", -1));
+        fase3.Add(new Praxia1(0, "Pensar la comida", -1));
+        fase3.Add(new Praxia1(5, "Lavar los platos", -1));
 
         fase3 = DesordenarLista<Praxia1>(fase3);
         aux.Add(new Praxia4(fase3));
 
 
         List<Praxia1> fase4 = new List<Praxia1>();
-        fase4.Add(new Praxia1(1, "Salgo de casa"));
-        fase4.Add(new Praxia1(4, "Meto la compra en la bolsa"));
-        fase4.Add(new Praxia1(5, "Coloco la compra en su sitio"));
-        fase4.Add(new Praxia1(3, "Paso por caja y pago"));
-        fase4.Add(new Praxia1(2, "Cojo un carro"));
-        fase4.Add(new Praxia1(0, "Elaboro una lista de la compra"));
+        fase4.Add(new Praxia1(1, "Salgo de casa", -1));
+        fase4.Add(new Praxia1(4, "Meto la compra en la bolsa", -1));
+        fase4.Add(new Praxia1(5, "Coloco la compra en su sitio", -1));
+        fase4.Add(new Praxia1(3, "Paso por caja y pago", -1));
+        fase4.Add(new Praxia1(2, "Cojo un carro", -1));
+        fase4.Add(new Praxia1(0, "Elaboro una lista de la compra", -1));
 
         fase4 = DesordenarLista<Praxia1>(fase4);
         aux.Add(new Praxia4(fase4));
 
 
         List<Praxia1> fase5 = new List<Praxia1>();
-        fase5.Add(new Praxia1(0, "Meter la ropa en la lavadora"));
-        fase5.Add(new Praxia1(3, "Esperar a que termina el lavado"));
-        fase5.Add(new Praxia1(4, "Teder la ropa"));
-        fase5.Add(new Praxia1(5, "Planchar la ropa"));
-        fase5.Add(new Praxia1(2, "Seleccionar el programa de lavado"));
-        fase5.Add(new Praxia1(1, "Echar el jabón y el suavizante"));
+        fase5.Add(new Praxia1(0, "Meter la ropa en la lavadora", -1));
+        fase5.Add(new Praxia1(3, "Esperar a que termina el lavado", -1));
+        fase5.Add(new Praxia1(4, "Teder la ropa", -1));
+        fase5.Add(new Praxia1(5, "Planchar la ropa", -1));
+        fase5.Add(new Praxia1(2, "Seleccionar el programa de lavado", -1));
+        fase5.Add(new Praxia1(1, "Echar el jabón y el suavizante", -1));
 
         fase5 = DesordenarLista<Praxia1>(fase5);
         aux.Add(new Praxia4(fase5));
@@ -733,13 +735,15 @@ public class Praxia : MonoBehaviour
 
 class Praxia1
 {
-    public Praxia1(int i,string pre)
+    public Praxia1(int i,string pre,int au)
     {
         id=i;
         pregunta = pre;
+        audio = au;
     }
     public int id;
     public string pregunta;
+    public int audio;
    
 }
 

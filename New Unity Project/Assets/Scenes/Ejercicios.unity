@@ -655,13 +655,13 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "1- Ejercicios espec\xEDficos con nivel autom\xE1tico. De esta forma puedes
-    elegir que capacidades cognitivas quieres trabajar y el programa adapta el nivel
-    al usuario.\n\n2- Ejercicio y nivel espec\xEDfico. Aqu\xED puedes decidir tanto
-    el ejercicio qu\xE9 se quiere trabajar como el nivel de dificultad.\n\n3- Ejercicios
-    autom\xE1ticos. En este apartado la aplicaci\xF3n selecciona las capacidades
-    menos trabajadas y las adapta al nivel del usuario.\n\n4- Examen MEC. Puedes
-    volver a repetir el examen MEC para realizar una reevaluaci\xF3n, reajustar los
-    niveles del usuario o para ver la evoluci\xF3n.\n"
+    elegir qu\xE9 capacidades cognitivas quieres trabajar y el programa adapta el
+    nivel al usuario.\n\n2- Ejercicio y nivel espec\xEDfico. Aqu\xED puedes decidir
+    tanto el ejercicio que se quiere trabajar como el nivel de dificultad.\n\n3-
+    Ejercicios autom\xE1ticos. En este apartado, la aplicaci\xF3n selecciona las
+    capacidades menos trabajadas y las adapta al nivel del usuario.\n\n4- Examen
+    MEC. Puedes volver a repetir el examen MEC para realizar una reevaluaci\xF3n,
+    reajustar los niveles del usuario o para ver la evoluci\xF3n.\n"
 --- !u!222 &210952525
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8531,10 +8531,9 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Para empezar con el entrenamiento de los usuarios es necesario realizar
-    el examen mec MEC (es una evaluaci\xF3n para valorar el nivel cognitivo de la
-    persona). Este examen asigna los niveles iniciales del usuarios.\n\nDespu\xE9s
-    de realizarlo puedes decidir como quieres llevar a cabo los ejercicios. Hay diferentes
-    formas:\n"
+    el examen MEC (es una evaluaci\xF3n para valorar el nivel cognitivo de la persona).
+    Este examen asigna los niveles iniciales del usuarios.\n\nDespu\xE9s de realizarlo
+    puedes decidir c\xF3mo quieres llevar a cabo los ejercicios. Hay diferentes formas:\n"
 --- !u!222 &1976782160
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8898,8 +8897,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 643.7855, y: -360.6263}
-  m_SizeDelta: {x: 360.4388, y: 126.406}
+  m_AnchoredPosition: {x: 628, y: -365}
+  m_SizeDelta: {x: 405.0593, y: 158.8572}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2072624793
 MonoBehaviour:
@@ -8970,7 +8969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9642607, g: 1, b: 0.4198113, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

@@ -201,47 +201,47 @@ public class Memoria : MonoBehaviour
         List<MemoriaN1> pregRandom = new List<MemoriaN1>();
 
 
-        aux.Add(new PreguntasN1("¿Dónde está la bañera?",0));
-        aux.Add(new PreguntasN1("¿Dónde está el lavabo?",1));
-        aux.Add(new PreguntasN1("¿Dónde está el espejo?",2));
-        aux.Add(new PreguntasN1("¿Dónde está la lavadora?",3));
-        aux.Add(new PreguntasN1("¿Dónde está el calentador?",4));
-        aux.Add(new PreguntasN1("¿Dónde está el váter?",5));
+        aux.Add(new PreguntasN1("¿Dónde está la bañera?",0,0));
+        aux.Add(new PreguntasN1("¿Dónde está el lavabo?",1,1));
+        aux.Add(new PreguntasN1("¿Dónde está el espejo?",2,2));
+        aux.Add(new PreguntasN1("¿Dónde está la lavadora?",3,3));
+        aux.Add(new PreguntasN1("¿Dónde está el calentador?",4,4));
+        aux.Add(new PreguntasN1("¿Dónde está el váter?",5,5));
         pregRandom.Add(new MemoriaN1(aux,bano,botonesFase1));
 
 
 
         List<PreguntasN1> aux2 = new List<PreguntasN1>();
-        aux2.Add(new PreguntasN1("¿Dónde está la barca?", 0));
-        aux2.Add(new PreguntasN1("¿Dónde están los patos?", 1));
-        aux2.Add(new PreguntasN1("¿Dónde está la vaca?", 2));
-        aux2.Add(new PreguntasN1("¿Dónde está el árbol con fruta?", 3));
-        aux2.Add(new PreguntasN1("¿Dónde está la cabaña?", 4));
-        aux2.Add(new PreguntasN1("¿Dónde está el árbol sin fruta?", 5));
+        aux2.Add(new PreguntasN1("¿Dónde está la barca?", 0,6));
+        aux2.Add(new PreguntasN1("¿Dónde están los patos?", 1,7));
+        aux2.Add(new PreguntasN1("¿Dónde está la vaca?", 2,8));
+        aux2.Add(new PreguntasN1("¿Dónde está el árbol con fruta?", 3,9));
+        aux2.Add(new PreguntasN1("¿Dónde está la cabaña?", 4,10));
+        aux2.Add(new PreguntasN1("¿Dónde está el árbol sin fruta?", 5,11));
         pregRandom.Add(new MemoriaN1(aux2, granja, botonesFase2));
 
 
         List<PreguntasN1> aux3 = new List<PreguntasN1>();
-        aux3.Add(new PreguntasN1("¿Dónde está el horno?", 0));
-        aux3.Add(new PreguntasN1("¿Dónde está el frigorífico?", 1));
-        aux3.Add(new PreguntasN1("¿Dónde está el fregadero?", 2));
-        aux3.Add(new PreguntasN1("¿Dónde está el microondas?", 3));
+        aux3.Add(new PreguntasN1("¿Dónde está el horno?", 0,12));
+        aux3.Add(new PreguntasN1("¿Dónde está el frigorífico?", 1,13));
+        aux3.Add(new PreguntasN1("¿Dónde está el fregadero?", 2,14));
+        aux3.Add(new PreguntasN1("¿Dónde está el microondas?", 3,15));
         pregRandom.Add(new MemoriaN1(aux3, cocina, botonesFase3));
 
         List<PreguntasN1> aux4 = new List<PreguntasN1>();
-        aux4.Add(new PreguntasN1("¿Dónde está el espejo?", 0));
-        aux4.Add(new PreguntasN1("¿Dónde está la maceta?", 1));
-        aux4.Add(new PreguntasN1("¿Dónde está la cama?", 2));
-        aux4.Add(new PreguntasN1("¿Dónde está la ventana?", 3));
-        aux4.Add(new PreguntasN1("¿Dónde está la lámpara?", 4));
+        aux4.Add(new PreguntasN1("¿Dónde está el espejo?", 0,16));
+        aux4.Add(new PreguntasN1("¿Dónde está la maceta?", 1,17));
+        aux4.Add(new PreguntasN1("¿Dónde está la cama?", 2,18));
+        aux4.Add(new PreguntasN1("¿Dónde está la ventana?", 3,19));
+        aux4.Add(new PreguntasN1("¿Dónde está la lámpara?", 4,20));
 
         pregRandom.Add(new MemoriaN1(aux4, habitacion, botonesFase4));
 
         List<PreguntasN1> aux5 = new List<PreguntasN1>();
-        aux5.Add(new PreguntasN1("¿Dónde está el frigorífico?", 0));
-        aux5.Add(new PreguntasN1("¿Dónde está la mesa?", 1));
-        aux5.Add(new PreguntasN1("¿Dónde está la ventana?", 2));
-        aux5.Add(new PreguntasN1("¿Dónde está la fregadero?", 3));       
+        aux5.Add(new PreguntasN1("¿Dónde está el frigorífico?", 0,21));
+        aux5.Add(new PreguntasN1("¿Dónde está la mesa?", 1,22));
+        aux5.Add(new PreguntasN1("¿Dónde está la ventana?", 2,23));
+        aux5.Add(new PreguntasN1("¿Dónde está la fregadero?", 3,24));       
 
         pregRandom.Add(new MemoriaN1(aux5, cocina2, botonesFase5));
 
@@ -255,32 +255,32 @@ public class Memoria : MonoBehaviour
         */
 
         List<PreguntasN1> aux7 = new List<PreguntasN1>();
-        aux7.Add(new PreguntasN1("¿Dónde está el lavabo?", 0));
-        aux7.Add(new PreguntasN1("¿Dónde está el papel higiénico?", 1));
-        aux7.Add(new PreguntasN1("¿Dónde está el retrete?", 2));
-        aux7.Add(new PreguntasN1("¿Dónde está la toalla?", 3));
-        aux7.Add(new PreguntasN1("¿Dónde está el espejo?", 4));
-        aux7.Add(new PreguntasN1("¿Dónde está la escobilla?", 5));
+        aux7.Add(new PreguntasN1("¿Dónde está el lavabo?", 0,25));
+        aux7.Add(new PreguntasN1("¿Dónde está el papel higiénico?", 1,26));
+        aux7.Add(new PreguntasN1("¿Dónde está el retrete?", 2,27));
+        aux7.Add(new PreguntasN1("¿Dónde está la toalla?", 3,28));
+        aux7.Add(new PreguntasN1("¿Dónde está el espejo?", 4,29));
+        aux7.Add(new PreguntasN1("¿Dónde está la escobilla?", 5,30));
 
         pregRandom.Add(new MemoriaN1(aux7, bano2, botonesFase7));
 
 
         List<PreguntasN1> aux8 = new List<PreguntasN1>();
-        aux8.Add(new PreguntasN1("¿Dónde está la cama?", 0));
-        aux8.Add(new PreguntasN1("¿Dónde está la lámpara?", 1));
-        aux8.Add(new PreguntasN1("¿Dónde está la mesita?", 2));
-        aux8.Add(new PreguntasN1("¿Dónde está el cuadro?", 3));
-        aux8.Add(new PreguntasN1("¿Dónde está la ventana?", 4));
-        aux8.Add(new PreguntasN1("¿Dónde está la alfombra?", 5));
+        aux8.Add(new PreguntasN1("¿Dónde está la cama?", 0,31));
+        aux8.Add(new PreguntasN1("¿Dónde está la lámpara?", 1,32));
+        aux8.Add(new PreguntasN1("¿Dónde está la mesita?", 2,33));
+        aux8.Add(new PreguntasN1("¿Dónde está el cuadro?", 3,34));
+        aux8.Add(new PreguntasN1("¿Dónde está la ventana?", 4,35));
+        aux8.Add(new PreguntasN1("¿Dónde está la alfombra?", 5,36));
 
         pregRandom.Add(new MemoriaN1(aux8, habitacion2, botonesFase8));
 
         List<PreguntasN1> aux9 = new List<PreguntasN1>();
-        aux9.Add(new PreguntasN1("¿Dónde está el sofá?", 0));
-        aux9.Add(new PreguntasN1("¿Dónde está la chimenea?", 1));
-        aux9.Add(new PreguntasN1("¿Dónde está la ventana?", 2));
-        aux9.Add(new PreguntasN1("¿Dónde está el reloj?", 3));
-        aux9.Add(new PreguntasN1("¿Dónde está la mesa?", 4));        
+        aux9.Add(new PreguntasN1("¿Dónde está el sofá?", 0,37));
+        aux9.Add(new PreguntasN1("¿Dónde está la chimenea?", 1,38));
+        aux9.Add(new PreguntasN1("¿Dónde está la ventana?", 2,39));
+        aux9.Add(new PreguntasN1("¿Dónde está el reloj?", 3,40));
+        aux9.Add(new PreguntasN1("¿Dónde está la mesa?", 4,41));        
 
         pregRandom.Add(new MemoriaN1(aux9, salon4, botonesFase9));
 
@@ -311,7 +311,9 @@ public class Memoria : MonoBehaviour
         
             if (preguntas1[contador].preguntas.Count > 0)
             {
+                
                 int rand = Random.Range(0, preguntas1[contador].preguntas.Count);
+                sonidos.GetComponent<Sonidos>().repAudio(0, preguntas1[contador].preguntas[rand].audio);
                 textoPrincipal.GetComponent<Text>().text = preguntas1[contador].preguntas[rand].pregunta;
                 preguntas1[contador].solucion = preguntas1[contador].preguntas[rand].id;
             }
@@ -340,7 +342,7 @@ public class Memoria : MonoBehaviour
         }
         else
         {
-            final("Ejercicio de Memoria nivel1 completado", preguntasMaximas, 0, 2,false);
+            final("Ejercicio de Memoria nivel 1 completado", preguntasMaximas, 0, 2,false);
         }
 
 
@@ -451,53 +453,53 @@ public class Memoria : MonoBehaviour
         posicion2.Add("Debajo de la televisión");
 
         List<string> estampados = new List<string>();
-        estampados.Add("De rallas");
+        estampados.Add("De rayas");
         estampados.Add("De círculos");
         estampados.Add("De lunares");
         estampados.Add("De cuadrados");
 
-        fase1.Add(new MemoriaN2("¿Cuántos árboles hay?", numeros ,1));
-        fase1.Add(new MemoriaN2("¿De qué color es la casa?", colores,0));
-        fase1.Add(new MemoriaN2("¿Cuántas manzanas hay en el árbol?", numeros,4));
-        fase1.Add(new MemoriaN2("¿De qué color es la barca?", colores,2));
-        fase1.Add(new MemoriaN2("¿Cómo está el día?", clima,0));
-        fase1.Add(new MemoriaN2("¿Qué especies de animales hay ? ", animales, 0));
+        fase1.Add(new MemoriaN2("¿Cuántos árboles hay?", numeros ,1,42));
+        fase1.Add(new MemoriaN2("¿De qué color es la casa?", colores,0,43));
+        fase1.Add(new MemoriaN2("¿Cuántas manzanas hay en el árbol?", numeros,4,44));
+        fase1.Add(new MemoriaN2("¿De qué color es la barca?", colores,2,45));
+        fase1.Add(new MemoriaN2("¿Cómo está el día?", clima,0,46));
+        fase1.Add(new MemoriaN2("¿Qué especies de animales hay ? ", animales, 0,47));
 
         pregRandom.Add(new ListMemoriaN2(fase1, granja));
 
-        fase2.Add(new MemoriaN2("¿De qué color son las sábanas?", colores, 1));
-        fase2.Add(new MemoriaN2("¿Dónde está el espejo?", posicion, 0));
-        fase2.Add(new MemoriaN2("¿De qué color es la alfombra?", colores, 5));
-        fase2.Add(new MemoriaN2("¿De qué color es el suelo ? ", colores, 0));
-        fase2.Add(new MemoriaN2("¿Cuántos cuadros hay?", numeros, 1));
-        fase2.Add(new MemoriaN2("¿Cómo son los cojines? ", estampados, 0));
+        fase2.Add(new MemoriaN2("¿De qué color son las sábanas?", colores, 1,48));
+        fase2.Add(new MemoriaN2("¿Dónde está el espejo?", posicion, 0,49));
+        fase2.Add(new MemoriaN2("¿De qué color es la alfombra?", colores, 5,50));
+        fase2.Add(new MemoriaN2("¿De qué color es el suelo ? ", colores, 0,51));
+        fase2.Add(new MemoriaN2("¿Cuántos cuadros hay?", numeros, 1,52));
+        fase2.Add(new MemoriaN2("¿Cómo son los cojines? ", estampados, 0,53));
 
         pregRandom.Add(new ListMemoriaN2(fase2, habitacion));
 
 
-        fase3.Add(new MemoriaN2("¿Dónde está el gato?", posicion2, 0));
-        fase3.Add(new MemoriaN2("¿De qué color es el sofá?", colores, 5));
-        fase3.Add(new MemoriaN2("¿De qué color son las cortinas?", colores, 7));
-        fase3.Add(new MemoriaN2("¿Cuántas macetas hay en la ventana? ", numeros, 1));
-        fase3.Add(new MemoriaN2("¿Dónde está la mesa?", posicion2, 13));
-        fase3.Add(new MemoriaN2("¿De qué color es la lámpara? ", colores, 8));
-        fase3.Add(new MemoriaN2("¿Cuántos cuadros hay? ", numeros, 1));
+        fase3.Add(new MemoriaN2("¿Dónde está el gato?", posicion2, 0,54));
+        fase3.Add(new MemoriaN2("¿De qué color es el sofá?", colores, 5,55));
+        fase3.Add(new MemoriaN2("¿De qué color son las cortinas?", colores, 7,56));
+        fase3.Add(new MemoriaN2("¿Cuántas macetas hay en la ventana? ", numeros, 1,57));
+        fase3.Add(new MemoriaN2("¿Dónde está la mesa?", posicion2, 13,58));
+        fase3.Add(new MemoriaN2("¿De qué color es la lámpara? ", colores, 8,59));
+        fase3.Add(new MemoriaN2("¿Cuántos cuadros hay? ", numeros, 1,60));
 
         pregRandom.Add(new ListMemoriaN2(fase3, salon2));
 
-        fase4.Add(new MemoriaN2("¿De qué color es el sofá?", colores, 9));
-        fase4.Add(new MemoriaN2("¿Cuántos libros hay?", numeros, 2));
-        fase4.Add(new MemoriaN2("¿De qué color es el suelo?", colores, 1));
-        fase4.Add(new MemoriaN2("¿Cuántas velas hay? ", numeros, 1));
-        fase4.Add(new MemoriaN2("¿de qué color es la pared?", colores, 1));        
+        fase4.Add(new MemoriaN2("¿De qué color es el sofá?", colores, 9,61));
+        fase4.Add(new MemoriaN2("¿Cuántos libros hay?", numeros, 2,62));
+        fase4.Add(new MemoriaN2("¿De qué color es el suelo?", colores, 1,63));
+        fase4.Add(new MemoriaN2("¿Cuántas velas hay? ", numeros, 1,64));
+        fase4.Add(new MemoriaN2("¿de qué color es la pared?", colores, 1,65));        
 
         pregRandom.Add(new ListMemoriaN2(fase4, salon4));
 
-        fase5.Add(new MemoriaN2("¿De qué color es la colcha?", colores, 4));
-        fase5.Add(new MemoriaN2("¿Cuántos cuadros hay?", numeros, 0));
-        fase5.Add(new MemoriaN2("¿De qué color es la alfombra?", colores, 4));
-        fase5.Add(new MemoriaN2("¿Cuántas mesitas hay? ", numeros, 0));
-        fase5.Add(new MemoriaN2("¿Cuántas lámparas hay?", numeros, 0));
+        fase5.Add(new MemoriaN2("¿De qué color es la colcha?", colores, 4,66));
+        fase5.Add(new MemoriaN2("¿Cuántos cuadros hay?", numeros, 0,67));
+        fase5.Add(new MemoriaN2("¿De qué color es la alfombra?", colores, 4,68));
+        fase5.Add(new MemoriaN2("¿Cuántas mesitas hay? ", numeros, 0,69));
+        fase5.Add(new MemoriaN2("¿Cuántas lámparas hay?", numeros, 0,70));
 
         pregRandom.Add(new ListMemoriaN2(fase5, habitacion2));
 
@@ -522,6 +524,7 @@ public class Memoria : MonoBehaviour
         if (contador < preguntas2.Count)
         {
             panelNivel2.transform.GetChild(0).GetComponent<Image>().sprite = preguntas2[contador].imagen;
+            sonidos.GetComponent<Sonidos>().repAudio(0,71);
             textoPrincipal.GetComponent<Text>().text = "Memoriza esta imagen y dale al botón empezar";
         }
         
@@ -537,9 +540,10 @@ public class Memoria : MonoBehaviour
     {
         if (contador < preguntas2.Count)
         {
-           
-            
+
+            sonidos.GetComponent<Sonidos>().repAudio(0, preguntas2[contador].preguntas[preguntas2[contador].contador].audios);
             textoPrincipal.GetComponent<Text>().text = preguntas2[contador].preguntas[preguntas2[contador].contador].pregunta;
+
             if (nivel == 2)
             {
                 generarBotones(2);
@@ -557,12 +561,12 @@ public class Memoria : MonoBehaviour
         {
             if (nivel == 2)
             {
-                final("Ejercicio de Memoria nivel2 completado", preguntasMaximas, preguntasMaximas / 2, 3,false);
+                final("Ejercicio de Memoria nivel 2 completado", preguntasMaximas, preguntasMaximas / 2, 3,false);
 
             }
             else
             {
-                final("Ejercicio de Memoria nivel3 completado", preguntasMaximas, preguntasMaximas/2,4,false);
+                final("Ejercicio de Memoria nivel 3 completado", preguntasMaximas, preguntasMaximas/2,4,false);
 
             }
             sonidos.GetComponent<Sonidos>().repSonido(4);
@@ -809,7 +813,7 @@ public class Memoria : MonoBehaviour
             contadorFases++;
             if (contadorFases == fasesTotales.Count)
             {
-                final("Ejercicio de Memoria nivel4 completado", preguntasMaximas, preguntasMaximas / 2, 4,true);
+                final("Ejercicio de Memoria nivel 4 completado", preguntasMaximas, preguntasMaximas / 2, 4,true);
 
             }
             else
@@ -1059,28 +1063,33 @@ class MemoriaN1
 
  class PreguntasN1
 {
-    public PreguntasN1(string preg,int i)
+    public PreguntasN1(string preg,int i,int au)
     {
+        
         pregunta = preg;
         id = i;
+        audio = au;
     }
     public string pregunta;
     public int id;
+    public int audio;
 }
 
 class MemoriaN2
 {
-    public MemoriaN2(string pre, List<string>otr, int sol)
+    public MemoriaN2(string pre, List<string>otr, int sol,int au)
     {
         otras = new List<string>();
         pregunta = pre;
         otras = otr;        
         solucion = sol;
+        audios = au;
     }
 
     public string pregunta;
     public List<string> otras;   
     public int solucion;
+    public int audios;
     
 
 }

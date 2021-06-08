@@ -186,16 +186,16 @@ public class Orientacion : MonoBehaviour
 
 
         preguntas1 = new List<Orientacion1>();
-        preguntas1.Add(new Orientacion1(0,  "Pulsa la foto del perro dentro de la cama"));        
-        preguntas1.Add(new Orientacion1(1,  "Pulsa la foto de la pelota debajo de la silla"));
-        preguntas1.Add(new Orientacion1(2,  "Pulsa la foto de a niña detrás del ordenador"));        
-        preguntas1.Add(new Orientacion1(3,  "Pulsa la foto del a niña delante de la bicicleta"));
-        preguntas1.Add(new Orientacion1(4,  "Pulsa la foto de los periquitos dentro de la jaula"));      
-        preguntas1.Add(new Orientacion1(5,  "Pulsa la foto del profesor delante de la pizarra"));
-        preguntas1.Add(new Orientacion1(6,  "Pulsa la foto del ciclista encima de la bici"));
-        preguntas1.Add(new Orientacion1(7,  "Pulsa la foto de la pelota debajo de la mesa"));
-        preguntas1.Add(new Orientacion1(8,  "Pulsa la foto del libro encima de la mesa"));
-        preguntas1.Add(new Orientacion1(9,  "Pulsa la foto del gato delante de la silla"));
+        preguntas1.Add(new Orientacion1(0,  "Pulsa la foto del perro dentro de la cama",0));        
+        preguntas1.Add(new Orientacion1(1,  "Pulsa la foto de la pelota debajo de la mesa roja",1));
+        preguntas1.Add(new Orientacion1(2,  "Pulsa la foto de a niña detrás del ordenador",2));        
+        preguntas1.Add(new Orientacion1(3,  "Pulsa la foto del a niña delante de la bicicleta",3));
+        preguntas1.Add(new Orientacion1(4,  "Pulsa la foto de los periquitos dentro de la jaula",4));      
+        preguntas1.Add(new Orientacion1(5,  "Pulsa la foto del profesor delante de la pizarra",5));
+        preguntas1.Add(new Orientacion1(6,  "Pulsa la foto del ciclista encima de la bici",6));
+        preguntas1.Add(new Orientacion1(7,  "Pulsa la foto de la pelota debajo de la mesa",7));
+        preguntas1.Add(new Orientacion1(8,  "Pulsa la foto del libro encima de la mesa",8));
+        preguntas1.Add(new Orientacion1(9,  "Pulsa la foto del gato delante de la silla",9));
 
 
 
@@ -210,6 +210,7 @@ public class Orientacion : MonoBehaviour
         if (contador < preguntas1.Count)
         {
             generarImagenesN1();
+            sonidos.GetComponent<Sonidos>().repAudio(6, preguntas1[contador].audio);
             textoPrincipal.GetComponent<Text>().text = preguntas1[contador].pregunta;
            
 
@@ -264,18 +265,18 @@ public class Orientacion : MonoBehaviour
     void nivel2()
     {
         preguntas2 = new List<Orientacion2>();
-        preguntas2.Add(new Orientacion2(1, "Selecciona la pelota que está debajo de la mesa", pre1N2));
-        preguntas2.Add(new Orientacion2(0, "Selecciona la pelota que está encima de la mesa", pre1N2));
-        preguntas2.Add(new Orientacion2(0, "Selecciona la pelota que está encima  de la silla", pre2N2));
-        preguntas2.Add(new Orientacion2(1, "Selecciona la pelota que está al lado de la silla", pre2N2));
-        preguntas2.Add(new Orientacion2(0, "Selecciona la pelota que está al lado de la cama", pre3N2));
-        preguntas2.Add(new Orientacion2(1, "Selecciona la pelota que está encima de la cama", pre3N2));
-        preguntas2.Add(new Orientacion2(0, "Selecciona el peluche que está debajo de la silla", pre4N2));
-        preguntas2.Add(new Orientacion2(1, "Selecciona el peluche que está encima de la silla", pre4N2));
-        preguntas2.Add(new Orientacion2(1, "Selecciona el peluche que está encima de la mesa", pre5N2));
-        preguntas2.Add(new Orientacion2(0, "Selecciona el peluche que está debajo de la mesa", pre5N2));
-        preguntas2.Add(new Orientacion2(0, "Selecciona el peluche que está encima de la cama", pre6N2));
-        preguntas2.Add(new Orientacion2(1, "Selecciona el peluche que está al lado de la cama", pre6N2));
+        preguntas2.Add(new Orientacion2(1, "Selecciona la pelota que está debajo de la mesa", pre1N2,10));
+        preguntas2.Add(new Orientacion2(0, "Selecciona la pelota que está encima de la mesa", pre1N2,11));
+        preguntas2.Add(new Orientacion2(0, "Selecciona la pelota que está encima  de la silla", pre2N2,12));
+        preguntas2.Add(new Orientacion2(1, "Selecciona la pelota que está al lado de la silla", pre2N2,13));
+        preguntas2.Add(new Orientacion2(0, "Selecciona la pelota que está al lado de la cama", pre3N2,14));
+        preguntas2.Add(new Orientacion2(1, "Selecciona la pelota que está encima de la cama", pre3N2,15));
+        preguntas2.Add(new Orientacion2(0, "Selecciona el peluche que está debajo de la silla", pre4N2,16));
+        preguntas2.Add(new Orientacion2(1, "Selecciona el peluche que está encima de la silla", pre4N2,17));
+        preguntas2.Add(new Orientacion2(1, "Selecciona el peluche que está encima de la mesa", pre5N2,18));
+        preguntas2.Add(new Orientacion2(0, "Selecciona el peluche que está debajo de la mesa", pre5N2,19));
+        preguntas2.Add(new Orientacion2(0, "Selecciona el peluche que está encima de la cama", pre6N2,20));
+        preguntas2.Add(new Orientacion2(1, "Selecciona el peluche que está al lado de la cama", pre6N2,21));
 
         preguntas2 = DesordenarLista<Orientacion2>(preguntas2);
         panel2.SetActive(true);
@@ -293,6 +294,7 @@ public class Orientacion : MonoBehaviour
         if (contador < preguntas2.Count)
         {
             preguntas2[contador].escena.SetActive(true);
+            sonidos.GetComponent<Sonidos>().repAudio(6, preguntas2[contador].audio);
             textoPrincipal.GetComponent<Text>().text = preguntas2[contador].pregunta;
 
         }
@@ -348,24 +350,24 @@ public class Orientacion : MonoBehaviour
         fase3.Add(n13);
         fase3.Add(n14);
 
-        preguntas3.Add(new Orientacion3(fase1, "Pulsa la maceta que está encima de la mesa",0));
-        preguntas3.Add(new Orientacion3(fase1, "Pulsa la maceta que está debajo de la mesa", 1));
-        preguntas3.Add(new Orientacion3(fase1, "Pulsa la maceta que está a la izquierda de la mesa", 2));
-        preguntas3.Add(new Orientacion3(fase1, "Pulsa la maceta que está a la derecha de la mesa", 3));
-        preguntas3.Add(new Orientacion3(fase1, "Pulsa la lámpara que está delante de la mesa", 4));
-        preguntas3.Add(new Orientacion3(fase1, "Pulsa la lámpara que está detrás de la mesa", 5));
+        preguntas3.Add(new Orientacion3(fase1, "Pulsa la maceta que está encima de la mesa",0,22));
+        preguntas3.Add(new Orientacion3(fase1, "Pulsa la maceta que está debajo de la mesa", 1,23));
+        preguntas3.Add(new Orientacion3(fase1, "Pulsa la maceta que está a la izquierda de la mesa", 2,34));
+        preguntas3.Add(new Orientacion3(fase1, "Pulsa la maceta que está a la derecha de la mesa", 3,35));
+        preguntas3.Add(new Orientacion3(fase1, "Pulsa la lámpara que está delante de la mesa", 4,36));
+        preguntas3.Add(new Orientacion3(fase1, "Pulsa la lámpara que está detrás de la mesa", 5,37));
                                                 
-        preguntas3.Add(new Orientacion3(fase2, "Pulsa la maceta que está entre la lámpara y la mesa", 4));
-        preguntas3.Add(new Orientacion3(fase2, "Pulsa la lámpara que está a la derecha de la mesa", 5));
+        preguntas3.Add(new Orientacion3(fase2, "Pulsa la maceta que está entre la lámpara y la mesa", 4,38));
+        preguntas3.Add(new Orientacion3(fase2, "Pulsa la lámpara que está a la derecha de la mesa", 5,39));
 
 
 
-        preguntas3.Add(new Orientacion3(fase3, "Pulsa el gato que está delante de la mesa", 0));
-        preguntas3.Add(new Orientacion3(fase3, "Pulsa el gato que está encima de la mesa", 1));
-        preguntas3.Add(new Orientacion3(fase3, "Pulsa el gato que está a la derecha de la mesa", 2));
-        preguntas3.Add(new Orientacion3(fase3, "Pulsa el gato que está detrás de la mesa", 3));
-        preguntas3.Add(new Orientacion3(fase3, "Pulsa el gato que está a la izquierda de la mesa", 4));
-        preguntas3.Add(new Orientacion3(fase3, "Pulsa el gato que está debajo de la mesa", 5));
+        preguntas3.Add(new Orientacion3(fase3, "Pulsa el gato que está delante de la mesa", 0,30));
+        preguntas3.Add(new Orientacion3(fase3, "Pulsa el gato que está encima de la mesa", 1,31));
+        preguntas3.Add(new Orientacion3(fase3, "Pulsa el gato que está a la derecha de la mesa", 2,32));
+        preguntas3.Add(new Orientacion3(fase3, "Pulsa el gato que está detrás de la mesa", 3,33));
+        preguntas3.Add(new Orientacion3(fase3, "Pulsa el gato que está a la izquierda de la mesa", 4,34));
+        preguntas3.Add(new Orientacion3(fase3, "Pulsa el gato que está debajo de la mesa", 5,35));
 
 
 
@@ -380,6 +382,7 @@ public class Orientacion : MonoBehaviour
     {
         if (contador < preguntas3.Count)
         {
+            sonidos.GetComponent<Sonidos>().repAudio(6, preguntas3[contador].audio);
             textoPrincipal.GetComponent<Text>().text = preguntas3[contador].pregunta;
             generarBotonesN3();
         }
@@ -429,20 +432,20 @@ public class Orientacion : MonoBehaviour
     void nivel4()
     {
         preguntas4 = new List<Orientacion4>();
-        preguntas4.Add(new Orientacion4(2, 2, "Coloca el cuadrado a la derecha del círculo amarillo", 1));
-        preguntas4.Add(new Orientacion4(4, 5, "Coloca el rombo debajo del círculo rojo", 2));
-        preguntas4.Add(new Orientacion4(4, 0, "Coloca el triángulo arriba del círculo verde", 3));
-        preguntas4.Add(new Orientacion4(0, 4, "Coloca el rectángulo a la izquierda del círculo azul", 4));
+        preguntas4.Add(new Orientacion4(2, 2, "Coloca el cuadrado a la derecha del círculo amarillo", 1,36));
+        preguntas4.Add(new Orientacion4(4, 5, "Coloca el rombo debajo del círculo rojo", 2,37));
+        preguntas4.Add(new Orientacion4(4, 0, "Coloca el triángulo arriba del círculo verde", 3,38));
+        preguntas4.Add(new Orientacion4(0, 4, "Coloca el rectángulo a la izquierda del círculo azul", 4,39));
                                                
-        preguntas4.Add(new Orientacion4(5, 4, "Coloca el rombo a la derecha círculo rojo", 2));
-        preguntas4.Add(new Orientacion4(5, 1, "Coloca el triángulo a la derecha del círculo verde", 3));
-        preguntas4.Add(new Orientacion4(1, 3, "Coloca el cuadrado debajo del círculo amarillo", 1));
-        preguntas4.Add(new Orientacion4(1, 5, "Coloca el rectángulo a la debajo del círculo azul", 4));
+        preguntas4.Add(new Orientacion4(5, 4, "Coloca el rombo a la derecha círculo rojo", 2,40));
+        preguntas4.Add(new Orientacion4(5, 1, "Coloca el triángulo a la derecha del círculo verde", 3,41));
+        preguntas4.Add(new Orientacion4(1, 3, "Coloca el cuadrado debajo del círculo amarillo", 1,42));
+        preguntas4.Add(new Orientacion4(1, 5, "Coloca el rectángulo a la debajo del círculo azul", 4,43));
                                                
-        preguntas4.Add(new Orientacion4(0, 2, "Coloca el cuadrado a la izquierda del círculo amarillo", 1));
-        preguntas4.Add(new Orientacion4(4, 3, "Coloca el rombo arriba del círculo rojo", 2));
-        preguntas4.Add(new Orientacion4(4, 2, "Coloca el triángulo abajo del círculo verde", 3));
-        preguntas4.Add(new Orientacion4(2, 4, "Coloca el rectángulo a la derecha del círculo azul", 4));
+        preguntas4.Add(new Orientacion4(0, 2, "Coloca el cuadrado a la izquierda del círculo amarillo", 1,44));
+        preguntas4.Add(new Orientacion4(4, 3, "Coloca el rombo arriba del círculo rojo", 2,45));
+        preguntas4.Add(new Orientacion4(4, 2, "Coloca el triángulo abajo del círculo verde", 3,46));
+        preguntas4.Add(new Orientacion4(2, 4, "Coloca el rectángulo a la derecha del círculo azul", 4,47));
 
 
 
@@ -458,6 +461,7 @@ public class Orientacion : MonoBehaviour
     {
         if (contador < preguntas4.Count)
         {
+            sonidos.GetComponent<Sonidos>().repAudio(6, preguntas4[contador].audio);
             textoPrincipal.GetComponent<Text>().text = preguntas4[contador].pregunta;
         }
         else
@@ -523,42 +527,48 @@ public class Orientacion : MonoBehaviour
 
 class Orientacion1
 {
-    public Orientacion1(int img, string pre)
+    public Orientacion1(int img, string pre,int au)
     {
         imagen = img;        
         pregunta = pre;
+        audio = au;
     }
     public int imagen;    
     public string pregunta;
+    public int audio;
 }
 
 class Orientacion2
 {
-    public Orientacion2(int sol, string pre,GameObject esc)
+    public Orientacion2(int sol, string pre,GameObject esc,int au)
     {
         solucion = sol;
         pregunta = pre;
         escena = esc;
+        audio = au;
     }
     public int solucion;
     public string pregunta;
     public GameObject escena;
+    public int audio;
 }
 
 class Orientacion3
 {
-    public Orientacion3(List<Sprite> img, string pre,int i)
+    public Orientacion3(List<Sprite> img, string pre,int i,int au)
     {
         imagenes = new List<Sprite>();
         imagenes = img;
         pregunta = pre;
         id = i;
+        audio = au;
     }
 
 
     public List<Sprite> imagenes;
     public string pregunta;
     public int id;
+    public int audio;
 }
 
 class Botones
@@ -574,17 +584,19 @@ class Botones
 
 class Orientacion4
 {
-    public Orientacion4(int x2, int y2, string preg, int i)
+    public Orientacion4(int x2, int y2, string preg, int i, int au)
     {
         x = x2;
         y = y2;
         pregunta = preg;
       
         id = i;
+        audio = au;
 
     }
 
     public int x, y;
     public string pregunta;    
     public int id;
+    public int audio;
 }

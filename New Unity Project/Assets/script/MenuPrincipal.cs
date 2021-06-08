@@ -100,5 +100,9 @@ public class MenuPrincipal : MonoBehaviour
 
     }
 
+    public void cerrarAplicacion()
+    {
+        Application.Quit();        
+    }
 
 }

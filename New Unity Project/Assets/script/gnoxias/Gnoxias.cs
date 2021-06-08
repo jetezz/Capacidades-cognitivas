@@ -278,6 +278,7 @@ public class Gnoxias : MonoBehaviour
        
 
         panel1.SetActive(true);
+        sonidos.GetComponent<Sonidos>().repAudio(4, 0);
         textoPrincipal.GetComponent<Text>().text = "Selecciona el trozo que corresponde a la imagen";
         siguientePreguntaN1();
 
@@ -291,7 +292,7 @@ public class Gnoxias : MonoBehaviour
         }
         else
         {
-            final("Ejercicio de Gnosia nivel1 completado", 10, 0, 2,false);
+            final("Ejercicio de Gnosia nivel 1 completado", 10, 0, 2,false);
         }
     }
     void generarBotonesN1()
@@ -430,7 +431,7 @@ public class Gnoxias : MonoBehaviour
         
 
         panel2.SetActive(true);
-
+        sonidos.GetComponent<Sonidos>().repAudio(4, 1);
         textoPrincipal.GetComponent<Text>().text = "Selecciona la imagen que corresponde a la silueta";
         siguientePreguntaN2();
 
@@ -448,7 +449,7 @@ public class Gnoxias : MonoBehaviour
         }
         else
         {
-            final("Ejercicio de Gnosia nivel2 completado", 12, 5, 3,false);
+            final("Ejercicio de Gnosia nivel 2 completado", 12, 5, 3,false);
 
 
         }
@@ -602,6 +603,7 @@ public class Gnoxias : MonoBehaviour
 
 
         panel3.SetActive(true);
+        sonidos.GetComponent<Sonidos>().repAudio(4, 2);
         textoPrincipal.GetComponent<Text>().text = "Selecciona las imágenes que aparecen en la silueta";
         siguientePreguntaN3();
 
@@ -653,7 +655,7 @@ public class Gnoxias : MonoBehaviour
         }
         else
         {
-            final("Ejercicio de Gnosia nivel3 completado", 36, 12, 4,false);
+            final("Ejercicio de Gnosia nivel 3 completado", 36, 12, 4,false);
 
         }
     }
@@ -753,6 +755,7 @@ public class Gnoxias : MonoBehaviour
 
         preguntasN4 = DesordenarLista<Pregunta4G>(preguntasN4);
         panel4.SetActive(true);
+        sonidos.GetComponent<Sonidos>().repAudio(4, 3);
         textoPrincipal.GetComponent<Text>().text = "Selecciona la casilla a la que corresponde esta imagen ";
         siguientePreguntaN4();
     }
@@ -765,7 +768,7 @@ public class Gnoxias : MonoBehaviour
         }
         else
         {
-            final("Ejercicio de Gnosia nivel4 completado", 12, 6, 4,true);
+            final("Ejercicio de Gnosia nivel 4 completado", 12, 6, 4,true);
 
         }
     }

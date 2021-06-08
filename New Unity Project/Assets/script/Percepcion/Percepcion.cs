@@ -126,7 +126,7 @@ public class Percepcion : MonoBehaviour
     //nivel1
     List<Pregunta1P> preguntas1;
     public GameObject panel1;
-    int numrespuestas = 0;
+    
 
 
 
@@ -283,6 +283,7 @@ public class Percepcion : MonoBehaviour
 
 
         panel1.SetActive(true);
+        sonidos.GetComponent<Sonidos>().repAudio(2,0);
         textoPrincipal.GetComponent<Text>().text = "Selecciona las imágenes que son iguales al ejemplo";
         siguientePreguntaN1();
     }
@@ -484,6 +485,7 @@ public class Percepcion : MonoBehaviour
 
 
         panel2.SetActive(true);
+        sonidos.GetComponent<Sonidos>().repAudio(2, 0);
         textoPrincipal.GetComponent<Text>().text = "Selecciona las imágenes que son iguales al ejemplo";
 
         siguientePreguntaN2();
@@ -748,6 +750,7 @@ public class Percepcion : MonoBehaviour
         preguntas2.AddRange(aux[2].lista);
 
         panel2.SetActive(true);
+        sonidos.GetComponent<Sonidos>().repAudio(2, 0);
         textoPrincipal.GetComponent<Text>().text = "Selecciona las imágenes que son iguales al ejemplo";
 
         siguientePreguntaN2();
@@ -789,6 +792,7 @@ public class Percepcion : MonoBehaviour
 
 
         panel4.SetActive(true);
+        sonidos.GetComponent<Sonidos>().repAudio(2, 1);
         textoPrincipal.GetComponent<Text>().text = "Selecciona el dibujo que es igual en ambos lados (color y forma)";
         siguientepreguntaN4();
 
