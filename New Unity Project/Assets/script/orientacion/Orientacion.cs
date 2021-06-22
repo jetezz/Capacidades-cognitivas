@@ -352,13 +352,13 @@ public class Orientacion : MonoBehaviour
 
         preguntas3.Add(new Orientacion3(fase1, "Pulsa la maceta que está encima de la mesa",0,22));
         preguntas3.Add(new Orientacion3(fase1, "Pulsa la maceta que está debajo de la mesa", 1,23));
-        preguntas3.Add(new Orientacion3(fase1, "Pulsa la maceta que está a la izquierda de la mesa", 2,34));
-        preguntas3.Add(new Orientacion3(fase1, "Pulsa la maceta que está a la derecha de la mesa", 3,35));
-        preguntas3.Add(new Orientacion3(fase1, "Pulsa la lámpara que está delante de la mesa", 4,36));
-        preguntas3.Add(new Orientacion3(fase1, "Pulsa la lámpara que está detrás de la mesa", 5,37));
+        preguntas3.Add(new Orientacion3(fase1, "Pulsa la maceta que está a la izquierda de la mesa", 2,24));
+        preguntas3.Add(new Orientacion3(fase1, "Pulsa la maceta que está a la derecha de la mesa", 3,25));
+        preguntas3.Add(new Orientacion3(fase1, "Pulsa la lámpara que está delante de la mesa", 4,26));
+        preguntas3.Add(new Orientacion3(fase1, "Pulsa la lámpara que está detrás de la mesa", 5,27));
                                                 
-        preguntas3.Add(new Orientacion3(fase2, "Pulsa la maceta que está entre la lámpara y la mesa", 4,38));
-        preguntas3.Add(new Orientacion3(fase2, "Pulsa la lámpara que está a la derecha de la mesa", 5,39));
+        preguntas3.Add(new Orientacion3(fase2, "Pulsa la maceta que está entre la lámpara y la mesa", 4,28));
+        preguntas3.Add(new Orientacion3(fase2, "Pulsa la lámpara que está a la derecha de la mesa", 5,29));
 
 
 

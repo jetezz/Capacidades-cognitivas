@@ -43,10 +43,13 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
+    - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -1742,4 +1745,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Ejercicios/Percepcion.unity
   - Assets/Scenes/Ejercicios/Praxias.unity
   - Assets/Scenes/ManagerEjercicios.unity
-  playerPath: C:/Users/JesusCuadraTellez/Desktop/tfg/aplicacion/tfg/New Unity Project/capacidadesCognitivas.apk
+  playerPath: C:/Users/JesusCuadraTellez/Desktop/tfg/aplicacion/tfg/New Unity Project/capacidadesCognitivas2.apk

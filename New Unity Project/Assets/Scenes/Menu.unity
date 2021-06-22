@@ -800,10 +800,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audiosMemoria: []
-  audioM1: {fileID: 8300000, guid: 6d641b752c9a4c14d8b9e9bf42862bd9, type: 3}
-  audioM2: {fileID: 8300000, guid: 911996e7918aa8140a83d2fce58163bd, type: 3}
-  audioM3: {fileID: 8300000, guid: 63aec5f471a960749997396f4f478b92, type: 3}
-  audioM4: {fileID: 8300000, guid: ac1acd460ffd34148ab496def54df032, type: 3}
+  audioM1: {fileID: 8300000, guid: c7474b238ca3bbb45a8eaf6a6fffec0f, type: 3}
+  audioM2: {fileID: 8300000, guid: c7474b238ca3bbb45a8eaf6a6fffec0f, type: 3}
+  audioM3: {fileID: 8300000, guid: c7474b238ca3bbb45a8eaf6a6fffec0f, type: 3}
+  audioM4: {fileID: 8300000, guid: c7474b238ca3bbb45a8eaf6a6fffec0f, type: 3}
   audioM5: {fileID: 0}
   audioM6: {fileID: 0}
   audioM7: {fileID: 0}
@@ -877,7 +877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audiosLenguaje: []
-  audioL1: {fileID: 8300000, guid: b3a0e5efa97b1154dbadbdae8dd2f0b0, type: 3}
+  audioL1: {fileID: 8300000, guid: c7474b238ca3bbb45a8eaf6a6fffec0f, type: 3}
   audioL2: {fileID: 0}
   audioL3: {fileID: 0}
   audioL4: {fileID: 0}
@@ -940,7 +940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audiosPercepcion: []
-  audioP0: {fileID: 8300000, guid: 69ea00917d5d1f44b90b70e899b35cbd, type: 3}
+  audioP0: {fileID: 8300000, guid: c7474b238ca3bbb45a8eaf6a6fffec0f, type: 3}
   audioP1: {fileID: 0}
   audioP2: {fileID: 0}
   audioP3: {fileID: 0}
@@ -1004,7 +1004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audiosCalculo: []
-  audioC0: {fileID: 8300000, guid: eb65b31267f0fd74fad1757f015c0c48, type: 3}
+  audioC0: {fileID: 8300000, guid: c7474b238ca3bbb45a8eaf6a6fffec0f, type: 3}
   audioC1: {fileID: 0}
   audioC2: {fileID: 0}
   audioC3: {fileID: 0}
@@ -1068,7 +1068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audiosOrientacion: []
-  audioO0: {fileID: 8300000, guid: 37f3a281e13048e4e87f5bd00c8ec066, type: 3}
+  audioO0: {fileID: 8300000, guid: c7474b238ca3bbb45a8eaf6a6fffec0f, type: 3}
   audioO1: {fileID: 0}
   audioO2: {fileID: 0}
   audioO3: {fileID: 0}
@@ -1132,7 +1132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audiosPraxia: []
-  audioP0: {fileID: 8300000, guid: 4a62885cfd6fc9c449eedc70c51e9ab7, type: 3}
+  audioP0: {fileID: 8300000, guid: c7474b238ca3bbb45a8eaf6a6fffec0f, type: 3}
   audioP1: {fileID: 0}
   audioP2: {fileID: 0}
   audioP3: {fileID: 0}
@@ -1196,7 +1196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audiosgnosias: []
-  audioG0: {fileID: 8300000, guid: eaab3744bddfa104f99e1c31f10903fc, type: 3}
+  audioG0: {fileID: 8300000, guid: c7474b238ca3bbb45a8eaf6a6fffec0f, type: 3}
   audioG1: {fileID: 0}
   audioG2: {fileID: 0}
   audioG3: {fileID: 0}
@@ -1260,7 +1260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audiosAtencion: []
-  audioA0: {fileID: 8300000, guid: 79310fc59cb59a24e868213b7460649f, type: 3}
+  audioA0: {fileID: 8300000, guid: c7474b238ca3bbb45a8eaf6a6fffec0f, type: 3}
   audioA1: {fileID: 0}
   audioA2: {fileID: 0}
   audioA3: {fileID: 0}

@@ -774,7 +774,7 @@ public class Lenguaje : MonoBehaviour
         fases4.Add(fases4aux[0]);
 
 
-
+        sonidos.GetComponent<Sonidos>().repAudio(1, 39);
         textoPrincipal.GetComponent<Text>().text = "Coloca las palabras en el grupo correcto";
         panel4.SetActive(true);
         siguientepreguntaN4();
