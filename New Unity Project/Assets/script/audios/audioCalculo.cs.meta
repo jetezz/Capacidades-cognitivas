@@ -3,7 +3,25 @@ guid: 808cc99afdaa5004c87062ea1e2980a2
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - audioC0: {fileID: 8300000, guid: 27fafdef66b3f0e40b8fec480d09dfae, type: 3}
+  - audioC1: {fileID: 8300000, guid: 0b6e2e6ebb58a1047a0aff00b8126566, type: 3}
+  - audioC2: {fileID: 8300000, guid: fb2dbdd3a8c97754caddea47f05a62dc, type: 3}
+  - audioC3: {fileID: 8300000, guid: 19c5e53dc8203c04d9070ebd1d587df9, type: 3}
+  - audioC4: {fileID: 8300000, guid: 6a3d2e6276c27e6419c1fc214d87041d, type: 3}
+  - audioC5: {fileID: 8300000, guid: b2e36bb5b1277034a87322248b6cd64c, type: 3}
+  - audioC6: {fileID: 8300000, guid: 59b8f4c36f5c63b47b2b2a5386f2dd53, type: 3}
+  - audioC7: {fileID: 8300000, guid: 11093b1e3dfc5454aaf3df9565f375fe, type: 3}
+  - audioC8: {instanceID: 0}
+  - audioC9: {instanceID: 0}
+  - audioC10: {instanceID: 0}
+  - audioC11: {instanceID: 0}
+  - audioC12: {instanceID: 0}
+  - audioC13: {instanceID: 0}
+  - audioC14: {instanceID: 0}
+  - audioC15: {instanceID: 0}
+  - audioC16: {fileID: 8300000, guid: 979425dbe2b95b34f9d74b3aa71391fd, type: 3}
+  - audioC17: {fileID: 8300000, guid: 338701eb1e709e742b4ab8b6f9fe7ad4, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

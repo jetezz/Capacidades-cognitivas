@@ -168,6 +168,9 @@ public class Lenguaje : MonoBehaviour
             managerEjercicios.GetComponent<ManagerEjercicios>().usuario.lenguaje(siguienteNnivel);
             GameObject managerUsuario = GameObject.FindWithTag("MUsu");
             managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+            int au;
+            au = Random.Range(4, 8);
+            sonidos.GetComponent<Sonidos>().repAudio(3, au);
         }
         else
         {
@@ -182,6 +185,9 @@ public class Lenguaje : MonoBehaviour
                 managerEjercicios.GetComponent<ManagerEjercicios>().usuario.lenguaje(siguienteNnivel);
                 GameObject managerUsuario = GameObject.FindWithTag("MUsu");
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+                int au;
+                au = Random.Range(8, 10);
+                sonidos.GetComponent<Sonidos>().repAudio(3, au);
             }
             else
             {
@@ -190,6 +196,9 @@ public class Lenguaje : MonoBehaviour
                 managerEjercicios.GetComponent<ManagerEjercicios>().usuario.lenguaje(siguienteNnivel);
                 GameObject managerUsuario = GameObject.FindWithTag("MUsu");
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+                int au;
+                au = Random.Range(8, 10);
+                sonidos.GetComponent<Sonidos>().repAudio(3, au);
             }
 
 
@@ -219,7 +228,7 @@ public class Lenguaje : MonoBehaviour
         aux.Add(new Pregunta1("Pulsa en el perro", 1, 2,8));
         aux.Add(new Pregunta1("Pulsa en el gato", 2, 2,9));
         aux.Add(new Pregunta1("Pulsa en el caballo", 3, 2,10));
-        aux.Add(new Pregunta1("Pulsa en el oveja", 4, 2,11));
+        aux.Add(new Pregunta1("Pulsa en la oveja", 4, 2,11));
         preguntas1aux.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
         aux.Clear();
 

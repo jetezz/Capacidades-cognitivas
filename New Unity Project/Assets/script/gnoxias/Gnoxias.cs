@@ -201,6 +201,9 @@ public class Gnoxias : MonoBehaviour
             managerEjercicios.GetComponent<ManagerEjercicios>().usuario.gnosia(siguienteNnivel);
             GameObject managerUsuario = GameObject.FindWithTag("MUsu");
             managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+            int au;
+            au = Random.Range(4, 8);
+            sonidos.GetComponent<Sonidos>().repAudio(3, au);
         }
         else
         {
@@ -215,6 +218,9 @@ public class Gnoxias : MonoBehaviour
                 managerEjercicios.GetComponent<ManagerEjercicios>().usuario.gnosia(siguienteNnivel);
                 GameObject managerUsuario = GameObject.FindWithTag("MUsu");
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+                int au;
+                au = Random.Range(8, 10);
+                sonidos.GetComponent<Sonidos>().repAudio(3, au);
             }
             else
             {
@@ -223,6 +229,9 @@ public class Gnoxias : MonoBehaviour
                 managerEjercicios.GetComponent<ManagerEjercicios>().usuario.gnosia(siguienteNnivel);
                 GameObject managerUsuario = GameObject.FindWithTag("MUsu");
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+                int au;
+                au = Random.Range(8, 10);
+                sonidos.GetComponent<Sonidos>().repAudio(3, au);
             }
 
 
@@ -279,7 +288,7 @@ public class Gnoxias : MonoBehaviour
 
         panel1.SetActive(true);
         sonidos.GetComponent<Sonidos>().repAudio(4, 0);
-        textoPrincipal.GetComponent<Text>().text = "Selecciona el trozo que corresponde a la imagen";
+        textoPrincipal.GetComponent<Text>().text = "Selecciona el cuadrado que corresponde a la imagen";
         siguientePreguntaN1();
 
     }

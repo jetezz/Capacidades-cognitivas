@@ -163,6 +163,9 @@ public class Memoria : MonoBehaviour
             managerEjercicios.GetComponent<ManagerEjercicios>().usuario.memoria(siguienteNnivel);
             GameObject managerUsuario = GameObject.FindWithTag("MUsu");
             managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+            int au;
+            au = Random.Range(4, 8);
+            sonidos.GetComponent<Sonidos>().repAudio(3, au);
         }
         else
         {
@@ -177,6 +180,9 @@ public class Memoria : MonoBehaviour
                 managerEjercicios.GetComponent<ManagerEjercicios>().usuario.memoria(siguienteNnivel);
                 GameObject managerUsuario = GameObject.FindWithTag("MUsu");
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+                int au;
+                au = Random.Range(8, 10);
+                sonidos.GetComponent<Sonidos>().repAudio(3, au);
             }
             else
             {
@@ -185,6 +191,9 @@ public class Memoria : MonoBehaviour
                 managerEjercicios.GetComponent<ManagerEjercicios>().usuario.memoria(siguienteNnivel);
                 GameObject managerUsuario = GameObject.FindWithTag("MUsu");
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+                int au;
+                au = Random.Range(8, 10);
+                sonidos.GetComponent<Sonidos>().repAudio(3, au);
             }
 
 
@@ -241,7 +250,7 @@ public class Memoria : MonoBehaviour
         aux5.Add(new PreguntasN1("¿Dónde está el frigorífico?", 0,21));
         aux5.Add(new PreguntasN1("¿Dónde está la mesa?", 1,22));
         aux5.Add(new PreguntasN1("¿Dónde está la ventana?", 2,23));
-        aux5.Add(new PreguntasN1("¿Dónde está la fregadero?", 3,24));       
+        aux5.Add(new PreguntasN1("¿Dónde está el fregadero?", 3,24));       
 
         pregRandom.Add(new MemoriaN1(aux5, cocina2, botonesFase5));
 

@@ -34,11 +34,13 @@ public class Sonidos : MonoBehaviour
 
 
     AudioSource reproductor;
+    AudioSource reproductor2;
     Dictionary<int, AudioClip> listaSonidos;
 
     private void Awake()
     {
         reproductor = GetComponent<AudioSource>();
+        reproductor2 = GetComponent<AudioSource>();
         if (sonidos == null)
         {
             sonidos = this;
@@ -82,8 +84,9 @@ public class Sonidos : MonoBehaviour
     }
     public void repAudio(int capacidad, int i)
     {
-        reproductor.PlayOneShot(listaAudios[capacidad][i]);
+        reproductor2.PlayOneShot(listaAudios[capacidad][i]);
         Debug.Log(i);
     }
-    
+
+   
 }

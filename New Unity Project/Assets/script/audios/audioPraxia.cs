@@ -13,7 +13,7 @@ public class audioPraxia : MonoBehaviour
     public AudioClip audioP5;
     public AudioClip audioP6;
     public AudioClip audioP7;
-    public AudioClip audioP8;
+    public AudioClip audioP8;    
     public AudioClip audioP9;
     public AudioClip audioP10;
     public AudioClip audioP11;
@@ -25,45 +25,28 @@ public class audioPraxia : MonoBehaviour
     public AudioClip audioP17;
     public AudioClip audioP18;
     public AudioClip audioP19;
-    public AudioClip audioP20;
-    public AudioClip audioP21;
-    public AudioClip audioP22;
-    public AudioClip audioP23;
-    public AudioClip audioP24;
-    public AudioClip audioP25;
-    public AudioClip audioP26;
-    public AudioClip audioP27;
-    public AudioClip audioP28;
-    public AudioClip audioP29;
-    public AudioClip audioP30;
-    public AudioClip audioP31;
-    public AudioClip audioP32;
-    public AudioClip audioP33;
-    public AudioClip audioP34;
-    public AudioClip audioP35;
-    public AudioClip audioP36;
-    public AudioClip audioP37;
-    public AudioClip audioP38;
-    public AudioClip audioP39;
-    public AudioClip audioP40;
-    public AudioClip audioP41;
-    public AudioClip audioP42;
-    public AudioClip audioP43;
-    public AudioClip audioP44;
-    public AudioClip audioP45;
-    public AudioClip audioP46;
-    public AudioClip audioP47;
-    public AudioClip audioP48;
-    public AudioClip audioP49;
-    public AudioClip audioP50;
+
     private void Awake()
-    {
-
-        for (int i = 0; i < 100; i++)
-        {
-            audiosPraxia.Add(audioP0);
-        }
-
-
+    {        
+         audiosPraxia.Add(audioP0);
+         audiosPraxia.Add(audioP1);
+         audiosPraxia.Add(audioP2);
+         audiosPraxia.Add(audioP3);
+         audiosPraxia.Add(audioP4);
+         audiosPraxia.Add(audioP5);
+         audiosPraxia.Add(audioP6);
+         audiosPraxia.Add(audioP7);
+         audiosPraxia.Add(audioP8);
+         audiosPraxia.Add(audioP9);
+         audiosPraxia.Add(audioP10);
+         audiosPraxia.Add(audioP11);
+         audiosPraxia.Add(audioP12);
+         audiosPraxia.Add(audioP13);
+         audiosPraxia.Add(audioP14);
+         audiosPraxia.Add(audioP15);
+         audiosPraxia.Add(audioP16);
+         audiosPraxia.Add(audioP17);
+         audiosPraxia.Add(audioP18);
+         audiosPraxia.Add(audioP19);
     }
 }

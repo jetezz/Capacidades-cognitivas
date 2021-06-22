@@ -6,7 +6,8 @@ public class audioMemoria : MonoBehaviour
 {
    
     public List<AudioClip> audiosMemoria=new List<AudioClip>();
-
+    
+    public AudioClip audioM0;
     public AudioClip audioM1;
     public AudioClip audioM2;
     public AudioClip audioM3;
@@ -57,14 +58,103 @@ public class audioMemoria : MonoBehaviour
     public AudioClip audioM48;
     public AudioClip audioM49;
     public AudioClip audioM50;
+    public AudioClip audioM51;
+    public AudioClip audioM52;
+    public AudioClip audioM53;
+    public AudioClip audioM54;
+    public AudioClip audioM55;
+    public AudioClip audioM56;
+    public AudioClip audioM57;
+    public AudioClip audioM58;
+    public AudioClip audioM59;
+    public AudioClip audioM60;
+    public AudioClip audioM61;
+    public AudioClip audioM62;
+    public AudioClip audioM63;
+    public AudioClip audioM64;
+    public AudioClip audioM65;
+    public AudioClip audioM66;
+    public AudioClip audioM67;
+    public AudioClip audioM68;
+    public AudioClip audioM69;
+    public AudioClip audioM70;
+    public AudioClip audioM71;
     private void Awake()
     {
 
-        for (int i = 0; i < 100; i++)
-        {
-            audiosMemoria.Add(audioM1);
-        }
-       
+     audiosMemoria.Add(audioM0);
+     audiosMemoria.Add(audioM1);
+     audiosMemoria.Add(audioM2);
+     audiosMemoria.Add(audioM3);
+     audiosMemoria.Add(audioM4);
+     audiosMemoria.Add(audioM5);
+     audiosMemoria.Add(audioM6);
+     audiosMemoria.Add(audioM7);
+     audiosMemoria.Add(audioM8);
+     audiosMemoria.Add(audioM9);
+     audiosMemoria.Add(audioM10);
+     audiosMemoria.Add(audioM11);
+     audiosMemoria.Add(audioM12);
+     audiosMemoria.Add(audioM13);
+     audiosMemoria.Add(audioM14);
+     audiosMemoria.Add(audioM15);
+     audiosMemoria.Add(audioM16);
+     audiosMemoria.Add(audioM17);
+     audiosMemoria.Add(audioM18);
+     audiosMemoria.Add(audioM19);
+     audiosMemoria.Add(audioM20);
+     audiosMemoria.Add(audioM21);
+     audiosMemoria.Add(audioM22);
+     audiosMemoria.Add(audioM23);
+     audiosMemoria.Add(audioM24);
+     audiosMemoria.Add(audioM25);
+     audiosMemoria.Add(audioM26);
+     audiosMemoria.Add(audioM27);
+     audiosMemoria.Add(audioM28);
+     audiosMemoria.Add(audioM29);
+     audiosMemoria.Add(audioM30);
+     audiosMemoria.Add(audioM31);
+     audiosMemoria.Add(audioM32);
+     audiosMemoria.Add(audioM33);
+     audiosMemoria.Add(audioM34);
+     audiosMemoria.Add(audioM35);
+     audiosMemoria.Add(audioM36);
+     audiosMemoria.Add(audioM37);
+     audiosMemoria.Add(audioM38);
+     audiosMemoria.Add(audioM39);
+     audiosMemoria.Add(audioM40);
+     audiosMemoria.Add(audioM41);
+     audiosMemoria.Add(audioM42);
+     audiosMemoria.Add(audioM43);
+     audiosMemoria.Add(audioM44);
+     audiosMemoria.Add(audioM45);
+     audiosMemoria.Add(audioM46);
+     audiosMemoria.Add(audioM47);
+     audiosMemoria.Add(audioM48);
+     audiosMemoria.Add(audioM49);
+     audiosMemoria.Add(audioM50);
+     audiosMemoria.Add(audioM51);
+     audiosMemoria.Add(audioM52);
+     audiosMemoria.Add(audioM53);
+     audiosMemoria.Add(audioM54);
+     audiosMemoria.Add(audioM55);
+     audiosMemoria.Add(audioM56);
+     audiosMemoria.Add(audioM57);
+     audiosMemoria.Add(audioM58);
+     audiosMemoria.Add(audioM59);
+     audiosMemoria.Add(audioM60);
+     audiosMemoria.Add(audioM61);
+     audiosMemoria.Add(audioM62);
+     audiosMemoria.Add(audioM63);
+     audiosMemoria.Add(audioM64);
+     audiosMemoria.Add(audioM65);
+     audiosMemoria.Add(audioM66);
+     audiosMemoria.Add(audioM67);
+     audiosMemoria.Add(audioM68);
+     audiosMemoria.Add(audioM69);
+     audiosMemoria.Add(audioM70);
+     audiosMemoria.Add(audioM71);
+
 
     }
 }

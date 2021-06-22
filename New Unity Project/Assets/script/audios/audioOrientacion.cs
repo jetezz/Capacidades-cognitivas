@@ -54,17 +54,59 @@ public class audioOrientacion : MonoBehaviour
     public AudioClip audioO46;
     public AudioClip audioO47;
     public AudioClip audioO48;
-    public AudioClip audioO49;
-    public AudioClip audioO50;
+
 
     private void Awake()
     {
-
-        for (int i = 0; i < 100; i++)
-        {
-            audiosOrientacion.Add(audioO0);
-        }
-
+        audiosOrientacion.Add(audioO0);
+        audiosOrientacion.Add(audioO1);
+        audiosOrientacion.Add(audioO2);
+        audiosOrientacion.Add(audioO3);
+        audiosOrientacion.Add(audioO4);
+        audiosOrientacion.Add(audioO5);
+        audiosOrientacion.Add(audioO6);
+        audiosOrientacion.Add(audioO7);
+        audiosOrientacion.Add(audioO8);
+        audiosOrientacion.Add(audioO9);
+        audiosOrientacion.Add(audioO10);
+        audiosOrientacion.Add(audioO11);
+        audiosOrientacion.Add(audioO12);
+        audiosOrientacion.Add(audioO13);
+        audiosOrientacion.Add(audioO14);
+        audiosOrientacion.Add(audioO15);
+        audiosOrientacion.Add(audioO16);
+        audiosOrientacion.Add(audioO17);
+        audiosOrientacion.Add(audioO18);
+        audiosOrientacion.Add(audioO19);
+        audiosOrientacion.Add(audioO20);
+        audiosOrientacion.Add(audioO21);
+        audiosOrientacion.Add(audioO22);
+        audiosOrientacion.Add(audioO23);
+        audiosOrientacion.Add(audioO24);
+        audiosOrientacion.Add(audioO25);
+        audiosOrientacion.Add(audioO26);
+        audiosOrientacion.Add(audioO27);
+        audiosOrientacion.Add(audioO28);
+        audiosOrientacion.Add(audioO29);
+        audiosOrientacion.Add(audioO30);
+        audiosOrientacion.Add(audioO31);
+        audiosOrientacion.Add(audioO32);
+        audiosOrientacion.Add(audioO33);
+        audiosOrientacion.Add(audioO34);
+        audiosOrientacion.Add(audioO35);
+        audiosOrientacion.Add(audioO36);
+        audiosOrientacion.Add(audioO37);
+        audiosOrientacion.Add(audioO38);
+        audiosOrientacion.Add(audioO39);
+        audiosOrientacion.Add(audioO40);
+        audiosOrientacion.Add(audioO41);
+        audiosOrientacion.Add(audioO42);
+        audiosOrientacion.Add(audioO43);
+        audiosOrientacion.Add(audioO44);
+        audiosOrientacion.Add(audioO45);
+        audiosOrientacion.Add(audioO46);
+        audiosOrientacion.Add(audioO47);
+        audiosOrientacion.Add(audioO48);
 
     }
 }

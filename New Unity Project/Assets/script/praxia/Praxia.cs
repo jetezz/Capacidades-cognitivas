@@ -139,6 +139,9 @@ public class Praxia : MonoBehaviour
             managerEjercicios.GetComponent<ManagerEjercicios>().usuario.praxia(siguienteNnivel);
             GameObject managerUsuario = GameObject.FindWithTag("MUsu");
             managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+            int au;
+            au = Random.Range(4, 8);
+            sonidos.GetComponent<Sonidos>().repAudio(3, au);
         }
         else
         {
@@ -153,6 +156,9 @@ public class Praxia : MonoBehaviour
                 managerEjercicios.GetComponent<ManagerEjercicios>().usuario.praxia(siguienteNnivel);
                 GameObject managerUsuario = GameObject.FindWithTag("MUsu");
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+                int au;
+                au = Random.Range(8, 10);
+                sonidos.GetComponent<Sonidos>().repAudio(3, au);
             }
             else
             {
@@ -161,6 +167,9 @@ public class Praxia : MonoBehaviour
                 managerEjercicios.GetComponent<ManagerEjercicios>().usuario.praxia(siguienteNnivel);
                 GameObject managerUsuario = GameObject.FindWithTag("MUsu");
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+                int au;
+                au = Random.Range(8, 10);
+                sonidos.GetComponent<Sonidos>().repAudio(3, au);
 
             }
 
@@ -221,8 +230,14 @@ public class Praxia : MonoBehaviour
         }
 
         panel1.SetActive(true);
-        siguientePreguntaN1();
+        sonidos.GetComponent<Sonidos>().repAudio(5, 19);
+        StartCoroutine(Esperar());
 
+    }
+    IEnumerator Esperar()
+    {
+        yield return new WaitForSeconds(2);
+        siguientePreguntaN1();
     }
     void siguientePreguntaN1()
     {
@@ -434,7 +449,7 @@ public class Praxia : MonoBehaviour
     void nivel3()
     {
         sonidos.GetComponent<Sonidos>().repAudio(5, 17);
-        textoPrincipal.GetComponent<Text>().text = "Pulsa las secuencia de la primera a la última";
+        textoPrincipal.GetComponent<Text>().text = "Pulsa las secuencia en orden, desde la primera acción a la última";
         List<string> fase1 = new List<string>();
         List<string> fase2 = new List<string>();
         List<string> fase3 = new List<string>();

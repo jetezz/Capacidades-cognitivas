@@ -220,6 +220,9 @@ public class Percepcion : MonoBehaviour
             managerEjercicios.GetComponent<ManagerEjercicios>().usuario.percepcion(siguienteNnivel);
             GameObject managerUsuario = GameObject.FindWithTag("MUsu");
             managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+            int au;
+            au = Random.Range(4, 8);
+            sonidos.GetComponent<Sonidos>().repAudio(3, au);
         }
         else
         {
@@ -234,6 +237,9 @@ public class Percepcion : MonoBehaviour
                 managerEjercicios.GetComponent<ManagerEjercicios>().usuario.percepcion(siguienteNnivel);
                 GameObject managerUsuario = GameObject.FindWithTag("MUsu");
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+                int au;
+                au = Random.Range(8, 10);
+                sonidos.GetComponent<Sonidos>().repAudio(3, au);
             }
             else
             {
@@ -242,6 +248,9 @@ public class Percepcion : MonoBehaviour
                 managerEjercicios.GetComponent<ManagerEjercicios>().usuario.percepcion(siguienteNnivel);
                 GameObject managerUsuario = GameObject.FindWithTag("MUsu");
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+                int au;
+                au = Random.Range(8, 10);
+                sonidos.GetComponent<Sonidos>().repAudio(3, au);
             }
 
 
@@ -284,7 +293,7 @@ public class Percepcion : MonoBehaviour
 
         panel1.SetActive(true);
         sonidos.GetComponent<Sonidos>().repAudio(2,0);
-        textoPrincipal.GetComponent<Text>().text = "Selecciona las imágenes que son iguales al ejemplo";
+        textoPrincipal.GetComponent<Text>().text = "Selecciona las imágenes que son iguales que el ejemplo";
         siguientePreguntaN1();
     }
 
@@ -486,7 +495,7 @@ public class Percepcion : MonoBehaviour
 
         panel2.SetActive(true);
         sonidos.GetComponent<Sonidos>().repAudio(2, 0);
-        textoPrincipal.GetComponent<Text>().text = "Selecciona las imágenes que son iguales al ejemplo";
+        textoPrincipal.GetComponent<Text>().text = "Selecciona las imágenes que son iguales que el ejemplo";
 
         siguientePreguntaN2();
 
@@ -751,7 +760,7 @@ public class Percepcion : MonoBehaviour
 
         panel2.SetActive(true);
         sonidos.GetComponent<Sonidos>().repAudio(2, 0);
-        textoPrincipal.GetComponent<Text>().text = "Selecciona las imágenes que son iguales al ejemplo";
+        textoPrincipal.GetComponent<Text>().text = "Selecciona las imágenes que son iguales que el ejemplo";
 
         siguientePreguntaN2();
 

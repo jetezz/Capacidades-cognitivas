@@ -145,6 +145,9 @@ public class Calculo : MonoBehaviour
             managerEjercicios.GetComponent<ManagerEjercicios>().usuario.calculo(siguienteNnivel);
             GameObject managerUsuario = GameObject.FindWithTag("MUsu");
             managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+            int au;
+            au = UnityEngine.Random.Range(4, 8);
+            sonidos.GetComponent<Sonidos>().repAudio(3, au);
         }
         else
         {
@@ -159,6 +162,9 @@ public class Calculo : MonoBehaviour
                 managerEjercicios.GetComponent<ManagerEjercicios>().usuario.calculo(siguienteNnivel);
                 GameObject managerUsuario = GameObject.FindWithTag("MUsu");
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+                int au;
+                au = UnityEngine.Random.Range(8, 10);
+                sonidos.GetComponent<Sonidos>().repAudio(3, au);
             }
             else
             {
@@ -167,6 +173,9 @@ public class Calculo : MonoBehaviour
                 managerEjercicios.GetComponent<ManagerEjercicios>().usuario.calculo(siguienteNnivel);
                 GameObject managerUsuario = GameObject.FindWithTag("MUsu");
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+                int au;
+                au = UnityEngine.Random.Range(8, 10);
+                sonidos.GetComponent<Sonidos>().repAudio(3, au);
             }
             
 
@@ -197,14 +206,14 @@ public class Calculo : MonoBehaviour
         preguntas1.Add(new Calculo1(5, "Pulsa el billete de 10 euros", false,5));
         preguntas1.Add(new Calculo1(6, "Pulsa el billete de 20 euros", false,6));
         preguntas1.Add(new Calculo1(7, "Pulsa el billete de 50 euros", false,7));
-        preguntas1.Add(new Calculo1(0, "Pulsa la moneda de 5 céntimos", true,8));
-        preguntas1.Add(new Calculo1(1, "Pulsa la moneda de 10 céntimos", true,9));
-        preguntas1.Add(new Calculo1(2, "Pulsa la moneda de 20 céntimos", true,10));
-        preguntas1.Add(new Calculo1(3, "Pulsa la moneda de 50 céntimos", true,11));
-        preguntas1.Add(new Calculo1(4, "Pulsa el billete de 5 euros", false,12));
-        preguntas1.Add(new Calculo1(5, "Pulsa el billete de 10 euros", false,13));
-        preguntas1.Add(new Calculo1(6, "Pulsa el billete de 20 euros", false,14));
-        preguntas1.Add(new Calculo1(7, "Pulsa el billete de 50 euros", false,15));
+        preguntas1.Add(new Calculo1(0, "Pulsa la moneda de 5 céntimos", true,0));
+        preguntas1.Add(new Calculo1(1, "Pulsa la moneda de 10 céntimos", true,1));
+        preguntas1.Add(new Calculo1(2, "Pulsa la moneda de 20 céntimos", true,2));
+        preguntas1.Add(new Calculo1(3, "Pulsa la moneda de 50 céntimos", true,3));
+        preguntas1.Add(new Calculo1(4, "Pulsa el billete de 5 euros", false,4));
+        preguntas1.Add(new Calculo1(5, "Pulsa el billete de 10 euros", false,5));
+        preguntas1.Add(new Calculo1(6, "Pulsa el billete de 20 euros", false,6));
+        preguntas1.Add(new Calculo1(7, "Pulsa el billete de 50 euros", false,7));
 
 
 
@@ -420,7 +429,7 @@ public class Calculo : MonoBehaviour
 
         preguntas3 = DesordenarLista<Calculo3>(preguntas3);
 
-        sonidos.GetComponent<Sonidos>().repAudio(7,16);
+        sonidos.GetComponent<Sonidos>().repAudio(7,8);
         textoPrincipal.GetComponent<Text>().text = "Pulsa en el grupo que contenga el mismo dinero que el grupo de arriba";
         siguientePreguntaN3();
 
@@ -589,8 +598,8 @@ public class Calculo : MonoBehaviour
 
 
         preguntas3 = DesordenarLista<Calculo3>(preguntas3);
-        sonidos.GetComponent<Sonidos>().repAudio(7, 16);
-        textoPrincipal.GetComponent<Text>().text = "Pulsa en el grupo que contenga el mismo dinero que el grupo de arriba";
+        sonidos.GetComponent<Sonidos>().repAudio(7, 8);
+        textoPrincipal.GetComponent<Text>().text = "Pulsa la casilla que contenga el mismo dinero que el grupo de arriba";
         siguientePreguntaN3();
 
     }
@@ -724,7 +733,7 @@ public class Calculo : MonoBehaviour
         conjunto2.Add(new Grupo2(img9, etiqueta9, 50.35f));
         
         panel4.SetActive(true);
-        sonidos.GetComponent<Sonidos>().repAudio(7, 17);
+        sonidos.GetComponent<Sonidos>().repAudio(7, 9);
         textoPrincipal.GetComponent<Text>().text = "Calcula la suma de estos objetos";
         siguientePreguntaN4();
     }

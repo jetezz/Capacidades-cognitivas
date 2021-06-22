@@ -475,9 +475,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'New Text
-
-    asd'
+  m_Text: Selecciona la imagen correcta
 --- !u!222 &134526855
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1426,7 +1424,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &344693982
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4168,7 +4166,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 28.054932, y: 51.621338}
+  m_AnchoredPosition: {x: 28.055176, y: 51.621338}
   m_SizeDelta: {x: -127.931, y: -381.5486}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1565321592
@@ -5874,7 +5872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5685390976144708508, guid: 56614a7255ee34a41af6cbed1eccb7db, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.33618164
+      value: -0.3359375
       objectReference: {fileID: 0}
     - target: {fileID: 5685390976144708508, guid: 56614a7255ee34a41af6cbed1eccb7db, type: 3}
       propertyPath: m_AnchoredPosition.y

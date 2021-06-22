@@ -5,6 +5,7 @@ using UnityEngine;
 public class audioLenguaje : MonoBehaviour
 {
     public List<AudioClip> audiosLenguaje = new List<AudioClip>();
+    public AudioClip audioL0;
     public AudioClip audioL1;
     public AudioClip audioL2;
     public AudioClip audioL3;
@@ -44,26 +45,52 @@ public class audioLenguaje : MonoBehaviour
     public AudioClip audioL37;
     public AudioClip audioL38;
     public AudioClip audioL39;
-    public AudioClip audioL40;
-    public AudioClip audioL41;
-    public AudioClip audioL42;
-    public AudioClip audioL43;
-    public AudioClip audioL44;
-    public AudioClip audioL45;
-    public AudioClip audioL46;
-    public AudioClip audioL47;
-    public AudioClip audioL48;
-    public AudioClip audioL49;
-    public AudioClip audioL50;
+    
 
     private void Awake()
     {
 
-        for (int i = 0; i < 100; i++)
-        {
-            audiosLenguaje.Add(audioL1);
-        }
-
+        
+     audiosLenguaje.Add(audioL0);
+     audiosLenguaje.Add(audioL1);
+     audiosLenguaje.Add(audioL2);
+     audiosLenguaje.Add(audioL3);
+     audiosLenguaje.Add(audioL4);
+     audiosLenguaje.Add(audioL5);
+     audiosLenguaje.Add(audioL6);
+     audiosLenguaje.Add(audioL7);
+     audiosLenguaje.Add(audioL8);
+     audiosLenguaje.Add(audioL9);
+     audiosLenguaje.Add(audioL10);
+     audiosLenguaje.Add(audioL11);
+     audiosLenguaje.Add(audioL12);
+     audiosLenguaje.Add(audioL13);
+     audiosLenguaje.Add(audioL14);
+     audiosLenguaje.Add(audioL15);
+     audiosLenguaje.Add(audioL16);
+     audiosLenguaje.Add(audioL17);
+     audiosLenguaje.Add(audioL18);
+     audiosLenguaje.Add(audioL19);
+     audiosLenguaje.Add(audioL20);
+     audiosLenguaje.Add(audioL21);
+     audiosLenguaje.Add(audioL22);
+     audiosLenguaje.Add(audioL23);
+     audiosLenguaje.Add(audioL24);
+     audiosLenguaje.Add(audioL25);
+     audiosLenguaje.Add(audioL26);
+     audiosLenguaje.Add(audioL27);
+     audiosLenguaje.Add(audioL28);
+     audiosLenguaje.Add(audioL29);
+     audiosLenguaje.Add(audioL30);
+     audiosLenguaje.Add(audioL31);
+     audiosLenguaje.Add(audioL32);
+     audiosLenguaje.Add(audioL33);
+     audiosLenguaje.Add(audioL34);
+     audiosLenguaje.Add(audioL35);
+     audiosLenguaje.Add(audioL36);
+     audiosLenguaje.Add(audioL37);
+     audiosLenguaje.Add(audioL38);
+     audiosLenguaje.Add(audioL39);
 
     }
 }

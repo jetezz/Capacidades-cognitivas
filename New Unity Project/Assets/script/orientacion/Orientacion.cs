@@ -139,6 +139,9 @@ public class Orientacion : MonoBehaviour
             managerEjercicios.GetComponent<ManagerEjercicios>().usuario.orientacion(siguienteNnivel);
             GameObject managerUsuario = GameObject.FindWithTag("MUsu");
             managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+            int au;
+            au = Random.Range(4, 8);
+            sonidos.GetComponent<Sonidos>().repAudio(3, au);
         }
         else
         {
@@ -153,6 +156,9 @@ public class Orientacion : MonoBehaviour
                 managerEjercicios.GetComponent<ManagerEjercicios>().usuario.orientacion(siguienteNnivel);
                 GameObject managerUsuario = GameObject.FindWithTag("MUsu");
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+                int au;
+                au = Random.Range(8, 10);
+                sonidos.GetComponent<Sonidos>().repAudio(3, au);
             }
             else
             {
@@ -161,6 +167,9 @@ public class Orientacion : MonoBehaviour
                 managerEjercicios.GetComponent<ManagerEjercicios>().usuario.orientacion(siguienteNnivel);
                 GameObject managerUsuario = GameObject.FindWithTag("MUsu");
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
+                int au;
+                au = Random.Range(8, 10);
+                sonidos.GetComponent<Sonidos>().repAudio(3, au);
             }
 
 
@@ -186,24 +195,31 @@ public class Orientacion : MonoBehaviour
 
 
         preguntas1 = new List<Orientacion1>();
-        preguntas1.Add(new Orientacion1(0,  "Pulsa la foto del perro dentro de la cama",0));        
-        preguntas1.Add(new Orientacion1(1,  "Pulsa la foto de la pelota debajo de la mesa roja",1));
-        preguntas1.Add(new Orientacion1(2,  "Pulsa la foto de a niña detrás del ordenador",2));        
-        preguntas1.Add(new Orientacion1(3,  "Pulsa la foto del a niña delante de la bicicleta",3));
-        preguntas1.Add(new Orientacion1(4,  "Pulsa la foto de los periquitos dentro de la jaula",4));      
-        preguntas1.Add(new Orientacion1(5,  "Pulsa la foto del profesor delante de la pizarra",5));
-        preguntas1.Add(new Orientacion1(6,  "Pulsa la foto del ciclista encima de la bici",6));
-        preguntas1.Add(new Orientacion1(7,  "Pulsa la foto de la pelota debajo de la mesa",7));
-        preguntas1.Add(new Orientacion1(8,  "Pulsa la foto del libro encima de la mesa",8));
-        preguntas1.Add(new Orientacion1(9,  "Pulsa la foto del gato delante de la silla",9));
+        preguntas1.Add(new Orientacion1(0,  "Pulsa la imagen: el perro está dentro de la cama",0));        
+        preguntas1.Add(new Orientacion1(1,  "Pulsa la imagen: la pelota está debajo de la mesa roja",1));
+        preguntas1.Add(new Orientacion1(2,  "Pulsa la imagen: la niña está detrás del ordenador",2));        
+        preguntas1.Add(new Orientacion1(3,  "Pulsa la imagen: la niña está delante de la bicicleta",3));
+        preguntas1.Add(new Orientacion1(4,  "Pulsa la imagen: los periquitos están dentro de la jaula",4));      
+        preguntas1.Add(new Orientacion1(5,  "Pulsa la imagen: el profesor está delante de la pizarra",5));
+        preguntas1.Add(new Orientacion1(6,  "Pulsa la imagen: el ciclista está encima de la bici",6));
+        preguntas1.Add(new Orientacion1(7,  "Pulsa la imagen: la pelota está debajo de la mesa",7));
+        preguntas1.Add(new Orientacion1(8,  "Pulsa la imagen: el libro está encima de la mesa",8));
+        preguntas1.Add(new Orientacion1(9,  "Pulsa la imagen: el gato está delante de la silla",9));
 
 
 
         preguntas1 = DesordenarLista<Orientacion1>(preguntas1);
         panel1.SetActive(true);
+        sonidos.GetComponent<Sonidos>().repAudio(6, 48);
+        StartCoroutine(Esperar());
+        
+        
+
+    }
+    IEnumerator Esperar()
+    {
+        yield return new WaitForSeconds(2);
         siguientePreguntaN1();
-
-
     }
     void siguientePreguntaN1()
     {
@@ -434,17 +450,17 @@ public class Orientacion : MonoBehaviour
         preguntas4 = new List<Orientacion4>();
         preguntas4.Add(new Orientacion4(2, 2, "Coloca el cuadrado a la derecha del círculo amarillo", 1,36));
         preguntas4.Add(new Orientacion4(4, 5, "Coloca el rombo debajo del círculo rojo", 2,37));
-        preguntas4.Add(new Orientacion4(4, 0, "Coloca el triángulo arriba del círculo verde", 3,38));
+        preguntas4.Add(new Orientacion4(4, 0, "Coloca el triángulo encima del círculo verde", 3,38));
         preguntas4.Add(new Orientacion4(0, 4, "Coloca el rectángulo a la izquierda del círculo azul", 4,39));
                                                
-        preguntas4.Add(new Orientacion4(5, 4, "Coloca el rombo a la derecha círculo rojo", 2,40));
+        preguntas4.Add(new Orientacion4(5, 4, "Coloca el rombo a la derecha del círculo rojo", 2,40));
         preguntas4.Add(new Orientacion4(5, 1, "Coloca el triángulo a la derecha del círculo verde", 3,41));
         preguntas4.Add(new Orientacion4(1, 3, "Coloca el cuadrado debajo del círculo amarillo", 1,42));
-        preguntas4.Add(new Orientacion4(1, 5, "Coloca el rectángulo a la debajo del círculo azul", 4,43));
+        preguntas4.Add(new Orientacion4(1, 5, "Coloca el rectángulo debajo del círculo azul", 4,43));
                                                
         preguntas4.Add(new Orientacion4(0, 2, "Coloca el cuadrado a la izquierda del círculo amarillo", 1,44));
-        preguntas4.Add(new Orientacion4(4, 3, "Coloca el rombo arriba del círculo rojo", 2,45));
-        preguntas4.Add(new Orientacion4(4, 2, "Coloca el triángulo abajo del círculo verde", 3,46));
+        preguntas4.Add(new Orientacion4(4, 3, "Coloca el rombo encima del círculo rojo", 2,45));
+        preguntas4.Add(new Orientacion4(4, 2, "Coloca el triángulo debajo del círculo verde", 3,46));
         preguntas4.Add(new Orientacion4(2, 4, "Coloca el rectángulo a la derecha del círculo azul", 4,47));
 
 
