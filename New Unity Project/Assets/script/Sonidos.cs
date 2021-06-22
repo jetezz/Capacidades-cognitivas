@@ -84,7 +84,9 @@ public class Sonidos : MonoBehaviour
     }
     public void repAudio(int capacidad, int i)
     {
+        reproductor2.Stop();
         reproductor2.PlayOneShot(listaAudios[capacidad][i]);
+        
         Debug.Log(i);
     }
 

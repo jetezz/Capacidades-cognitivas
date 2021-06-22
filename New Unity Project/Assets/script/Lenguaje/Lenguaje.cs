@@ -211,52 +211,52 @@ public class Lenguaje : MonoBehaviour
     {
         preguntas1aux = new List<Preguntas1>();
         List<Pregunta1> aux = new List<Pregunta1>();
-        aux.Add(new Pregunta1("Pulsa en el color azul", 1, 0,0));
-        aux.Add(new Pregunta1("Pulsa en el color rojo", 2, 0,1));
-        aux.Add(new Pregunta1("Pulsa en el color verde", 3, 0,2));
-        aux.Add(new Pregunta1("Pulsa en el color negro", 4, 0,3));
+        aux.Add(new Pregunta1("Pulsa el color azul", 1, 0,0));
+        aux.Add(new Pregunta1("Pulsa el color rojo", 2, 0,1));
+        aux.Add(new Pregunta1("Pulsa el color verde", 3, 0,2));
+        aux.Add(new Pregunta1("Pulsa el color negro", 4, 0,3));
         preguntas1aux.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
         aux.Clear();
 
-        aux.Add(new Pregunta1("Pulsa en la falda", 1, 1,4));
-        aux.Add(new Pregunta1("Pulsa en el calcetín", 2, 1,5));
-        aux.Add(new Pregunta1("Pulsa en la chaqueta", 3, 1,6));
-        aux.Add(new Pregunta1("Pulsa en el pantalón", 4, 1,7));
+        aux.Add(new Pregunta1("Pulsa la falda", 1, 1,4));
+        aux.Add(new Pregunta1("Pulsa el calcetín", 2, 1,5));
+        aux.Add(new Pregunta1("Pulsa la chaqueta", 3, 1,6));
+        aux.Add(new Pregunta1("Pulsa el pantalón", 4, 1,7));
         preguntas1aux.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
         aux.Clear();
 
-        aux.Add(new Pregunta1("Pulsa en el perro", 1, 2,8));
-        aux.Add(new Pregunta1("Pulsa en el gato", 2, 2,9));
-        aux.Add(new Pregunta1("Pulsa en el caballo", 3, 2,10));
-        aux.Add(new Pregunta1("Pulsa en la oveja", 4, 2,11));
+        aux.Add(new Pregunta1("Pulsa el perro", 1, 2,8));
+        aux.Add(new Pregunta1("Pulsa el gato", 2, 2,9));
+        aux.Add(new Pregunta1("Pulsa el caballo", 3, 2,10));
+        aux.Add(new Pregunta1("Pulsa la oveja", 4, 2,11));
         preguntas1aux.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
         aux.Clear();
 
-        aux.Add(new Pregunta1("Pulsa en las zapatillas de estar por casa", 1, 3,12));
-        aux.Add(new Pregunta1("Pulsa en las botas", 2, 3,13));
-        aux.Add(new Pregunta1("Pulsa en las chanclas", 3, 3,14));
-        aux.Add(new Pregunta1("Pulsa en las deportivas", 4, 3,15));
+        aux.Add(new Pregunta1("Pulsa las zapatillas de estar por casa", 1, 3,12));
+        aux.Add(new Pregunta1("Pulsa las botas", 2, 3,13));
+        aux.Add(new Pregunta1("Pulsa las chanclas", 3, 3,14));
+        aux.Add(new Pregunta1("Pulsa las deportivas", 4, 3,15));
         preguntas1aux.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
         aux.Clear();
 
-        aux.Add(new Pregunta1("Pulsa en la guitarra", 1, 4,16));
-        aux.Add(new Pregunta1("Pulsa en el tambor", 2, 4,17));
-        aux.Add(new Pregunta1("Pulsa en la flauta", 3, 4,18));
-        aux.Add(new Pregunta1("Pulsa en el piano", 4, 4,19));
+        aux.Add(new Pregunta1("Pulsa la guitarra", 1, 4,16));
+        aux.Add(new Pregunta1("Pulsa el tambor", 2, 4,17));
+        aux.Add(new Pregunta1("Pulsa la flauta", 3, 4,18));
+        aux.Add(new Pregunta1("Pulsa el piano", 4, 4,19));
         preguntas1aux.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
         aux.Clear();
 
-        aux.Add(new Pregunta1("Pulsa en el tomate", 1, 5,20));
-        aux.Add(new Pregunta1("Pulsa en la lechuga", 2, 5,21));
-        aux.Add(new Pregunta1("Pulsa en la zanahoria", 3, 5,22));
-        aux.Add(new Pregunta1("Pulsa en el pepino", 4, 5,23));
+        aux.Add(new Pregunta1("Pulsa el tomate", 1, 5,20));
+        aux.Add(new Pregunta1("Pulsa la lechuga", 2, 5,21));
+        aux.Add(new Pregunta1("Pulsa la zanahoria", 3, 5,22));
+        aux.Add(new Pregunta1("Pulsa el pepino", 4, 5,23));
         preguntas1aux.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
         aux.Clear();
 
-        aux.Add(new Pregunta1("Pulsa en el círculo", 1, 6,24));
-        aux.Add(new Pregunta1("Pulsa en el cuadrado", 2, 6,25));
-        aux.Add(new Pregunta1("Pulsa en el triángulo", 3, 6,26));
-        aux.Add(new Pregunta1("Pulsa en el rectángulo", 4, 6,27));
+        aux.Add(new Pregunta1("Pulsa el círculo", 1, 6,24));
+        aux.Add(new Pregunta1("Pulsa el cuadrado", 2, 6,25));
+        aux.Add(new Pregunta1("Pulsa el triángulo", 3, 6,26));
+        aux.Add(new Pregunta1("Pulsa el rectángulo", 4, 6,27));
         preguntas1aux.Add(new Preguntas1(DesordenarLista<Pregunta1>(aux)));
         aux.Clear();
 
@@ -400,7 +400,7 @@ public class Lenguaje : MonoBehaviour
 
         preguntas2 = DesordenarLista<Pregunta2>(aux);
         sonidos.GetComponent<Sonidos>().repAudio(1, 28);
-        textoPrincipal.GetComponent<Text>().text = "Qué imagen no corresponde con el grupo";
+        textoPrincipal.GetComponent<Text>().text = "¿Qué imagen no corresponde con el grupo?";
         panel2.SetActive(true);
         siguientePreguntaN2();
 
@@ -554,6 +554,8 @@ public class Lenguaje : MonoBehaviour
         {
             panel3.transform.GetChild(0).GetComponent<Text>().text = preguntas3[contador].pregunta;
             generarBotonesN3();
+            //sonidos.GetComponent<Sonidos>().repAudio(1, preguntas3[contador].audio);
+
         }
         else
         {

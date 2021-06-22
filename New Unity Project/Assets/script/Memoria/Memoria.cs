@@ -521,7 +521,8 @@ public class Memoria : MonoBehaviour
         }
        
         cargarImagen();
-        
+
+        sonidos.GetComponent<Sonidos>().repAudio(0, 71);
         panelNivel2.SetActive(true);
 
 
@@ -532,8 +533,7 @@ public class Memoria : MonoBehaviour
     {
         if (contador < preguntas2.Count)
         {
-            panelNivel2.transform.GetChild(0).GetComponent<Image>().sprite = preguntas2[contador].imagen;
-            sonidos.GetComponent<Sonidos>().repAudio(0,71);
+            panelNivel2.transform.GetChild(0).GetComponent<Image>().sprite = preguntas2[contador].imagen;            
             textoPrincipal.GetComponent<Text>().text = "Memoriza esta imagen y dale al botón empezar";
         }
         
@@ -734,6 +734,7 @@ public class Memoria : MonoBehaviour
             posicionesPreguntas.Add(false);
             drags.transform.GetChild(i).GetComponent<Drag>().iniciarposicion();
         }
+        sonidos.GetComponent<Sonidos>().repAudio(0, 71);
     }
 
 

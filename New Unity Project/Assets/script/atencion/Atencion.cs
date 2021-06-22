@@ -502,8 +502,8 @@ public class Atencion : MonoBehaviour
         preguntas4.Add(new Pregunta4A(aux));
 
 
-        sonidos.GetComponent<Sonidos>().repAudio(3, 3);
-        textoPrincipal.GetComponent<Text>().text = "Introduce el número que falta 0-48";
+        
+        textoPrincipal.GetComponent<Text>().text = "Introduce los números que faltan del 0 al 48";
         tiempoEjercicio = 0;
         panel4.SetActive(true);
         siguientePreguntaN4();
