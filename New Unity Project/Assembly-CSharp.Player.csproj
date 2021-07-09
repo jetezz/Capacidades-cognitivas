@@ -111,12 +111,12 @@
     <Compile Include="Assets\CodeMonkey\Utils\UI_Sprite.cs" />
     <Compile Include="Assets\script\MenuPrincipal.cs" />
     <Compile Include="Assets\script\UsuarioEscena.cs" />
+    <Compile Include="Assets\script\Sonidos2.cs" />
     <Compile Include="Assets\CodeMonkey\Utils\UI_BarMultiple.cs" />
     <Compile Include="Assets\script\pru.cs" />
     <Compile Include="Assets\script\EsEstadiscitcas.cs" />
     <Compile Include="Assets\CodeMonkey\CMDebug.cs" />
     <Compile Include="Assets\CodeMonkey\Utils\FunctionPeriodic.cs" />
-    <Compile Include="Assets\script\Sonidos2.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
