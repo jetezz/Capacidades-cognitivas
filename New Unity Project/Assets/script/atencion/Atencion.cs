@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class Atencion : MonoBehaviour
 {
     GameObject sonidos;
+    GameObject sonidos2;
     private GameObject managerEjercicios;
     private int contador = 0;
     public int puntos = 0;
@@ -70,6 +71,7 @@ public class Atencion : MonoBehaviour
     {
         managerEjercicios = GameObject.FindWithTag("MEje");
         sonidos = GameObject.FindWithTag("Sonido");
+        sonidos2 = GameObject.FindWithTag("Sonido2");
 
 
 
@@ -81,7 +83,7 @@ public class Atencion : MonoBehaviour
         }
         else if (managerEjercicios.GetComponent<ManagerEjercicios>().nivel == 2)
         {
-            sonidos.GetComponent<Sonidos>().repAudio(3, 1);
+            sonidos2.GetComponent<Sonidos2>().repAudio(3, 1);
             nivel2();
          
         }
@@ -112,7 +114,7 @@ public class Atencion : MonoBehaviour
             managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
             int au;
             au = Random.Range(4, 8);
-            sonidos.GetComponent<Sonidos>().repAudio(3, au);
+            sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
         }
         else
         {
@@ -130,7 +132,7 @@ public class Atencion : MonoBehaviour
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
                 int au;
                 au = Random.Range(8, 10);
-                sonidos.GetComponent<Sonidos>().repAudio(3, au);
+                sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
             }
             else
             {
@@ -140,8 +142,8 @@ public class Atencion : MonoBehaviour
                 GameObject managerUsuario = GameObject.FindWithTag("MUsu");
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
                 int au;
-                au = Random.Range(8, 10);
-                sonidos.GetComponent<Sonidos>().repAudio(3, au);
+                au = Random.Range(6, 8);
+                sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
             }
 
 
@@ -165,7 +167,7 @@ public class Atencion : MonoBehaviour
 
 
         panel1.SetActive(true);
-        sonidos.GetComponent<Sonidos>().repAudio(3,0);
+        sonidos2.GetComponent<Sonidos2>().repAudio(3,0);
         textoPrincipal.GetComponent<Text>().text = "Selecciona las imágenes que son iguales al ejemplo";
         siguientePreguntaN1();
     }
@@ -292,7 +294,7 @@ public class Atencion : MonoBehaviour
                     managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
                     int au;
                     au = Random.Range(4, 8);
-                    sonidos.GetComponent<Sonidos>().repAudio(3, au);
+                    sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
                 }
                 else
                 {
@@ -304,7 +306,7 @@ public class Atencion : MonoBehaviour
                         managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
                         int au;
                         au = Random.Range(8, 10);
-                        sonidos.GetComponent<Sonidos>().repAudio(3, au);
+                        sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
                     }
                     else
                     {
@@ -313,8 +315,8 @@ public class Atencion : MonoBehaviour
                         GameObject managerUsuario = GameObject.FindWithTag("MUsu");
                         managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
                         int au;
-                        au = Random.Range(8, 10);
-                        sonidos.GetComponent<Sonidos>().repAudio(3, au);
+                        au = Random.Range(6, 8);
+                        sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
                     }
                     
                 }
@@ -381,7 +383,7 @@ public class Atencion : MonoBehaviour
 
         preguntas3.Add(Random.Range(30, 36));
 
-        sonidos.GetComponent<Sonidos>().repAudio(3, 2);
+        sonidos2.GetComponent<Sonidos2>().repAudio(3, 2);
         textoPrincipal.GetComponent<Text>().text = "Introduce el número que falta 0-35";
         tiempoEjercicio = 0;
         panel3.SetActive(true);
@@ -408,7 +410,7 @@ public class Atencion : MonoBehaviour
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
                 int au;
                 au = Random.Range(4, 8);
-                sonidos.GetComponent<Sonidos>().repAudio(3, au);
+                sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
             }
             else
             {
@@ -420,7 +422,7 @@ public class Atencion : MonoBehaviour
                     managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
                     int au;
                     au = Random.Range(8, 10);
-                    sonidos.GetComponent<Sonidos>().repAudio(3, au);
+                    sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
                 }
                 else
                 {
@@ -429,8 +431,8 @@ public class Atencion : MonoBehaviour
                     GameObject managerUsuario = GameObject.FindWithTag("MUsu");
                     managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
                     int au;
-                    au = Random.Range(8, 10);
-                    sonidos.GetComponent<Sonidos>().repAudio(3, au);
+                    au = Random.Range(6, 8);
+                    sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
                 }
                 
             }
@@ -530,7 +532,7 @@ public class Atencion : MonoBehaviour
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
                 int au;
                 au = Random.Range(4, 8);
-                sonidos.GetComponent<Sonidos>().repAudio(3, au);
+                sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
             }
             else
             {
@@ -542,7 +544,7 @@ public class Atencion : MonoBehaviour
                     managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
                     int au;
                     au = Random.Range(8, 10);
-                    sonidos.GetComponent<Sonidos>().repAudio(3, au);
+                    sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
                 }
                 else
                 {
@@ -551,8 +553,8 @@ public class Atencion : MonoBehaviour
                     GameObject managerUsuario = GameObject.FindWithTag("MUsu");
                     managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
                     int au;
-                    au = Random.Range(8, 10);
-                    sonidos.GetComponent<Sonidos>().repAudio(3, au);
+                    au = Random.Range(6, 8);
+                    sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
                 }
               
             }

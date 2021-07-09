@@ -11,6 +11,7 @@ TagManager:
   - panelSalir
   - DragParent
   - Sonido
+  - Sonido2
   layers:
   - Default
   - TransparentFX

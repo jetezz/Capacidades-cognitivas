@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Sonidos : MonoBehaviour
 {
-    public GameObject audios;
+    
     public static MonoBehaviour sonidos;
     public AudioClip boton;
     public AudioClip atras;
@@ -30,17 +30,15 @@ public class Sonidos : MonoBehaviour
   
 
 
-    private List<List <AudioClip>> listaAudios;
+    
 
 
-    AudioSource reproductor;
-    AudioSource reproductor2;
+    AudioSource reproductor;    
     Dictionary<int, AudioClip> listaSonidos;
 
     private void Awake()
     {
-        reproductor = GetComponent<AudioSource>();
-        reproductor2 = GetComponent<AudioSource>();
+        reproductor = GetComponent<AudioSource>();        
         if (sonidos == null)
         {
             sonidos = this;
@@ -55,21 +53,6 @@ public class Sonidos : MonoBehaviour
             listaSonidos.Add(6, drop);
             listaSonidos.Add(7, money);
             listaSonidos.Add(8, click);
-
-            
-
-            listaAudios = new List<List<AudioClip>>();
-            listaAudios.Add(audios.GetComponent<audioMemoria>().audiosMemoria);
-            listaAudios.Add(audios.GetComponent<audioLenguaje>().audiosLenguaje);
-            listaAudios.Add(audios.GetComponent<audioPercepcion>().audiosPercepcion);
-            listaAudios.Add(audios.GetComponent<audioAtencion>().audiosAtencion);
-            listaAudios.Add(audios.GetComponent<audioGnosia>().audiosgnosias);
-            listaAudios.Add(audios.GetComponent<audioPraxia>().audiosPraxia);
-            listaAudios.Add(audios.GetComponent<audioOrientacion>().audiosOrientacion);
-            listaAudios.Add(audios.GetComponent<audioCalculo>().audiosCalculo);
-
-
-
         }
         else if (sonidos != this)
         {
@@ -82,13 +65,7 @@ public class Sonidos : MonoBehaviour
 
         reproductor.PlayOneShot(listaSonidos[i]);
     }
-    public void repAudio(int capacidad, int i)
-    {
-        reproductor2.Stop();
-        reproductor2.PlayOneShot(listaAudios[capacidad][i]);
-        
-        Debug.Log(i);
-    }
+  
 
    
 }

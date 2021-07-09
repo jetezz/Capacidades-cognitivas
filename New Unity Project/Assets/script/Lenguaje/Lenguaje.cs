@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Lenguaje : MonoBehaviour
 {
     GameObject sonidos;
+    GameObject sonidos2;
     private AudioSource fuenteDeAudio;
     private GameObject managerEjercicios;
     private int contador = 0;
@@ -113,6 +114,7 @@ public class Lenguaje : MonoBehaviour
 
         managerEjercicios = GameObject.FindWithTag("MEje");
         sonidos = GameObject.FindWithTag("Sonido");
+        sonidos2 = GameObject.FindWithTag("Sonido2");
 
 
 
@@ -170,7 +172,7 @@ public class Lenguaje : MonoBehaviour
             managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
             int au;
             au = Random.Range(4, 8);
-            sonidos.GetComponent<Sonidos>().repAudio(3, au);
+            sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
         }
         else
         {
@@ -187,7 +189,7 @@ public class Lenguaje : MonoBehaviour
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
                 int au;
                 au = Random.Range(8, 10);
-                sonidos.GetComponent<Sonidos>().repAudio(3, au);
+                sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
             }
             else
             {
@@ -197,8 +199,8 @@ public class Lenguaje : MonoBehaviour
                 GameObject managerUsuario = GameObject.FindWithTag("MUsu");
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
                 int au;
-                au = Random.Range(8, 10);
-                sonidos.GetComponent<Sonidos>().repAudio(3, au);
+                au = Random.Range(6, 8);
+                sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
             }
 
 
@@ -279,7 +281,7 @@ public class Lenguaje : MonoBehaviour
         {
             if (contador < preguntas1.Count)
             {
-                sonidos.GetComponent<Sonidos>().repAudio(1, preguntas1[contador].preguntas[preguntas1[contador].contador].audio);
+                sonidos2.GetComponent<Sonidos2>().repAudio(1, preguntas1[contador].preguntas[preguntas1[contador].contador].audio);
                 textoPrincipal.GetComponent<Text>().text = preguntas1[contador].preguntas[preguntas1[contador].contador].pregunta;
                 generarGrupo();
             }
@@ -399,7 +401,7 @@ public class Lenguaje : MonoBehaviour
 
 
         preguntas2 = DesordenarLista<Pregunta2>(aux);
-        sonidos.GetComponent<Sonidos>().repAudio(1, 28);
+        sonidos2.GetComponent<Sonidos2>().repAudio(1, 28);
         textoPrincipal.GetComponent<Text>().text = "¿Qué imagen no corresponde con el grupo?";
         panel2.SetActive(true);
         siguientePreguntaN2();
@@ -542,7 +544,7 @@ public class Lenguaje : MonoBehaviour
 
 
         panel3.SetActive(true);
-        sonidos.GetComponent<Sonidos>().repAudio(1, 38);
+        sonidos2.GetComponent<Sonidos2>().repAudio(1, 38);
         textoPrincipal.GetComponent<Text>().text = "¿A qué grupo corresponden estas palabras?";
         siguientePreguntaN3();
 
@@ -785,7 +787,7 @@ public class Lenguaje : MonoBehaviour
         fases4.Add(fases4aux[0]);
 
 
-        sonidos.GetComponent<Sonidos>().repAudio(1, 39);
+        sonidos2.GetComponent<Sonidos2>().repAudio(1, 39);
         textoPrincipal.GetComponent<Text>().text = "Coloca las palabras en el grupo correcto";
         panel4.SetActive(true);
         siguientepreguntaN4();

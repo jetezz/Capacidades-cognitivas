@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Gnoxias : MonoBehaviour
 {
     GameObject sonidos;
+    GameObject sonidos2;
     private GameObject managerEjercicios;
     private int contador = 0;
     public int puntos = 0;
@@ -162,6 +163,7 @@ public class Gnoxias : MonoBehaviour
      
         managerEjercicios = GameObject.FindWithTag("MEje");
         sonidos = GameObject.FindWithTag("Sonido");
+        sonidos2 = GameObject.FindWithTag("Sonido2");
 
 
         if (managerEjercicios.GetComponent<ManagerEjercicios>().nivel == 1)
@@ -203,7 +205,7 @@ public class Gnoxias : MonoBehaviour
             managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
             int au;
             au = Random.Range(4, 8);
-            sonidos.GetComponent<Sonidos>().repAudio(3, au);
+            sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
         }
         else
         {
@@ -220,7 +222,7 @@ public class Gnoxias : MonoBehaviour
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
                 int au;
                 au = Random.Range(8, 10);
-                sonidos.GetComponent<Sonidos>().repAudio(3, au);
+                sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
             }
             else
             {
@@ -230,8 +232,8 @@ public class Gnoxias : MonoBehaviour
                 GameObject managerUsuario = GameObject.FindWithTag("MUsu");
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
                 int au;
-                au = Random.Range(8, 10);
-                sonidos.GetComponent<Sonidos>().repAudio(3, au);
+                au = Random.Range(6, 8);
+                sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
             }
 
 
@@ -287,7 +289,7 @@ public class Gnoxias : MonoBehaviour
        
 
         panel1.SetActive(true);
-        sonidos.GetComponent<Sonidos>().repAudio(4, 0);
+        sonidos2.GetComponent<Sonidos2>().repAudio(4, 0);
         textoPrincipal.GetComponent<Text>().text = "Selecciona el cuadrado que corresponde a la imagen";
         siguientePreguntaN1();
 
@@ -440,7 +442,7 @@ public class Gnoxias : MonoBehaviour
         
 
         panel2.SetActive(true);
-        sonidos.GetComponent<Sonidos>().repAudio(4, 1);
+        sonidos2.GetComponent<Sonidos2>().repAudio(4, 1);
         textoPrincipal.GetComponent<Text>().text = "Selecciona la imagen que corresponde a la silueta";
         siguientePreguntaN2();
 
@@ -612,7 +614,7 @@ public class Gnoxias : MonoBehaviour
 
 
         panel3.SetActive(true);
-        sonidos.GetComponent<Sonidos>().repAudio(4, 2);
+        sonidos2.GetComponent<Sonidos2>().repAudio(4, 2);
         textoPrincipal.GetComponent<Text>().text = "Selecciona las imágenes que aparecen en la silueta";
         siguientePreguntaN3();
 
@@ -764,7 +766,7 @@ public class Gnoxias : MonoBehaviour
 
         preguntasN4 = DesordenarLista<Pregunta4G>(preguntasN4);
         panel4.SetActive(true);
-        sonidos.GetComponent<Sonidos>().repAudio(4, 3);
+        sonidos2.GetComponent<Sonidos2>().repAudio(4, 3);
         textoPrincipal.GetComponent<Text>().text = "Selecciona la casilla a la que corresponde esta imagen ";
         siguientePreguntaN4();
     }

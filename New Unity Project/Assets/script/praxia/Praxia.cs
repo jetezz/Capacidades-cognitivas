@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Praxia : MonoBehaviour
 {
     GameObject sonidos;
+    GameObject sonidos2;
     private GameObject managerEjercicios;
     private int contador = 0;
     public int puntos = 0;
@@ -101,6 +102,7 @@ public class Praxia : MonoBehaviour
     {
         managerEjercicios = GameObject.FindWithTag("MEje");
         sonidos = GameObject.FindWithTag("Sonido");
+        sonidos2 = GameObject.FindWithTag("Sonido2");
 
 
         if (managerEjercicios.GetComponent<ManagerEjercicios>().nivel == 1)
@@ -140,8 +142,8 @@ public class Praxia : MonoBehaviour
             GameObject managerUsuario = GameObject.FindWithTag("MUsu");
             managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
             int au;
-            au = Random.Range(4, 8);
-            sonidos.GetComponent<Sonidos>().repAudio(3, au);
+            au = Random.Range(4, 6);
+            sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
         }
         else
         {
@@ -158,7 +160,7 @@ public class Praxia : MonoBehaviour
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
                 int au;
                 au = Random.Range(8, 10);
-                sonidos.GetComponent<Sonidos>().repAudio(3, au);
+                sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
             }
             else
             {
@@ -168,8 +170,8 @@ public class Praxia : MonoBehaviour
                 GameObject managerUsuario = GameObject.FindWithTag("MUsu");
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
                 int au;
-                au = Random.Range(8, 10);
-                sonidos.GetComponent<Sonidos>().repAudio(3, au);
+                au = Random.Range(6, 8);
+                sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
 
             }
 
@@ -230,20 +232,20 @@ public class Praxia : MonoBehaviour
         }
 
         panel1.SetActive(true);
-        sonidos.GetComponent<Sonidos>().repAudio(5, 19);
+        sonidos2.GetComponent<Sonidos2>().repAudio(5, 19);
         StartCoroutine(Esperar());
 
     }
     IEnumerator Esperar()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         siguientePreguntaN1();
     }
     void siguientePreguntaN1()
     {
         if (contador < preguntas1.Count)
         {
-            sonidos.GetComponent<Sonidos>().repAudio(5, preguntas1[contador].audio);
+            sonidos2.GetComponent<Sonidos2>().repAudio(5, preguntas1[contador].audio);
             textoPrincipal.GetComponent<Text>().text = preguntas1[contador].pregunta;
             generarBotones1();
         }
@@ -358,7 +360,7 @@ public class Praxia : MonoBehaviour
         {
             preguntas2.Add(aux[i]);
         }
-        sonidos.GetComponent<Sonidos>().repAudio(5, 16);
+        sonidos2.GetComponent<Sonidos2>().repAudio(5, 16);
         textoPrincipal.GetComponent<Text>().text = "Pulsa la acción relacionada con la imagen";
         preguntas2 = DesordenarLista<Praxia2>(preguntas2);
      
@@ -448,7 +450,7 @@ public class Praxia : MonoBehaviour
 
     void nivel3()
     {
-        sonidos.GetComponent<Sonidos>().repAudio(5, 17);
+        sonidos2.GetComponent<Sonidos2>().repAudio(5, 17);
         textoPrincipal.GetComponent<Text>().text = "Pulsa las secuencia en orden, desde la primera acción a la última";
         List<string> fase1 = new List<string>();
         List<string> fase2 = new List<string>();
@@ -579,7 +581,7 @@ public class Praxia : MonoBehaviour
     }
     void nivel4()
     {
-        sonidos.GetComponent<Sonidos>().repAudio(5, 18);
+        sonidos2.GetComponent<Sonidos2>().repAudio(5, 18);
         textoPrincipal.GetComponent<Text>().text = "Indica el orden de las secuencias";
         for (int i = 0; i < 6; i++)
         {

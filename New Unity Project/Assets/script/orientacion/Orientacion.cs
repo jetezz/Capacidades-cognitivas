@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Orientacion : MonoBehaviour
 {
     GameObject sonidos;
+    GameObject sonidos2;
     private GameObject managerEjercicios;
     private int contador = 0;
     public int puntos = 0;
@@ -101,6 +102,7 @@ public class Orientacion : MonoBehaviour
     {
         managerEjercicios = GameObject.FindWithTag("MEje");
         sonidos = GameObject.FindWithTag("Sonido");
+        sonidos2 = GameObject.FindWithTag("Sonido2");
 
 
         if (managerEjercicios.GetComponent<ManagerEjercicios>().nivel == 1)
@@ -140,8 +142,8 @@ public class Orientacion : MonoBehaviour
             GameObject managerUsuario = GameObject.FindWithTag("MUsu");
             managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
             int au;
-            au = Random.Range(4, 8);
-            sonidos.GetComponent<Sonidos>().repAudio(3, au);
+            au = Random.Range(4, 6);
+            sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
         }
         else
         {
@@ -158,7 +160,7 @@ public class Orientacion : MonoBehaviour
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
                 int au;
                 au = Random.Range(8, 10);
-                sonidos.GetComponent<Sonidos>().repAudio(3, au);
+                sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
             }
             else
             {
@@ -168,8 +170,8 @@ public class Orientacion : MonoBehaviour
                 GameObject managerUsuario = GameObject.FindWithTag("MUsu");
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
                 int au;
-                au = Random.Range(8, 10);
-                sonidos.GetComponent<Sonidos>().repAudio(3, au);
+                au = Random.Range(6, 8);
+                sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
             }
 
 
@@ -210,7 +212,7 @@ public class Orientacion : MonoBehaviour
 
         preguntas1 = DesordenarLista<Orientacion1>(preguntas1);
         panel1.SetActive(true);
-        sonidos.GetComponent<Sonidos>().repAudio(6, 48);
+        sonidos2.GetComponent<Sonidos2>().repAudio(6, 48);
         StartCoroutine(Esperar());
         
         
@@ -226,7 +228,7 @@ public class Orientacion : MonoBehaviour
         if (contador < preguntas1.Count)
         {
             generarImagenesN1();
-            sonidos.GetComponent<Sonidos>().repAudio(6, preguntas1[contador].audio);
+            sonidos2.GetComponent<Sonidos2>().repAudio(6, preguntas1[contador].audio);
             textoPrincipal.GetComponent<Text>().text = preguntas1[contador].pregunta;
            
 
@@ -310,7 +312,7 @@ public class Orientacion : MonoBehaviour
         if (contador < preguntas2.Count)
         {
             preguntas2[contador].escena.SetActive(true);
-            sonidos.GetComponent<Sonidos>().repAudio(6, preguntas2[contador].audio);
+            sonidos2.GetComponent<Sonidos2>().repAudio(6, preguntas2[contador].audio);
             textoPrincipal.GetComponent<Text>().text = preguntas2[contador].pregunta;
 
         }
@@ -398,7 +400,7 @@ public class Orientacion : MonoBehaviour
     {
         if (contador < preguntas3.Count)
         {
-            sonidos.GetComponent<Sonidos>().repAudio(6, preguntas3[contador].audio);
+            sonidos2.GetComponent<Sonidos2>().repAudio(6, preguntas3[contador].audio);
             textoPrincipal.GetComponent<Text>().text = preguntas3[contador].pregunta;
             generarBotonesN3();
         }
@@ -477,7 +479,7 @@ public class Orientacion : MonoBehaviour
     {
         if (contador < preguntas4.Count)
         {
-            sonidos.GetComponent<Sonidos>().repAudio(6, preguntas4[contador].audio);
+            sonidos2.GetComponent<Sonidos2>().repAudio(6, preguntas4[contador].audio);
             textoPrincipal.GetComponent<Text>().text = preguntas4[contador].pregunta;
         }
         else

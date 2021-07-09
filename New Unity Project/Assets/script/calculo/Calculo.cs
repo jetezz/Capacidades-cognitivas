@@ -11,6 +11,7 @@ using System;
 public class Calculo : MonoBehaviour
 {
     GameObject sonidos;
+    GameObject sonidos2;
     private GameObject managerEjercicios;
     private int contador = 0;
     public int puntos = 0;
@@ -104,6 +105,7 @@ public class Calculo : MonoBehaviour
     {
         managerEjercicios = GameObject.FindWithTag("MEje");
         sonidos = GameObject.FindWithTag("Sonido");
+        sonidos2 = GameObject.FindWithTag("Sonido2");
 
 
         if (managerEjercicios.GetComponent<ManagerEjercicios>().nivel == 1)
@@ -147,7 +149,7 @@ public class Calculo : MonoBehaviour
             managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
             int au;
             au = UnityEngine.Random.Range(4, 8);
-            sonidos.GetComponent<Sonidos>().repAudio(3, au);
+            sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
         }
         else
         {
@@ -164,7 +166,7 @@ public class Calculo : MonoBehaviour
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
                 int au;
                 au = UnityEngine.Random.Range(8, 10);
-                sonidos.GetComponent<Sonidos>().repAudio(3, au);
+                sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
             }
             else
             {
@@ -174,8 +176,8 @@ public class Calculo : MonoBehaviour
                 GameObject managerUsuario = GameObject.FindWithTag("MUsu");
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
                 int au;
-                au = UnityEngine.Random.Range(8, 10);
-                sonidos.GetComponent<Sonidos>().repAudio(3, au);
+                au = UnityEngine.Random.Range(6, 8);
+                sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
             }
             
 
@@ -229,7 +231,7 @@ public class Calculo : MonoBehaviour
     {
         if (contador < preguntas1.Count)
         {
-            sonidos.GetComponent<Sonidos>().repAudio(7, preguntas1[contador].audio);
+            sonidos2.GetComponent<Sonidos2>().repAudio(7, preguntas1[contador].audio);
             textoPrincipal.GetComponent<Text>().text = preguntas1[contador].pregunta;
             panel1.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
             panel1.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
@@ -429,7 +431,7 @@ public class Calculo : MonoBehaviour
 
         preguntas3 = DesordenarLista<Calculo3>(preguntas3);
 
-        sonidos.GetComponent<Sonidos>().repAudio(7,8);
+        sonidos2.GetComponent<Sonidos2>().repAudio(7,8);
         textoPrincipal.GetComponent<Text>().text = "Pulsa en el grupo que contenga el mismo dinero que el grupo de arriba";
         siguientePreguntaN3();
 
@@ -598,7 +600,7 @@ public class Calculo : MonoBehaviour
 
 
         preguntas3 = DesordenarLista<Calculo3>(preguntas3);
-        sonidos.GetComponent<Sonidos>().repAudio(7, 8);
+        sonidos2.GetComponent<Sonidos2>().repAudio(7, 8);
         textoPrincipal.GetComponent<Text>().text = "Pulsa la casilla que contenga el mismo dinero que el grupo de arriba";
         siguientePreguntaN3();
 
@@ -733,7 +735,7 @@ public class Calculo : MonoBehaviour
         conjunto2.Add(new Grupo2(img9, etiqueta9, 50.35f));
         
         panel4.SetActive(true);
-        sonidos.GetComponent<Sonidos>().repAudio(7, 9);
+        sonidos2.GetComponent<Sonidos2>().repAudio(7, 9);
         textoPrincipal.GetComponent<Text>().text = "Calcula la suma de estos objetos";
         siguientePreguntaN4();
     }

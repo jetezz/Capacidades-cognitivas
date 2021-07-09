@@ -92,13 +92,13 @@ public class ManagerEjercicios : MonoBehaviour
     }
     void randomnivel()
     {
-        int rand = Random.Range(0,10);
+        int rand = Random.Range(0,51);
         
         switch (nivel)
         {
             case 2:
                 {
-                    if (rand >= 7)
+                    if (rand >= 45)
                     {
                         nivel = 1;
                     }
@@ -106,12 +106,12 @@ public class ManagerEjercicios : MonoBehaviour
                 }
             case 3:
                 {
-                    if (rand >= 7)
+                    if (rand >= 45)
                     {
                         nivel = 2;
                     }
 
-                    if (rand == 9)
+                    if (rand >= 48)
                     {
                         nivel = 1;
                     }
@@ -119,12 +119,12 @@ public class ManagerEjercicios : MonoBehaviour
                 }
             case 4:
                 {
-                    if (rand >= 7)
+                    if (rand >= 40)
                     {
                         nivel = 3;
                     }
 
-                    if (rand == 9)
+                    if (rand >= 45)
                     {
                         nivel = 2;
                     }

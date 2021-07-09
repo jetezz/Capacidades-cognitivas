@@ -1787,11 +1787,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2432825682090202900, guid: b3a8f4731d778cb48ade52da2fe9b3e6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -9.243713
+      value: -9.243652
       objectReference: {fileID: 0}
     - target: {fileID: 2432825682090202900, guid: b3a8f4731d778cb48ade52da2fe9b3e6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 8.955383
+      value: 8.955322
       objectReference: {fileID: 0}
     - target: {fileID: 2432825682090202900, guid: b3a8f4731d778cb48ade52da2fe9b3e6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3809,7 +3809,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5.2819, y: 0.21739}
+  m_AnchoredPosition: {x: -5.2819824, y: 0.21740723}
   m_SizeDelta: {x: -48.51, y: -46.711}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &744806290
@@ -6282,11 +6282,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5685390976144708508, guid: 56614a7255ee34a41af6cbed1eccb7db, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.0090427
+      value: 0.009033203
       objectReference: {fileID: 0}
     - target: {fileID: 5685390976144708508, guid: 56614a7255ee34a41af6cbed1eccb7db, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.21753
+      value: 0.2175293
       objectReference: {fileID: 0}
     - target: {fileID: 5685390976144708508, guid: 56614a7255ee34a41af6cbed1eccb7db, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6984,7 +6984,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5.2819214, y: 5.6644287}
+  m_AnchoredPosition: {x: -5.2819824, y: 5.6644287}
   m_SizeDelta: {x: -48.51, y: -35.817}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1721551717
@@ -7588,7 +7588,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5.2811, y: 0.2174}
+  m_AnchoredPosition: {x: -5.281006, y: 0.21740723}
   m_SizeDelta: {x: -48.5115, y: -46.7108}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1783733125
@@ -7965,11 +7965,11 @@ MonoBehaviour:
   rombo: {fileID: 21300000, guid: 17f0c26b09c6fe04fa2928e014014ddf, type: 3}
   rectangulo: {fileID: 21300000, guid: 3fbbb5bc01e00cd498e226f8aa041056, type: 3}
   triangulo: {fileID: 21300000, guid: bb2c8a9c92ba7bc44bd2de22caddc9fb, type: 3}
-  caballo: {fileID: 21300000, guid: 2ebcd53aef9683a4ebae8e5bdefd5386, type: 3}
-  gato: {fileID: 21300000, guid: db6e978bd188bdd44a5a04cb0bf8b042, type: 3}
-  perro: {fileID: 21300000, guid: 13ec52e4f3e2aa64ca4b9733b10b9ee8, type: 3}
-  conejo: {fileID: 21300000, guid: b0102e3d6b7b4924e9fc98c38dda9eaf, type: 3}
-  oveja: {fileID: 21300000, guid: 0fef8165168e2ea4a9b70f6f32f9cbca, type: 3}
+  caballo: {fileID: 21300000, guid: 0aba57dd5ef9ec54c948afa60cdbd64e, type: 3}
+  gato: {fileID: 21300000, guid: df38fd1c79bcafe429c5f2aca3fed49d, type: 3}
+  perro: {fileID: 21300000, guid: 635d1be7163b67b44bd2992ec8f1d0cf, type: 3}
+  conejo: {fileID: 21300000, guid: 47ec6439ef1358442b01b37e094c757a, type: 3}
+  oveja: {fileID: 21300000, guid: cb8787a35e755e7479e0d191f472191a, type: 3}
   perro1: {fileID: 21300000, guid: cbb3431d64b3a5c40a4ee27eb2e84d9b, type: 3}
   perro2: {fileID: 21300000, guid: cb0c4a74e6aa7144780e4db51b3ed9ee, type: 3}
   perro3: {fileID: 21300000, guid: e34bf3390dc24314292a1cc1fb794272, type: 3}

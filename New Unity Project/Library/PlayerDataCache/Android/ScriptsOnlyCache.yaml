@@ -27,6 +27,7 @@ ScriptsOnlyBuild:
     - SlotOrientacion
     - SlotPraxia
     - Sonidos
+    - Sonidos2
     - Test
     - UsuarioEscena
     - WindowsGraph
@@ -48,8 +49,6 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
-    - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -77,6 +76,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Mask
     - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Scrollbar
+    - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
     - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
@@ -683,7 +683,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4526}
     - Class: 114
-      Script: {instanceID: 4930}
+      Script: {instanceID: 4932}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -755,6 +755,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1654}
     - Class: 114
+      Script: {instanceID: 1692}
+    - Class: 114
       Script: {instanceID: 1796}
     - Class: 114
       Script: {instanceID: 1930}
@@ -794,6 +796,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4616}
     - Class: 114
       Script: {instanceID: 4654}
+    - Class: 114
+      Script: {instanceID: 4712}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1113,7 +1117,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 48da3118a508028f8f56f929dd4fa75c
+      Hash: c032241fbde6c7b8121b1b5639230172
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ManagerUsuario
@@ -1353,7 +1357,7 @@ ScriptsOnlyBuild:
     className: Percepcion
   - hash:
       serializedVersion: 2
-      Hash: 6b7cd5091dd08d7533837dca12518389
+      Hash: 79260984b158e2ec912244f88f8d6d12
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ManagerEjercicios
@@ -1383,7 +1387,7 @@ ScriptsOnlyBuild:
     className: Outline
   - hash:
       serializedVersion: 2
-      Hash: 469fc089d260e41732b1f4cced70d32b
+      Hash: 2dc02fbf54a3ccd72f11a9a22ee101ae
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Sonidos
@@ -1665,7 +1669,7 @@ ScriptsOnlyBuild:
     className: menu
   - hash:
       serializedVersion: 2
-      Hash: b1cf573a743adfd3bf239d633e5c37b5
+      Hash: fbdac98caa011f70cebc9a367602b31c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MenuPrincipal
@@ -1687,6 +1691,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_ScrollbarEventHandler
+  - hash:
+      serializedVersion: 2
+      Hash: 7182489a03a660da6fe7d668796c8287
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Sonidos2
   - hash:
       serializedVersion: 2
       Hash: 25660265ccf8b1686a1362a9e35c0664

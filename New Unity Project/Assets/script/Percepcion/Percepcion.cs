@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Percepcion : MonoBehaviour
 {
     GameObject sonidos;
+    GameObject sonidos2;
     private GameObject managerEjercicios;
     private int contador = 0;
     public int puntos = 0;
@@ -163,6 +164,7 @@ public class Percepcion : MonoBehaviour
 
         managerEjercicios = GameObject.FindWithTag("MEje");
         sonidos = GameObject.FindWithTag("Sonido");
+        sonidos2 = GameObject.FindWithTag("Sonido2");
 
 
 
@@ -221,8 +223,8 @@ public class Percepcion : MonoBehaviour
             GameObject managerUsuario = GameObject.FindWithTag("MUsu");
             managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
             int au;
-            au = Random.Range(4, 8);
-            sonidos.GetComponent<Sonidos>().repAudio(3, au);
+            au = Random.Range(4, 6);
+            sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
         }
         else
         {
@@ -239,7 +241,7 @@ public class Percepcion : MonoBehaviour
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
                 int au;
                 au = Random.Range(8, 10);
-                sonidos.GetComponent<Sonidos>().repAudio(3, au);
+                sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
             }
             else
             {
@@ -249,8 +251,8 @@ public class Percepcion : MonoBehaviour
                 GameObject managerUsuario = GameObject.FindWithTag("MUsu");
                 managerUsuario.GetComponent<ManagerUsuario>().guardarUsuarios();
                 int au;
-                au = Random.Range(8, 10);
-                sonidos.GetComponent<Sonidos>().repAudio(3, au);
+                au = Random.Range(6, 8);
+                sonidos2.GetComponent<Sonidos2>().repAudio(3, au);
             }
 
 
@@ -292,7 +294,7 @@ public class Percepcion : MonoBehaviour
 
 
         panel1.SetActive(true);
-        sonidos.GetComponent<Sonidos>().repAudio(2,0);
+        sonidos2.GetComponent<Sonidos2>().repAudio(2,0);
         textoPrincipal.GetComponent<Text>().text = "Selecciona las imágenes que son iguales que el ejemplo";
         siguientePreguntaN1();
     }
@@ -494,7 +496,7 @@ public class Percepcion : MonoBehaviour
 
 
         panel2.SetActive(true);
-        sonidos.GetComponent<Sonidos>().repAudio(2, 0);
+        sonidos2.GetComponent<Sonidos2>().repAudio(2, 0);
         textoPrincipal.GetComponent<Text>().text = "Selecciona las imágenes que son iguales que el ejemplo";
 
         siguientePreguntaN2();
@@ -759,7 +761,7 @@ public class Percepcion : MonoBehaviour
         preguntas2.AddRange(aux[2].lista);
 
         panel2.SetActive(true);
-        sonidos.GetComponent<Sonidos>().repAudio(2, 0);
+        sonidos2.GetComponent<Sonidos2>().repAudio(2, 0);
         textoPrincipal.GetComponent<Text>().text = "Selecciona las imágenes que son iguales que el ejemplo";
 
         siguientePreguntaN2();
@@ -801,7 +803,7 @@ public class Percepcion : MonoBehaviour
 
 
         panel4.SetActive(true);
-        sonidos.GetComponent<Sonidos>().repAudio(2, 1);
+        sonidos2.GetComponent<Sonidos2>().repAudio(2, 1);
         textoPrincipal.GetComponent<Text>().text = "Selecciona el dibujo que es igual en ambos lados (color y forma)";
         siguientepreguntaN4();
 

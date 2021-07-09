@@ -10,7 +10,7 @@ public class ManagerUsuario : MonoBehaviour
     public static ManagerUsuario managerUsuario;       
     public List<Usuario> usuarios;  
     public Usuario usuarioSeleccionado;
-
+    
 
 
     private void Awake()
@@ -83,6 +83,7 @@ public class Usuario
        Description = detalles;
         estadisticas = new Estadisticas();
    }
+    public int numEstadisticasMax = 20;
     public string Name;
     public string Description;
     public Sprite Icon;
@@ -91,35 +92,93 @@ public class Usuario
 
     public void memoria(int valor)
     {
-        estadisticas.memoria.Add(new Dato("1", valor));
+        if(valor>0 && valor < 5)
+        {
+            estadisticas.memoria.Add(new Dato("1", valor));
+            if (estadisticas.memoria.Count() > numEstadisticasMax)
+            {
+                estadisticas.memoria.RemoveAt(0);
+            }
+        }
+       
+        
     }
     public void lenguaje(int valor)
     {
-        estadisticas.lenguaje.Add(new Dato("1", valor));
+        if (valor > 0 && valor < 5)
+        {
+            estadisticas.lenguaje.Add(new Dato("1", valor));
+            if (estadisticas.lenguaje.Count() > numEstadisticasMax)
+            {
+                estadisticas.lenguaje.RemoveAt(0);
+            }
+        }
     }
     public void percepcion(int valor)
     {
-        estadisticas.percepcion.Add(new Dato("1", valor));
+        if (valor > 0 && valor < 5)
+        {
+            estadisticas.percepcion.Add(new Dato("1", valor));
+            if (estadisticas.percepcion.Count() > numEstadisticasMax)
+            {
+                estadisticas.percepcion.RemoveAt(0);
+            }
+        }
     }
     public void atencion(int valor)
     {
-        estadisticas.atencion.Add(new Dato("1", valor));
+        if (valor > 0 && valor < 5)
+        {
+            estadisticas.atencion.Add(new Dato("1", valor));
+            if (estadisticas.atencion.Count() > numEstadisticasMax)
+            {
+                estadisticas.atencion.RemoveAt(0);
+            }
+        }
     }
     public void gnosia(int valor)
     {
-        estadisticas.gnosias.Add(new Dato("1", valor));
+        if (valor > 0 && valor < 5)
+        {
+            estadisticas.gnosias.Add(new Dato("1", valor));
+            if (estadisticas.gnosias.Count() > numEstadisticasMax)
+            {
+                estadisticas.gnosias.RemoveAt(0);
+            }
+        }
     }
     public void praxia(int valor)
     {
-        estadisticas.praxias.Add(new Dato("1", valor));
+        if (valor > 0 && valor < 5)
+        {
+            estadisticas.praxias.Add(new Dato("1", valor));
+            if (estadisticas.praxias.Count() > numEstadisticasMax)
+            {
+                estadisticas.praxias.RemoveAt(0);
+            }
+        }
     }
     public void orientacion(int valor)
     {
-        estadisticas.orientacion.Add(new Dato("1", valor));
+        if (valor > 0 && valor < 5)
+        {
+            estadisticas.orientacion.Add(new Dato("1", valor));
+            if (estadisticas.orientacion.Count() > numEstadisticasMax)
+            {
+                estadisticas.orientacion.RemoveAt(0);
+            }
+        }
     }
     public void calculo(int valor)
     {
-        estadisticas.calculo.Add(new Dato("1", valor));
+        if (valor > 0 && valor < 5)
+        {
+            estadisticas.calculo.Add(new Dato("1", valor));
+            if (estadisticas.calculo.Count() > numEstadisticasMax)
+            {
+                estadisticas.calculo.RemoveAt(0);
+            }
+        }
     }
 
     public string getMemoria()
