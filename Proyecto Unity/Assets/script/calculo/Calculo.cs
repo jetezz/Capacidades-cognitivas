@@ -773,6 +773,10 @@ public class Calculo : MonoBehaviour
         for(int i = 0; i < 2; i++)
         {
             float rando = UnityEngine.Random.Range(-10, 10);
+            while (rando == 0)
+            {
+                rando = UnityEngine.Random.Range(-10, 10);
+            }
             aux.Add(new float_bool(precioTotal + rando,false));
         }
 
